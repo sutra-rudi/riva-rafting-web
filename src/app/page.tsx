@@ -1,10 +1,9 @@
-import AppButton from './components/appButton';
+import AppHeader from './components/AppHeader';
 import styles from './styles/page.module.scss';
 export default function Home() {
   return (
     <main className={styles.homeMain}>
-      <h2 className={styles.pageTitle}>Riva Rafting</h2>
-      <AppButton content='Botun prvi' />
+      <AppHeader />
     </main>
   );
 }

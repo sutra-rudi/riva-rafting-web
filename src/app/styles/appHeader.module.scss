@@ -1,0 +1,16 @@
+@import 'main.scss';
+
+.navParent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navLeftParent {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.navLeft {
+  display: flex;
+  gap: 2em;
+}
