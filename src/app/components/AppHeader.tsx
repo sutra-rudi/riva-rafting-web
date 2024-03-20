@@ -6,6 +6,7 @@ const navLinksOne: string[] = ['O nama', 'Aktivnosti', 'Kontakt'];
 const navLinksTwo: string[] = ['Mićanovi Dvori', 'Zrmanja Camping Vilagge'];
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
+import LanguageSwitch from './LanguageSwitch';
 const AppHeader = () => {
   const HeaderBaseOne = () => {
     return (
@@ -21,7 +22,7 @@ const AppHeader = () => {
 
   const HeaderBaseTwo = () => {
     return (
-      <div>
+      <div className={styles.navRight}>
         {navLinksTwo.map((link) => (
           <Link key={link} href={'#'}>
             {link}
@@ -31,18 +32,30 @@ const AppHeader = () => {
     );
   };
 
-  {
-    /* <span className='separator'>|</span>; */
-  }
   return (
     <nav className={styles.navParent}>
-      <div className={styles.navLeftParent}>
-        <Image src={AppLogo} alt='app logo' />
-        <HeaderBaseOne />
+      <div className={styles.navPromoTrack}>
+        <span>TRIP ADVISOR</span>
+        <span>|</span>
+        <a href='tel:+0038523689920'>+385 23 689 920</a>
+        <span>|</span>
+        <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
       </div>
+      <div className={styles.navMaster}>
+        <div className={styles.navInnerParent}>
+          <div className={styles.navLeftParent}>
+            <Image src={AppLogo} alt='app logo' />
+            <HeaderBaseOne />
+          </div>
+          <span>|</span>
 
-      <HeaderBaseTwo />
-      <AppButton isNav content='BOOK YOUR ADVENTURE' />
+          <HeaderBaseTwo />
+        </div>
+        <div className={styles.navInnerParent}>
+          <AppButton isNav content='BOOK YOUR ADVENTURE' />
+          <LanguageSwitch />
+        </div>
+      </div>
     </nav>
   );
 };

@@ -1,16 +1,111 @@
 @import 'main.scss';
 
-.navParent {
+.navMaster {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  place-items: center;
+  padding: 2.5em 4.5em;
+}
+
+.navPromoTrack {
+  background: $zelenaGlavna;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-weight: 400;
+  color: #fff;
+
+  a {
+    color: #fff;
+    padding: 0.5em 0;
+  }
+}
+
+.navInnerParent {
+  display: flex;
+  justify-content: space-between;
+  place-items: center;
+
+  gap: 2em;
 }
 
 .navLeftParent {
   display: flex;
+  place-items: center;
   gap: 2.2rem;
+  font-weight: 400;
+
+  a {
+    color: $tamna;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 250ms ease;
+    position: relative;
+
+    &:hover {
+      color: $zelenaGlavna;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;
+      background: $zelenaGlavna;
+      height: 1.5px;
+      content: '';
+      width: 100%;
+      transform: scale(0);
+      transition: all 250ms ease;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
 }
 
 .navLeft {
   display: flex;
+  place-items: center;
   gap: 2em;
+}
+
+.navRight {
+  display: flex;
+  place-items: center;
+  gap: 2em;
+  font-weight: 400;
+
+  a {
+    color: $tamna;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+
+    transition: all 250ms ease;
+
+    &:hover {
+      color: $zelenaGlavna;
+    }
+
+    &::after {
+      position: absolute;
+      left: 0;
+      bottom: -0.2em;
+      background: $zelenaGlavna;
+      height: 1.5px;
+      content: '';
+      width: 100%;
+      transform: scale(0);
+      transition: all 250ms ease;
+      transform-origin: left;
+    }
+
+    &:hover::after {
+      transform: scale(1);
+    }
+  }
 }

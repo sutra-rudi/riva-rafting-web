@@ -11,17 +11,16 @@
   color: #fff;
   font-size: 1em;
   line-height: $velikiProred;
-  font-weight: 700;
+  font-weight: 500;
 
   &:hover {
     background: #fff;
-    border: 2px solid $zelenaGlavna;
+    border: 1.5px solid $zelenaGlavna;
     color: $zelenaGlavna;
   }
 }
 
 .navButton {
-  line-height: 100%;
-  height: 38px;
+  height: max-content;
   padding: 0.5em 0.75em;
 }
