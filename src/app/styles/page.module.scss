@@ -2,5 +2,14 @@
 
 .homeMain {
   min-height: 100dvh;
-  background-color: $tamna;
+  background-color: $svijetloSiva;
+
+  display: flex;
+  place-items: center;
+  justify-content: center;
+}
+
+.pageTitle {
+  font-size: $velikiNaslov;
+  line-height: $velikiProred;
 }

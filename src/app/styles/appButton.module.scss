@@ -1,0 +1,21 @@
+@import 'main.scss';
+
+.appButton {
+  border: 0;
+  outline: 0;
+  border-radius: 6px;
+  padding: 1.3125em 2.125em;
+  cursor: pointer;
+  background: $zelenaGlavna;
+  transition: all 250ms ease-out;
+  color: #fff;
+  font-size: 1em;
+  line-height: $velikiProred;
+  font-weight: 700;
+
+  &:hover {
+    background: #fff;
+    border: 2px solid $zelenaGlavna;
+    color: $zelenaGlavna;
+  }
+}
