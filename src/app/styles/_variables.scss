@@ -1,4 +1,4 @@
-//COLORS//
+//----------------------BOJE--------------------------//
 
 $tamna: #161938;
 $plavaGlavna: #2f476f;
@@ -6,6 +6,18 @@ $zutaGlavna: #fdc028;
 $zelenaGlavna: #a4cd46;
 $svijetloSiva: #eeeeee;
 
-//FONTS//
-$velikiNaslov: 55px;
-$velikiProred: 120%;
+//--------------------FONTOVI-------------------------//
+$heading1: 55px;
+$heading2: 36px;
+$heading3: 30px;
+$heading4: 21px;
+$heading5: 16px;
+$defaultProred: 120%;
+$sekundarniProred: 110%;
+$browserProred: normal;
+
+//-------------------BREAKPOINTS--------------------//
+$phones: 768px;
+$tablets: 1024px;
+$desktops: 1300px;
+$smPhones: 480px;

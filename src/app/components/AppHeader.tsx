@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import AppLogo from '../img/APP_LOGO.png';
+import svgAppLogo from '../img/RIVA-RAFTING-LOGO-SVG.svg';
 import Image from 'next/image';
 const navLinksOne: string[] = ['O nama', 'Aktivnosti', 'Kontakt'];
 const navLinksTwo: string[] = ['Mićanovi Dvori', 'Zrmanja Camping Vilagge'];
@@ -44,7 +45,7 @@ const AppHeader = () => {
       <div className={styles.navMaster}>
         <div className={styles.navInnerParent}>
           <div className={styles.navLeftParent}>
-            <Image src={AppLogo} alt='app logo' />
+            <Image src={svgAppLogo} alt='app logo' />
             <HeaderBaseOne />
           </div>
           <span>|</span>
@@ -54,6 +55,7 @@ const AppHeader = () => {
         <div className={styles.navInnerParent}>
           <AppButton isNav content='BOOK YOUR ADVENTURE' />
           <LanguageSwitch />
+          <button className={styles.mobileButtonTemp}>Mobile menu</button>
         </div>
       </div>
     </nav>

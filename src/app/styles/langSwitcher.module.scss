@@ -2,4 +2,8 @@
 
 .langSwitcherParent {
   display: flex;
+
+  @media screen and (max-width: $smPhones) {
+    display: none;
+  }
 }

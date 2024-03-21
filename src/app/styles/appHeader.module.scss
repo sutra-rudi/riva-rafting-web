@@ -6,6 +6,13 @@
   justify-content: space-between;
   place-items: center;
   padding: 2.5em 4.5em;
+
+  @media screen and (max-width: $tablets) {
+    padding: 1.5em 3em;
+  }
+  @media screen and (max-width: $phones) {
+    padding: 1em 1.5em;
+  }
 }
 
 .navPromoTrack {
@@ -16,6 +23,10 @@
   gap: 1em;
   font-weight: 400;
   color: #fff;
+
+  @media screen and (max-width: $phones) {
+    font-size: 0.8em;
+  }
 
   a {
     color: #fff;
@@ -29,6 +40,18 @@
   place-items: center;
 
   gap: 2em;
+
+  @media screen and (max-width: $desktops) {
+    span {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $desktops) {
+    .mobileButtonTemp {
+      display: none;
+    }
+  }
 }
 
 .navLeftParent {
@@ -71,6 +94,10 @@
   display: flex;
   place-items: center;
   gap: 2em;
+
+  @media screen and (max-width: $desktops) {
+    display: none;
+  }
 }
 
 .navRight {
@@ -107,5 +134,9 @@
     &:hover::after {
       transform: scale(1);
     }
+  }
+
+  @media screen and (max-width: $desktops) {
+    display: none;
   }
 }

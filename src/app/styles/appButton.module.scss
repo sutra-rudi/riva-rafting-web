@@ -10,7 +10,7 @@
   transition: all 250ms ease-out;
   color: #fff;
   font-size: 1em;
-  line-height: $velikiProred;
+  line-height: $defaultProred;
   font-weight: 500;
 
   &:hover {
@@ -23,4 +23,8 @@
 .navButton {
   height: max-content;
   padding: 0.5em 0.75em;
+
+  @media screen and (max-width: $tablets) {
+    display: none;
+  }
 }
