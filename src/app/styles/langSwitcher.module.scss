@@ -2,8 +2,34 @@
 
 .langSwitcherParent {
   display: flex;
+  gap: 0.25em;
+  color: $plavaGlavna;
+  background: #fff;
+  padding: 0.5em 0.75em;
+  font-weight: normal;
+  cursor: pointer;
+  transition: all 350ms ease;
 
   @media screen and (max-width: $smPhones) {
     display: none;
+  }
+
+  .active {
+    background: $zelenaGlavna;
+    color: $svijetloSiva;
+  }
+
+  .croa,
+  .engl {
+    transition: all 250ms ease;
+    padding: 0.25em 0.35em;
+
+    &:hover {
+      color: $zelenaGlavna;
+    }
+  }
+
+  .separator {
+    padding: 0.25em 0.35em;
   }
 }

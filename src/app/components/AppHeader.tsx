@@ -55,7 +55,11 @@ const AppHeader = () => {
         <div className={styles.navInnerParent}>
           <AppButton isNav content='BOOK YOUR ADVENTURE' />
           <LanguageSwitch />
-          <button className={styles.mobileButtonTemp}>Mobile menu</button>
+          <div className={styles.mobileButtonTemp}>
+            <div className=''></div>
+            <div className=''></div>
+            <div className=''></div>
+          </div>
         </div>
       </div>
     </nav>

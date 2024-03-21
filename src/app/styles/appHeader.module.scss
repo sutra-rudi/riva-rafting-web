@@ -26,11 +26,28 @@
 
   @media screen and (max-width: $phones) {
     font-size: 0.8em;
+
+    &:first-child span {
+      display: none;
+    }
   }
 
   a {
     color: #fff;
     padding: 0.5em 0;
+  }
+}
+
+.mobileButtonTemp {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 0.35em;
+
+  div {
+    width: 35px;
+    height: 2px;
+    display: block;
+    background: $plavaGlavna;
   }
 }
 
