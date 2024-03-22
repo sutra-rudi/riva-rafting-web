@@ -3,21 +3,24 @@ import AppHeader from './components/AppHeader';
 import DodatneInformacije from './sections/DodatneInformacije';
 import styles from './styles/page.module.scss';
 import { Suspense } from 'react';
-import PromoSekcijaJedan from './sections/PromoSekcijaJedan';
 
 export default function Home() {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
-
+  const PromoLazy = dynamic(() => import('./sections/PromoSekcijaJedan'), { ssr: false });
+  const TureLazy = dynamic(() => import('./sections/TureSekcija'), { ssr: false });
+  const TureOfferLazy = dynamic(() => import('./sections/TurePonuda'), { ssr: false });
   return (
     <main className={styles.homeMain}>
       <AppHeader />
       <Suspense fallback={<div>Loading</div>}>
         <HeroLazy />
+
+        <PromoLazy />
+        <TureLazy />
+        <TureOfferLazy />
+
+        <DodatneInformacije />
       </Suspense>
-
-      <PromoSekcijaJedan />
-
-      <DodatneInformacije />
     </main>
   );
 }

@@ -7,11 +7,6 @@ import papirDivider from '../img/PAPIR-RAZMAK.svg';
 import ReactPlayer from 'react-player/lazy';
 import AppButton from '../components/AppButton';
 
-// import heroVideoSrc from '../img/hero-video-test.mov';
-
-{
-  /*  */
-}
 const HeroSekcija = () => {
   return window ? (
     <section className={styles.heroSekcija}>

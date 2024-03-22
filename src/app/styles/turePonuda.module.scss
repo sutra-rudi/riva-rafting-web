@@ -1,0 +1,78 @@
+.turePonudaSekcija {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 0 4em 0;
+
+  .dividerContPaper {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: -300px;
+    left: 0;
+    z-index: 3;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    inset: 0;
+    background: url('../img/ture-background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  .masterContainer {
+    max-width: $masterContainerWidth;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: stretch;
+    gap: 6em;
+  }
+
+  .tureArticle {
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+
+    .contentHolder {
+      max-width: 672px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      place-items: start;
+      gap: 1.5em;
+    }
+
+    .contentTitle {
+      font-size: $heading2;
+      color: $tamna;
+      line-height: $sekundarniProred;
+    }
+    .contentSubtitle {
+      font-size: $heading4;
+      font-weight: 500;
+      color: $tamna;
+      line-height: $defaultProred;
+    }
+
+    .contentText {
+      white-space: pre-wrap;
+    }
+
+    .imgHolder {
+      width: 100%;
+      max-width: 672px;
+      height: 445px;
+      position: relative;
+    }
+  }
+
+  .articleReverse {
+    flex-direction: row-reverse;
+  }
+}

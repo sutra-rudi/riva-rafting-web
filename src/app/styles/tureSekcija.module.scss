@@ -1,0 +1,18 @@
+.tureSekcija {
+  width: 100%;
+  position: relative;
+  padding: 5em 0;
+
+  .dividerContPaper {
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+  .masterContainer {
+    max-width: $masterContainerWidth;
+    margin: 0 auto;
+  }
+}
