@@ -1,0 +1,32 @@
+.promoSekcijaJedan {
+  .promoSekcijaHeader {
+    font-size: $heading2;
+    color: $tamna;
+    max-width: 980px;
+    margin: 2em auto;
+    text-align: center;
+  }
+
+  .promoSekcijaTaxonomyCard {
+    display: flex;
+    gap: 2.5em;
+    place-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $zelenaGlavna;
+    font-size: $heading4;
+    line-height: $defaultProred;
+
+    .taxonomyButton {
+      transition: all 250ms ease;
+      // padding: ;
+      font-size: $heading4;
+      line-height: $defaultProred;
+      padding: 0.15em 0.25em;
+    }
+    .taxonomyButtonActive {
+      outline: 1px solid $zelenaGlavna;
+      border-radius: 10px;
+    }
+  }
+}
