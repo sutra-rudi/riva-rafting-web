@@ -1,15 +1,13 @@
 .heroSekcija {
-  min-height: 70dvh;
   position: relative;
-
+  overflow-x: hidden;
   .dividerContPaper {
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: 80px;
     top: 0;
     left: 0;
-    display: block;
-    z-index: 999999;
+    z-index: 3;
   }
 
   .playerContainer {
@@ -18,7 +16,7 @@
 
   .heroCtaKontejner {
     position: absolute;
-    top: 35%;
+    top: 30%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);

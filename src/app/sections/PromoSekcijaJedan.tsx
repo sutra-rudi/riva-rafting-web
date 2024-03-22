@@ -2,6 +2,11 @@
 
 import React from 'react';
 import styles from '../styles/promoSekcijaJedan.module.scss';
+import demoSlika from '../img/demo-slika-ponuda.png';
+import RaftingCard from '../components/RaftingCard';
+import Image from 'next/image';
+import papirDivider from '../img/PAPIR-RAZMAK-ALT.svg';
+import AppButton from '../components/AppButton';
 
 const taxonomijaPromoSekcija = [
   { title: 'Sve', id: 1 },
@@ -9,14 +14,25 @@ const taxonomijaPromoSekcija = [
   { title: 'Velebit', id: 3 },
 ];
 
+const promoSekcijaDemoPodaci = [
+  { title: 'Tets kraćeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+];
+
 const PromoSekcijaJedan = () => {
   const [currentActiveTax, setCurrentActiveTax] = React.useState<number>(1);
 
   const handleClick = (itemValue: number) => setCurrentActiveTax(itemValue);
 
-  const TaxonomyCard = () => {
+  const TaxonomyButtons = () => {
     return (
-      <div className={styles.promoSekcijaTaxonomyCard}>
+      <div className={styles.promoSekcijaTaxonomyContainer}>
         {taxonomijaPromoSekcija.map((item) => (
           <span
             className={
@@ -34,14 +50,33 @@ const PromoSekcijaJedan = () => {
     );
   };
 
+  const TaxonomyCardContainer = () => {
+    return (
+      <div className={styles.taxonomyCardContainer}>
+        {promoSekcijaDemoPodaci.map((kartica, index) => (
+          <RaftingCard key={index} title={kartica.title} imageUrl={kartica.image} location={kartica.location} />
+        ))}
+      </div>
+    );
+  };
+
   return (
     <section className={styles.promoSekcijaJedan}>
-      <h2 className={styles.promoSekcijaHeader}>
-        Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
-        Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
-      </h2>
+      <div className={styles.dividerContPaperAlt}>
+        <Image src={papirDivider} fill alt='deco' />
+      </div>
+      {/* MAIN CONT START */}
+      <div className={styles.masterContainer}>
+        <h2 className={styles.promoSekcijaHeader}>
+          Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
+          Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
+        </h2>
 
-      <TaxonomyCard />
+        <TaxonomyButtons />
+        <TaxonomyCardContainer />
+        <AppButton content='REZERVIRAJTE SVOJ TERMIN' />
+      </div>
+      {/* MAIN CONT END */}
     </section>
   );
 };

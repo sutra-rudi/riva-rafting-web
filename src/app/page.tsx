@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 import AppHeader from './components/AppHeader';
 import DodatneInformacije from './sections/DodatneInformacije';
-import HeroSekcija from './sections/HeroSekcija';
 import styles from './styles/page.module.scss';
 import { Suspense } from 'react';
 import PromoSekcijaJedan from './sections/PromoSekcijaJedan';

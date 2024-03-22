@@ -1,6 +1,8 @@
 .homeMain {
   min-height: 100dvh;
-  background-color: $svijetloSiva;
+  background-color: #fff;
+  max-width: $maxContainerWidth;
+  margin: 0 auto;
 }
 
 .pageTitle {

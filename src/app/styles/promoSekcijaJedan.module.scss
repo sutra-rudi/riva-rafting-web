@@ -1,13 +1,35 @@
 .promoSekcijaJedan {
+  width: 100%;
+  position: relative;
+  padding: 5em 0;
+
+  .dividerContPaperAlt {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    top: -150px;
+    left: 0;
+    z-index: 3;
+  }
+
+  .masterContainer {
+    max-width: $masterContainerWidth;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    gap: 6em;
+  }
+
   .promoSekcijaHeader {
     font-size: $heading2;
     color: $tamna;
     max-width: 980px;
-    margin: 2em auto;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .promoSekcijaTaxonomyCard {
+  .promoSekcijaTaxonomyContainer {
     display: flex;
     gap: 2.5em;
     place-items: center;
@@ -27,6 +49,93 @@
     .taxonomyButtonActive {
       outline: 1px solid $zelenaGlavna;
       border-radius: 10px;
+    }
+  }
+
+  .taxonomyCardContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px 40px;
+
+    .raftingCard {
+      max-width: 342px;
+      height: 339px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+
+      .raftingImage {
+        transition: all 250ms ease-out;
+        object-fit: cover;
+      }
+
+      .cardArrowIcon {
+        transition: transform 250ms ease 150ms;
+      }
+
+      &:hover {
+        .raftingImage {
+          transform: scale(1.2);
+        }
+        .cardArrowIcon {
+          transform: translateX(0.75em);
+        }
+
+        .cardTitle {
+          &::after {
+            transform: scale(1);
+          }
+        }
+      }
+
+      .raftingCartInteractiveOverlay {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: min-content;
+        padding: 0.8em 1.1em;
+        background: $zelenaGlavna;
+        display: flex;
+        place-items: center;
+        justify-content: space-between;
+
+        .interactiveOverlayTitleCont {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 0.25em;
+        }
+
+        .cardTitle {
+          font-size: $heading5;
+          color: $tamna;
+          line-height: $defaultProred;
+          font-weight: 500;
+          position: relative;
+
+          &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transition: transform 250ms ease;
+            transform: scale(0);
+            transform-origin: left;
+            content: '';
+            width: 100%;
+            height: 2px;
+            background: red;
+          }
+        }
+
+        .cardLocation {
+          font-size: 14px;
+          color: $svijetloSiva;
+          display: flex;
+          place-items: center;
+          gap: 0.5em;
+          font-weight: 500;
+        }
+      }
     }
   }
 }
