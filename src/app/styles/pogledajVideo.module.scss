@@ -1,0 +1,44 @@
+.pogledajVideoSection {
+  min-height: 600px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  justify-content: center;
+
+  .dividerContPaper {
+    position: absolute;
+    width: 100%;
+    height: 125px;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+
+  .dividerContPaperAlt {
+    position: absolute;
+    width: 100%;
+    height: 85px;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+
+  .pogledajControls {
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    z-index: 1;
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .pogledajKontroleTekst {
+    font-size: $heading1;
+    color: $svijetloSiva;
+    text-transform: uppercase;
+    line-height: $defaultProred;
+    font-weight: 700;
+  }
+}

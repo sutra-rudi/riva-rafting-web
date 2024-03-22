@@ -4,6 +4,7 @@ import DodatneInformacije from './sections/DodatneInformacije';
 import styles from './styles/page.module.scss';
 import { Suspense } from 'react';
 import Loading from './loading';
+import PogledajVideo from './sections/PogledajVideo';
 
 export default async function Home() {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
@@ -20,7 +21,7 @@ export default async function Home() {
         <PromoLazy />
         <TureLazy />
         <TureOfferLazy />
-
+        <PogledajVideo />
         <DodatneInformacije />
       </main>
     </Suspense>
