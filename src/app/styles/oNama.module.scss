@@ -1,0 +1,56 @@
+.aboutUsSection {
+  width: 100%;
+  margin: 180px 0 0 0;
+  .masterContainer {
+    max-width: $masterContainerWidth;
+    margin: 0 auto;
+    width: 100%;
+    //     display: grid;
+    //     grid-template-columns: repeat(1, 1fr);
+    //     place-items: center;
+    //     gap: 6em;
+
+    .aboutUsContentCont {
+      display: flex;
+      place-items: center;
+      gap: 5.5em;
+    }
+
+    .sectionHeading {
+      font-size: $heading2;
+      color: $tamna;
+      line-height: $sekundarniProred;
+    }
+
+    .imageHolder {
+      width: 100%;
+      max-width: 669px;
+
+      height: 468px;
+      position: relative;
+    }
+
+    .aboutUsContent {
+      width: 100%;
+      max-width: 558px;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2em;
+
+      p {
+        width: 100%;
+        color: $tamna;
+        line-height: $defaultProred;
+        font-size: $baseFontSize;
+        white-space: pre-wrap;
+      }
+    }
+
+    .buttonContainer {
+      width: 100%;
+      display: flex;
+      place-items: center;
+      gap: 1.4em;
+    }
+  }
+}
