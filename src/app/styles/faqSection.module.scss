@@ -1,0 +1,28 @@
+.faqSection {
+  width: 100%;
+  .masterContainer {
+    max-width: $masterContainerWidth;
+    margin: 0 auto;
+  }
+
+  .sectionHeading {
+    margin: 11rem 0 4rem 0;
+
+    h1 {
+      font-size: $heading1;
+      line-height: $defaultProred;
+      text-align: center;
+      text-transform: uppercase;
+      color: $tamna;
+    }
+  }
+
+  .faqContainer {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    gap: 3rem;
+  }
+}

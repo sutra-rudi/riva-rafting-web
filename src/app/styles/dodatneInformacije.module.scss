@@ -1,7 +1,16 @@
 .dodatneInformacije {
   width: 100%;
-
+  position: relative;
   margin: 50em 0 0 0;
+
+  .dividerContPaper {
+    position: absolute;
+    width: 100%;
+    height: 225px;
+    top: -250px;
+    left: 0;
+    z-index: 3;
+  }
 
   .sectionHeading {
     text-align: center;
@@ -9,17 +18,17 @@
     text-transform: uppercase;
     font-size: $heading1;
     line-height: $defaultProred;
-    margin: 0 0 3.5em 0;
+    margin: 0 0 3.5rem 0;
   }
 
   .sectionListContainer {
     display: flex;
     place-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-flow: row wrap;
     gap: 1.375em;
     margin: 0 auto 2em auto;
-    width: 92.5%;
+    max-width: $masterContainerWidth;
 
     .titleHolder {
       z-index: 2;
@@ -56,9 +65,11 @@
       position: relative;
       width: 472px;
       height: 472px;
-
+      border-radius: 0 0 120px 0;
       img {
         object-position: center;
+        border-radius: 0 0 120px 0;
+        aspect-ratio: 1 / 1;
       }
     }
   }
