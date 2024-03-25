@@ -8,6 +8,7 @@ import PogledajVideo from './sections/PogledajVideo';
 import OnamaSekcija from './sections/OnamaSekcija';
 import TripAdvisorSekcija from './sections/TripAdvisorSekcija';
 import NajpopularnijeTure from './sections/NajpopularnijeTure';
+import FAQsection from './sections/FAQsection';
 
 export default async function Home() {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
@@ -29,6 +30,7 @@ export default async function Home() {
         <TripAdvisorSekcija />
         <NajpopularnijeTure />
         <DodatneInformacije />
+        <FAQsection />
       </main>
     </Suspense>
   );

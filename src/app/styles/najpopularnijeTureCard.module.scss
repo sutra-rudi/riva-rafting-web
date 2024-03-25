@@ -61,6 +61,20 @@
       left: 0;
       width: 100%;
       height: 50px;
+      outline: none;
+      border: none;
+      background: $zelenaTamna;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+      padding: 1.3rem 1rem;
+
+      span {
+        text-transform: uppercase;
+        color: #fff;
+        line-height: $defaultProred;
+        font-size: 1.15rem;
+      }
     }
   }
 }

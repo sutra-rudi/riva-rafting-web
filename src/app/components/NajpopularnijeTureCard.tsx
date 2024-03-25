@@ -30,7 +30,7 @@ const NajpopularnijeTureCard = (props: PopularTourCard) => {
         <p>{content}</p>
         <button>
           <span>Saznaj više</span>
-          <Image src={strelica} width={32} height={32} alt='icon' />
+          <Image src={strelica} width={34} height={34} alt='icon' />
         </button>
       </div>
     </div>
