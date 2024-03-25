@@ -62,7 +62,8 @@
 
     .contentText {
       white-space: pre-wrap;
-      line-height: 140%;
+      line-height: $defaultProred;
+      font-weight: 300;
       color: $tamna;
     }
 

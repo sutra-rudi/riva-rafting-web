@@ -6,6 +6,8 @@ import { Suspense } from 'react';
 import Loading from './loading';
 import PogledajVideo from './sections/PogledajVideo';
 import OnamaSekcija from './sections/OnamaSekcija';
+import TripAdvisorSekcija from './sections/TripAdvisorSekcija';
+import NajpopularnijeTure from './sections/NajpopularnijeTure';
 
 export default async function Home() {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
@@ -24,6 +26,8 @@ export default async function Home() {
         <TureOfferLazy />
         <PogledajVideo />
         <OnamaSekcija />
+        <TripAdvisorSekcija />
+        <NajpopularnijeTure />
         <DodatneInformacije />
       </main>
     </Suspense>

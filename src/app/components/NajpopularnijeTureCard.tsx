@@ -1,0 +1,40 @@
+'use client';
+
+import Image, { StaticImageData } from 'next/image';
+import React from 'react';
+import styles from '../styles/najpopularnijeTureCard.module.scss';
+import strelica from '../img/strelica-desno.svg';
+interface PopularTourCard {
+  imageUrl: StaticImageData;
+  content: string;
+  duration: string;
+  adrenaline: string;
+}
+
+const NajpopularnijeTureCard = (props: PopularTourCard) => {
+  const { imageUrl, content, duration, adrenaline } = props;
+  return (
+    <div className={styles.najpopularnijeTureCard}>
+      <div className={styles.imageContainer}>
+        <Image src={imageUrl} fill alt='popular tour card image' />
+
+        <div className={styles.moreInfoContainer}></div>
+        <div className={styles.moreInfoText}>
+          <span>{`Trajanje: ${duration}`}</span>
+          <span>|</span>
+          <span>{`Adrenalin: ${adrenaline}/10`}</span>
+        </div>
+      </div>
+
+      <div className={styles.contentContainer}>
+        <p>{content}</p>
+        <button>
+          <span>Saznaj više</span>
+          <Image src={strelica} width={32} height={32} alt='icon' />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default NajpopularnijeTureCard;

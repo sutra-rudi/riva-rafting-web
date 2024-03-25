@@ -1,0 +1,24 @@
+.najpopularnijeTure {
+  width: 100%;
+  min-height: 40dvh;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-items: center;
+  gap: 1.4rem;
+
+  .sectionHeading {
+    margin: 4.3em 0 0 0;
+    font-size: $heading2;
+    line-height: $sekundarniProred;
+    color: $tamna;
+  }
+
+  .najpopularnijeTureContainer {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    place-items: center;
+    justify-content: center;
+    gap: 1.2em;
+  }
+}
