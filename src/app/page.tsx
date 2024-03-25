@@ -10,6 +10,7 @@ import TripAdvisorSekcija from './sections/TripAdvisorSekcija';
 import NajpopularnijeTure from './sections/NajpopularnijeTure';
 import FAQsection from './sections/FAQsection';
 import GallerySection from './sections/GallerySection';
+import AppFooter from './components/AppFooter';
 
 export default async function Home() {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
@@ -31,6 +32,7 @@ export default async function Home() {
         <DodatneInformacije />
         <FAQsection />
         <GallerySection />
+        <AppFooter />
       </main>
     </Suspense>
   );

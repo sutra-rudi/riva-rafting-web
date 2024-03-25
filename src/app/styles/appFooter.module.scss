@@ -1,0 +1,37 @@
+.appFooter {
+  width: 100%;
+  min-height: 850px;
+  position: relative;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+
+  .contentContainer {
+    max-width: $masterContainerWidth;
+    min-height: 369px;
+    position: relative;
+    background: rgba(225, 225, 225, 0.8);
+
+    display: flex;
+    flex-flow: row wrap;
+    place-items: center;
+    gap: 7rem;
+    justify-content: center;
+    padding: 0 3rem;
+
+    .appLogoContainer {
+      width: 295px;
+      height: 108px;
+      position: relative;
+    }
+
+    .linkStack {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: start;
+      place-items: center;
+      max-width: 243px;
+      gap: 1.3rem;
+    }
+  }
+}

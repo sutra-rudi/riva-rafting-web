@@ -1,0 +1,44 @@
+import React from 'react';
+import styles from '../styles/appFooter.module.scss';
+import footerBg from '../img/footer-bg-main.png';
+import appLogo from '../img/APP-LOGO-FOOTER.svg';
+import Image from 'next/image';
+
+const AppFooter = () => {
+  return (
+    <footer className={styles.appFooter}>
+      <Image fill src={footerBg} alt='footerBackground' />
+      <div className={styles.contentContainer}>
+        <div className={styles.appLogoContainer}>
+          <Image fill src={appLogo} alt='app logo' />
+        </div>
+
+        <div className={styles.linkStack}>
+          <a href=''>Rafting tura</a>
+          <a href=''>Špiljarenje</a>
+          <a href=''>Vožnja bicikla</a>
+          <a href=''>Jahanje</a>
+          <a href=''>Pješačka tura</a>
+          <a href=''>Jeep safari</a>
+          <a href=''>Kayak ture</a>
+          <a href=''>Stand up paddle</a>
+        </div>
+        <div className={styles.linkStack}>
+          <a href=''>O nama</a>
+          <a href=''>Kontakt forma</a>
+          <a href=''>FAQ</a>
+          <a href=''>Obrovački kraj</a>
+          <a href=''>Zrmanja Camping village</a>
+          <a href=''>Mičanovi dvori</a>
+        </div>
+        <div className={styles.linkStack}>
+          <a href=''>6 Obala hr. Čas. Senada Ž., Obrovac, Croatia</a>
+          <a href=''>info@riva-rafting-centar.hr</a>
+          <a href=''>023 689 920</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default AppFooter;
