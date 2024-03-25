@@ -22,7 +22,13 @@
 
     display: flex;
     justify-content: center;
-    place-items: center;
+    place-items: start;
+    flex-flow: row wrap;
     gap: 3rem;
+
+    .accordion {
+      max-width: 547px;
+      width: 100%;
+    }
   }
 }

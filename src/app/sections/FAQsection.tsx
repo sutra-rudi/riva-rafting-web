@@ -18,7 +18,7 @@ const FAQsection = () => {
           <h1>NAJČEŠĆA PITANJA</h1>
         </div>
         <div className={styles.faqContainer}>
-          <Accordion>
+          <Accordion className={styles.accordion}>
             <AccordionItem>
               <AccordionItemHeading>
                 <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>
@@ -76,7 +76,7 @@ const FAQsection = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion>
+          <Accordion className={styles.accordion}>
             <AccordionItem>
               <AccordionItemHeading>
                 <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>

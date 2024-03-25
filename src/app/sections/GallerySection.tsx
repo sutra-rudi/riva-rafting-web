@@ -17,11 +17,19 @@ const GallerySection = () => {
   return (
     <section className={styles.gallerySection}>
       <div className={styles.gallerySectionParallax}>
+        <div className={styles.gallerySectionTextOverlay}>
+          <h2>RIJEKA ZRMANJA</h2>
+          <h4>
+            Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
+            čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.{' '}
+          </h4>
+        </div>
         <Image src={paral} fill alt='alt' />
       </div>
       <Swiper
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={4.2}
+        // centeredSlides
         //   onSlideChange={() => console.log('slide change')}
         //   onSwiper={(swiper) => console.log(swiper)}
         className={styles.swiper}

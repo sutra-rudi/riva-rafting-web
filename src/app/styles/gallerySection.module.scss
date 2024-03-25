@@ -1,13 +1,48 @@
 .gallerySection {
+  width: 100%;
+
   .gallerySectionParallax {
     width: 100%;
-    min-height: 570px;
+    min-height: 697px;
     position: relative;
+
+    .gallerySectionTextOverlay {
+      max-width: 898px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+      position: absolute;
+      bottom: 45%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      padding: 1.5rem 4rem;
+
+      display: grid;
+      place-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.2rem;
+
+      h2 {
+        font-size: $heading2;
+        color: #fff;
+        line-height: $sekundarniProred;
+        font-weight: 700;
+      }
+
+      h4 {
+        font-size: $heading4;
+        line-height: 120%;
+        color: #fff;
+        font-weight: 500;
+      }
+    }
   }
 
   .swiper {
     width: 100%;
     height: 100%;
+    margin-top: 10px;
 
     .swiperSlide {
       height: 336px;
