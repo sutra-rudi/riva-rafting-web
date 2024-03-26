@@ -6,6 +6,7 @@ import imgUrlTri from '../img/najpopularnije3.png';
 import NajpopularnijeTureCard from '../components/NajpopularnijeTureCard';
 import sectionImage from '../img/najpopularnije-bg.png';
 import Image from 'next/image';
+import PaperDividBotAlt from '../components/PaperDivitBotAlt';
 
 const staticDemoContent = [
   {
@@ -44,6 +45,7 @@ const NajpopularnijeTure = () => {
           <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
         </div>
         <Image src={sectionImage} alt='deco image' fill />
+        <PaperDividBotAlt />
       </div>
     </section>
   );

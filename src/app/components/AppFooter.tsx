@@ -3,13 +3,12 @@ import styles from '../styles/appFooter.module.scss';
 import footerBg from '../img/footer-bg-main.png';
 import appLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
-import papirDivider from '../img/PAPIR-RAZMAK.svg';
+
+import PaperDividTop from './PaperDividTop';
 const AppFooter = () => {
   return (
     <footer className={styles.appFooter}>
-      <div className={styles.dividerContPaper}>
-        <Image src={papirDivider} fill alt='deco' />
-      </div>
+      <PaperDividTop />
       ;
       <Image fill src={footerBg} alt='footerBackground' />
       <div className={styles.contentContainer}>

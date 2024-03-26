@@ -1,0 +1,25 @@
+.paperTop {
+  position: absolute;
+  width: 100svw;
+  height: 100px;
+  top: -50px;
+  left: 0;
+  z-index: 6;
+}
+
+.paperBottom {
+  position: absolute;
+  width: 100svw;
+  height: 100px;
+  top: -50px;
+  left: 0;
+  z-index: 6;
+}
+.paperBottomAlt {
+  position: absolute;
+  width: 100svw;
+  height: 100px;
+  bottom: -50px;
+  left: 0;
+  z-index: 6;
+}

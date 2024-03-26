@@ -2,18 +2,15 @@
 
 import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
-import Image from 'next/image';
-import papirDivider from '../img/PAPIR-RAZMAK.svg';
 import ReactPlayer from 'react-player/lazy';
 import AppButton from '../components/AppButton';
+import PaperDividTop from '../components/PaperDividTop';
 
 const HeroSekcija = () => {
   return window ? (
     <section className={styles.heroSekcija}>
       <div className={styles.playerContainer}>
-        <div className={styles.dividerContPaper}>
-          <Image src={papirDivider} fill alt='deco' />
-        </div>
+        <PaperDividTop />
 
         <ReactPlayer url={'/hero-video-test.mov'} loop playing muted volume={0} width={'100%'} height={'100%'} />
 

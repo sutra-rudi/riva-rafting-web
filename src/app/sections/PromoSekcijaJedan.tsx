@@ -4,9 +4,8 @@ import React from 'react';
 import styles from '../styles/promoSekcijaJedan.module.scss';
 import demoSlika from '../img/demo-slika-ponuda.png';
 import RaftingCard from '../components/RaftingCard';
-import Image from 'next/image';
-import papirDivider from '../img/PAPIR-RAZMAK-ALT.svg';
 import AppButton from '../components/AppButton';
+import PaperDividBot from '../components/PaperDividBot';
 
 const taxonomijaPromoSekcija = [
   { title: 'Sve', id: 1 },
@@ -62,9 +61,7 @@ const PromoSekcijaJedan = () => {
 
   return (
     <section className={styles.promoSekcijaJedan}>
-      <div className={styles.dividerContPaperAlt}>
-        <Image src={papirDivider} fill alt='deco' />
-      </div>
+      <PaperDividBot />
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         <h2 className={styles.promoSekcijaHeader}>

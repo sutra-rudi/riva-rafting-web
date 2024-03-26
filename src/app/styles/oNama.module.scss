@@ -1,14 +1,12 @@
 .aboutUsSection {
   width: 100%;
-  margin: 180px 0 0 0;
+  position: relative;
+
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;
     width: 100%;
-    //     display: grid;
-    //     grid-template-columns: repeat(1, 1fr);
-    //     place-items: center;
-    //     gap: 6em;
+    padding-top: 2rem;
 
     .aboutUsContentCont {
       display: flex;

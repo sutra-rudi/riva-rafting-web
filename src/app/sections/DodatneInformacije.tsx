@@ -4,14 +4,10 @@ import imgtwo from '../img/imag2.png';
 import imgthree from '../img/imag3.png';
 import React from 'react';
 import Image from 'next/image';
-import paperDividTop from '../img/PAPIR-RAZMAK-ALT.svg';
 
 const DodatneInformacije = () => {
   return (
     <section className={styles.dodatneInformacije}>
-      <div className={styles.dividerContPaper}>
-        <Image src={paperDividTop} fill alt='deco' />
-      </div>
       <h1 className={styles.sectionHeading}>Dodatne Informacije</h1>
 
       <div className={styles.sectionListContainer}>

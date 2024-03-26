@@ -5,8 +5,7 @@ import styles from '../styles/turePonuda.module.scss';
 import TureArticle from '../components/TureArticle';
 import tureOne from '../img/ture1.png';
 import tureTwo from '../img/ture2.png';
-import Image from 'next/image';
-import papirDivider from '../img/PAPIR-RAZMAK-ALT.svg';
+import PaperDividBot from '../components/PaperDividBot';
 
 const staticDemoData = [
   {
@@ -31,9 +30,7 @@ const staticDemoData = [
 const TurePonuda = () => {
   return (
     <section className={styles.turePonudaSekcija}>
-      <div className={styles.dividerContPaper}>
-        <Image src={papirDivider} fill alt='deco' />
-      </div>
+      <PaperDividBot />
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         {staticDemoData.map((article) => (
