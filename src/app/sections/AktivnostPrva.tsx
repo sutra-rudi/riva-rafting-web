@@ -55,7 +55,7 @@ const AktivnostPrva = (props: AktivnostInterface) => {
       <div className={styles.masterContainer}>
         <div className={styles.contentContainer}>
           <StickyBox offsetTop={20} offsetBottom={20} className={styles.swiperSticky}>
-            <Swiper loop={true} spaceBetween={10} navigation={true} className={styles.swiper}>
+            <Swiper loop={true} spaceBetween={10} navigation={true} className={styles.swiperTop}>
               <SwiperSlide className={styles.swiperSlide}>
                 <Image fill src={slikaGlavna} alt='slika' />
               </SwiperSlide>
@@ -65,7 +65,7 @@ const AktivnostPrva = (props: AktivnostInterface) => {
               spaceBetween={10}
               slidesPerView={4.2}
               freeMode={true}
-              className={styles.swiper}
+              className={styles.swiperBottom}
               watchSlidesProgress={true}
             >
               <SwiperSlide className={styles.swiperSlide}>

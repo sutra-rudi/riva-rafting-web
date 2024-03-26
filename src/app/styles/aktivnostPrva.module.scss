@@ -47,14 +47,21 @@
     max-width: 693px;
     width: 100%;
 
-    .swiper {
+    .swiperTop {
       width: 100%;
 
       height: 100%;
       margin-top: 10px;
 
       .swiperSlide {
-        height: 336px;
+        height: 540px;
+      }
+    }
+
+    .swiperBottom {
+      margin-top: 10px;
+      .swiperSlide {
+        height: 120px;
       }
     }
   }
