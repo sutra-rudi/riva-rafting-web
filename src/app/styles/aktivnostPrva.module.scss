@@ -17,6 +17,7 @@
   .swiperSticky {
     max-width: 693px;
     width: 100%;
+
     .swiper {
       width: 100%;
 
@@ -84,6 +85,48 @@
       grid-template-columns: repeat(1, 1fr);
       place-items: stretch;
       gap: 3.1rem;
+
+      .articleBlock {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        place-items: stretch;
+        outline: 1px solid rgba(146, 146, 146, 0.11);
+
+        .articleBlockHeading {
+          font-size: $heading4;
+          color: #fff;
+          line-height: $defaultProred;
+          background: $zelenaGlavna;
+          padding: 1.3rem 0 1.3rem 3.1rem;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+
+        .articleInfo {
+          padding: 1.3rem 0 1.3rem 4rem;
+
+          p {
+            margin: 0.5rem 0;
+          }
+
+          li + li {
+            margin-top: 0.5rem;
+          }
+
+          p {
+            font-size: 1.1rem;
+            line-height: 130%;
+            color: $tamna;
+            font-weight: 500;
+          }
+
+          li {
+            font-size: 1.1rem;
+            line-height: 130%;
+            color: $tamna;
+          }
+        }
+      }
     }
   }
 }

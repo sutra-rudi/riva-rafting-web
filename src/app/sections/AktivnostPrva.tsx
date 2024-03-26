@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import styles from '../styles/aktivnostPrva.module.scss';
 import Image from 'next/image';
@@ -11,6 +10,7 @@ import slika2 from '../img/karuzel2.png';
 import slika3 from '../img/karuzel3.png';
 import slika4 from '../img/karuzel4.png';
 import slika5 from '../img/imag3.png';
+import slikaGlavna from '../img/ture1.png';
 import StickyBox from 'react-sticky-box';
 import AppButton from '../components/AppButton';
 
@@ -21,15 +21,18 @@ const AktivnostPrva = () => {
       <div className={styles.masterContainer}>
         <div className={styles.contentContainer}>
           <StickyBox offsetTop={20} offsetBottom={20} className={styles.swiperSticky}>
+            <Swiper loop={true} spaceBetween={10} navigation={true} className={styles.swiper}>
+              <SwiperSlide className={styles.swiperSlide}>
+                <Image fill src={slikaGlavna} alt='slika' />
+              </SwiperSlide>
+            </Swiper>
             <Swiper
+              loop={true}
               spaceBetween={10}
               slidesPerView={4.2}
-              // centeredSlides
-              //   onSlideChange={() => console.log('slide change')}
-              //   onSwiper={(swiper) => console.log(swiper)}
+              freeMode={true}
               className={styles.swiper}
-              //   modules={[Autoplay]}
-              //   autoplay={{ delay: 1500 }}
+              watchSlidesProgress={true}
             >
               <SwiperSlide className={styles.swiperSlide}>
                 <Image fill src={slika1} alt='slika' />
@@ -78,12 +81,10 @@ const AktivnostPrva = () => {
             </div>
 
             <div className={styles.articleDetails}>
-              <div className='articleBlock'>
-                <div className='articleBlockHeading'>
-                  <h4>OSNOVNE INFORMACIJE O TURI</h4>
-                </div>
+              <div className={styles.articleBlock}>
+                <h4 className={styles.articleBlockHeading}>OSNOVNE INFORMACIJE O TURI</h4>
 
-                <div className='articleInfo'>
+                <div className={styles.articleInfo}>
                   <ul>
                     <li>DESTINACIJA: Rijeka Zrmanja, Krupa I Krnjeza</li>
                     <li>CIJENA: 10 EUR</li>
@@ -97,12 +98,12 @@ const AktivnostPrva = () => {
                 </div>
               </div>
 
-              <div className='articleBlock'>
-                <div className='articleBlockHeading'>
+              <div className={styles.articleBlock}>
+                <div className={styles.articleBlockHeading}>
                   <h4>Plan ture</h4>
                 </div>
 
-                <div className='articleInfo'>
+                <div className={styles.articleInfo}>
                   <ul>
                     <li>Dolazak na Mićanove Dvore</li>
                     <li>Polazak prema startu</li>
@@ -116,30 +117,30 @@ const AktivnostPrva = () => {
                 </div>
               </div>
 
-              <div className='articleBlock'>
-                <div className='articleBlockHeading'>
+              <div className={styles.articleBlock}>
+                <div className={styles.articleBlockHeading}>
                   <h4>UZETI SA SOBOM</h4>
                 </div>
 
-                <div className='articleInfo withHeader'>
+                <div className={styles.articleInfo}>
                   <p>OBAVEZNO:</p>
                   <ul>
                     <li>dodatna majica i kupaći kostim </li>
                     <li>tenisice za šetnju</li>
-                    <li>ručnik</li>
+                    <li>ručnik</li>
                   </ul>
                   <p>PO ŽELJI:</p>
                   <ul>
                     <li>mobitel </li>
                     <li>fotoaparat</li>
-                    <li>sunčane naočale</li>
+                    <li>sunčane naočale</li>
                     <li>krema protiv sunca</li>
                   </ul>
                   <p>SAVJETUJEMO:</p>
                   <ul>
                     <li>Min. 0,5l vode</li>
-                    <li>sendvič</li>
-                    <li>voće</li>
+                    <li>sendvič</li>
+                    <li>voće</li>
                   </ul>
                 </div>
               </div>
