@@ -9,7 +9,6 @@ import slika5 from '../img/imag3.png';
 import paral from '../img/gallery-main-bg.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
 

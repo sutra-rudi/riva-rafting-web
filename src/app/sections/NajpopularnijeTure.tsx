@@ -31,7 +31,11 @@ const staticDemoContent = [
   },
 ];
 
-const NajpopularnijeTure = () => {
+interface MostPopularTours {
+  isLanding: boolean;
+}
+
+const NajpopularnijeTure = (props: MostPopularTours) => {
   return (
     <section className={styles.najpopularnijeTure}>
       <h2 className={styles.sectionHeading}>NAŠE NAJPOPULARNIJE TURE:</h2>
@@ -40,13 +44,15 @@ const NajpopularnijeTure = () => {
           return <NajpopularnijeTureCard key={index} {...contentData} />;
         })}
       </div>
-      <div className={styles.imageHolder}>
-        <div className={styles.gradientImageOverlay}>
-          <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
+      {props.isLanding && (
+        <div className={styles.imageHolder}>
+          <div className={styles.gradientImageOverlay}>
+            <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
+          </div>
+          <Image src={sectionImage} alt='deco image' fill />
+          <PaperDividBotAlt />
         </div>
-        <Image src={sectionImage} alt='deco image' fill />
-        <PaperDividBotAlt />
-      </div>
+      )}
     </section>
   );
 };

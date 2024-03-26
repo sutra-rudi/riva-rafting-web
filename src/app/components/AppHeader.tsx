@@ -13,7 +13,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navLeft}>
         {navLinksOne.map((link) => (
-          <Link key={link} href={'#'}>
+          <Link key={link} href={'/aktivnosti'}>
             {link}
           </Link>
         ))}
@@ -45,7 +45,9 @@ const AppHeader = () => {
       <div className={styles.navMaster}>
         <div className={styles.navInnerParent}>
           <div className={styles.navLeftParent}>
-            <Image src={svgAppLogo} alt='app logo' />
+            <Link href={'/'}>
+              <Image src={svgAppLogo} alt='app logo' />
+            </Link>
             <HeaderBaseOne />
           </div>
           <span>|</span>

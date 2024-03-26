@@ -5,7 +5,8 @@
   margin: 0 auto;
 }
 
-.pageTitle {
-  font-size: $heading1;
-  line-height: $defaultProred;
+.aktivnostiMain {
+  min-height: 100dvh;
+  background-color: #fff;
+  max-width: $maxContainerWidth;
 }

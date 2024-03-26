@@ -5,9 +5,19 @@ import imgthree from '../img/imag3.png';
 import React from 'react';
 import Image from 'next/image';
 
-const DodatneInformacije = () => {
+interface MoreInfoProps {
+  isLanding: boolean;
+}
+
+const DodatneInformacije = (props: MoreInfoProps) => {
   return (
-    <section className={styles.dodatneInformacije}>
+    <section
+      className={
+        props.isLanding
+          ? `${styles.dodatneInformacije}`
+          : `${styles.dodatneInformacije} ${styles.dodatneInformacijeSub}`
+      }
+    >
       <h1 className={styles.sectionHeading}>Dodatne Informacije</h1>
 
       <div className={styles.sectionListContainer}>

@@ -28,8 +28,8 @@ export default async function Home() {
         <PogledajVideo />
         <OnamaSekcija />
         <TripAdvisorSekcija />
-        <NajpopularnijeTure />
-        <DodatneInformacije />
+        <NajpopularnijeTure isLanding />
+        <DodatneInformacije isLanding />
         <FAQsection />
         <GallerySection />
         <AppFooter />
