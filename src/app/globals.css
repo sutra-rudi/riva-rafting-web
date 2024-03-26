@@ -49,3 +49,6 @@ h6 {
 #__next {
   isolation: isolate;
 } */
+.mapboxgl-control-container {
+  display: none !important;
+}

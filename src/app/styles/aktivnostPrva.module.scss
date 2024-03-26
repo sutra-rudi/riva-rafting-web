@@ -1,9 +1,38 @@
 .aktivnostPrva {
   width: 100%;
   position: relative;
+  margin-bottom: 100px;
+
+  .aktivnostHero {
+    height: 65dvh;
+    min-height: 634px;
+    position: relative;
+    margin-top: 30px;
+
+    .heroHeader {
+      z-index: 6;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      place-items: center;
+      position: absolute;
+      gap: 0.85rem;
+
+      bottom: 216px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      h1 {
+        // font-size: $heading1;
+        font-size: 110px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+    }
+  }
+
   .masterContainer {
     max-width: $masterContainerWidth;
-    margin: 0 auto;
+    margin: 4rem auto 0 auto;
   }
 
   .contentContainer {
@@ -128,5 +157,11 @@
         }
       }
     }
+  }
+
+  .mapboxContainer {
+    min-height: 680px;
+    margin: 10rem 0 0 0;
+    position: relative;
   }
 }

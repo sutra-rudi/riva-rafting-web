@@ -7,10 +7,11 @@ import NajpopularnijeTure from '../sections/NajpopularnijeTure';
 import TripAdvisorSekcija from '../sections/TripAdvisorSekcija';
 import AktivnostPrva from '../sections/AktivnostPrva';
 export default function Aktivnosti() {
+  const mapboxApiKey = process.env.MAPBOX_API_KEY;
   return (
     <main className={styles.aktivnostiMain}>
       <AppHeader />
-      <AktivnostPrva />
+      <AktivnostPrva apiKey={mapboxApiKey as string} />
       <DodatneInformacije isLanding={false} />
       <TripAdvisorSekcija />
       <NajpopularnijeTure isLanding={false} />

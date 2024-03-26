@@ -13,10 +13,44 @@ import slika5 from '../img/imag3.png';
 import slikaGlavna from '../img/ture1.png';
 import StickyBox from 'react-sticky-box';
 import AppButton from '../components/AppButton';
+import mapboxgl from 'mapbox-gl';
+import aktivnostHero from '../img/AKTIVNOSTI-HERO.png';
+import PaperDividBotAlt from '../components/PaperDivitBotAlt';
+import PaperDividTop from '../components/PaperDividTop';
 
-const AktivnostPrva = () => {
+interface AktivnostInterface {
+  apiKey: string;
+}
+
+const AktivnostPrva = (props: AktivnostInterface) => {
+  const mapContainer = React.useRef<any>(null);
+  const map = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    if (map.current) return; // initialize map only once
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: 'mapbox://styles/lovreperaic/clu5id29e00ud01qs2gbfabi4',
+      accessToken: props.apiKey,
+
+      // center: [lng, lat],
+      // zoom: zoom,
+    });
+
+    map.current.scrollZoom.disable();
+  });
+
   return (
     <section className={styles.aktivnostPrva}>
+      <div className={styles.aktivnostHero}>
+        <PaperDividTop />
+        <Image fill src={aktivnostHero} alt='hero' />
+        <div className={styles.heroHeader}>
+          <h1>Pješačka tura</h1>
+          <AppButton content='Rezervirajte svoj termin' />
+        </div>
+        <PaperDividBotAlt />
+      </div>
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         <div className={styles.contentContainer}>
@@ -149,6 +183,11 @@ const AktivnostPrva = () => {
         </div>
       </div>
       {/* MAIN CONT END */}
+
+      <div className={styles.mapboxContainer} ref={mapContainer}>
+        <PaperDividTop />
+        <PaperDividBotAlt />
+      </div>
     </section>
   );
 };
