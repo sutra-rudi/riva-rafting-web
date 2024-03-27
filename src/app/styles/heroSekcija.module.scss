@@ -3,13 +3,23 @@
   overflow-x: hidden;
   max-height: 80dvh;
 
+  @media only screen and (max-width: $tablets) {
+    height: 95dvh;
+    max-height: auto;
+  }
+
   .playerContainer {
     position: relative;
     height: auto;
     width: 100%;
     max-height: 80dvh;
+    height: 100%;
     overflow: hidden;
     display: flex;
+    @media only screen and (max-width: $tablets) {
+      // max-height: 95dvh;
+      max-height: auto;
+    }
   }
 
   .heroCtaKontejner {
@@ -26,6 +36,12 @@
       color: $svijetloSiva;
       text-transform: uppercase;
       line-height: $defaultProred;
+      text-align: center;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading1;
+        padding: 0 0.25rem;
+      }
     }
 
     .heroCtaButtonKontejter {
@@ -35,6 +51,12 @@
       width: 100%;
       place-items: center;
       justify-content: center;
+
+      @media only screen and (max-width: $tablets) {
+        button:nth-child(1) {
+          display: none;
+        }
+      }
     }
   }
 }

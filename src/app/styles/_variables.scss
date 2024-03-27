@@ -13,7 +13,13 @@ $heading2: 36px;
 $heading3: 30px;
 $heading4: 21px;
 $heading5: 16px;
-$baseFontSize: 1em;
+$mobileHeading1: 36px;
+$mobileHeading2: 26px;
+$mobileHeading3: 20px;
+$mobileHeading4: 18px;
+$buttonFontSize: 21px;
+$buttonFontSizeMobile: 16px;
+$baseFontSize: 1rem;
 $defaultProred: 148%;
 $sekundarniProred: 110%;
 $browserProred: normal;
@@ -22,6 +28,7 @@ $browserProred: normal;
 $phones: 768px;
 $tablets: 1024px;
 $desktops: 1300px;
+$largeDesktops: 1700px;
 $smPhones: 480px;
 
 // -------------------CONTAINERS-------------------//

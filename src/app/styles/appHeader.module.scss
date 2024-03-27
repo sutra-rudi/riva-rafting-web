@@ -75,6 +75,15 @@
   gap: 2.2rem;
   font-weight: 400;
 
+  img {
+    // display: none;
+    @media only screen and (max-width: $largeDesktops) {
+      width: 150px;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
   a {
     color: $tamna;
     text-decoration: none;

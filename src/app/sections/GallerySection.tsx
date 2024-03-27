@@ -10,6 +10,7 @@ import paral from '../img/gallery-main-bg.png';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import styles from '../styles/gallerySection.module.scss';
+import 'swiper/css';
 import Image from 'next/image';
 
 const GallerySection = () => {
@@ -29,8 +30,8 @@ const GallerySection = () => {
         spaceBetween={10}
         slidesPerView={4.2}
         // centeredSlides
-        //   onSlideChange={() => console.log('slide change')}
-        //   onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+        onSwiper={(swiper) => console.log(swiper)}
         className={styles.swiper}
         modules={[Autoplay]}
         autoplay={{ delay: 1500 }}
