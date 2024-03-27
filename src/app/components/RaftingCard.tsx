@@ -14,7 +14,9 @@ const RaftingCard = (props: RaftingCardProps) => {
 
   return (
     <div className={styles.raftingCard}>
-      <Image className={styles.raftingImage} src={imageUrl} fill alt='rafting img' />
+      <div className={styles.imageContainer}>
+        <Image className={styles.raftingImage} src={imageUrl} fill alt='rafting img' />
+      </div>
       <div className={styles.raftingCartInteractiveOverlay}>
         <div className={styles.interactiveOverlayTitleCont}>
           <h5 className={styles.cardTitle}>{title}</h5>

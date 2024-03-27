@@ -68,6 +68,7 @@ const PromoSekcijaJedan = () => {
           Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
           Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
         </h2>
+        <h2 className={styles.promoSekcijaHeaderMobile}>ODABERI SVOJU AVANTURU</h2>
 
         <TaxonomyButtons />
         <TaxonomyCardContainer />
