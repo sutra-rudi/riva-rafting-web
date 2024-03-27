@@ -73,6 +73,11 @@ const PromoSekcijaJedan = () => {
         <TaxonomyButtons />
         <TaxonomyCardContainer />
         <AppButton content='REZERVIRAJTE SVOJ TERMIN' />
+
+        <h3 className={styles.mobileHeadingPromo}>
+          Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
+          Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
+        </h3>
       </div>
       {/* MAIN CONT END */}
     </section>

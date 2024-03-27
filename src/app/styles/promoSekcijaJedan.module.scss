@@ -3,6 +3,25 @@
   position: relative;
   padding: 5em 0;
 
+  @media only screen and (max-width: $tablets) {
+    // display: none;
+    button {
+      display: none !important;
+    }
+  }
+
+  .mobileHeadingPromo {
+    @media only screen and (min-width: $tablets) {
+      display: none;
+    }
+
+    text-align: center;
+    font-size: $mobileHeading3;
+    line-height: $defaultProred;
+    color: $tamna;
+    margin: 4rem 0.5rem 2rem 0.5rem;
+  }
+
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;
