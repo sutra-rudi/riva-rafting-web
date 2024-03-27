@@ -8,8 +8,14 @@
     width: 100%;
     padding-top: 2rem;
 
+    @media only screen and (max-width: $largeDesktops) {
+      padding: 2rem 1rem;
+    }
+
     .aboutUsContentCont {
       display: flex;
+      flex-direction: row;
+      flex-wrap: wrap-reverse;
       place-items: center;
       gap: 5.5em;
     }
@@ -22,7 +28,9 @@
 
     .imageHolder {
       width: 100%;
-      max-width: 669px;
+      @media only screen and (min-width: $desktops) {
+        max-width: 669px;
+      }
 
       height: 468px;
       position: relative;
@@ -30,7 +38,10 @@
 
     .aboutUsContent {
       width: 100%;
-      max-width: 558px;
+
+      @media only screen and (min-width: $desktops) {
+        max-width: 558px;
+      }
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       gap: 2em;
@@ -48,6 +59,7 @@
       width: 100%;
       display: flex;
       place-items: center;
+      flex-wrap: wrap;
       gap: 1.4em;
     }
   }

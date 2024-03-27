@@ -1,5 +1,15 @@
 .pogledajVideoSection {
   min-height: 600px;
+
+  @media only screen and (max-width: $tablets) {
+    min-height: 400px;
+  }
+
+  @media only screen and (max-width: $phones) {
+    min-height: 300px;
+    min-height: 40dvh;
+  }
+
   position: relative;
   display: grid;
   place-items: center;
@@ -13,11 +23,29 @@
 
     img {
       cursor: pointer;
+
+      @media only screen and (max-width: $tablets) {
+        width: 100px;
+        height: 100px;
+      }
+
+      @media only screen and (max-width: $phones) {
+        width: 75px;
+        height: 75px;
+      }
     }
   }
 
   .pogledajKontroleTekst {
     font-size: $heading1;
+
+    @media only screen and (max-width: $tablets) {
+      font-size: $heading2;
+    }
+
+    @media only screen and (max-width: $phones) {
+      font-size: $heading3;
+    }
     color: $svijetloSiva;
     text-transform: uppercase;
     line-height: $defaultProred;

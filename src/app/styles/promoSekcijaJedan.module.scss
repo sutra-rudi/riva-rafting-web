@@ -89,15 +89,15 @@
 
     @media only screen and (max-width: $tablets) {
       grid-template-columns: repeat(2, 1fr);
-      gap: 11px 20px;
-      max-width: 70%;
+      // gap: 11px 20px;
+      max-width: 80%;
       margin: 0 auto;
       // gap: 22px 40px;
     }
 
     @media only screen and (max-width: $phones) {
       grid-template-columns: repeat(1, 1fr);
-      gap: 5.5px 10px;
+      // gap: 5.5px 10px;
 
       // gap: 22px 40px;
     }
@@ -109,7 +109,10 @@
     }
 
     .raftingCard {
-      max-width: 342px;
+      @media only screen and (min-width: $tablets) {
+        max-width: 342px;
+      }
+
       width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
@@ -164,11 +167,11 @@
 
         height: 265px;
 
-        @media only screen and (max-width: $tablets) {
+        @media only screen and (max-width: $desktops) {
           height: 132px;
         }
 
-        @media only screen and (max-width: $phones) {
+        @media only screen and (max-width: $tablets) {
           height: 102px;
         }
 

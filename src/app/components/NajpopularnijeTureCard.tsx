@@ -21,8 +21,8 @@ const NajpopularnijeTureCard = (props: PopularTourCard) => {
         <div className={styles.moreInfoContainer}></div>
         <div className={styles.moreInfoText}>
           <span>{`Trajanje: ${duration}`}</span>
-          <span>|</span>
-          <span>{`Adrenalin: ${adrenaline}/10`}</span>
+          <span className={styles.moreInfoTextAdrenaline}>|</span>
+          <span className={styles.moreInfoTextAdrenaline}>{`Adrenalin: ${adrenaline}/10`}</span>
         </div>
       </div>
 

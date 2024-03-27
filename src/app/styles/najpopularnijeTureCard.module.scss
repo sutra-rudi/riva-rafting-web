@@ -4,11 +4,23 @@
   max-width: 530px;
   background: $zelenaGlavna;
   justify-content: space-between;
+  flex-wrap: wrap;
+
+  @media only screen and (max-width: $phones) {
+    max-width: 170px;
+  }
 
   .imageContainer {
     position: relative;
-    max-width: 266px;
+
+    @media only screen and (min-width: $tablets) {
+      max-width: 266px;
+    }
     height: 266px;
+
+    @media only screen and (max-width: $tablets) {
+      height: 138px;
+    }
     width: 100%;
   }
 
@@ -22,6 +34,10 @@
     mix-blend-mode: multiply;
     padding: 0.9rem 1.2rem;
     height: 50px;
+
+    @media only screen and (max-width: $tablets) {
+      top: 0;
+    }
   }
 
   .moreInfoText {
@@ -34,6 +50,16 @@
     bottom: 0;
     left: 0;
     width: 100%;
+
+    @media only screen and (max-width: $tablets) {
+      top: 0;
+      bottom: unset;
+      font-size: $mobileFontSizeAlt;
+
+      .moreInfoTextAdrenaline {
+        display: none;
+      }
+    }
     span {
       color: #fff;
       font-size: 0.9em;
@@ -45,16 +71,33 @@
 
   .contentContainer {
     width: 100%;
-    max-width: 264px;
+
     padding: 1.3rem 1rem;
     position: relative;
+    height: 150px;
 
     p {
       color: $tamna;
-      font-size: 1.1rem;
+      font-size: $mobileFontSizeContentAlt;
       line-height: 130%;
     }
+    @media only screen and (min-width: $tablets) {
+      max-width: 264px;
+      height: auto;
+      p {
+        font-size: 1.1rem;
+      }
+    }
 
+    @media only screen and (max-width: $phones) {
+      p {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+      }
+    }
     button {
       position: absolute;
       bottom: 0;
@@ -74,6 +117,10 @@
         color: #fff;
         line-height: $defaultProred;
         font-size: 1.15rem;
+
+        @media only screen and (max-width: $tablets) {
+          font-size: $buttonFontSizeMobile;
+        }
       }
     }
   }

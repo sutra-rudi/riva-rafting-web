@@ -40,11 +40,20 @@
     font-size: $heading2;
     line-height: $sekundarniProred;
     color: $tamna;
+    text-align: center;
+    @media only screen and (max-width: $tablets) {
+      font-size: $mobileHeading1;
+    }
+
+    @media only screen and (max-width: $phones) {
+      font-size: $mobileHeading2;
+    }
   }
 
   .najpopularnijeTureContainer {
     display: flex;
     margin: 0 auto;
+    flex-wrap: wrap;
     width: 100%;
     place-items: center;
     justify-content: center;

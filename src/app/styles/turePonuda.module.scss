@@ -23,16 +23,45 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-items: stretch;
+    padding: 5rem 1rem;
+    width: 100%;
     gap: 6em;
+
+    @media only screen and (max-width: $largeDesktops) {
+      // padding: 5rem 2rem;
+    }
+
+    @media only screen and (max-width: $desktops) {
+      gap: 4rem;
+      // padding: 5rem 2.5rem;
+    }
+
+    @media only screen and (max-width: $tablets) {
+      // padding: 5rem 1rem;
+      gap: 3rem;
+      // padding: 0;
+    }
+
+    @media only screen and (max-width: $phones) {
+      // padding: 5rem 1rem;
+      gap: 2rem;
+    }
   }
 
   .tureArticle {
     display: flex;
     justify-content: space-between;
     place-items: center;
+    flex-flow: row wrap;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
 
     .contentHolder {
-      max-width: 672px;
+      @media only screen and (min-width: $largeDesktops) {
+        max-width: 672px;
+      }
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       place-items: start;
@@ -43,12 +72,26 @@
       font-size: $heading2;
       color: $tamna;
       line-height: $sekundarniProred;
+      width: 100%;
+
+      @media only screen and (max-width: $tablets) {
+        font-size: $mobileHeading1;
+      }
+      @media only screen and (max-width: $phones) {
+        font-size: $mobileHeading2;
+      }
     }
     .contentSubtitle {
       font-size: $heading4;
       font-weight: 500;
       color: $tamna;
       line-height: $defaultProred;
+      text-transform: uppercase;
+      width: 100%;
+
+      @media only screen and (max-width: $tablets) {
+        font-size: $heading5;
+      }
     }
 
     .contentText {
@@ -60,8 +103,16 @@
 
     .imgHolder {
       width: 100%;
-      max-width: 672px;
-      height: 445px;
+      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      max-width: 100%;
+      @media only screen and (min-width: $largeDesktops) {
+        max-width: 672px;
+        height: 445px;
+        aspect-ratio: 16 / 9;
+      }
+      height: 45vh;
+      // height: calc(40vh + 5rem);
       position: relative;
     }
   }
