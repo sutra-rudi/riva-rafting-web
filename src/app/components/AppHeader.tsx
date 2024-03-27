@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
-import AppLogo from '../img/APP_LOGO.png';
-import svgAppLogo from '../img/RIVA-RAFTING-LOGO-SVG.svg';
+
+import svgAppLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
 const navLinksOne: string[] = ['O nama', 'Aktivnosti', 'Kontakt'];
 const navLinksTwo: string[] = ['Mićanovi Dvori', 'Zrmanja Camping Vilagge'];
