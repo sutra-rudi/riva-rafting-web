@@ -29,6 +29,13 @@ const staticDemoContent = [
     duration: '3h',
     adrenaline: '5',
   },
+
+  {
+    imageUrl: imgUrlTri,
+    content: 'Istraži donji tok rijeke zrmanje od grada obrovca sve do Novigradskog mora. Tura traje 3 sata i ',
+    duration: '3h',
+    adrenaline: '5',
+  },
 ];
 
 interface MostPopularTours {
@@ -47,7 +54,7 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
       {props.isLanding && (
         <div className={styles.imageHolder}>
           <div className={styles.gradientImageOverlay}>
-            <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
+            <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
           </div>
           <Image src={sectionImage} alt='deco image' fill />
           <PaperDividBotAlt />

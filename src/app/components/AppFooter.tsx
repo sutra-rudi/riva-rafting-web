@@ -3,13 +3,25 @@ import styles from '../styles/appFooter.module.scss';
 import footerBg from '../img/footer-bg-main.png';
 import appLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
+import facebookIcon from '../img/FACEBOOK-FOOTER.svg';
+import instaIcon from '../img/INSTA-FOOTER.svg';
+import teleIcon from '../img/TELE-FOOTER.svg';
 
 import PaperDividTop from './PaperDividTop';
 const AppFooter = () => {
   return (
     <footer className={styles.appFooter}>
       <PaperDividTop />
-      ;
+
+      <div className={styles.socialFooterStack}>
+        <p>Zapratite nas:</p>
+        <div className={styles.socialIconStack}>
+          <Image src={facebookIcon} alt='icon' width={32} height={32} />
+          <Image src={instaIcon} alt='icon' width={32} height={32} />
+          <Image src={teleIcon} alt='icon' width={32} height={32} />
+        </div>
+      </div>
+
       <Image fill src={footerBg} alt='footerBackground' />
       <div className={styles.contentContainer}>
         <div className={styles.appLogoContainer}>

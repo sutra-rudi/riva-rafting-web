@@ -7,9 +7,41 @@
   justify-content: center;
   margin-top: 8rem;
 
+  .socialFooterStack {
+    @media only screen and (min-width: $tablets) {
+      display: none;
+    }
+
+    .socialIconStack {
+      display: flex;
+      place-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+    }
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    gap: 1.25rem;
+    position: absolute;
+    top: 20%;
+    z-index: 6;
+
+    p {
+      font-size: 1.2rem;
+      color: #fff;
+      text-transform: uppercase;
+      line-height: $defaultProred;
+    }
+  }
+
+  @media only screen and (max-width: $tablets) {
+    min-height: 1200px;
+    place-items: flex-end;
+  }
+
   .contentContainer {
     max-width: $masterContainerWidth;
-    min-height: 369px;
+
     position: relative;
     background: rgba(225, 225, 225, 0.8);
     display: flex;
@@ -17,12 +49,27 @@
     place-items: center;
     gap: 7rem;
     justify-content: center;
-    padding: 0 3rem;
+    padding: 2rem;
+
+    @media only screen and (max-width: $tablets) {
+      // justify-content: flex-end;
+      place-items: flex-end;
+      // padding: 2rem 0.25rem;
+      padding: 4rem 0 0 0;
+      width: 100%;
+    }
 
     .appLogoContainer {
       width: 295px;
       height: 108px;
       position: relative;
+
+      @media only screen and (max-width: $tablets) {
+        // justify-content: flex-end;
+        width: 200px;
+        object-fit: contain;
+        height: 78px;
+      }
     }
 
     .footerBlock {
@@ -30,6 +77,9 @@
       grid-template-columns: repeat(1, 1fr);
       place-items: start;
       gap: 1.1rem;
+      @media only screen and (max-width: $tablets) {
+        width: 100%;
+      }
 
       p {
         font-size: 1.125rem;
@@ -65,6 +115,28 @@
           font-weight: 400;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: $tablets) {
+    .footerBlock:nth-child(1),
+    .footerBlock:nth-child(2),
+    .footerBlock:nth-child(4) {
+      place-items: center;
+
+      .linkStack {
+        justify-content: center;
+        place-items: center;
+        text-align: center;
+      }
+    }
+
+    .footerBlock:nth-child(3) {
+      display: none;
+    }
+
+    .footerBlock:nth-child(4) {
+      background: $zelenaTamna;
     }
   }
 }

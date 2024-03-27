@@ -22,6 +22,14 @@
 
     .sectionHeading {
       font-size: $heading2;
+
+      @media only screen and (max-width: $tablets) {
+        font-size: $heading4;
+      }
+
+      @media only screen and (max-width: $phones) {
+        font-size: $mobileHeading2;
+      }
       color: $tamna;
       line-height: $sekundarniProred;
     }

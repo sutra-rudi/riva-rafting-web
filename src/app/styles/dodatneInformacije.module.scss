@@ -8,6 +8,13 @@
     color: $tamna;
     text-transform: uppercase;
     font-size: $heading1;
+    @media only screen and (max-width: $tablets) {
+      font-size: $heading3;
+    }
+
+    @media only screen and (max-width: $phones) {
+      font-size: $mobileHeading2;
+    }
     line-height: $defaultProred;
     margin: 0 0 3.5rem 0;
   }
@@ -16,6 +23,11 @@
     display: flex;
     place-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: $largeDesktops) {
+      justify-content: center;
+    }
+
     flex-flow: row wrap;
     gap: 1.375em;
     margin: 0 auto 2em auto;
@@ -46,6 +58,14 @@
         }
         h2 {
           font-size: $heading2;
+
+          @media only screen and (max-width: $tablets) {
+            font-size: $mobileHeading1;
+          }
+          @media only screen and (max-width: $phones) {
+            font-size: $mobileHeading2;
+          }
+
           line-height: $sekundarniProred;
           max-width: 358px;
         }
@@ -56,11 +76,32 @@
       position: relative;
       width: 472px;
       height: 472px;
+
       border-radius: 0 0 120px 0;
       img {
         object-position: center;
         border-radius: 0 0 120px 0;
         aspect-ratio: 1 / 1;
+      }
+
+      @media only screen and (max-width: $desktops) {
+        width: 374px;
+        height: 374px;
+        border-radius: 0 0 29px 0;
+
+        img {
+          border-radius: 0 0 29px 0;
+        }
+      }
+
+      @media only screen and (max-width: $phones) {
+        width: 100%;
+        border-radius: 0 0 29px 0;
+        height: 205px;
+        img {
+          border-radius: 0 0 29px 0;
+          aspect-ratio: 16 / 9;
+        }
       }
     }
   }

@@ -1,6 +1,10 @@
 .gallerySection {
   width: 100%;
 
+  @media only screen and (max-width: $tablets) {
+    margin-top: 50px;
+  }
+
   .swiper {
     width: 100%;
     height: 100%;
@@ -9,6 +13,13 @@
     .swiperSlide {
       position: relative;
       height: 336px;
+
+      @media only screen and (max-width: $tablets) {
+        height: 300px;
+      }
+      @media only screen and (max-width: $phones) {
+        height: 268px;
+      }
     }
   }
 
@@ -19,6 +30,7 @@
 
     .gallerySectionTextOverlay {
       max-width: 898px;
+      width: 100%;
       text-align: center;
       background: rgba(0, 0, 0, 0.2);
       position: absolute;
@@ -28,6 +40,13 @@
       z-index: 1;
       padding: 1.5rem 4rem;
 
+      @media only screen and (max-width: $tablets) {
+        padding: 1.5rem 3rem;
+      }
+      @media only screen and (max-width: $phones) {
+        padding: 1.5rem 2rem;
+      }
+
       display: grid;
       place-items: center;
       justify-content: center;
@@ -36,6 +55,13 @@
 
       h2 {
         font-size: $heading2;
+        @media only screen and (max-width: $tablets) {
+          font-size: $heading3;
+        }
+        @media only screen and (max-width: $phones) {
+          font-size: $mobileHeading2;
+        }
+
         color: #fff;
         line-height: $sekundarniProred;
         font-weight: 700;
@@ -43,6 +69,14 @@
 
       h4 {
         font-size: $heading4;
+        @media only screen and (max-width: $tablets) {
+          font-size: $heading5;
+        }
+        @media only screen and (max-width: $phones) {
+          font-size: $baseFontSize;
+          font-weight: 400;
+        }
+
         line-height: 120%;
         color: #fff;
         font-weight: 500;
