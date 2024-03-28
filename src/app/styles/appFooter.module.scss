@@ -48,7 +48,7 @@
     flex-flow: row wrap;
     place-items: center;
     gap: 7rem;
-    justify-content: center;
+    justify-content: space-between;
     padding: 2rem;
 
     @media only screen and (max-width: $tablets) {
@@ -76,6 +76,7 @@
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       place-items: start;
+      place-self: start;
       gap: 1.1rem;
       @media only screen and (max-width: $tablets) {
         width: 100%;
@@ -98,22 +99,120 @@
         }
       }
 
+      .activityStack {
+        ul {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.5rem 1.2rem;
+        }
+        li {
+          a {
+            text-decoration: none;
+            color: $plavaGlavna;
+            font-size: $baseFontSize;
+          }
+        }
+
+        li::marker {
+          color: $tamna;
+        }
+      }
+
       .linkStack {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: start;
-        place-items: start;
+        display: grid;
+        // flex-flow: row wrap;
+        // justify-content: start;
+        // place-items: start;
         max-width: 243px;
-        gap: 1.3rem;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0.3rem;
+        // gap: 1.3rem;
 
         a {
           text-decoration: none;
-          color: $tamna;
+          color: $plavaGlavna;
+          font-size: 1rem;
+          line-height: $defaultProred;
+          font-family: inherit;
+          font-weight: 400;
+          display: flex;
+          place-items: center;
+          justify-content: flex-start;
+          gap: 0.3rem;
+        }
+      }
+
+      .contactStack {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        place-items: start;
+
+        @media only screen and (max-width: $tablets) {
+          place-items: center;
+        }
+        a {
+          text-decoration: none;
+          color: $plavaGlavna;
           font-size: 1rem;
           line-height: $defaultProred;
           font-family: inherit;
           font-weight: 400;
         }
+      }
+    }
+
+    .footerDislaimerTrack {
+      background: $zelenaGlavna;
+      position: absolute;
+      bottom: -3.5rem;
+      left: 0;
+      width: 100%;
+      padding: 1.25rem 2.6rem;
+      display: flex;
+      place-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      @media only screen and (max-width: $phones) {
+        bottom: -82px;
+      }
+      flex-wrap: wrap;
+      // height: 100%;
+      font-size: $mobileFontSizeAlt;
+      color: #fff;
+
+      .disclaimerSig {
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+
+        .disclaimerSigIn {
+          display: flex;
+          place-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+        }
+      }
+
+      .disclaimerSocial {
+        display: flex;
+        place-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+
+        @media only screen and (max-width: $tablets) {
+          display: none;
+        }
+      }
+
+      .disclaimerSocialIcons {
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        gap: 0.75rem;
       }
     }
   }
