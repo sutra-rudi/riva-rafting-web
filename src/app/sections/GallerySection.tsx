@@ -12,6 +12,9 @@ import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
+import paralOne from '../img/PARAL-UP.png';
+import paralTwo from '../img/PARAL-DOWN.png';
+import { Parallax } from 'react-scroll-parallax';
 
 const GallerySection = () => {
   const settings = {
@@ -59,7 +62,14 @@ const GallerySection = () => {
             čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.{' '}
           </h4>
         </div>
-        <Image src={paral} fill alt='alt' />
+
+        {/* <Image src={paral} fill alt='alt' /> */}
+        <Parallax speed={-45} className={styles.paralOne}>
+          <Image src={paralOne} fill alt='alt' />
+        </Parallax>
+        <Parallax speed={-75} className={styles.paralTwo}>
+          <Image src={paralTwo} fill alt='alt' />
+        </Parallax>
       </div>
       <Slider className={styles.swiper} {...settings}>
         <div className={styles.swiperSlide}>
