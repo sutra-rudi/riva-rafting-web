@@ -97,10 +97,14 @@
 
     @media only screen and (max-width: $largeDesktops) {
       // display: none;
-      padding: 0 1.25rem;
+      // padding: 0 1.25rem;
     }
 
     .articleTopContent {
+      @media only screen and (max-width: $largeDesktops) {
+        // display: none;
+        padding: 0 1rem;
+      }
       h6 {
         font-size: $baseFontSize;
         font-weight: 400;
@@ -150,6 +154,14 @@
         gap: 1.1rem;
         place-items: center;
         margin-top: 1.25rem;
+
+        @media only screen and (max-width: $tablets) {
+          // display: none;
+          flex-wrap: wrap;
+          button {
+            text-transform: uppercase;
+          }
+        }
       }
     }
 
@@ -173,12 +185,32 @@
           line-height: $defaultProred;
           background: $zelenaGlavna;
           padding: 1.3rem 0 1.3rem 3.1rem;
+
+          @media only screen and (max-width: $tablets) {
+            // display: none;
+            padding: 1.3rem 0 1.3rem 2.1rem;
+          }
+
+          @media only screen and (max-width: $phones) {
+            // display: none;
+            padding: 1.3rem 0 1.3rem 1.3rem;
+          }
           font-weight: 500;
           text-transform: uppercase;
         }
 
         .articleInfo {
           padding: 1.3rem 0 1.3rem 4rem;
+
+          @media only screen and (max-width: $tablets) {
+            // display: none;
+            padding: 1.3rem 0 1.3rem 3rem;
+          }
+
+          @media only screen and (max-width: $phones) {
+            // display: none;
+            padding: 1.3rem 0 1.3rem 2.1rem;
+          }
 
           p {
             margin: 0.5rem 0;
