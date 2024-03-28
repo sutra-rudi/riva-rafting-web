@@ -77,29 +77,31 @@
       width: 472px;
       height: 472px;
 
-      border-radius: 0 0 120px 0;
+      // border-radius: 0 0 120px 0;
       img {
         object-position: center;
-        border-radius: 0 0 120px 0;
+        // border-radius: 0 0 120px 0;
         aspect-ratio: 1 / 1;
       }
 
       @media only screen and (max-width: $desktops) {
         width: 374px;
         height: 374px;
-        border-radius: 0 0 29px 0;
+        // border-radius: 0 0 29px 0;
+        padding: 1rem;
 
         img {
-          border-radius: 0 0 29px 0;
+          // border-radius: 0 0 29px 0;
+          padding: 1rem;
         }
       }
 
       @media only screen and (max-width: $phones) {
         width: 100%;
-        border-radius: 0 0 29px 0;
+        // border-radius: 0 0 29px 0;
         height: 205px;
         img {
-          border-radius: 0 0 29px 0;
+          // border-radius: 0 0 29px 0;
           aspect-ratio: 16 / 9;
         }
       }

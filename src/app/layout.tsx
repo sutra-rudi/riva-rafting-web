@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Ubuntu } from 'next/font/google';
 import './globals.css';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={ubuntu.className}>{children}</body>
+      <body className={ubuntu.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
