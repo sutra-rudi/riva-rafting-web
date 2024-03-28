@@ -67,7 +67,7 @@ const GallerySection = () => {
         <Parallax speed={-45} className={styles.paralOne}>
           <Image src={paralOne} fill alt='alt' />
         </Parallax>
-        <Parallax speed={-75} className={styles.paralTwo}>
+        <Parallax speed={-90} className={styles.paralTwo}>
           <Image src={paralTwo} fill alt='alt' />
         </Parallax>
       </div>

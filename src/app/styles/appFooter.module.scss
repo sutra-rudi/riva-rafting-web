@@ -63,6 +63,7 @@
       width: 295px;
       height: 108px;
       position: relative;
+      margin: 0 auto;
 
       @media only screen and (max-width: $tablets) {
         // justify-content: flex-end;
@@ -148,9 +149,6 @@
         gap: 1rem;
         place-items: start;
 
-        @media only screen and (max-width: $tablets) {
-          place-items: center;
-        }
         a {
           text-decoration: none;
           color: $plavaGlavna;
@@ -158,6 +156,12 @@
           line-height: $defaultProred;
           font-family: inherit;
           font-weight: 400;
+        }
+        @media only screen and (max-width: $tablets) {
+          place-items: center;
+          a {
+            color: $tamna;
+          }
         }
       }
     }
@@ -175,7 +179,8 @@
       gap: 1rem;
 
       @media only screen and (max-width: $phones) {
-        bottom: -82px;
+        bottom: -76px;
+        font-size: $mobileFontSizeSmall;
       }
       flex-wrap: wrap;
       // height: 100%;

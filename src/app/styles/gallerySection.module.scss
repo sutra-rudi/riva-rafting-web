@@ -38,7 +38,9 @@
     width: 100%;
     // height: auto;
     overflow: hidden;
-    min-height: 1210px;
+    @media only screen and (min-width: $largeDesktops) {
+      min-height: 1210px;
+    }
     position: relative;
 
     .paralOne {
@@ -48,6 +50,10 @@
       img {
         object-fit: cover;
         object-position: top;
+      }
+
+      @media only screen and (max-width: $desktops) {
+        object-position: center;
       }
       // img {
       //   width: 100%;
