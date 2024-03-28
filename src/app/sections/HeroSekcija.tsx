@@ -12,7 +12,7 @@ const HeroSekcija = () => {
       <div className={styles.playerContainer}>
         <PaperDividTop />
 
-        <ReactPlayer url={'/hero-video-test.mov'} loop playing muted volume={0} width={'100%'} height={'100%'} />
+        <ReactPlayer url={'/novi-hero.mp4'} loop playing muted volume={0} width={'100%'} height={'100%'} />
 
         <div className={styles.heroCtaKontejner}>
           <h1 className={styles.heroCtaHeader}>Doživite ljepote Zrmanje s nama!</h1>

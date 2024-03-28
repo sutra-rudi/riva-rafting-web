@@ -10,7 +10,7 @@ const TureSekcija = () => {
     <section className={styles.tureSekcija}>
       <PaperDividTop />
       <ReactPlayer
-        url={'/promo-video-demo.mov'}
+        url={'/novi-ping-pong.mp4'}
         loop
         playing
         muted
