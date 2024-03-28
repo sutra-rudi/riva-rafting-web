@@ -1,13 +1,12 @@
 .aktivnostPrva {
   width: 100%;
   position: relative;
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
 
   .aktivnostHero {
-    height: 65dvh;
+    height: 75dvh;
     min-height: 634px;
     position: relative;
-    // margin-top: 30px;
 
     .heroHeader {
       z-index: 6;
@@ -24,8 +23,20 @@
       h1 {
         // font-size: $heading1;
         font-size: 110px;
+
+        @media only screen and (max-width: $tablets) {
+          font-size: $heading1;
+        }
+
+        @media only screen and (max-width: $phones) {
+          font-size: 44px;
+        }
         text-transform: uppercase;
         color: #fff;
+        line-height: $defaultProred;
+        text-align: center;
+        width: 100%;
+        white-space: nowrap;
       }
     }
   }
@@ -38,14 +49,25 @@
   .contentContainer {
     display: flex;
     place-items: flex-start;
+
     width: 100%;
     position: relative;
     gap: 4rem;
+
+    @media only screen and (max-width: $largeDesktops) {
+      flex-wrap: wrap-reverse;
+      place-items: center;
+    }
   }
 
   .swiperSticky {
     max-width: 693px;
     width: 100%;
+
+    @media only screen and (max-width: $largeDesktops) {
+      position: static !important;
+      max-width: 100%;
+    }
 
     .swiperTop {
       width: 100%;
@@ -73,16 +95,33 @@
     place-items: stretch;
     gap: 2.8rem;
 
+    @media only screen and (max-width: $largeDesktops) {
+      // display: none;
+      padding: 0 1.25rem;
+    }
+
     .articleTopContent {
       h6 {
         font-size: $baseFontSize;
         font-weight: 400;
         color: $tamna;
         line-height: $defaultProred;
+
+        @media only screen and (max-width: $tablets) {
+          display: none;
+        }
       }
 
       h2 {
         font-size: $heading2;
+
+        @media only screen and (max-width: $tablets) {
+          font-size: $heading3;
+        }
+
+        @media only screen and (max-width: $phones) {
+          font-size: $mobileHeading2;
+        }
         font-weight: 700;
         line-height: $sekundarniProred;
         color: $tamna;
