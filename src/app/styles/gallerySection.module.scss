@@ -1,6 +1,9 @@
 .gallerySection {
   width: 100%;
   overflow-x: hidden;
+  height: auto;
+  // overflow-y: hidden;
+  // overflow: hidden;
 
   @media only screen and (max-width: $tablets) {
     margin-top: 50px;
@@ -10,30 +13,32 @@
     margin-top: 10px;
     width: 100%;
     z-index: 10;
-  }
+    // display: none;
+    .swiperSlide {
+      position: relative;
+      height: 336px;
+      border: none;
+      outline: none;
+      user-select: none;
 
-  .swiperSlide {
-    position: relative;
-    height: 336px;
-    border: none;
-    outline: none;
-    user-select: none;
+      // img {
+      //   margin: 0 1rem !important;
+      // }
 
-    // img {
-    //   margin: 0 1rem !important;
-    // }
-
-    @media only screen and (max-width: $tablets) {
-      height: 300px;
-    }
-    @media only screen and (max-width: $phones) {
-      height: 268px;
+      @media only screen and (max-width: $tablets) {
+        height: 300px;
+      }
+      @media only screen and (max-width: $phones) {
+        height: 268px;
+      }
     }
   }
 
   .gallerySectionParallax {
     width: 100%;
-    min-height: 697px;
+    // height: auto;
+    overflow: hidden;
+    min-height: 1210px;
     position: relative;
 
     .paralOne {
@@ -53,7 +58,8 @@
 
     .paralTwo {
       position: relative;
-      height: 940px;
+      // height: 940px;
+      height: 740px;
       z-index: 9;
       img {
         object-fit: cover;
