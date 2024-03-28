@@ -1,25 +1,32 @@
 .gallerySection {
   width: 100%;
+  overflow-x: hidden;
 
   @media only screen and (max-width: $tablets) {
     margin-top: 50px;
   }
 
   .swiper {
-    width: 100%;
-    height: 100%;
     margin-top: 10px;
+    width: 100%;
+  }
 
-    .swiperSlide {
-      position: relative;
-      height: 336px;
+  .swiperSlide {
+    position: relative;
+    height: 336px;
+    border: none;
+    outline: none;
+    user-select: none;
 
-      @media only screen and (max-width: $tablets) {
-        height: 300px;
-      }
-      @media only screen and (max-width: $phones) {
-        height: 268px;
-      }
+    // img {
+    //   margin: 0 1rem !important;
+    // }
+
+    @media only screen and (max-width: $tablets) {
+      height: 300px;
+    }
+    @media only screen and (max-width: $phones) {
+      height: 268px;
     }
   }
 

@@ -7,39 +7,47 @@ import slika3 from '../img/karuzel3.png';
 import slika4 from '../img/karuzel4.png';
 import slika5 from '../img/imag3.png';
 import paral from '../img/gallery-main-bg.png';
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import { }from "swiper"
-// import { SwiperContainer, register } from 'swiper/element/bundle';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 import styles from '../styles/gallerySection.module.scss';
-import 'swiper/css';
 import Image from 'next/image';
-import { SwiperContainer, register } from 'swiper/element';
 
 const GallerySection = () => {
-  // const swiperRef = React.useRef<SwiperContainer | null>(null);
-
-  // React.useEffect(() => {
-  //   // Register Swiper web component
-  //   register();
-
-  //   // Object with parameters
-  //   const params = {
-  //     slidesPerView: 3,
-  //     breakpoints: {
-  //       768: {
-  //         slidesPerView: 4,
-  //       },
-  //     },
-  //   };
-
-  //   if (swiperRef.current) {
-  //     // Assign it to swiper element
-
-  //     Object.assign(swiperRef.current, params);
-  //     swiperRef.current.initialize();
-  //     // initialize swiper
-  //   }
-  // }, []);
+  const settings = {
+    dots: false,
+    speed: 1500,
+    slidesToShow: 4.2,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    cssEase: 'linear',
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3.2,
+          // slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.2,
+          // slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2.2,
+          // slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <section className={styles.gallerySection}>
@@ -53,48 +61,23 @@ const GallerySection = () => {
         </div>
         <Image src={paral} fill alt='alt' />
       </div>
-      {/* <Swiper
-        spaceBetween={10}
-        // init={false}
-        slidesPerView={4.2}
-        // ref={swiperRef}
-        breakpoints={{
-          // when window width is >= 320px
-          768: {
-            slidesPerView: 1.2,
-          },
-          // when window width is >= 480px
-          1024: {
-            slidesPerView: 2.2,
-          },
-          // when window width is >= 640px
-          1300: {
-            slidesPerView: 4.2,
-          },
-        }}
-        // centeredSlides
-        // onSlideChange={() => console.log('slide change')}
-        // onSwiper={(swiper) => console.log(swiper)}
-        className={styles.swiper}
-        // modules={[Autoplay]}
-        // autoplay={{ delay: 1500 }}
-      >
-        <SwiperSlide lazy className={styles.swiperSlide}>
+      <Slider className={styles.swiper} {...settings}>
+        <div className={styles.swiperSlide}>
           <Image fill src={slika1} alt='slika' />
-        </SwiperSlide>
-        <SwiperSlide lazy className={styles.swiperSlide}>
+        </div>
+        <div className={styles.swiperSlide}>
           <Image fill src={slika2} alt='slika' />
-        </SwiperSlide>
-        <SwiperSlide lazy className={styles.swiperSlide}>
+        </div>
+        <div className={styles.swiperSlide}>
           <Image fill src={slika3} alt='slika' />
-        </SwiperSlide>
-        <SwiperSlide lazy className={styles.swiperSlide}>
+        </div>
+        <div className={styles.swiperSlide}>
           <Image fill src={slika4} alt='slika' />
-        </SwiperSlide>
-        <SwiperSlide lazy className={styles.swiperSlide}>
+        </div>
+        <div className={styles.swiperSlide}>
           <Image fill src={slika5} alt='slika' />
-        </SwiperSlide>
-      </Swiper> */}
+        </div>
+      </Slider>
     </section>
   );
 };
