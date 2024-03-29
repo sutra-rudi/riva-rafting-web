@@ -24,7 +24,7 @@
 
   .heroCtaKontejner {
     position: absolute;
-    top: 30%;
+    top: 50%;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -48,15 +48,17 @@
 
     .heroCtaHeaderBackside {
       position: absolute;
-      inset: 0;
-      left: -2rem;
-      bottom: 0;
-      opacity: 0.24;
+      // inset: 0;
+      left: 0;
+      bottom: 4rem;
+      left: 4rem;
+      // bottom: 22rem;
+      width: 100%;
       z-index: 1;
       letter-spacing: 0.25rem;
       color: transparent;
       -webkit-text-stroke: 1px #fff;
-      opacity: 0.25;
+      opacity: 0.15;
     }
 
     .heroCtaButtonKontejter {

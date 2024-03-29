@@ -4,6 +4,9 @@ import imgtwo from '../img/imag2.png';
 import imgthree from '../img/imag3.png';
 import React from 'react';
 import Image from 'next/image';
+import { Ubuntu_Condensed } from 'next/font/google';
+
+const ubuntuCondensed = Ubuntu_Condensed({ weight: '400', subsets: ['latin'] });
 
 interface MoreInfoProps {
   isLanding: boolean;
@@ -24,7 +27,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={styles.imageBox}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6>ZRMANJA CAMPING VILLAGE</h6>
+              <h6 className={ubuntuCondensed.className}>ZRMANJA CAMPING VILLAGE</h6>
               <h2>SMJEŠTAJ U NAŠEM KAMPU</h2>
             </div>
           </div>
@@ -34,7 +37,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={styles.imageBox}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6>MIĆANOVI DVORI</h6>
+              <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
               <h2>DOMAĆA HRANA</h2>
             </div>
           </div>
@@ -44,7 +47,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={styles.imageBox}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6>OBROVAC - ZRMANJA - VELEBIT</h6>
+              <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
               <h2>ŠTO POSJETITI U OKOLICI?</h2>
             </div>
           </div>

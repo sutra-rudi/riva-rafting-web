@@ -68,7 +68,7 @@ const PromoSekcijaJedan = () => {
       <div className={styles.masterContainer}>
         <h2 className={styles.promoSekcijaHeader}>
           Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
-          Velebita. Doživite nezaboravne trenutke usred <span>netaknute prirode.</span>
+          Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
         </h2>
         <h2 className={styles.promoSekcijaHeaderMobile}>ODABERI SVOJU AVANTURU</h2>
 
@@ -78,7 +78,7 @@ const PromoSekcijaJedan = () => {
 
         <h3 className={styles.mobileHeadingPromo}>
           Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine
-          Velebita. Doživite nezaboravne trenutke usred <span>netaknute prirode.</span>
+          Velebita. Doživite nezaboravne trenutke usred netaknute prirode.
         </h3>
       </div>
       {/* MAIN CONT END */}

@@ -102,7 +102,7 @@ const AppFooter = () => {
         <div className={styles.footerDislaimerTrack}>
           <div className={styles.disclaimerSig}>
             <div className={styles.disclaimerSigIn}>
-              <span>Terms&CONDITIONS</span>
+              <span>Terms & Conditions</span>
               <span>|</span>
               <span>Privacy Policy</span>
               <span>|</span>

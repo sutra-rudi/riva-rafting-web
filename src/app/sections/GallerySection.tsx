@@ -56,21 +56,31 @@ const GallerySection = () => {
   return (
     <section className={styles.gallerySection}>
       <div className={styles.gallerySectionParallax}>
-        <div className={styles.gallerySectionTextOverlay}>
+        <Parallax speed={-200} className={styles.gallerySectionTextOverlay}>
           <h2>RIJEKA ZRMANJA</h2>
           <h4>
             Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
             čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.{' '}
           </h4>
-        </div>
+        </Parallax>
 
         {/* <Image src={paral} fill alt='alt' /> */}
-        <Parallax speed={-195} className={styles.paralOne}>
-          <Image src={paralOne} fill alt='alt' />
-        </Parallax>
-        <Parallax speed={-445} className={styles.paralTwo}>
-          <Image src={paralTwo} fill alt='alt' />
-        </Parallax>
+        {clientWindowSize?.width && (
+          <>
+            <Parallax
+              speed={clientWindowSize?.width > 1300 ? -145 : clientWindowSize?.width > 1024 ? -225 : -245}
+              className={styles.paralOne}
+            >
+              <Image src={paralOne} fill alt='alt' />
+            </Parallax>
+            <Parallax
+              speed={clientWindowSize?.width > 1300 ? -445 : clientWindowSize?.width > 1024 ? -405 : -375}
+              className={styles.paralTwo}
+            >
+              <Image src={paralTwo} fill alt='alt' />
+            </Parallax>
+          </>
+        )}
       </div>
       <Slider className={styles.swiper} {...settings}>
         <div className={styles.swiperSlide}>

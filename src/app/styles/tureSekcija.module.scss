@@ -2,6 +2,19 @@
   width: 100%;
   position: relative;
 
+  .ferlaufImageBlock {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 52px;
+    .ferlaufImageCont {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;

@@ -23,11 +23,11 @@ const HeroSekcija = () => {
         <ReactPlayer url={'/novi-hero.mp4'} loop playing muted volume={0} width={'100%'} height={'100%'} />
         <div className={styles.heroCtaKontejner}>
           <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>
-            <Parallax speed={-2.5}>Doživite ljepote Zrmanje s nama!</Parallax>
+            <Parallax speed={-3.5}>Doživite ljepote Zrmanje s nama!</Parallax>
           </h1>
 
           <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
-            <Parallax speed={2.5}> Doživite ljepote Zrmanje s nama!</Parallax>
+            <Parallax speed={5}> Doživite ljepote Zrmanje s nama!</Parallax>
           </h1>
 
           <div className={styles.heroCtaButtonKontejter}>

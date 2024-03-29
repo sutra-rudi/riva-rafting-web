@@ -10,6 +10,10 @@ import sectionImage from '../img/najpopularnije-bg.png';
 import Image from 'next/image';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
 import { Parallax } from 'react-scroll-parallax';
+import ferlauf from '../img/FERLAUFVELEBIT.svg';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const staticDemoContent = [
   {
@@ -46,22 +50,66 @@ interface MostPopularTours {
 }
 
 const NajpopularnijeTure = (props: MostPopularTours) => {
+  const settings = {
+    dots: false,
+    // speed: 1500,
+    slidesToShow: 2.1,
+    slidesToScroll: 1,
+    initialSlide: 0,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
+    cssEase: 'linear',
+    infinite: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3.1,
+          // slidesToScroll: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.1,
+          // slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2.1,
+          // slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <section className={styles.najpopularnijeTure}>
       <h2 className={styles.sectionHeading}>NAŠE NAJPOPULARNIJE TURE:</h2>
-      <div className={styles.najpopularnijeTureContainer}>
+      {/* <div className={styles.najpopularnijeTureContainer}> */}
+      <Slider className={styles.najpopularnijeTureContainer} {...settings}>
         {staticDemoContent.map((contentData, index) => {
-          return <NajpopularnijeTureCard key={index} {...contentData} />;
+          return (
+            <div className={styles.swiperSlide} key={index}>
+              <NajpopularnijeTureCard {...contentData} />
+            </div>
+          );
         })}
-      </div>
+      </Slider>
+      {/* </div> */}
       {props.isLanding && (
         <div className={styles.imageHolder}>
+          <div className={styles.ferlauf}>
+            <Image src={ferlauf} fill alt='ferlauf' />
+          </div>
           <div className={styles.gradientImageOverlay}>
-            <h2>
+            <h3>
               <Parallax speed={-5} endScroll={-150}>
                 Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr
               </Parallax>
-            </h2>
+            </h3>
           </div>
 
           <Image src={sectionImage} alt='deco image' fill />

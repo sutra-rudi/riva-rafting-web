@@ -1,14 +1,15 @@
 .najpopularnijeTureCard {
-  width: 100%;
   display: flex;
-  max-width: 530px;
-  background: $zelenaGlavna;
-  justify-content: space-between;
+  // max-width: 530px;
+  // background: $zelenaGlavna;
+  // justify-content: space-between;
   flex-wrap: wrap;
+  width: 100%;
+  // outline: 1px solid $zelenaGlavna;
 
-  @media only screen and (max-width: $phones) {
-    max-width: 170px;
-  }
+  // @media only screen and (max-width: $phones) {
+  //   max-width: 170px;
+  // }
 
   .imageContainer {
     position: relative;
@@ -71,8 +72,7 @@
 
   .contentContainer {
     width: 100%;
-
-    padding: 1.3rem 1rem;
+    padding: 0.65rem 0.5rem;
     position: relative;
     height: 150px;
 
@@ -84,6 +84,7 @@
     @media only screen and (min-width: $tablets) {
       max-width: 264px;
       height: auto;
+      padding: 1.3rem 1rem;
       p {
         font-size: 1.1rem;
       }

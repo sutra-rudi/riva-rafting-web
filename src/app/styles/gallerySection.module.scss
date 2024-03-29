@@ -1,7 +1,7 @@
 .gallerySection {
   width: 100%;
   overflow-x: hidden;
-  border: 3px solid green;
+  // border: 3px solid green;
 
   @media only screen and (max-width: $tablets) {
     margin-top: 50px;
@@ -36,10 +36,14 @@
     width: 100%;
     // height: auto;
     overflow: hidden;
-    height: 75vh;
-    height: 75dvh;
+    // height: 75vh;
+    // height: 75dvh;
+
+    min-height: 80vh;
+    min-height: 80dvh;
     @media only screen and (min-width: $tablets) {
-      min-height: 1500px;
+      min-height: 115vh;
+      min-height: 115dvh;
     }
 
     // @media only screen and (max-width: $desktops) {
@@ -55,7 +59,7 @@
     .paralOne {
       position: relative;
       height: 470px;
-      border: 2px solid red;
+      // border: 2px solid red;
 
       img {
         object-fit: cover;
@@ -80,20 +84,20 @@
     .paralTwo {
       position: relative;
       // height: 940px;
-      height: 940px;
+      // height: 940px;
       height: 820px;
-      border: 2px solid blue;
+      // border: 2px solid blue;
 
       @media only screen and (max-width: $desktops) {
-        height: 900px;
+        height: 800px;
       }
 
       @media only screen and (max-width: $tablets) {
-        height: 750px;
+        height: 780px;
       }
 
       @media only screen and (max-width: $phones) {
-        height: 600px;
+        height: 760px;
       }
       z-index: 9;
       img {
@@ -103,17 +107,20 @@
     }
 
     .gallerySectionTextOverlay {
-      max-width: 898px;
+      // max-width: 898px;
       width: 100%;
       text-align: center;
       // background: rgba(0, 0, 0, 0.2);
       position: absolute;
       bottom: 45%;
-      left: 50%;
-      transform: translateX(-50%);
+      // left: 50%;
+      // transform: translateX(-50%);
       z-index: 10;
       padding: 1.5rem 4rem;
-
+      display: grid;
+      place-items: center;
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
       @media only screen and (max-width: $tablets) {
         padding: 1.5rem 3rem;
       }
@@ -150,7 +157,7 @@
           font-size: $baseFontSize;
           font-weight: 400;
         }
-
+        max-width: 898px;
         line-height: 120%;
         color: #fff;
         font-weight: 500;
