@@ -68,7 +68,7 @@ const GallerySection = () => {
         {clientWindowSize?.width && (
           <>
             <Parallax
-              speed={clientWindowSize?.width > 1300 ? -200 : clientWindowSize?.width > 1024 ? -225 : -245}
+              speed={clientWindowSize?.width > 1300 ? -210 : clientWindowSize?.width > 1024 ? -225 : -245}
               className={styles.paralOne}
             >
               <Image src={paralOne} fill alt='alt' />
