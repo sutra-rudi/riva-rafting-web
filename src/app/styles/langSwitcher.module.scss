@@ -1,33 +1,35 @@
 .langSwitcherParent {
   display: flex;
-  gap: 0.25em;
+  gap: 0.25rem;
   color: $plavaGlavna;
   background: #fff;
   padding: 0.5em 0.75em;
   font-weight: normal;
   cursor: pointer;
   transition: all 350ms ease;
+  place-items: center;
 
   @media screen and (max-width: $smPhones) {
     display: none;
   }
 
   .active {
-    background: $zelenaGlavna;
-    color: $svijetloSiva;
+    // background: $zelenaGlavna;
+    // color: $svijetloSiva;
+    border-bottom: 1px solid $zelenaGlavna;
   }
 
   .croa,
   .engl {
     transition: all 250ms ease;
-    padding: 0.25em 0.35em;
+    // padding: 0.25rem 0.35rem;
 
     &:hover {
       color: $zelenaGlavna;
     }
   }
 
-  .separator {
-    padding: 0.25em 0.35em;
-  }
+  // .separator {
+  //   // padding: 0.25em 0.35em;
+  // }
 }

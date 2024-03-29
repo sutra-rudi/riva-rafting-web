@@ -17,7 +17,7 @@ const OnamaSekcija = () => {
             <Image src={aboutUsImage} fill alt='about us' />
           </div>
           <div className={styles.aboutUsContent}>
-            <h2 className={styles.sectionHeading}>O NAMA</h2>
+            <h2 className={styles.sectionHeading}>O nama</h2>
             <p>{paragraphContent}</p>
             <div className={styles.buttonContainer}>
               <AppButton isAbout content='Saznaj više' />
