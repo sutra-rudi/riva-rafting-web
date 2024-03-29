@@ -1,6 +1,15 @@
 .faqSection {
   width: 100%;
   margin-bottom: 10rem;
+
+  @media only screen and (max-width: $desktops) {
+    margin-bottom: 5rem;
+  }
+
+  @media only screen and (max-width: $phones) {
+    margin-bottom: 2.5rem;
+  }
+
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;

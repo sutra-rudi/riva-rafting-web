@@ -76,15 +76,21 @@
     // margin: 0 auto;
     // flex-wrap: wrap;
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
     // place-items: center;
     // justify-content: center;
     gap: 1.2em;
     z-index: 9;
+    min-height: 550px;
 
-    .swiperSlide {
-      // width: 100&;
-      user-select: none;
+    // .swiperSlide {
+    //   // width: 100&;
+    //   user-select: none;
+    // }
+
+    .slick-list {
+      min-height: 550px;
+      // display: none !important;
     }
   }
 }

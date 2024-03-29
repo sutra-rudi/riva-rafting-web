@@ -53,7 +53,7 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
   const settings = {
     dots: false,
     // speed: 1500,
-    slidesToShow: 2.1,
+    slidesToShow: 4.1,
     slidesToScroll: 1,
     initialSlide: 0,
     // autoplay: true,
