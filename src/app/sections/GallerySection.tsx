@@ -6,7 +6,6 @@ import slika2 from '../img/karuzel2.png';
 import slika3 from '../img/karuzel3.png';
 import slika4 from '../img/karuzel4.png';
 import slika5 from '../img/imag3.png';
-import paral from '../img/gallery-main-bg.png';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -15,7 +14,7 @@ import Image from 'next/image';
 import paralOne from '../img/PARAL-UP.png';
 import paralTwo from '../img/PARAL-DOWN.png';
 import { Parallax } from 'react-scroll-parallax';
-
+import { useWindowSize } from '../hooks/useWindowSize';
 const GallerySection = () => {
   const settings = {
     dots: false,
@@ -52,6 +51,8 @@ const GallerySection = () => {
     ],
   };
 
+  const clientWindowSize = useWindowSize();
+
   return (
     <section className={styles.gallerySection}>
       <div className={styles.gallerySectionParallax}>
@@ -64,10 +65,10 @@ const GallerySection = () => {
         </div>
 
         {/* <Image src={paral} fill alt='alt' /> */}
-        <Parallax speed={-105} endScroll={150} className={styles.paralOne}>
+        <Parallax speed={-195} className={styles.paralOne}>
           <Image src={paralOne} fill alt='alt' />
         </Parallax>
-        <Parallax speed={-180} className={styles.paralTwo}>
+        <Parallax speed={-445} className={styles.paralTwo}>
           <Image src={paralTwo} fill alt='alt' />
         </Parallax>
       </div>

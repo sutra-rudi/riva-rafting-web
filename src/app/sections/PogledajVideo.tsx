@@ -20,6 +20,11 @@ const PogledajVideo = () => {
       <div className={styles.pogledajControls}>
         <Image src={videoKontrole} alt='controls' width={131} height={131} />
         <h1 className={`${styles.pogledajKontroleTekst} ${RecoletaBold.className}`}>Pogledaj video</h1>
+        <h1
+          className={`${styles.pogledajKontroleTekst} ${RecoletaBold.className} ${styles.pogledajKontroleTekstBackside}`}
+        >
+          Pogledaj video
+        </h1>
       </div>
       <PaperDividBotAlt />
     </section>

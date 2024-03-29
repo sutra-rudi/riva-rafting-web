@@ -1,10 +1,18 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Ubuntu } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  interactiveWidget: 'overlays-content',
+};
 
 export const metadata: Metadata = {
   title: {
@@ -18,13 +26,6 @@ export const metadata: Metadata = {
   },
   colorScheme: 'light',
   themeColor: '#eeeeee',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1.0,
-    maximumScale: 1.0,
-    userScalable: false,
-    interactiveWidget: 'overlays-content',
-  },
 };
 
 export default function RootLayout({

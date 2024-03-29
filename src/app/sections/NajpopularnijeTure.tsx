@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styles from '../styles/najpopularnijeTure.module.scss';
 import imgUrlJedan from '../img/najpopularnije1.png';
@@ -7,6 +9,7 @@ import NajpopularnijeTureCard from '../components/NajpopularnijeTureCard';
 import sectionImage from '../img/najpopularnije-bg.png';
 import Image from 'next/image';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
+import { Parallax } from 'react-scroll-parallax';
 
 const staticDemoContent = [
   {
@@ -54,9 +57,15 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
       {props.isLanding && (
         <div className={styles.imageHolder}>
           <div className={styles.gradientImageOverlay}>
-            <h2>Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr</h2>
+            <h2>
+              <Parallax speed={-5} endScroll={-150}>
+                Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr
+              </Parallax>
+            </h2>
           </div>
+
           <Image src={sectionImage} alt='deco image' fill />
+
           <PaperDividBotAlt />
         </div>
       )}

@@ -20,6 +20,7 @@
     gap: 1em;
     place-items: center;
     z-index: 1;
+    position: relative;
 
     img {
       cursor: pointer;
@@ -50,5 +51,28 @@
     text-transform: uppercase;
     line-height: $defaultProred;
     font-weight: 700;
+    z-index: 3;
+  }
+
+  .pogledajKontroleTekstBackside {
+    position: absolute;
+    // color: red;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    opacity: 0.25;
+    bottom: 0;
+    width: 100%;
+    left: -2rem;
+    font-size: 70px;
+
+    @media only screen and (max-width: $tablets) {
+      font-size: $heading2;
+    }
+
+    @media only screen and (max-width: $phones) {
+      font-size: $heading3;
+    }
+    z-index: 2;
+    white-space: nowrap;
   }
 }
