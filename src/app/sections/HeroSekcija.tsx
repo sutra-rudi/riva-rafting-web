@@ -1,11 +1,18 @@
 'use client';
-
+import localFont from 'next/font/local';
 import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
 import ReactPlayer from 'react-player/lazy';
 import AppButton from '../components/AppButton';
 import PaperDividTop from '../components/PaperDividTop';
 import { Parallax } from 'react-scroll-parallax';
+const RecoletaFont = localFont({
+  src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Regular.ttf', weight: '400' }],
+});
+
+const RecoletaBold = localFont({
+  src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
+});
 
 const HeroSekcija = () => {
   return window ? (
@@ -15,7 +22,12 @@ const HeroSekcija = () => {
         <PaperDividTop />
         <ReactPlayer url={'/novi-hero.mp4'} loop playing muted volume={0} width={'100%'} height={'100%'} />
         <div className={styles.heroCtaKontejner}>
-          <h1 className={styles.heroCtaHeader}>Doživite ljepote Zrmanje s nama!</h1>
+          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>Doživite ljepote Zrmanje s nama!</h1>
+
+          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
+            <Parallax speed={2.5}> Doživite ljepote Zrmanje s nama!</Parallax>
+          </h1>
+
           <div className={styles.heroCtaButtonKontejter}>
             <AppButton isHero content='Aktivnosti koje nudimo' />
             <AppButton isHero content='Rezervirajte svoj termin' />

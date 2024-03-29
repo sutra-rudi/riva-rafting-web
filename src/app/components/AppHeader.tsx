@@ -8,6 +8,7 @@ const navLinksTwo: string[] = ['Mićanovi Dvori', 'Zrmanja Camping Vilagge'];
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
+
 const AppHeader = () => {
   const HeaderBaseOne = () => {
     return (
@@ -35,7 +36,7 @@ const AppHeader = () => {
 
   return (
     <nav className={styles.navParent}>
-      <div className={styles.navPromoTrack}>
+      <div className={`${styles.navPromoTrack} `}>
         <span>TRIP ADVISOR</span>
         <span>|</span>
         <a href='tel:+0038523689920'>+385 23 689 920</a>

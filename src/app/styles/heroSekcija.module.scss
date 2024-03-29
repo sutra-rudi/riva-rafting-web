@@ -37,11 +37,23 @@
       text-transform: uppercase;
       line-height: $defaultProred;
       text-align: center;
+      position: relative;
+      z-index: 2;
 
       @media only screen and (max-width: $desktops) {
         font-size: $mobileHeading1;
         padding: 0 0.25rem;
       }
+    }
+
+    .heroCtaHeaderBackside {
+      position: absolute;
+      inset: 0;
+      left: -2rem;
+      bottom: 0;
+      opacity: 0.24;
+      z-index: 1;
+      letter-spacing: 0.25rem;
     }
 
     .heroCtaButtonKontejter {

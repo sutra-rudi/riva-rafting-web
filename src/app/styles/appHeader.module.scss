@@ -21,6 +21,7 @@
   gap: 1em;
   font-weight: 400;
   color: #fff;
+  font-size: $mobileFontSizeAlt;
 
   @media screen and (max-width: $phones) {
     font-size: 0.8em;

@@ -46,6 +46,7 @@
     .paralOne {
       position: relative;
       height: 470px;
+      border: 2px solid red;
 
       img {
         object-fit: cover;
@@ -66,6 +67,7 @@
       position: relative;
       // height: 940px;
       height: 740px;
+      border: 2px solid blue;
       z-index: 9;
       img {
         object-fit: cover;
