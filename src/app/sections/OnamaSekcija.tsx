@@ -21,7 +21,7 @@ const OnamaSekcija = () => {
             <p>{paragraphContent}</p>
             <div className={styles.buttonContainer}>
               <AppButton isAbout content='Saznaj više' />
-              <AppButton isAbout content='Kontaktiraj nas' />
+              <AppButton isAbout isSecondary content='Kontaktiraj nas' />
             </div>
           </div>
         </div>

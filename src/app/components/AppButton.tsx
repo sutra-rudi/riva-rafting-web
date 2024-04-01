@@ -5,10 +5,11 @@ interface ButtonProps {
   isNav?: boolean;
   isHero?: boolean;
   isAbout?: boolean;
+  isSecondary?: boolean;
 }
 
 const AppButton = (props: ButtonProps) => {
-  const { content, isNav = false, isHero = false, isAbout } = props;
+  const { content, isNav = false, isHero = false, isAbout = false, isSecondary = false } = props;
 
   return (
     <button
@@ -17,8 +18,10 @@ const AppButton = (props: ButtonProps) => {
           ? `${styles.appButton} ${styles.navButton}`
           : isHero
           ? `${styles.appButton} ${styles.heroButton}`
+          : isAbout && isSecondary
+          ? `${styles.appButton} ${styles.secondaryButton} ${styles.aboutButton} `
           : isAbout
-          ? `${styles.appButton} ${styles.aboutButton} `
+          ? `${styles.appButton} ${styles.aboutButton}`
           : ` ${styles.appButton}`
       }
     >

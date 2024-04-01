@@ -1,7 +1,12 @@
 .dodatneInformacije {
   width: 100%;
   position: relative;
-  margin: 47rem 0 0 0;
+  margin: 47rem auto 0 auto;
+
+  @media only screen and (max-width: $desktops) {
+    max-width: $masterContainerWidth;
+    padding: 0 1rem;
+  }
 
   .sectionHeading {
     text-align: center;
@@ -23,7 +28,7 @@
     display: flex;
     place-items: center;
     justify-content: space-between;
-
+    gap: 0.575rem;
     @media only screen and (max-width: $largeDesktops) {
       justify-content: center;
     }
@@ -31,12 +36,11 @@
     @media only screen and (max-width: $tablets) {
       // justify-content: center;
       flex-wrap: wrap;
-      gap: 0.575rem;
     }
 
     // flex-flow: row wrap;
 
-    gap: 1.375rem;
+    // gap: 1.375rem;
     margin: 0 auto 2em auto;
     max-width: $masterContainerWidth;
 
@@ -99,7 +103,7 @@
 
         img {
           // border-radius: 0 0 29px 0;
-          padding: 1rem;
+          // padding: 1rem;
         }
       }
 

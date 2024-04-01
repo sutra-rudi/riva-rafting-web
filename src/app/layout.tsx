@@ -11,7 +11,9 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  interactiveWidget: 'resizes-visual',
+  interactiveWidget: 'overlays-content',
+  colorScheme: 'light',
+  themeColor: '#eeeeee',
 };
 
 export const metadata: Metadata = {
@@ -24,8 +26,6 @@ export const metadata: Metadata = {
 
     title: 'Riva Rafting',
   },
-  colorScheme: 'light',
-  themeColor: '#eeeeee',
 };
 
 export default function RootLayout({

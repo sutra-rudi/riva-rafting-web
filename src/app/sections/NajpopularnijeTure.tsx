@@ -14,6 +14,9 @@ import ferlauf from '../img/FERLAUFVELEBIT.svg';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Roboto_Condensed } from 'next/font/google';
+
+const RobotoCondensed = Roboto_Condensed({ weight: '700', subsets: ['latin'] });
 
 const staticDemoContent = [
   {
@@ -105,9 +108,9 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
             <Image src={ferlauf} fill alt='ferlauf' />
           </div>
           <div className={styles.gradientImageOverlay}>
-            <h3>
+            <h3 className={RobotoCondensed.className}>
               <Parallax speed={-5} endScroll={-150}>
-                Sviđa ti se što vidiš? Bookiraj svoju avanturu na +385 23 689 920 ili na info@riva-rafting.hr
+                {`Sviđa ti se što vidiš?\nBookiraj svoju avanturu na +385 23 689 920\nili na info@riva-rafting.hr`}
               </Parallax>
             </h3>
           </div>

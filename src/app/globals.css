@@ -8,12 +8,15 @@
 
 html {
   scrollbar-gutter: stable;
+  height: 100%;
   overflow-x: hidden;
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   background: #fff;
+  height: 100%;
+  /* overflow: scroll; */
 }
 
 img,

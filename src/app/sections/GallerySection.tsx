@@ -13,8 +13,8 @@ import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
 import paralOne from '../img/PARAL-UP.png';
 import paralTwo from '../img/PARAL-DOWN.png';
-import { Parallax } from 'react-scroll-parallax';
-import { useWindowSize } from '../hooks/useWindowSize';
+import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+
 const GallerySection = () => {
   const settings = {
     dots: false,
@@ -51,37 +51,42 @@ const GallerySection = () => {
     ],
   };
 
-  const clientWindowSize = useWindowSize();
+  const background: BannerLayer = {
+    image: `${paralOne.src}`,
+    translateY: [0, 60],
+    // opacity: [1, 0.3],
+    // scale: [1.05, 1, 'easeOutCubic'],
+    shouldAlwaysCompleteAnimation: true,
+  };
+
+  const headline: BannerLayer = {
+    translateY: [0, 30],
+    // scale: [1, 1.05, 'easeOutCubic'],
+    // speed: -250,
+    shouldAlwaysCompleteAnimation: true,
+    // expanded: false,
+    children: (
+      <div className={styles.gallerySectionTextOverlay}>
+        <h2>RIJEKA ZRMANJA</h2>
+        <h4>
+          Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
+          čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.
+        </h4>
+      </div>
+    ),
+  };
+
+  const foreground: BannerLayer = {
+    image: paralTwo.src,
+    translateY: [0, 15],
+    // scale: [1, 1.1, 'easeOutCubic'],
+    shouldAlwaysCompleteAnimation: true,
+  };
 
   return (
     <section className={styles.gallerySection}>
-      <div className={styles.gallerySectionParallax}>
-        <Parallax speed={-200} className={styles.gallerySectionTextOverlay}>
-          <h2>RIJEKA ZRMANJA</h2>
-          <h4>
-            Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
-            čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.{' '}
-          </h4>
-        </Parallax>
+      <ParallaxBanner className={styles.gallerySectionParallax} layers={[background, foreground, headline]} />
 
-        {/* <Image src={paral} fill alt='alt' /> */}
-        {clientWindowSize?.width && (
-          <>
-            <Parallax
-              speed={clientWindowSize?.width > 1300 ? -210 : clientWindowSize?.width > 1024 ? -225 : -245}
-              className={styles.paralOne}
-            >
-              <Image src={paralOne} fill alt='alt' />
-            </Parallax>
-            <Parallax
-              speed={clientWindowSize?.width > 1300 ? -300 : clientWindowSize?.width > 1024 ? -275 : -255}
-              className={styles.paralTwo}
-            >
-              <Image src={paralTwo} fill alt='alt' />
-            </Parallax>
-          </>
-        )}
-      </div>
       <Slider className={styles.swiper} {...settings}>
         <div className={styles.swiperSlide}>
           <Image fill src={slika1} alt='slika' />

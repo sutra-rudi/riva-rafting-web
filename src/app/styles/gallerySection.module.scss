@@ -1,7 +1,6 @@
 .gallerySection {
   width: 100%;
   overflow-x: hidden;
-  // border: 3px solid green;
 
   @media only screen and (max-width: $tablets) {
     margin-top: 50px;
@@ -11,17 +10,13 @@
     margin-top: 10px;
     width: 100%;
     z-index: 10;
-    // display: none;
+
     .swiperSlide {
       position: relative;
       height: 336px;
       border: none;
       outline: none;
       user-select: none;
-
-      // img {
-      //   margin: 0 1rem !important;
-      // }
 
       @media only screen and (max-width: $tablets) {
         height: 300px;
@@ -33,78 +28,10 @@
   }
 
   .gallerySectionParallax {
-    width: 100%;
-    // height: auto;
-    overflow: hidden;
-    // height: 75vh;
-    // height: 75dvh;
-
-    min-height: 80vh;
-    min-height: 80dvh;
-    @media only screen and (min-width: $tablets) {
-      min-height: 115vh;
-      min-height: 115dvh;
-    }
-
-    // @media only screen and (max-width: $desktops) {
-    //   height: 1150px;
-    // }
-
-    // @media only screen and (max-width: $tablets) {
-    //   height: 800px;
-    // }
-
+    height: 100vh;
+    height: 100lvh;
+    min-height: 100%;
     position: relative;
-
-    .paralOne {
-      position: relative;
-      height: 470px;
-      // border: 2px solid red;
-
-      img {
-        object-fit: cover;
-        object-position: top;
-      }
-
-      @media only screen and (max-width: $desktops) {
-        object-position: center;
-
-        // height: 400px;
-      }
-
-      // @media only screen and (max-width: $tablets) {
-      //   height: 300px;
-      // }
-
-      // @media only screen and (max-width: $phones) {
-      //   height: 200px;
-      // }
-    }
-
-    .paralTwo {
-      position: relative;
-      // height: 940px;
-      // height: 940px;
-      height: 820px;
-      // border: 2px solid blue;
-
-      @media only screen and (max-width: $desktops) {
-        height: 800px;
-      }
-
-      @media only screen and (max-width: $tablets) {
-        height: 780px;
-      }
-
-      @media only screen and (max-width: $phones) {
-        height: 760px;
-      }
-      z-index: 9;
-      img {
-        object-fit: cover;
-        // object-position: top;
-      }
-    }
 
     .gallerySectionTextOverlay {
       // max-width: 898px;
@@ -113,8 +40,6 @@
       // background: rgba(0, 0, 0, 0.2);
       position: absolute;
       bottom: 40%;
-      // left: 50%;
-      // transform: translateX(-50%);
       z-index: 10;
       padding: 1.5rem 4rem;
       display: grid;

@@ -39,38 +39,50 @@
     place-items: flex-end;
   }
 
-  .contentContainer {
-    max-width: $masterContainerWidth;
-
-    position: relative;
+  .footerMaster {
+    display: flex;
     background: rgba(225, 225, 225, 0.7);
+    width: 100%;
+    display: flex;
+    max-width: $masterContainerWidth;
+    width: 100%;
+    flex-flow: row wrap;
+    place-items: center;
+    justify-content: center;
+    gap: 8rem;
+    position: relative;
+    padding: 2rem;
+  }
+
+  .appLogoContainer {
+    max-width: 240px;
+    width: 100%;
+    height: 108px;
+    position: relative;
+
+    img {
+      object-fit: contain;
+    }
+
+    @media only screen and (max-width: $tablets) {
+      margin: 0 auto;
+    }
+  }
+
+  .contentContainer {
     display: flex;
     flex-flow: row wrap;
     place-items: center;
     gap: 7rem;
-    justify-content: space-between;
-    padding: 2rem;
 
-    @media only screen and (max-width: $tablets) {
-      // justify-content: flex-end;
-      place-items: flex-end;
-      // padding: 2rem 0.25rem;
-      padding: 4rem 0 0 0;
-      width: 100%;
+    @media only screen and (max-width: $desktops) {
+      gap: 6rem;
     }
-
-    .appLogoContainer {
-      width: 295px;
-      height: 108px;
-      position: relative;
-      margin: 0 auto;
-
-      @media only screen and (max-width: $tablets) {
-        // justify-content: flex-end;
-        width: 200px;
-        object-fit: contain;
-        height: 78px;
-      }
+    @media only screen and (max-width: $tablets) {
+      gap: 5rem;
+    }
+    @media only screen and (max-width: $tablets) {
+      gap: 4rem;
     }
 
     .footerBlock {
@@ -100,7 +112,6 @@
           left: 0;
 
           @media only screen and (max-width: $tablets) {
-            // width: 24px;
             left: 50%;
             transform: translateX(-50%);
           }
@@ -128,13 +139,9 @@
 
       .linkStack {
         display: grid;
-        // flex-flow: row wrap;
-        // justify-content: start;
-        // place-items: start;
         max-width: 243px;
         grid-template-columns: repeat(1, 1fr);
         gap: 0.3rem;
-        // gap: 1.3rem;
 
         a {
           text-decoration: none;
@@ -156,8 +163,6 @@
         gap: 1rem;
         gap: 0.3rem;
 
-        place-items: start;
-
         a {
           text-decoration: none;
           color: $plavaGlavna;
@@ -165,6 +170,10 @@
           line-height: $defaultProred;
           font-family: inherit;
           font-weight: 400;
+
+          &:first-child {
+            white-space: pre-wrap;
+          }
         }
         @media only screen and (max-width: $tablets) {
           place-items: center;
@@ -182,21 +191,36 @@
     .footerDislaimerTrack {
       background: $zelenaGlavna;
       position: absolute;
-      bottom: -3.5rem;
+      bottom: -33px;
       left: 0;
       width: 100%;
-      padding: 1.25rem 2.6rem;
+      // padding: 1.25rem 2.6rem;
+
+      @media only screen and (min-width: $tablets) {
+        padding: 1rem;
+        bottom: -65px;
+      }
+
       display: flex;
       place-items: center;
       justify-content: space-between;
       gap: 1rem;
 
       @media only screen and (max-width: $phones) {
-        bottom: -76px;
+        bottom: -65px;
         font-size: $mobileFontSizeSmall;
       }
+
+      @media only screen and (max-width: 680px) {
+        bottom: -68px;
+        // padding: 0.75rem 2rem;
+        // bottom: 0;
+      }
+
+      @media only screen and (max-width: $tablets) {
+        justify-content: center;
+      }
       flex-wrap: wrap;
-      // height: 100%;
       font-size: $mobileFontSizeAlt;
       color: #fff;
 
@@ -207,11 +231,28 @@
         gap: 0.5rem;
         flex-wrap: wrap;
 
+        @media only screen and (max-width: $tablets) {
+          width: 100%;
+        }
+
         .disclaimerSigIn {
           display: flex;
           place-items: center;
           justify-content: center;
           gap: 0.5rem;
+
+          padding: 0.5rem 0;
+
+          @media only screen and (max-width: $phones) {
+            width: 100%;
+          }
+
+          &:nth-child(2) {
+            // display: none;
+            @media only screen and (max-width: 680px) {
+              background: $zelenaTamna;
+            }
+          }
         }
       }
 
@@ -245,7 +286,7 @@
 
   @media only screen and (max-width: $tablets) {
     .footerBlock:nth-child(1),
-    .footerBlock:nth-child(2),
+    .footerBlock:nth-child(3),
     .footerBlock:nth-child(4) {
       place-items: center;
 
@@ -256,7 +297,7 @@
       }
     }
 
-    .footerBlock:nth-child(3) {
+    .footerBlock:nth-child(2) {
       display: none;
     }
 

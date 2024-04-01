@@ -41,8 +41,8 @@
   outline: 1.5px solid $zelenaGlavna;
   color: $zelenaGlavna;
   &:hover {
-    background: #fff;
+    background: $zelenaGlavna;
     outline: 1.5px solid $zelenaGlavna;
-    color: $zelenaGlavna;
+    color: #fff;
   }
 }

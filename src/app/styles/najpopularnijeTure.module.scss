@@ -36,7 +36,7 @@
       display: flex;
       flex-direction: column;
       place-items: center;
-      justify-content: end;
+      justify-content: flex-end;
 
       h3 {
         max-width: 748px;
@@ -44,13 +44,14 @@
         color: #fff;
         font-size: $heading3;
         z-index: 5;
+        white-space: pre-wrap;
         @media only screen and (max-width: $tablets) {
           font-size: $mobileHeading2;
         }
         @media only screen and (max-width: $phones) {
           font-size: $mobileHeading3;
         }
-        line-height: $sekundarniProred;
+        line-height: 120%;
         font-weight: 700;
       }
     }
