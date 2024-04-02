@@ -66,16 +66,23 @@ const PromoSekcijaJedan = () => {
       <div className={styles.taxonomyCardContainer}>
         {currentActiveTax === 1
           ? promoSekcijaDemoPodaci.map((kartica, index) => (
-              <RaftingCard key={index} title={kartica.title} imageUrl={kartica.image} location={kartica.location} />
+              <RaftingCard
+                key={index}
+                title={kartica.title}
+                imageUrl={kartica.image}
+                location={kartica.location}
+                delay={index - index * 0.85}
+              />
             ))
           : promoSekcijaDemoPodaci
               .filter((kartica) => kartica.locationId === currentActiveTax)
-              .map((kartica) => (
+              .map((kartica, index) => (
                 <RaftingCard
                   key={kartica.title}
                   title={kartica.title}
                   imageUrl={kartica.image}
                   location={kartica.location}
+                  delay={index - index * 0.85}
                 />
               ))}
       </div>

@@ -7,13 +7,14 @@ interface RaftingCardProps {
   title: string;
   location: string;
   imageUrl: StaticImageData;
+  delay?: number;
 }
 
 const RaftingCard = (props: RaftingCardProps) => {
-  const { title, location, imageUrl } = props;
+  const { title, location, imageUrl, delay } = props;
 
   return (
-    <div className={styles.raftingCard}>
+    <div style={{ animationDelay: delay ? `${delay}s` : '0' }} className={styles.raftingCard}>
       <div className={styles.imageContainer}>
         <p className={styles.cardLocation}>
           <span>
