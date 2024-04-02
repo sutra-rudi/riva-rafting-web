@@ -161,11 +161,11 @@
     padding: 0 0.5rem;
 
     @media only screen and (max-width: $largeDesktops) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
 
     @media only screen and (max-width: $desktops) {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(5, 1fr);
     }
 
     @media only screen and (max-width: $tablets) {
@@ -173,6 +173,10 @@
     }
 
     @media only screen and (max-width: $phones) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media only screen and (max-width: $smPhones) {
       grid-template-columns: repeat(1, 1fr);
     }
 
@@ -188,6 +192,11 @@
       opacity: 0;
       animation: fadeIn 1s ease forwards;
 
+      @media only screen and (min-width: $phones) and (max-width: $tablets) {
+        /* Your CSS styles for medium screens here */
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       @media only screen and (max-width: $phones) {
         grid-template-columns: repeat(2, 1fr);
 
@@ -198,10 +207,6 @@
         &:nth-child(even) .raftingCartInteractiveOverlay {
           background: $zelenaTamna;
         }
-
-        .raftingCartInteractiveOverlay {
-          min-width: 200px;
-        }
       }
 
       .raftingImage {
@@ -210,7 +215,7 @@
 
       .cardArrowIcon {
         transition: transform 250ms ease 150ms;
-        @media only screen and (max-width: $tablets) {
+        @media only screen and (max-width: 1100px) {
           display: none;
         }
       }
@@ -259,7 +264,7 @@
         }
 
         @media only screen and (max-width: $tablets) {
-          max-height: 205px;
+          max-height: 140px;
 
           img {
             object-fit: cover;
@@ -283,10 +288,18 @@
         width: 100%;
         padding: 0.8rem 1.1rem;
         background: $zelenaGlavna;
+        // background: red;
         display: flex;
         place-items: center;
         justify-content: space-between;
         z-index: 2;
+
+        @media only screen and (min-width: $tablets) {
+          position: absolute;
+          bottom: 0;
+          background: rgba(164, 205, 70, 0.85);
+        }
+
         @media only screen and (max-width: $tablets) {
           padding: 0.4rem 0.55rem;
         }
@@ -299,6 +312,13 @@
 
         .cardTitle {
           font-size: $heading5;
+
+          @media only screen and (max-width: $tablets) {
+            // padding: 0.4rem 0.55rem;
+            font-size: $mobileFontSizeAlt;
+            line-height: $browserProred;
+          }
+
           color: $tamna;
           line-height: $defaultProred;
           font-weight: 500;

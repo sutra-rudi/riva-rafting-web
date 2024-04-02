@@ -14,6 +14,11 @@ import Image from 'next/image';
 import paralOne from '../img/PARAL-UP.png';
 import paralTwo from '../img/PARAL-DOWN.png';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+import localFont from 'next/font/local';
+
+const RecoletaSemiBold = localFont({
+  src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
+});
 
 const GallerySection = () => {
   const settings = {
@@ -67,11 +72,13 @@ const GallerySection = () => {
     // expanded: false,
     children: (
       <div className={styles.gallerySectionTextOverlay}>
-        <h2>RIJEKA ZRMANJA</h2>
-        <h4>
-          Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
-          čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.
-        </h4>
+        <div className={styles.gallerySectionTextOverlayContent}>
+          <h2 className={RecoletaSemiBold.className}>RIJEKA ZRMANJA</h2>
+          <h4>
+            Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
+            čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.
+          </h4>
+        </div>
       </div>
     ),
   };

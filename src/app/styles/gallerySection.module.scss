@@ -34,33 +34,54 @@
     position: relative;
 
     .gallerySectionTextOverlay {
-      // max-width: 898px;
-      width: 100%;
       text-align: center;
-      // background: rgba(0, 0, 0, 0.2);
       position: absolute;
       bottom: 40%;
       z-index: 10;
-      padding: 1.5rem 4rem;
-      display: grid;
-      place-items: center;
-      grid-template-columns: repeat(1, 1fr);
       width: 100%;
-      @media only screen and (max-width: $tablets) {
-        padding: 1.5rem 3rem;
-      }
-      @media only screen and (max-width: $phones) {
-        padding: 1.5rem 2rem;
-      }
-
       display: grid;
       place-items: center;
       justify-content: center;
       grid-template-columns: repeat(1, 1fr);
       gap: 1.2rem;
 
+      .gallerySectionTextOverlayContent {
+        padding: 1.5rem 4rem;
+        position: relative;
+        display: grid;
+        place-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+        @media only screen and (max-width: $tablets) {
+          padding: 1.5rem 3rem;
+        }
+        @media only screen and (max-width: $phones) {
+          padding: 1.5rem 2rem;
+        }
+        width: 100%;
+        max-width: 777px;
+
+        &::before {
+          position: absolute;
+          inset: 0;
+          content: '';
+          width: 100%;
+          height: 100%;
+          // height: 200px;
+          // background: rgba($color: #000000, $alpha: 0.2);
+          background: url('../img/para-bg-text.svg');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          opacity: 0.55;
+          mix-blend-mode: multiply;
+          // border-radius: 9999px;
+        }
+      }
+
       h2 {
         font-size: $heading2;
+        z-index: 3;
         @media only screen and (max-width: $tablets) {
           font-size: $heading3;
         }
@@ -70,22 +91,22 @@
 
         color: #fff;
         line-height: $sekundarniProred;
-        font-weight: 700;
+        font-weight: 600;
       }
 
       h4 {
-        font-size: $heading4;
+        font-size: $mobileHeading4;
+        z-index: 3;
         @media only screen and (max-width: $tablets) {
           font-size: $heading5;
         }
         @media only screen and (max-width: $phones) {
           font-size: $baseFontSize;
-          font-weight: 400;
         }
-        max-width: 498px;
+        // max-width: 498px;
         line-height: 120%;
         color: #fff;
-        font-weight: 500;
+        font-weight: 400;
       }
     }
   }
