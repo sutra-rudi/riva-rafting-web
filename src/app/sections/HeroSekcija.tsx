@@ -47,7 +47,7 @@ const HeroSekcija = () => {
           <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>Doživite ljepote Zrmanje s nama!</h1>
 
           <h1
-            style={{ letterSpacing: scrollPos > 0 ? `-${scrollPos / 50}px` : '0' }}
+            style={{ letterSpacing: scrollPos > 0 ? `${scrollPos / 50}px` : '0' }}
             className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}
           >
             Doživite ljepote Zrmanje s nama!

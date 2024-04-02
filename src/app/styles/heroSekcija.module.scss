@@ -51,7 +51,7 @@
 
     .heroCtaHeaderBackside {
       position: absolute;
-      font-size: 80px;
+      font-size: $heading1;
       color: $svijetloSiva;
       text-transform: uppercase;
       line-height: $defaultProred;
@@ -63,7 +63,7 @@
       will-change: letter-spacing;
       color: transparent;
       -webkit-text-stroke: 1px #fff;
-      opacity: 0.15;
+      opacity: 0.25;
       white-space: nowrap;
       overflow: hidden;
 
