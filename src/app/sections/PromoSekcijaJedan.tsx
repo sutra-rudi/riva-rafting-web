@@ -64,9 +64,20 @@ const PromoSekcijaJedan = () => {
   const TaxonomyCardContainer = () => {
     return (
       <div className={styles.taxonomyCardContainer}>
-        {promoSekcijaDemoPodaci.map((kartica, index) => (
-          <RaftingCard key={index} title={kartica.title} imageUrl={kartica.image} location={kartica.location} />
-        ))}
+        {currentActiveTax === 1
+          ? promoSekcijaDemoPodaci.map((kartica, index) => (
+              <RaftingCard key={index} title={kartica.title} imageUrl={kartica.image} location={kartica.location} />
+            ))
+          : promoSekcijaDemoPodaci
+              .filter((kartica) => kartica.locationId === currentActiveTax)
+              .map((kartica) => (
+                <RaftingCard
+                  key={kartica.title}
+                  title={kartica.title}
+                  imageUrl={kartica.image}
+                  location={kartica.location}
+                />
+              ))}
       </div>
     );
   };
