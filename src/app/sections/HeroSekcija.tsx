@@ -5,18 +5,25 @@ import styles from '../styles/heroSekcija.module.scss';
 import ReactPlayer from 'react-player/lazy';
 import AppButton from '../components/AppButton';
 import PaperDividTop from '../components/PaperDividTop';
-import { Parallax } from 'react-scroll-parallax';
 import heroPoster from '../img/hero-poster.jpg';
-// const RecoletaFont = localFont({
-//   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Regular.ttf', weight: '400' }],
-// });
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
 
 const HeroSekcija = () => {
-  return window ? (
+  const [scrollPos, setScrollPos] = React.useState<number>(0);
+
+  React.useEffect(() => {
+    const updateClientScrollPostion = () => window.scrollY < 772 && setScrollPos(window.scrollY);
+
+    window && window.addEventListener('scroll', updateClientScrollPostion);
+
+    return () => window.removeEventListener('scroll', updateClientScrollPostion);
+  }, []);
+
+  console.log(scrollPos);
+  return (
     <section className={styles.heroSekcija}>
       <div className={styles.playerContainer}>
         <PaperDividTop />
@@ -37,12 +44,13 @@ const HeroSekcija = () => {
           height={'100%'}
         />
         <div className={styles.heroCtaKontejner}>
-          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>
-            <Parallax speed={-3.5}>Doživite ljepote Zrmanje s nama!</Parallax>
-          </h1>
+          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>Doživite ljepote Zrmanje s nama!</h1>
 
-          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
-            <Parallax speed={5}> Doživite ljepote Zrmanje s nama!</Parallax>
+          <h1
+            style={{ letterSpacing: scrollPos > 0 ? `-${scrollPos / 50}px` : '0' }}
+            className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}
+          >
+            Doživite ljepote Zrmanje s nama!
           </h1>
 
           <div className={styles.heroCtaButtonKontejter}>
@@ -52,7 +60,7 @@ const HeroSekcija = () => {
         </div>
       </div>
     </section>
-  ) : null;
+  );
 };
 
 export default HeroSekcija;

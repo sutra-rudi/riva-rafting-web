@@ -1,7 +1,8 @@
 .heroSekcija {
   position: relative;
   overflow-x: hidden;
-  max-height: 80dvh;
+  max-height: 80vh;
+  max-height: 80lvh;
 
   @media only screen and (max-width: $tablets) {
     height: 95dvh;
@@ -12,7 +13,8 @@
     position: relative;
     height: auto;
     width: 100%;
-    max-height: 80dvh;
+    max-height: 80vh;
+    max-height: 80lvh;
     height: 100%;
     overflow: hidden;
     display: flex;
@@ -38,6 +40,7 @@
       line-height: $defaultProred;
       text-align: center;
       position: relative;
+      // overflow: hidden;
       z-index: 2;
 
       @media only screen and (max-width: $desktops) {
@@ -48,17 +51,26 @@
 
     .heroCtaHeaderBackside {
       position: absolute;
-      // inset: 0;
-      left: 0;
-      bottom: 4rem;
-      left: 4rem;
-      // bottom: 22rem;
+      font-size: 80px;
+      color: $svijetloSiva;
+      text-transform: uppercase;
+      line-height: $defaultProred;
+      text-align: center;
+      inset: 0;
       width: 100%;
       z-index: 1;
-      letter-spacing: 0.25rem;
+      transition: all 250ms ease;
+      will-change: letter-spacing;
       color: transparent;
       -webkit-text-stroke: 1px #fff;
       opacity: 0.15;
+      white-space: nowrap;
+      overflow: hidden;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading1;
+        // padding: 0 0.25rem;
+      }
     }
 
     .heroCtaButtonKontejter {
