@@ -15,7 +15,7 @@ const FAQsection = () => {
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         <div className={styles.sectionHeading}>
-          <h1>NAJČEŠĆA PITANJA</h1>
+          <h2>NAJČEŠĆA PITANJA</h2>
         </div>
         <div className={styles.faqContainer}>
           <Accordion className={styles.accordion}>

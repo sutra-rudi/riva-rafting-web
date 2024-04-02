@@ -6,6 +6,7 @@ import ReactPlayer from 'react-player/lazy';
 import ferlaufTop from '../img/FERLAUFPINGPONG.svg';
 import PaperDividTop from '../components/PaperDividTop';
 import Image from 'next/image';
+import pingPongPoster from '../img/ping-pong-poster.jpg';
 const TureSekcija = () => {
   return (
     <section className={styles.tureSekcija}>
@@ -24,6 +25,13 @@ const TureSekcija = () => {
         width={'100%'}
         height={'100%'}
         playsinline
+        config={{
+          file: {
+            attributes: {
+              poster: pingPongPoster.src,
+            },
+          },
+        }}
       />
     </section>
   );

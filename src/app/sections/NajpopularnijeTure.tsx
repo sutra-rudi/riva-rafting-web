@@ -110,7 +110,14 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
           <div className={styles.gradientImageOverlay}>
             <h3 className={RobotoCondensed.className}>
               <Parallax speed={-5} endScroll={-150}>
-                {`Sviđa ti se što vidiš?\nBookiraj svoju avanturu na +385 23 689 920\nili na info@riva-rafting.hr`}
+                <span>Sviđa ti se što vidiš?</span>
+                <span>
+                  Bookiraj svoju avanturu na <a href='tel:+38523689920'>+385 23 689 920</a>
+                </span>
+                <span>
+                  ili na <a href='mailto:info@riva-rafting.hr'>info@riva-rafting.hr</a>
+                </span>
+                {/* {`Sviđa ti se što vidiš?\nBookiraj svoju avanturu na +385 23 689 920\nili na info@riva-rafting.hr`} */}
               </Parallax>
             </h3>
           </div>

@@ -16,6 +16,8 @@ const AppButton = (props: ButtonProps) => {
       className={
         isNav
           ? `${styles.appButton} ${styles.navButton}`
+          : isHero && isSecondary
+          ? `${styles.appButton} ${styles.secondaryButton} ${styles.heroButton}`
           : isHero
           ? `${styles.appButton} ${styles.heroButton}`
           : isAbout && isSecondary

@@ -2,7 +2,16 @@
 
 import React from 'react';
 import styles from '../styles/promoSekcijaJedan.module.scss';
-import demoSlika from '../img/demo-slika-ponuda.png';
+import raftingTura from '../img/demo-slika-ponuda.png';
+import spiljarenje from '../img/spiljarenje.png';
+import jahanje from '../img/jahanje.png';
+import voznjaBicikla from '../img/voznja-bicikla.png';
+import kajakPoZrmanji from '../img/kajak-tura-po-zrmanji.png';
+import standupPaddle from '../img/standup-padle.png';
+import voznjaBrodom from '../img/voznja-brodom.png';
+import pjesackaTura from '../img/pjesacka-tura.png';
+import jeepSafari from '../img/jeep-safari.png';
+import kayakTure from '../img/kajak-tura.png';
 import RaftingCard from '../components/RaftingCard';
 import AppButton from '../components/AppButton';
 import PaperDividBot from '../components/PaperDividBot';
@@ -11,19 +20,20 @@ const taxonomijaPromoSekcija = [
   { title: 'Sve', id: 1 },
   { title: 'Zrmanja', id: 2 },
   { title: 'Velebit', id: 3 },
+  { title: 'Murvica', id: 4 },
 ];
 
 const promoSekcijaDemoPodaci = [
-  { title: 'Tets kraćeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
-  { title: 'Rafting tura test dužeg imena', location: 'Zrmanja', image: demoSlika },
+  { title: 'Rafting tura', location: 'Zrmanja', image: raftingTura, locationId: 2 },
+  { title: 'Špiljarenje', location: 'Velebit', image: spiljarenje, locationId: 3 },
+  { title: 'Jahanje', location: 'Murvica', image: jahanje, locationId: 4 },
+  { title: 'Vožnja bicikla', location: 'Zrmanja', image: voznjaBicikla, locationId: 2 },
+  { title: 'Kajak po Zrmanji do Jadranskog mora', location: 'Zrmanja', image: kajakPoZrmanji, locationId: 2 },
+  { title: 'Stand up paddle', location: 'Zrmanja', image: standupPaddle, locationId: 2 },
+  { title: 'Vožnja brodom', location: 'Zrmanja', image: voznjaBrodom, locationId: 2 },
+  { title: 'Pješačka tura', location: 'Zrmanja', image: pjesackaTura, locationId: 2 },
+  { title: 'Jeep safari', location: 'Velebit', image: jeepSafari, locationId: 3 },
+  { title: 'Kayak ture', location: 'Zrmanja', image: kayakTure, locationId: 2 },
 ];
 
 const PromoSekcijaJedan = () => {

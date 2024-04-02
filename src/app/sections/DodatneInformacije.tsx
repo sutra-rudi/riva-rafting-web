@@ -21,7 +21,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           : `${styles.dodatneInformacije} ${styles.dodatneInformacijeSub}`
       }
     >
-      <h1 className={styles.sectionHeading}>Dodatne Informacije</h1>
+      <h2 className={styles.sectionHeading}>Dodatne Informacije</h2>
 
       <div className={styles.sectionListContainer}>
         <div className={styles.imageBox}>

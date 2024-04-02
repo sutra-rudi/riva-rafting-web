@@ -44,7 +44,7 @@
         color: #fff;
         font-size: $heading3;
         z-index: 5;
-        white-space: pre-wrap;
+        // white-space: pre-wrap;
         @media only screen and (max-width: $tablets) {
           font-size: $mobileHeading2;
         }
@@ -53,6 +53,17 @@
         }
         line-height: 120%;
         font-weight: 700;
+
+        div {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          place-items: center;
+
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
       }
     }
   }
