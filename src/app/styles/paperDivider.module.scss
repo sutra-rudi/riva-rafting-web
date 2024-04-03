@@ -1,7 +1,8 @@
 .paperTop {
   position: absolute;
-  width: 100svw;
+  width: 100vw;
   height: 51px;
+  // height: 2.5vmin;
 
   @media only screen and (max-width: $tablets) {
     height: 35px;
@@ -13,8 +14,9 @@
 
 .paperBottom {
   position: absolute;
-  width: 100svw;
+  width: 100vw;
   height: 51px;
+  // height: 2.5vmin;
 
   @media only screen and (max-width: $tablets) {
     height: 35px;
@@ -26,8 +28,9 @@
 }
 .paperBottomAlt {
   position: absolute;
-  width: 100svw;
+  width: 100vw;
   height: 51px;
+  // height: 2.5vmin;
 
   @media only screen and (max-width: $tablets) {
     height: 35px;

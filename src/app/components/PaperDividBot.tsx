@@ -5,7 +5,7 @@ import papirDivider from '../img/PAPIR-RAZMAK-ALT.svg';
 const PaperDividBot = () => {
   return (
     <div className={styles.paperBottom}>
-      <Image src={papirDivider} fill alt='deco' />
+      <Image src={papirDivider} fill alt='deco' priority />
     </div>
   );
 };

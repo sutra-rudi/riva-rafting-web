@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
     "mapbox-gl": "^3.2.0",
     "next": "14.1.4",
     "react": "^18",
     "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18",
     "react-loader-spinner": "^6.1.6",
+    "react-multi-carousel": "^2.8.5",
     "react-player": "^2.15.1",
     "react-scroll-parallax": "^3.4.5",
     "react-slick": "^0.30.2",

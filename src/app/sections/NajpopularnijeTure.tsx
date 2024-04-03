@@ -11,10 +11,11 @@ import Image from 'next/image';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
 import { Parallax } from 'react-scroll-parallax';
 import ferlauf from '../img/FERLAUFVELEBIT.svg';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { Roboto_Condensed } from 'next/font/google';
+
+// @ts-ignore
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/react-splide/css';
 
 const RobotoCondensed = Roboto_Condensed({ weight: '700', subsets: ['latin'] });
 
@@ -29,7 +30,7 @@ const staticDemoContent = [
   {
     imageUrl: imgUrlDva,
     content:
-      'Istraži donji tok rijeke zrmanje od grada obrovca sve do Novigradskog mora. Tura traje 3 sata i posjetitelji ostaju očarani prekrasnim kanjonom..posjetitelji ostaju očarani',
+      'Istraži donji tok rijeke zrmanje od grada obrovca sve do Novigradskog mora. Tura traje 3 sata i posjetitelji ostaju očarani prekrasnim kanjonom..',
     duration: '3h',
     adrenaline: '5',
   },
@@ -53,55 +54,38 @@ interface MostPopularTours {
 }
 
 const NajpopularnijeTure = (props: MostPopularTours) => {
-  const settings = {
-    dots: false,
-    // speed: 1500,
-    slidesToShow: 4.1,
-    slidesToScroll: 1,
-    initialSlide: 0,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
-    cssEase: 'linear',
-    infinite: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3.1,
-          // slidesToScroll: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2.1,
-          // slidesToScroll: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2.1,
-          // slidesToScroll: 1,
-        },
-      },
-    ],
+  const splideOptions: any = {
+    perPage: 4,
+    // type: 'loop',
+    // drag: 'free',
+    // snap: true,
+    // gap: '1rem',
+    focus: 'center',
+    gap: '1rem',
+    pagination: false,
+    // height: '265px',
+    arrows: false,
+    breakpoints: {
+      768: { perPage: 2.3 },
+      1024: { perPage: 4 },
+      1300: { perPage: 4 },
+    },
   };
 
   return (
     <section className={styles.najpopularnijeTure}>
       <h2 className={styles.sectionHeading}>NAŠE NAJPOPULARNIJE TURE:</h2>
-      {/* <div className={styles.najpopularnijeTureContainer}> */}
-      <Slider className={styles.najpopularnijeTureContainer} {...settings}>
+
+      <Splide className={styles.najpopularnijeTureContainer} options={splideOptions}>
         {staticDemoContent.map((contentData, index) => {
           return (
-            <div className={styles.swiperSlide} key={index}>
+            <SplideSlide key={index} className={styles.swiperSlide}>
               <NajpopularnijeTureCard {...contentData} />
-            </div>
+            </SplideSlide>
           );
         })}
-      </Slider>
-      {/* </div> */}
+      </Splide>
+
       {props.isLanding && (
         <div className={styles.imageHolder}>
           <div className={styles.ferlauf}>
@@ -117,7 +101,6 @@ const NajpopularnijeTure = (props: MostPopularTours) => {
                 <span>
                   ili na <a href='mailto:info@riva-rafting.hr'>info@riva-rafting.hr</a>
                 </span>
-                {/* {`Sviđa ti se što vidiš?\nBookiraj svoju avanturu na +385 23 689 920\nili na info@riva-rafting.hr`} */}
               </Parallax>
             </h3>
           </div>

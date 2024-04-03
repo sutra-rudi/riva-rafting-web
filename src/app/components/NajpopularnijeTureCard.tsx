@@ -14,9 +14,9 @@ interface PopularTourCard {
 const NajpopularnijeTureCard = (props: PopularTourCard) => {
   const { imageUrl, content, duration, adrenaline } = props;
   return (
-    <div className={styles.najpopularnijeTureCard}>
+    <div draggable={false} className={styles.najpopularnijeTureCard}>
       <div className={styles.imageContainer}>
-        <Image src={imageUrl} fill alt='popular tour card image' />
+        <Image draggable={false} src={imageUrl} fill alt='popular tour card image' placeholder='blur' />
 
         <div className={styles.moreInfoContainer}></div>
         <div className={styles.moreInfoText}>

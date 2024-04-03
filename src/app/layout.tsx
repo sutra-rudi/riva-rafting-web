@@ -1,9 +1,8 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Ubuntu } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
-
-// const inter = Inter({ subsets: ['latin'] });
+import '@splidejs/react-splide/css';
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
 
 export const viewport: Viewport = {

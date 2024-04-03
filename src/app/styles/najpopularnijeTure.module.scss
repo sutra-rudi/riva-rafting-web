@@ -19,7 +19,6 @@
       top: 0;
       height: 476px;
       z-index: 8;
-      // outline: 1px solid red;
     }
 
     .gradientImageOverlay {
@@ -44,7 +43,6 @@
         color: #fff;
         font-size: $heading3;
         z-index: 5;
-        // white-space: pre-wrap;
         @media only screen and (max-width: $tablets) {
           font-size: $mobileHeading2;
         }
@@ -84,25 +82,8 @@
   }
 
   .najpopularnijeTureContainer {
-    // display: flex;
-    // margin: 0 auto;
-    // flex-wrap: wrap;
     width: 100%;
-    overflow-x: hidden;
-    // place-items: center;
-    // justify-content: center;
-    gap: 1.2em;
-    z-index: 9;
-    min-height: 550px;
-
-    // .swiperSlide {
-    //   // width: 100&;
-    //   user-select: none;
-    // }
-
-    .slick-list {
-      min-height: 550px;
-      // display: none !important;
-    }
+    min-height: 365px;
+    height: auto;
   }
 }

@@ -6,7 +6,7 @@ import styles from '../styles/paperDivider.module.scss';
 const PaperDividTop = () => {
   return (
     <div className={styles.paperTop}>
-      <Image src={papirDivider} fill alt='deco' />
+      <Image src={papirDivider} fill alt='deco' priority />
     </div>
   );
 };
