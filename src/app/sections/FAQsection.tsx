@@ -20,7 +20,7 @@ const FAQsection = () => {
         <div className={styles.faqContainer}>
           <Accordion className={styles.accordion}>
             <AccordionItem>
-              <AccordionItemHeading>
+              <AccordionItemHeading className={styles.testBG}>
                 <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>

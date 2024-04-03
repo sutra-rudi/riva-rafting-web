@@ -55,3 +55,8 @@ h6 {
 .mapboxgl-control-container {
   display: none !important;
 }
+
+.accordion__button {
+  /* display: none !important; */
+  background: rgba(164, 205, 70, 0.05) !important;
+}
