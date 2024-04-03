@@ -2,6 +2,15 @@
   width: 100%;
   position: relative;
 
+  .playerContainer {
+    video {
+      @media only screen and (max-width: $desktops) {
+        min-height: 75vh;
+        min-height: 75lvh;
+      }
+    }
+  }
+
   .ferlaufImageBlock {
     position: absolute;
     top: -40px;

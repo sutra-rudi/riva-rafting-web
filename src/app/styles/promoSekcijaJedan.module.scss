@@ -287,7 +287,11 @@
       .raftingCartInteractiveOverlay {
         width: 100%;
         padding: 0.8rem 1.1rem;
-        background: $zelenaGlavna;
+
+        background: url('../img/SMALL-CARD-BG.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         // background: red;
         display: flex;
         place-items: center;

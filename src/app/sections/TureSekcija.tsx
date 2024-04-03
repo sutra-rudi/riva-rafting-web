@@ -7,7 +7,18 @@ import ferlaufTop from '../img/FERLAUFPINGPONG.svg';
 import PaperDividTop from '../components/PaperDividTop';
 import Image from 'next/image';
 import pingPongPoster from '../img/ping-pong-poster.jpg';
+import Loading from '../loading';
 const TureSekcija = () => {
+  const [isReady, setIsReady] = React.useState(false);
+  const playerRef = React.useRef<ReactPlayer>(null);
+
+  const onReady = React.useCallback(() => {
+    if (!isReady) {
+      // const timeToStart = 7 * 60 + 12.6;
+      playerRef.current && playerRef.current.seekTo(0, 'seconds');
+      setIsReady(true);
+    }
+  }, [isReady]);
   return (
     <section className={styles.tureSekcija}>
       <PaperDividTop />
@@ -16,23 +27,27 @@ const TureSekcija = () => {
           <Image fill src={ferlaufTop} alt='ferlauf' />
         </div>
       </div>
-      <ReactPlayer
-        url={'/novi-ping-pong.mp4'}
-        loop
-        playing
-        muted
-        volume={0}
-        width={'100%'}
-        height={'100%'}
-        playsinline
-        config={{
-          file: {
-            attributes: {
-              poster: pingPongPoster.src,
+      <div className={styles.playerContainer}>
+        <ReactPlayer
+          url={'/novi-ping-pong.mp4'}
+          loop
+          muted
+          volume={0}
+          width={'100%'}
+          height={'100%'}
+          playsinline
+          playing={isReady}
+          onReady={onReady}
+          fallback={<Loading />}
+          config={{
+            file: {
+              attributes: {
+                poster: pingPongPoster.src,
+              },
             },
-          },
-        }}
-      />
+          }}
+        />
+      </div>
     </section>
   );
 };

@@ -8,7 +8,7 @@
   z-index: 9;
   background: $svijetloSiva;
 
-  @media only screen and (min-width: $largeDesktops) {
+  @media only screen and (min-width: $desktops) {
     flex-wrap: nowrap;
   }
 
@@ -27,8 +27,8 @@
     left: 0;
 
     width: 100%;
-    background: #7fa723;
-    mix-blend-mode: multiply;
+    background: rgba(127, 167, 35, 0.9);
+    // mix-blend-mode: multiply;
     padding: 0.9rem 1.2rem;
     height: 50px;
 
