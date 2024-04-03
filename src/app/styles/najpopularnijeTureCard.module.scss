@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   z-index: 9;
+  background: $svijetloSiva;
 
   @media only screen and (min-width: $largeDesktops) {
     flex-wrap: nowrap;
@@ -77,14 +78,17 @@
       font-size: $baseFontSize;
       line-height: $browserProred;
       padding: 1.3rem 1rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
 
-      @media only screen and (max-width: $desktops) {
-        font-size: $mobileFontSizeContentAlt;
+      @media only screen and (max-width: $tablets) {
         padding: 0.65rem 0.5rem;
+        font-size: $mobileFontSizeContentAlt;
+      }
+
+      @media only screen and (max-width: $largeDesktops) {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
     }
 
@@ -92,7 +96,7 @@
       width: 100%;
       outline: none;
       border: none;
-      background: $zelenaTamna;
+      background: rgba(164, 205, 70, 0.25);
       display: flex;
       place-items: center;
       justify-content: space-between;
@@ -106,7 +110,7 @@
 
       span {
         text-transform: uppercase;
-        color: #fff;
+        color: $zelenaTamna;
         line-height: $defaultProred;
         // font-size: 1.15rem;
 

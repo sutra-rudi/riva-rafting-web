@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styles from '../styles/najpopularnijeTureCard.module.scss';
-import strelica from '../img/strelica-desno.svg';
+import strelica from '../img/STRELICA-DESNO-ZELENA.svg';
 interface PopularTourCard {
   imageUrl: StaticImageData;
   content: string;
