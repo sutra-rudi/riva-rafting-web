@@ -16,10 +16,12 @@ import NajpopularnijeTure from '@/app/sections/NajpopularnijeTure';
 import PaperDividTop from '@/app/components/PaperDividTop';
 import PaperDividBotAlt from '@/app/components/PaperDivitBotAlt';
 import Image from 'next/image';
+import staticImageImports from './staticImageImports';
 
 export default async function ActivityDetails({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
 
+  const findHero = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
   // console.log(params.SLUG_HR);
 
   const parseBulletPoints = (strBlock: string) =>
@@ -30,7 +32,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
       <main className={styles.aktivnost}>
         <div className={styles.aktivnostHero}>
           <PaperDividTop />
-          {/* <Image fill src={nest.find((item) => item.id === findData?.ID)?.slika.src} alt='hero' /> */}
+          <Image fill src={findHero?.aktivnostHeroUrl ?? ''} alt='hero' />
           <div className={styles.heroHeader}>
             <h1>{findData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
             <AppButton content='Rezervirajte svoj termin' />
