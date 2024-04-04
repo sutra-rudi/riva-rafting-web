@@ -1,13 +1,15 @@
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styles from '../styles/promoSekcijaJedan.module.scss';
-import arrowIcon from '../img/strelica-desno.svg';
+import arrowIcon from '../img/STRELICA-DESNO-ALT-NOVA.svg';
 import locationIcon from '../img/lokacija-ikonica.svg';
+import Link from 'next/link';
 interface RaftingCardProps {
   title: string;
   location: string;
   imageUrl: StaticImageData;
   delay?: number;
+  url: string;
 }
 
 const RaftingCard = (props: RaftingCardProps) => {
@@ -15,21 +17,23 @@ const RaftingCard = (props: RaftingCardProps) => {
 
   return (
     <div style={{ animationDelay: delay ? `${delay}s` : '0' }} className={styles.raftingCard}>
-      <div className={styles.imageContainer}>
-        <p className={styles.cardLocation}>
-          <span>
-            <Image src={locationIcon} width={13} height={13} alt='arrow' className={styles.cardLocationIcon} />
-          </span>
-          {location}
-        </p>
-        <Image className={styles.raftingImage} src={imageUrl} fill alt='rafting img' />
-      </div>
-      <div className={styles.raftingCartInteractiveOverlay}>
-        <div className={styles.interactiveOverlayTitleCont}>
-          <h5 className={styles.cardTitle}>{title}</h5>
+      <Link href={`/aktivnosti/${props.url}`}>
+        <div className={styles.imageContainer}>
+          <p className={styles.cardLocation}>
+            <span>
+              <Image src={locationIcon} width={13} height={13} alt='arrow' className={styles.cardLocationIcon} />
+            </span>
+            {location}
+          </p>
+          <Image className={styles.raftingImage} src={imageUrl} fill alt='rafting img' />
         </div>
-        <Image src={arrowIcon} width={33} height={33} alt='arrow' className={styles.cardArrowIcon} />
-      </div>
+        <div className={styles.raftingCartInteractiveOverlay}>
+          <div className={styles.interactiveOverlayTitleCont}>
+            <h5 className={styles.cardTitle}>{title}</h5>
+          </div>
+          <Image src={arrowIcon} width={33} height={33} alt='arrow' className={styles.cardArrowIcon} />
+        </div>
+      </Link>
     </div>
   );
 };

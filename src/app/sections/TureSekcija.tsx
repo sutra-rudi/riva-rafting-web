@@ -8,6 +8,7 @@ import PaperDividTop from '../components/PaperDividTop';
 import Image from 'next/image';
 import pingPongPoster from '../img/ping-pong-poster.jpg';
 import Loading from '../loading';
+import AppButton from '../components/AppButton';
 const TureSekcija = () => {
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
@@ -28,6 +29,9 @@ const TureSekcija = () => {
         </div>
       </div>
       <div className={styles.playerContainer}>
+        <div className={styles.buttonOnVideo}>
+          <AppButton content='REZERVIRAJTE SVOJ TERMIN' />
+        </div>
         <ReactPlayer
           url={'/novi-ping-pong.mp4'}
           loop

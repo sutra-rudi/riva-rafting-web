@@ -13,8 +13,9 @@ import pjesackaTura from '../img/pjesacka-tura.png';
 import jeepSafari from '../img/jeep-safari.png';
 import kayakTure from '../img/kajak-tura.png';
 import RaftingCard from '../components/RaftingCard';
-import AppButton from '../components/AppButton';
 import PaperDividBot from '../components/PaperDividBot';
+
+import demoData from '../../../public/webdata/demodata2.json';
 
 const taxonomijaPromoSekcija = [
   { title: 'Sve', id: 1 },
@@ -24,22 +25,30 @@ const taxonomijaPromoSekcija = [
 ];
 
 const promoSekcijaDemoPodaci = [
-  { title: 'Rafting tura', location: 'Zrmanja', image: raftingTura, locationId: 2 },
-  { title: 'Špiljarenje', location: 'Velebit', image: spiljarenje, locationId: 3 },
-  { title: 'Jahanje', location: 'Murvica', image: jahanje, locationId: 4 },
-  { title: 'Vožnja bicikla', location: 'Zrmanja', image: voznjaBicikla, locationId: 2 },
-  { title: 'Kajak po Zrmanji do Jadranskog mora', location: 'Zrmanja', image: kajakPoZrmanji, locationId: 2 },
-  { title: 'Stand up paddle', location: 'Zrmanja', image: standupPaddle, locationId: 2 },
-  { title: 'Vožnja brodom', location: 'Zrmanja', image: voznjaBrodom, locationId: 2 },
-  { title: 'Pješačka tura', location: 'Zrmanja', image: pjesackaTura, locationId: 2 },
-  { title: 'Jeep safari', location: 'Velebit', image: jeepSafari, locationId: 3 },
-  { title: 'Kayak ture', location: 'Zrmanja', image: kayakTure, locationId: 2 },
+  { title: 'Rafting tura', location: 'Zrmanja', image: raftingTura, locationId: 2, url: 'Rafting' },
+  { title: 'Špiljarenje', location: 'Velebit', image: spiljarenje, locationId: 3, url: 'Spiljarenje' },
+  { title: 'Jahanje', location: 'Murvica', image: jahanje, locationId: 4, url: 'Jahanje' },
+  { title: 'Vožnja bicikla', location: 'Zrmanja', image: voznjaBicikla, locationId: 2, url: 'Bicik' },
+  {
+    title: 'Kajak po Zrmanji do Jadranskog mora',
+    location: 'Zrmanja',
+    image: kajakPoZrmanji,
+    locationId: 2,
+    url: 'Kayak-Zrmanja-More',
+  },
+  { title: 'Stand up paddle', location: 'Zrmanja', image: standupPaddle, locationId: 2, url: 'Stand-Up-Paddle' },
+  { title: 'Vožnja brodom', location: 'Zrmanja', image: voznjaBrodom, locationId: 2, url: 'Zrmanja-brodom' },
+  { title: 'Pješačka tura', location: 'Zrmanja', image: pjesackaTura, locationId: 2, url: 'Pjesacke-ture' },
+  { title: 'Jeep safari', location: 'Velebit', image: jeepSafari, locationId: 3, url: 'Jeep-safari' },
+  { title: 'Kayak ture', location: 'Zrmanja', image: kayakTure, locationId: 2, url: 'kayak-tura' },
 ];
 
 const PromoSekcijaJedan = () => {
   const [currentActiveTax, setCurrentActiveTax] = React.useState<number>(1);
 
   const handleClick = (itemValue: number) => setCurrentActiveTax(itemValue);
+
+  console.log('DEMO DATA', demoData);
 
   const TaxonomyButtons = () => {
     return (
@@ -72,6 +81,7 @@ const PromoSekcijaJedan = () => {
                 imageUrl={kartica.image}
                 location={kartica.location}
                 delay={index - index * 0.85}
+                url={kartica.url}
               />
             ))
           : promoSekcijaDemoPodaci
@@ -82,6 +92,7 @@ const PromoSekcijaJedan = () => {
                   title={kartica.title}
                   imageUrl={kartica.image}
                   location={kartica.location}
+                  url={kartica.url}
                   delay={index - index * 0.85}
                 />
               ))}
@@ -100,9 +111,8 @@ const PromoSekcijaJedan = () => {
         </h2>
         <h2 className={styles.promoSekcijaHeaderMobile}>ODABERI SVOJU AVANTURU</h2>
 
-        <TaxonomyButtons />
+        {/* <TaxonomyButtons /> */}
         <TaxonomyCardContainer />
-        <AppButton content='REZERVIRAJTE SVOJ TERMIN' />
 
         <h3 className={styles.mobileHeadingPromo}>
           Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine

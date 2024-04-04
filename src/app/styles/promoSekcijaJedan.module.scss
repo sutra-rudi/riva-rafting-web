@@ -193,7 +193,6 @@
       animation: fadeIn 1s ease forwards;
 
       @media only screen and (min-width: $phones) and (max-width: $tablets) {
-        /* Your CSS styles for medium screens here */
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -205,7 +204,11 @@
         }
 
         &:nth-child(even) .raftingCartInteractiveOverlay {
-          background: $zelenaTamna;
+          // background: $zelenaTamna;
+          background: url('../img/SMALL-CARD-BG-ALT.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
         }
       }
 
@@ -243,6 +246,7 @@
         .cardLocation {
           font-size: 14px;
           color: $svijetloSiva;
+          opacity: 0.75;
           display: flex;
           place-items: center;
           gap: 0.5em;
@@ -323,7 +327,7 @@
             line-height: $browserProred;
           }
 
-          color: $tamna;
+          color: #fff;
           line-height: $defaultProred;
           font-weight: 500;
           position: relative;

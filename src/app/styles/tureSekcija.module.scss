@@ -3,6 +3,13 @@
   position: relative;
 
   .playerContainer {
+    position: relative;
+    .buttonOnVideo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
     video {
       @media only screen and (max-width: $desktops) {
         min-height: 75vh;

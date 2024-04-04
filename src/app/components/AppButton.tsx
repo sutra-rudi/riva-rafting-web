@@ -10,7 +10,6 @@ interface ButtonProps {
 
 const AppButton = (props: ButtonProps) => {
   const { content, isNav = false, isHero = false, isAbout = false, isSecondary = false } = props;
-  console.log('hello');
   return (
     <button
       className={
