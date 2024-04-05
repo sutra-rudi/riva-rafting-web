@@ -17,12 +17,15 @@ import PaperDividTop from '@/app/components/PaperDividTop';
 import PaperDividBotAlt from '@/app/components/PaperDivitBotAlt';
 import Image from 'next/image';
 import staticImageImports from './staticImageImports';
+import AktivnostGallery from './AktivnostGallery';
 
 export default async function ActivityDetails({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
 
   const findHero = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
   // console.log(params.SLUG_HR);
+
+  const findGallery = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
 
   const parseBulletPoints = (strBlock: string) =>
     strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
@@ -42,50 +45,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
         {/* MAIN CONT START */}
         <div className={styles.masterContainer}>
           <div className={styles.contentContainer}>
-            {/* <StickyBox offsetTop={20} offsetBottom={20} className={styles.swiperSticky}>
-                <Slider className={styles.swiperTop} asNavFor={nav2} ref={(slider) => (sliderRef1 = slider as any)}>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika1} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika2} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika3} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika4} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika5} alt='slika' />
-                  </div>
-                </Slider>
-
-                <Slider
-                  asNavFor={nav1}
-                  ref={(slider) => (sliderRef2 = slider as any)}
-                  // slidesToShow={3}
-                  swipeToSlide={true}
-                  focusOnSelect={true}
-                  {...settings}
-                >
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika1} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika2} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika3} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika4} alt='slika' />
-                  </div>
-                  <div className={styles.swiperSlide}>
-                    <Image fill src={slika5} alt='slika' />
-                  </div>
-                </Slider>
-              </StickyBox> */}
+            <AktivnostGallery listaSlika={findGallery?.aktivnostGalerija!} />
 
             <article className={styles.activityArticle}>
               <div className={styles.articleTopContent}>
