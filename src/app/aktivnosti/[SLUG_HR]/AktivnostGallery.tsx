@@ -7,18 +7,23 @@ import StickyBox from 'react-sticky-box';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Image, { StaticImageData } from 'next/image';
+// import { useWindowSize } from '@/app/hooks/useWindowSize';
 
 const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => {
+  // const clientWindowSize = useWindowSize();
+
   const splideOptions: any = {
     perPage: 5.2,
-    type: 'loop',
+    // type: clientWindowSize && clientWindowSize?.width > 1300 ? 'loop' : 'slide',
+    type: 'slide',
     drag: 'free',
     snap: true,
     gap: '0.5rem',
     focus: 'center',
     pagination: false,
     arrows: false,
-    autoplay: true,
+    // autoplay: clientWindowSize && clientWindowSize?.width > 1300 ? true : false,
+    autoplay: false,
     interval: 5000,
     isNavigation: true,
     breakpoints: {

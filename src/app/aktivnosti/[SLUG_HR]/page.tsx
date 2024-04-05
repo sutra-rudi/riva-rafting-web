@@ -38,7 +38,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
       <main className={styles.aktivnost}>
         <div className={styles.aktivnostHero}>
           <PaperDividTop />
-          <Image fill src={findHero?.aktivnostHeroUrl ?? ''} alt='hero' />
+          <Image fill src={findHero?.aktivnostHeroUrl ?? ''} alt='hero' placeholder='blur' />
           <div className={styles.heroHeader}>
             <h1>{findData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
             <AppButton content='Rezervirajte svoj termin' />
