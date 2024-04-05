@@ -32,11 +32,9 @@ const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => 
       <Splide
         className={styles.swiper}
         options={splideOptions}
-        onActive={(slider) => {
-          console.log('SLIDER', slider);
-          const elem = document.querySelector('.is-active');
-          /*@ts-ignore*/
-          // console.log('ELE', elem.children[0].children[0].children[0].children[0].attributes.src);
+        //@ts-ignore
+        onMove={(slider) => {
+          console.log('SLIDER', slider.destIndex);
         }}
       >
         {listaSlika.map((slika, index) => {
