@@ -68,14 +68,21 @@
   }
 
   .swiperSticky {
-    max-width: 693px;
     width: 100%;
+
+    @media only screen and (min-width: $largeDesktops) {
+      max-width: 693px;
+    }
 
     @media only screen and (max-width: $largeDesktops) {
       position: static !important;
       // max-width: 95vw;
       overflow-x: hidden;
       margin: 0 auto;
+    }
+
+    .swiper {
+      margin-top: 1rem;
     }
 
     .swiperTop {

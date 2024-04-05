@@ -18,9 +18,12 @@ import PaperDividBotAlt from '@/app/components/PaperDivitBotAlt';
 import Image from 'next/image';
 import staticImageImports from './staticImageImports';
 import AktivnostGallery from './AktivnostGallery';
+import MapboxMapa from './MapboxMapa';
 
 export default async function ActivityDetails({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
+
+  const mapboxApiKey = process.env.MAPBOX_API_KEY;
 
   const findHero = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
   // console.log(params.SLUG_HR);
@@ -127,10 +130,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
         {/* MAIN CONT END */}
 
-        <div className={styles.mapboxContainer}>
-          <PaperDividTop />
-          <PaperDividBotAlt />
-        </div>
+        <MapboxMapa apiKey={mapboxApiKey as string} />
 
         <DodatneInformacije isLanding={false} />
         <TripAdvisorSekcija />
