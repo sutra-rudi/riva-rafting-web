@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/appButton.module.scss';
+
 interface ButtonProps {
   content: string;
   isNav?: boolean;
@@ -8,27 +9,22 @@ interface ButtonProps {
   isSecondary?: boolean;
 }
 
-const AppButton = (props: ButtonProps) => {
-  const { content, isNav = false, isHero = false, isAbout = false, isSecondary = false } = props;
-  return (
-    <button
-      className={
-        isNav
-          ? `${styles.appButton} ${styles.navButton}`
-          : isHero && isSecondary
-          ? `${styles.appButton} ${styles.secondaryButton} ${styles.heroButton}`
-          : isHero
-          ? `${styles.appButton} ${styles.heroButton}`
-          : isAbout && isSecondary
-          ? `${styles.appButton} ${styles.secondaryButton} ${styles.aboutButton} `
-          : isAbout
-          ? `${styles.appButton} ${styles.aboutButton}`
-          : ` ${styles.appButton}`
-      }
-    >
-      {content}
-    </button>
-  );
+const AppButton = ({ content, isNav = false, isHero = false, isAbout = false, isSecondary = false }: ButtonProps) => {
+  const buttonClassNames = isNav
+    ? `${styles.appButton} ${styles.navButton}`
+    : isHero && isSecondary
+    ? `${styles.appButton} ${styles.secondaryButton} ${styles.heroButton}`
+    : isHero
+    ? `${styles.appButton} ${styles.heroButton}`
+    : isAbout && isSecondary
+    ? `${styles.appButton} ${styles.secondaryButton} ${styles.aboutButton}`
+    : isAbout
+    ? `${styles.appButton} ${styles.aboutButton}`
+    : isSecondary
+    ? `${styles.appButton} ${styles.secondaryButton}`
+    : `${styles.appButton}`;
+
+  return <button className={buttonClassNames}>{content}</button>;
 };
 
 export default AppButton;

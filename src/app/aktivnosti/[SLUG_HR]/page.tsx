@@ -32,6 +32,8 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
   const parseBulletPoints = (strBlock: string) =>
     strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
+
+  // console.log('TTT', findData?.TEKST);
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
@@ -55,11 +57,13 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
                 <h6>{findData?.NADNASLOV}</h6>
                 <h2>{findData?.NASLOV}</h2>
                 <div className={styles.articleContentTextContainer}>
-                  <p>{findData?.TEKST}</p>
+                  {findData?.TEKST.split('\n').map((t, i) => (
+                    <p key={i}>{t}</p>
+                  ))}
                 </div>
                 <div className={styles.articleButtonStack}>
                   <AppButton content='Rezerviraj termin' />
-                  <AppButton content='Imaš pitanje?' />
+                  <AppButton content='Imaš pitanje?' isSecondary />
                 </div>
               </div>
 

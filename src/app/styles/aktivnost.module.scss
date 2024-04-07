@@ -7,7 +7,9 @@
   // margin-bottom: 100px;
 
   .aktivnostHero {
-    height: 75dvh;
+    height: 85vh;
+    height: 85dvh;
+
     min-height: 634px;
     position: relative;
 
@@ -22,27 +24,29 @@
       bottom: 216px;
       left: 50%;
       transform: translateX(-50%);
-
+      width: 100%;
       h1 {
         // font-size: $heading1;
         font-size: 110px;
 
-        @media only screen and (max-width: $tablets) {
+        @media only screen and (max-width: $desktops) {
+          min-width: 95vw;
           font-size: $heading1;
+          line-height: $browserProred;
         }
 
-        @media only screen and (max-width: $phones) {
-          font-size: 44px;
-        }
+        // @media only screen and (max-width: $phones) {
+        //   font-size: 44px;
+        // }
         text-transform: uppercase;
         color: #fff;
         line-height: $defaultProred;
         text-align: center;
         width: 100%;
-        white-space: nowrap;
 
         @media only screen and (max-width: $smPhones) {
           white-space: unset;
+          font-size: 44px;
         }
       }
     }

@@ -13,7 +13,7 @@ interface MoreInfoProps {
 }
 
 const DodatneInformacije = (props: MoreInfoProps) => {
-  console.log('test');
+  // console.log('test');
   return (
     <section
       className={
