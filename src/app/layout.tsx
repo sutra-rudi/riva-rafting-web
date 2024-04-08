@@ -22,7 +22,6 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-
     title: 'Riva Rafting',
   },
 };

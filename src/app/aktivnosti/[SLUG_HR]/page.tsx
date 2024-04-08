@@ -1,10 +1,6 @@
-export const metadata = {
-  title: 'Article',
-};
 // import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import Loading from '../loading';
-
 import demoData from '../../../../public/webdata/webcontent.json';
 import AppButton from '@/app/components/AppButton';
 import styles from '../../styles/aktivnost.module.scss';
@@ -19,6 +15,28 @@ import Image from 'next/image';
 import staticImageImports from './staticImageImports';
 import AktivnostGallery from './AktivnostGallery';
 import MapboxMapa from './MapboxMapa';
+
+export async function generateMetadata({ params }: { params: { SLUG_HR: string } }) {
+  const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
+
+  return {
+    title: findData?.NASLOV,
+    openGraph: {
+      title: findData?.NASLOV,
+      description: String(findData?.SEO_HR),
+      siteName: findData?.NASLOV_AKTIVNOSTI_HERO_HR,
+      type: 'website',
+      locale: 'hr',
+    },
+    twitter: {
+      title: findData?.NASLOV,
+      description: String(findData?.SEO_HR),
+      siteName: findData?.NASLOV_AKTIVNOSTI_HERO_HR,
+      type: 'website',
+      locale: 'hr',
+    },
+  };
+}
 
 export default async function ActivityDetails({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
