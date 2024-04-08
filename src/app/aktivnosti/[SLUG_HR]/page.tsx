@@ -8,13 +8,17 @@ import AppHeader from '@/app/components/AppHeader';
 import AppFooter from '@/app/components/AppFooter';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
 import TripAdvisorSekcija from '@/app/sections/TripAdvisorSekcija';
-import NajpopularnijeTure from '@/app/sections/NajpopularnijeTure';
+// import NajpopularnijeTure from '@/app/sections/NajpopularnijeTure';
 import PaperDividTop from '@/app/components/PaperDividTop';
 import PaperDividBotAlt from '@/app/components/PaperDivitBotAlt';
 import Image from 'next/image';
 import staticImageImports from './staticImageImports';
 import AktivnostGallery from './AktivnostGallery';
 import MapboxMapa from './MapboxMapa';
+import localFont from 'next/font/local';
+const RecoletaBold = localFont({
+  src: [{ path: '../../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
+});
 
 export async function generateMetadata({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
@@ -58,7 +62,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
           <PaperDividTop />
           <Image fill src={findHero?.aktivnostHeroUrl ?? ''} alt='hero' placeholder='blur' />
           <div className={styles.heroHeader}>
-            <h1>{findData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
+            <h1 className={RecoletaBold.className}>{findData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
             <AppButton content='Rezervirajte svoj termin' />
           </div>
           <PaperDividBotAlt />
@@ -154,7 +158,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
         <DodatneInformacije isLanding={false} />
         <TripAdvisorSekcija />
-        <NajpopularnijeTure isLanding={false} />
+        {/* <NajpopularnijeTure isLanding={false} /> */}
         <AppFooter />
       </main>
     </Suspense>
