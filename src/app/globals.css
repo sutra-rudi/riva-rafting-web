@@ -55,3 +55,7 @@ h6 {
 .mapboxgl-control-container {
   display: none !important;
 }
+
+.splide__slide.is-active {
+  border: none !important;
+}
