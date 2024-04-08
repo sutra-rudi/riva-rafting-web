@@ -42,11 +42,6 @@
 
   .faqContainer {
     width: 100%;
-
-    // display: flex;
-    // justify-content: center;
-    // place-items: flex-start;
-    // flex-flow: row wrap;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     @media only screen and (max-width: $phones) {

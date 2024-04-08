@@ -221,7 +221,7 @@
 
       @media only screen and (min-width: $tablets) {
         padding: 1rem;
-        bottom: -65px;
+        bottom: -63px;
       }
 
       display: flex;
@@ -230,12 +230,12 @@
       gap: 1rem;
 
       @media only screen and (max-width: $phones) {
-        bottom: -65px;
+        bottom: -63px;
         font-size: $mobileFontSizeSmall;
       }
 
       @media only screen and (max-width: 680px) {
-        bottom: -68px;
+        bottom: -66px;
       }
 
       @media only screen and (max-width: $tablets) {
@@ -251,6 +251,7 @@
         justify-content: center;
         gap: 0.5rem;
         flex-wrap: wrap;
+        position: relative;
 
         @media only screen and (max-width: $tablets) {
           width: 100%;
@@ -305,6 +306,9 @@
   }
 
   @media only screen and (max-width: $tablets) {
+    .footerMaster {
+      padding: 1rem 0 0 0;
+    }
     .footerBlock:nth-child(1),
     .footerBlock:nth-child(3),
     .footerBlock:nth-child(4) {
@@ -321,8 +325,28 @@
       display: none;
     }
 
-    .footerBlock:nth-child(4) {
-      background: $zelenaTamna;
+    .footerBlock:nth-child(3) {
+      padding: 0.5rem 0;
+
+      a,
+      p {
+        color: $tamna !important;
+      }
+
+      p::after {
+        background: $tamna !important;
+      }
     }
+  }
+}
+
+@media only screen and (max-width: $phones) {
+  .contentContainer {
+    width: 100%;
+  }
+
+  .footerBlock:nth-child(3) {
+    background: $zelenaTamna;
+    width: 100%;
   }
 }

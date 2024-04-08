@@ -1,6 +1,3 @@
-export const metadata = {
-  title: 'Article',
-};
 // import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import Loading from '../loading';
@@ -24,6 +21,30 @@ import localFont from 'next/font/local';
 const RecoletaBold = localFont({
   src: [{ path: '../../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
+
+export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
+  const findData = demoData.find(
+    (iten) => String(iten.SLUG_ENG).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
+  );
+
+  return {
+    title: findData?.ENG_NASLOV,
+    openGraph: {
+      title: findData?.ENG_NASLOV,
+      description: String(findData?.SEO_ENG),
+      siteName: findData?.ENG_NASLOV,
+      type: 'website',
+      locale: 'en',
+    },
+    twitter: {
+      title: findData?.ENG_NASLOV,
+      description: String(findData?.SEO_ENG),
+      siteName: findData?.ENG_NASLOV,
+      type: 'website',
+      locale: 'en',
+    },
+  };
+}
 
 export default async function ActivityDetails({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
