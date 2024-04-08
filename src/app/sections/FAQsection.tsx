@@ -18,21 +18,25 @@ const FAQsection = () => {
           <h2>NAJČEŠĆA PITANJA</h2>
         </div>
         <div className={styles.faqContainer}>
-          <Accordion className={styles.accordion}>
-            <AccordionItem>
-              <AccordionItemHeading className={styles.testBG}>
-                <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>
+          <Accordion allowZeroExpanded className={styles.accordion}>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  What harsh truths do you prefer to ignore?
+                </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim
                   minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -41,9 +45,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -52,9 +58,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -63,9 +71,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -76,10 +86,12 @@ const FAQsection = () => {
             </AccordionItem>
           </Accordion>
 
-          <Accordion className={styles.accordion}>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>What harsh truths do you prefer to ignore?</AccordionItemButton>
+          <Accordion allowZeroExpanded className={styles.accordion}>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  What harsh truths do you prefer to ignore?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -88,9 +100,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -99,9 +113,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -110,9 +126,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
@@ -121,9 +139,11 @@ const FAQsection = () => {
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
-            <AccordionItem>
-              <AccordionItemHeading>
-                <AccordionItemButton>Is free will real or just an illusion?</AccordionItemButton>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Is free will real or just an illusion?
+                </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 <p>
