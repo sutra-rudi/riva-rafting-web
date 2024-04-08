@@ -7,6 +7,7 @@ import AppButton from '../components/AppButton';
 import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
 import Loading from '../loading';
+import { useAppContext } from '../contexts/store';
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
@@ -34,6 +35,24 @@ const HeroSekcija = () => {
     }
   }, [isReady]);
 
+  const {
+    state: { userLang },
+  } = useAppContext();
+
+  const headline_en = 'Experience the beauty of Zrmanja with us!';
+  const headline_hr = 'Doživite ljepote Zrmanje s nama!';
+
+  const btn_main_hr = 'Aktivnosti koje nudimo';
+  const btn_main_en = 'The activities we offer';
+
+  const btn_second_hr = 'Rezervirajte svoj termin';
+  const btn_second_en = 'Book your appointment';
+
+  const langCheck = React.useCallback(
+    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
+    [userLang]
+  );
+
   return (
     <section className={styles.heroSekcija}>
       <div className={styles.playerContainer}>
@@ -59,7 +78,7 @@ const HeroSekcija = () => {
           fallback={<Loading />}
         />
         <div className={styles.heroCtaKontejner}>
-          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>Doživite ljepote Zrmanje s nama!</h1>
+          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
 
           <h1
             style={{
@@ -69,12 +88,12 @@ const HeroSekcija = () => {
             }}
             className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}
           >
-            Doživite ljepote Zrmanje s nama!
+            {userLang === 'hr' ? headline_hr : headline_en}
           </h1>
 
           <div className={styles.heroCtaButtonKontejter}>
-            <AppButton isHero content='Aktivnosti koje nudimo' />
-            <AppButton isHero content='Rezervirajte svoj termin' isSecondary />
+            <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
+            <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary />
           </div>
         </div>
       </div>

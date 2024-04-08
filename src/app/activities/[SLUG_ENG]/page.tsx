@@ -20,8 +20,10 @@ import staticImageImports from './staticImageImports';
 import AktivnostGallery from './AktivnostGallery';
 import MapboxMapa from './MapboxMapa';
 
-export default async function ActivityDetails({ params }: { params: { SLUG_HR: string } }) {
-  const findData = demoData.find((iten) => String(iten.SLUG_HR).toLowerCase() === String(params.SLUG_HR).toLowerCase());
+export default async function ActivityDetails({ params }: { params: { SLUG_ENG: string } }) {
+  const findData = demoData.find(
+    (iten) => String(iten.SLUG_ENG).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
+  );
 
   const mapboxApiKey = process.env.MAPBOX_API_KEY;
 
@@ -52,10 +54,10 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
             <article className={styles.activityArticle}>
               <div className={styles.articleTopContent}>
-                <h6>{findData?.NADNASLOV}</h6>
-                <h2>{findData?.NASLOV}</h2>
+                <h6>{findData?.____PRAZNO__5}</h6>
+                <h2>{findData?.ENG_NASLOV}</h2>
                 <div className={styles.articleContentTextContainer}>
-                  {findData?.TEKST.split('\n').map((t, i) => (
+                  {findData?.ENG_TEKST.split('\n').map((t, i) => (
                     <p key={i}>{t}</p>
                   ))}
                 </div>
@@ -72,26 +74,26 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
                   <div className={styles.articleInfo}>
                     <ul>
                       <li>
-                        DESTINACIJA: <span>{findData?.['DESTINACIJA:']}</span>
+                        DESTINATION: <span>{findData?.['ENG_DESTINACIJA:']}</span>
                       </li>
                       <li>
-                        CIJENA: <span>{findData?.['CIJENA:']}</span>
+                        PRICE: <span>{findData?.['ENG_CIJENA:']}</span>
                       </li>
                       <li>
-                        AKTIVNOST: <span>{findData?.['AKTIVNOST:']}</span>
+                        ACTIVITY: <span>{findData?.['ENG_AKTIVNOST:']}</span>
                       </li>
                       <li>
-                        MINIMALNA DOB: <span>{findData?.['MINIMALNA_DOB:']}</span>
+                        MINIMUM AGE: <span>{findData?.['ENG_MINIMALNA_DOB:']}</span>
                       </li>
                       <li>
-                        ZAHTJEVNOST: <span>{findData?.['ZAHTJEVNOST:']}</span>
+                        DIFFICULTY: <span>{findData?.['ENG_ZAHTJEVNOST:']}</span>
                       </li>
                       <li>
-                        VELIČINA GRUPE: <span>{findData?.['VELIČINA_GRUPE:']}</span>
+                        GROUP SIZE: <span>{findData?.['ENG_VELIČINA_GRUPE:']}</span>
                       </li>
-                      <li>TRAJANJE: {findData?.['TRAJANJE:']}</li>
+                      <li>DURATION: {findData?.['ENG_TRAJANJE:']}</li>
                       <li>
-                        DULJINA: <span>{findData?.['DULJINA:']}</span>
+                        LENGTH: <span>{findData?.['ENG_DULJINA:']}</span>
                       </li>
                     </ul>
                   </div>
@@ -99,12 +101,12 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
                 <div className={styles.articleBlock}>
                   <div className={styles.articleBlockHeading}>
-                    <h4>{findData?.['NASLOV:_PLAN_TURE']}</h4>
+                    <h4>{findData?.['ENG_NASLOV:_ENG_PLAN_TURE']}</h4>
                   </div>
 
                   <div className={styles.articleInfo}>
                     <ul>
-                      {findData?.Sadržaj_bulleti.split('\n').map((str, index) => (
+                      {findData?.ENG_Sadržaj_bulleti.split('\n').map((str, index) => (
                         <li key={index}>{str}</li>
                       ))}
                     </ul>

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import React from 'react';
-
 import svgAppLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
 const navLinksOne: string[] = ['O nama', 'Aktivnosti', 'Kontakt'];
@@ -14,7 +13,7 @@ const AppHeader = () => {
     return (
       <div className={styles.navLeft}>
         {navLinksOne.map((link) => (
-          <Link key={link} href={'/aktivnosti'}>
+          <Link key={link} href={'#'}>
             {link}
           </Link>
         ))}

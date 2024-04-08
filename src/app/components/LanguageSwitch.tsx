@@ -2,31 +2,40 @@
 
 import React from 'react';
 import styles from '../styles/langSwitcher.module.scss';
-const LanguageSwitch = () => {
-  const [isActiveLang, setIsActiveLang] = React.useState<Record<string, boolean>>({
-    croatianLang: true,
-    englishLang: false,
-  });
+import { useAppContext } from '../contexts/store';
+import { ActionTypes } from '../types/actionTypes';
+import { UserLanguage } from '../types/appState';
+import { usePathname, useRouter } from 'next/navigation';
 
-  const handleLangSwitch = (languageStr: string) =>
-    setIsActiveLang((prev) => {
-      const newState = Object.fromEntries(Object.keys(prev).map((key) => [key, false]));
-      newState[languageStr] = true;
-      return newState;
-    });
+const LanguageSwitch = () => {
+  const {
+    state: { userLang },
+    dispatch,
+  } = useAppContext();
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleLangSwitch = (payloadF: UserLanguage) => {
+    dispatch({ type: ActionTypes.SET_USER_LANG, payload: payloadF });
+
+    if (pathname !== '/') {
+      router.push('/');
+    }
+  };
 
   return (
     <div className={styles.langSwitcherParent}>
       <div
-        onClick={() => handleLangSwitch('croatianLang')}
-        className={`${isActiveLang.croatianLang ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
+        onClick={() => handleLangSwitch(UserLanguage.hr)}
+        className={`${userLang === 'hr' ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
       >
         HR
       </div>
       <div className={styles.separator}>/</div>
       <div
-        onClick={() => handleLangSwitch('englishLang')}
-        className={`${isActiveLang.englishLang ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
+        onClick={() => handleLangSwitch(UserLanguage.en)}
+        className={`${userLang === 'en' ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
       >
         ENG
       </div>

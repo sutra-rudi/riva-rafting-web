@@ -4,7 +4,7 @@ import './globals.css';
 import { Providers } from './providers';
 import '@splidejs/react-splide/css';
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
-
+import { GlobalContextProvider } from './contexts/store';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -35,7 +35,9 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
-        <Providers>{children}</Providers>
+        <GlobalContextProvider>
+          <Providers>{children}</Providers>
+        </GlobalContextProvider>
       </body>
     </html>
   );

@@ -1,9 +1,12 @@
+'use client';
+
 import Image, { StaticImageData } from 'next/image';
 import React from 'react';
 import styles from '../styles/promoSekcijaJedan.module.scss';
 import arrowIcon from '../img/STRELICA-DESNO-ALT-NOVA.svg';
 import locationIcon from '../img/lokacija-ikonica.svg';
 import Link from 'next/link';
+import { useAppContext } from '../contexts/store';
 interface RaftingCardProps {
   title: string;
   location: string;
@@ -14,10 +17,12 @@ interface RaftingCardProps {
 
 const RaftingCard = (props: RaftingCardProps) => {
   const { title, location, imageUrl, delay } = props;
-
+  const {
+    state: { userLang },
+  } = useAppContext();
   return (
     <div style={{ animationDelay: delay ? `${delay}s` : '0' }} className={styles.raftingCard}>
-      <Link href={`/aktivnosti/${props.url}`}>
+      <Link href={`${userLang === 'hr' ? '/aktivnosti/' : '/activities/'}${props.url}`}>
         <div className={styles.imageContainer}>
           <p className={styles.cardLocation}>
             <span>
