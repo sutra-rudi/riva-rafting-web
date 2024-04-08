@@ -14,7 +14,7 @@ export default async function Home() {
   const PogledajVideoLazy = dynamic(() => import('./sections/PogledajVideo'), { ssr: false });
   const OnamaSekcijaLazy = dynamic(() => import('./sections/OnamaSekcija'), { ssr: false });
   const TripAdvisorSekcijaLazy = dynamic(() => import('./sections/TripAdvisorSekcija'), { ssr: false });
-  const NajpopularnijeTureLazy = dynamic(() => import('./sections/NajpopularnijeTure'), { ssr: false });
+  // const NajpopularnijeTureLazy = dynamic(() => import('./sections/NajpopularnijeTure'), { ssr: false });
   const FAQsectionLazy = dynamic(() => import('./sections/FAQsection'), { ssr: false });
   const GallerySectionLazy = dynamic(() => import('./sections/GallerySection'), { ssr: false });
 
@@ -29,7 +29,7 @@ export default async function Home() {
         <PogledajVideoLazy />
         <OnamaSekcijaLazy />
         <TripAdvisorSekcijaLazy />
-        <NajpopularnijeTureLazy isLanding />
+        {/* <NajpopularnijeTureLazy isLanding /> */}
         <DodatneInformacije isLanding />
         <FAQsectionLazy />
         <GallerySectionLazy />

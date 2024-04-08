@@ -165,11 +165,11 @@
     }
 
     @media only screen and (max-width: $desktops) {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     @media only screen and (max-width: $tablets) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
 
     @media only screen and (max-width: $phones) {
@@ -204,9 +204,9 @@
       @media only screen and (max-width: $phones) {
         grid-template-columns: repeat(2, 1fr);
 
-        &:nth-child(odd) .imageContainer {
-          order: 2;
-        }
+        // &:nth-child(odd) .imageContainer {
+        //   order: 2;
+        // }
 
         &:nth-child(even) .raftingCartInteractiveOverlay {
           // background: $zelenaTamna;
@@ -260,6 +260,10 @@
           top: 8%;
           left: 8%;
           z-index: 2;
+
+          @media only screen and (max-width: $phones) {
+            display: none;
+          }
         }
 
         @media only screen and (max-width: $desktops) {

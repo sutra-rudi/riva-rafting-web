@@ -8,7 +8,13 @@ import PaperDividTop from '../components/PaperDividTop';
 import Image from 'next/image';
 import pingPongPoster from '../img/ping-pong-poster.jpg';
 import Loading from '../loading';
-import AppButton from '../components/AppButton';
+import localFont from 'next/font/local';
+import { useAppContext } from '../contexts/store';
+// import AppButton from '../components/AppButton';
+
+const RecoletaSemiBold = localFont({
+  src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
+});
 const TureSekcija = () => {
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
@@ -20,6 +26,18 @@ const TureSekcija = () => {
       setIsReady(true);
     }
   }, [isReady]);
+
+  const {
+    state: { userLang },
+  } = useAppContext();
+
+  const headline_hr = 'Netaknuta Priroda';
+  const content_hr =
+    'Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine Velebita. Doživite nezaboravne trenutke usred netaknute prirode.';
+  const headline_eng = 'Untouched Nature';
+  const content_eng =
+    'Explore unlimited adventures, from exciting rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
+
   return (
     <section className={styles.tureSekcija}>
       <PaperDividTop />
@@ -29,8 +47,13 @@ const TureSekcija = () => {
         </div>
       </div>
       <div className={styles.playerContainer}>
-        <div className={styles.buttonOnVideo}>
-          <AppButton content='REZERVIRAJTE SVOJ TERMIN' />
+        <div className={styles.gallerySectionTextOverlay}>
+          <div className={styles.gallerySectionTextOverlayContent}>
+            <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? headline_hr : headline_eng}</h2>
+            <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
+          </div>
+
+          {/* <AppButton content='REZERVIRAJTE SVOJ TERMIN' /> */}
         </div>
         <ReactPlayer
           url={'/novi-ping-pong.mp4'}

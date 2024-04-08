@@ -16,11 +16,23 @@ import localFont from 'next/font/local';
 // @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import { useAppContext } from '../contexts/store';
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
 });
 
 const GallerySection = () => {
+  const {
+    state: { userLang },
+  } = useAppContext();
+
+  const title_hr = 'RIJEKA ZRMANJA';
+  const content_hr =
+    'Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.';
+  const title_eng = 'ZRMANJA RIVER';
+  const content_eng =
+    'With its deep canyon cutting through spectacular limestone cliffs, it offers unforgettable views of pure, emerald-green water winding through the wilderness of Northern Dalmatia.';
+
   const background: BannerLayer = {
     image: `${paralOne.src}`,
     translateY: [0, 60],
@@ -29,13 +41,17 @@ const GallerySection = () => {
 
   const splideOptions: any = {
     perPage: 3,
-    type: 'loop',
-    // drag: 'free',
-    // snap: true,
-    // gap: '1rem',
-    // focus: 'center',
+    type: 'slide',
+    drag: 'free',
+    snap: true,
+    gap: '0.5rem',
+    focus: 'center',
     pagination: false,
     arrows: false,
+    autoplay: true,
+    interval: 2000,
+    rewind: true,
+
     breakpoints: {
       640: { perPage: 1.2 },
       960: { perPage: 2.2 },
@@ -49,11 +65,8 @@ const GallerySection = () => {
     children: (
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
-          <h2 className={RecoletaSemiBold.className}>RIJEKA ZRMANJA</h2>
-          <h4>
-            Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore
-            čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.
-          </h4>
+          <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? title_hr : title_eng}</h2>
+          <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
         </div>
       </div>
     ),

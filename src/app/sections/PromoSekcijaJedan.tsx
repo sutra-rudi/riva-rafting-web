@@ -58,14 +58,14 @@ const PromoSekcijaJedan = () => {
     [userLang]
   );
 
-  const headline_en =
-    'Explore unlimited adventures, from thrilling rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
+  // const headline_en =
+  //   'Explore unlimited adventures, from thrilling rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
 
-  const headline_hr =
-    'Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine Velebita. Doživite nezaboravne trenutke usred netaknute prirode.';
+  // const headline_hr =
+  //   'Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine Velebita. Doživite nezaboravne trenutke usred netaknute prirode.';
 
   const secondHead_hr = 'ODABERI SVOJU AVANTURU';
-  const secondHead_en = 'Choose your adventure';
+  const secondHead_en = 'CHOOSE YOUR ADVENTURE';
 
   const promoSekcijaDemoPodaci = [
     {
@@ -175,13 +175,13 @@ const PromoSekcijaJedan = () => {
       <PaperDividBot />
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
-        <h2 className={styles.promoSekcijaHeader}>{langCheck(headline_hr, headline_en)}</h2>
+        {/* <h2 className={styles.promoSekcijaHeader}>{langCheck(headline_hr, headline_en)}</h2> */}
         <h2 className={styles.promoSekcijaHeaderMobile}>{langCheck(secondHead_hr, secondHead_en)}</h2>
 
         {/* <TaxonomyButtons /> */}
         <TaxonomyCardContainer />
 
-        <h3 className={styles.mobileHeadingPromo}>{langCheck(headline_hr, headline_en)}</h3>
+        {/* <h3 className={styles.mobileHeadingPromo}>{langCheck(headline_hr, headline_en)}</h3> */}
       </div>
       {/* MAIN CONT END */}
     </section>

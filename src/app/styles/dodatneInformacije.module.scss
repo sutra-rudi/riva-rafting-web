@@ -2,6 +2,7 @@
   width: 100%;
   position: relative;
   margin: 47rem auto 0 auto;
+  margin: 0 auto;
 
   @media only screen and (max-width: $desktops) {
     max-width: $masterContainerWidth;
@@ -101,10 +102,10 @@
         // border-radius: 0 0 29px 0;
         padding: 1rem;
 
-        img {
-          // border-radius: 0 0 29px 0;
-          // padding: 1rem;
-        }
+        // img {
+        //   // border-radius: 0 0 29px 0;
+        //   // padding: 1rem;
+        // }
       }
 
       @media only screen and (max-width: $phones) {
