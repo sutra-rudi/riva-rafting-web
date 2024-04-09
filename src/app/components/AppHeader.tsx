@@ -71,7 +71,9 @@ const AppHeader = () => {
         </div>
         <div className={styles.navInnerParent}>
           <AppButton isNav content='BOOK YOUR ADVENTURE' />
-          <LanguageSwitch />
+          <div className={styles.navInnerParentLang}>
+            <LanguageSwitch />
+          </div>
           <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
         </div>
       </div>

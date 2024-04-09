@@ -38,7 +38,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -51,7 +51,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -64,7 +64,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -77,7 +77,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -93,7 +93,7 @@ const FAQsection = () => {
                   What harsh truths do you prefer to ignore?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim
                   minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.
@@ -106,7 +106,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -119,7 +119,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -132,7 +132,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.
@@ -145,7 +145,7 @@ const FAQsection = () => {
                   Is free will real or just an illusion?
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
                   In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
                   laboris sed adipisicing eu esse duis nulla non.

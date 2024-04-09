@@ -19,6 +19,17 @@ body {
   /* overflow: scroll; */
 }
 
+@media only screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+    width: 0px;
+    background: transparent;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+}
+
 img,
 picture,
 video,
