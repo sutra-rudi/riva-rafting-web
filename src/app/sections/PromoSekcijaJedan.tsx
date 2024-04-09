@@ -64,8 +64,8 @@ const PromoSekcijaJedan = () => {
   // const headline_hr =
   //   'Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine Velebita. Doživite nezaboravne trenutke usred netaknute prirode.';
 
-  const secondHead_hr = 'ODABERI SVOJU AVANTURU';
-  const secondHead_en = 'CHOOSE YOUR ADVENTURE';
+  const secondHead_hr = 'Odaberi svoju avanturu';
+  const secondHead_en = 'Choose your adventure';
 
   const promoSekcijaDemoPodaci = [
     {

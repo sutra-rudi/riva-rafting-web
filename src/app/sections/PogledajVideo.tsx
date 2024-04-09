@@ -9,6 +9,8 @@ import localFont from 'next/font/local';
 import videoKontrole from '../img/video-kontrole-custom.svg';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 
+import Lottie from 'lottie-web';
+
 import PaperDividTop from '../components/PaperDividTop';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
 import { useAppContext } from '../contexts/store';
@@ -18,6 +20,17 @@ const RecoletaBold = localFont({
 });
 
 const PogledajVideo = () => {
+  const containerRef = React.useRef();
+  // React.useEffect(() => {
+  //   Lottie.loadAnimation({
+  //     container: containerRef.current as any,
+  //     renderer: 'svg',
+  //     loop: true,
+  //     autoplay: true,
+  //     path: '/animation.json',
+  //   });
+  // }, []);
+
   const {
     state: { userLang },
   } = useAppContext();

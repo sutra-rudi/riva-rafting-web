@@ -55,9 +55,11 @@
         gap: 1rem;
         @media only screen and (max-width: $tablets) {
           padding: 1.5rem 3rem;
+          gap: 0.8rem;
         }
         @media only screen and (max-width: $phones) {
           padding: 1.5rem 2rem;
+          gap: 0.6rem;
         }
         width: 100%;
         max-width: 777px;
@@ -66,8 +68,9 @@
           position: absolute;
           inset: 0;
           content: '';
-          width: 100%;
-          height: 100%;
+          width: 200%;
+          height: 200%;
+          left: -50%;
           // height: 200px;
           // background: rgba($color: #000000, $alpha: 0.2);
           background: url('../img/para-bg-text.svg');
@@ -83,9 +86,9 @@
       h2 {
         font-size: $heading2;
         z-index: 3;
-        @media only screen and (max-width: $tablets) {
-          font-size: $heading3;
-        }
+        // @media only screen and (max-width: $tablets) {
+        //   font-size: $heading3;
+        // }
         @media only screen and (max-width: $phones) {
           font-size: $mobileHeading2;
         }

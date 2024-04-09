@@ -120,10 +120,12 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
                         <span className={styles.boldSpan}>TRAJANJE:</span>
                         <span>{findData?.['TRAJANJE:']}</span>
                       </li>
-                      <li>
-                        <span className={styles.boldSpan}>DULJINA:</span>
-                        <span>{findData?.['DULJINA:']}</span>
-                      </li>
+                      {findData?.['DULJINA:'] !== '' && (
+                        <li>
+                          <span className={styles.boldSpan}>DULJINA:</span>
+                          <span>{findData?.['DULJINA:']}</span>
+                        </li>
+                      )}
                     </ul>
                   </div>
                 </div>

@@ -24,10 +24,13 @@
         place-items: center;
         grid-template-columns: repeat(1, 1fr);
         gap: 1rem;
+
         @media only screen and (max-width: $tablets) {
+          gap: 0.8rem;
           padding: 1.5rem 3rem;
         }
         @media only screen and (max-width: $phones) {
+          gap: 0.6rem;
           padding: 1.5rem 2rem;
         }
         width: 100%;
@@ -38,8 +41,11 @@
           position: absolute;
           inset: 0;
           content: '';
-          width: 100%;
-          height: 100%;
+          width: 200%;
+          height: 200%;
+          // outline: 10px solid $zelenaGlavna;
+          left: -50%;
+
           // height: 200px;
           // background: rgba($color: #000000, $alpha: 0.2);
           background: url('../img/para-bg-text.svg');
