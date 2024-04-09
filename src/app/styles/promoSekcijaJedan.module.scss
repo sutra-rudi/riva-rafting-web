@@ -170,10 +170,12 @@
 
     @media only screen and (max-width: $tablets) {
       grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     @media only screen and (max-width: $phones) {
       grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
     @media only screen and (max-width: $smPhones) {

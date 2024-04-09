@@ -3,6 +3,14 @@
   outline: 0;
   border-radius: 6px;
   padding: 0.9rem 1rem;
+
+  @media screen and (max-width: $tablets) {
+    padding: 0.7rem 1.1rem;
+  }
+
+  @media screen and (max-width: $phones) {
+    padding: 0.5rem 0.9rem;
+  }
   cursor: pointer;
   background: $zelenaGlavna;
   transition: all 250ms ease-out;
@@ -13,6 +21,8 @@
   position: relative;
   display: block;
   overflow: hidden;
+
+  max-width: max-content;
 
   &::before {
     content: '';
@@ -89,6 +99,14 @@
 .aboutButton {
   width: 231px;
   padding: 1em;
+
+  @media screen and (max-width: $tablets) {
+    padding: 0.7rem 0.9rem;
+  }
+
+  @media screen and (max-width: $phones) {
+    padding: 0.5rem 0.7rem;
+  }
 }
 
 .secondaryButton {
