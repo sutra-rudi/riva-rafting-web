@@ -17,11 +17,23 @@ import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
 import { Spin as Hamburger } from 'hamburger-react';
+import instaIcon from '../img/MOBILE-MENU-SOCIAL-2.svg';
+import facebookIcon from '../img/MOBILE-MENU-SOCIAL-1.svg';
+import teleIcon from '../img/MOBILE-MENU-SOCIAL-3.svg';
+
+import mobilePapir from '../img/MOBILE-PAPIR.svg';
+
 const AppHeader = () => {
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
 
   const handleNavControl = () => {
-    setIsNavOpen(!isNavOpen);
+    if (!isNavOpen) {
+      document.documentElement.classList.add('overflow-hidden');
+      setIsNavOpen(true);
+    } else {
+      document.documentElement.classList.remove('overflow-hidden');
+      setIsNavOpen(false);
+    }
   };
 
   const HeaderBaseOne = () => {
@@ -85,28 +97,45 @@ const AppHeader = () => {
           isNavOpen ? `${styles.mobileNavParent}` : `${styles.mobileNavParent} ${styles.mobileNavParentClosed}`
         }
       >
-        <div className={styles.langSwitchBlock}>
-          <LanguageSwitch />
-        </div>
+        <div className={styles.mobileNavParentInner}>
+          <div className={styles.langSwitchBlock}>
+            <LanguageSwitch />
+          </div>
 
-        <div className={styles.mobileBlock}>
-          {navLinksOne.map((link, index) => (
-            <Link key={link.text} href={link.href}>
-              {link.text}
-            </Link>
-          ))}
-        </div>
+          <div className={styles.mobileBlock}>
+            {navLinksOne.map((link, index) => (
+              <Link key={link.text} href={link.href}>
+                {link.text}
+              </Link>
+            ))}
+          </div>
 
-        <div className={styles.mobileBlockSpace}></div>
+          <div className={styles.mobileBlockSpace}></div>
 
-        <div className={styles.mobileBlock}>
-          {navLinksTwo.map((link, index) => (
-            <Link key={link.text} href={link.href}>
-              {link.text}
-            </Link>
-          ))}
+          <div className={styles.mobileBlock}>
+            {navLinksTwo.map((link, index) => (
+              <Link key={link.text} href={link.href}>
+                {link.text}
+              </Link>
+            ))}
+          </div>
+
+          <div className={styles.socialBlock}>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={facebookIcon} />
+            </div>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={instaIcon} />
+            </div>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={teleIcon} />
+            </div>
+          </div>
+
+          <Image className={styles.mobilePapir} alt='' src={mobilePapir} />
         </div>
       </div>
+
       {/* MOBILE */}
     </nav>
   );

@@ -168,7 +168,7 @@
 }
 .mobileNavParent {
   position: absolute;
-  overflow: auto;
+  // overflow: auto;
   width: 70%;
   height: 100%;
   background: #fff;
@@ -178,18 +178,30 @@
   top: 0;
   right: 0;
   transition: all 250ms ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  place-items: center;
-  gap: 4rem;
+
+  .mobileNavParentInner {
+    width: 100%;
+    height: 100%;
+    // padding: 10rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    place-items: center;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .langSwitchBlock {
+    position: absolute;
+    top: 3.5rem;
+    left: 1.5rem;
+  }
 
   .mobileBlock {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
     place-items: center;
-    outline: 1px solid red;
 
     a {
       text-decoration: none;
@@ -200,14 +212,44 @@
     }
   }
 
+  .socialBlock {
+    display: flex;
+    place-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    .socialBlockImage {
+      outline: 1px solid $plavaGlavna;
+      border-radius: 999px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      place-items: center;
+      justify-content: center;
+
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+
   .mobileBlockSpace {
     width: 25%;
     height: 0.15rem;
     background: $plavaGlavna;
     opacity: 0.25;
   }
+
+  .mobilePapir {
+    position: absolute;
+    width: 50px;
+    height: 100%;
+    left: -50px;
+    top: 0;
+    z-index: 10;
+  }
 }
 
 .mobileNavParentClosed {
-  transform: translateX(100%);
+  transform: translateX(115%);
 }
