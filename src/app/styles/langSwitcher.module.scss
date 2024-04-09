@@ -9,10 +9,6 @@
   transition: all 350ms ease;
   place-items: center;
 
-  @media screen and (max-width: $smPhones) {
-    display: none;
-  }
-
   .active {
     // background: $zelenaGlavna;
     // color: $svijetloSiva;

@@ -59,3 +59,17 @@ h6 {
 .splide__slide.is-active {
   border: none !important;
 }
+
+.hamburger-react {
+  z-index: 10;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+@media only screen and (min-width: 1300px) {
+  .hamburger-react {
+    display: none;
+  }
+}

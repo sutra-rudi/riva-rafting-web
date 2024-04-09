@@ -1,20 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 import React from 'react';
 import svgAppLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
-const navLinksOne: string[] = ['O nama', 'Aktivnosti', 'Kontakt'];
-const navLinksTwo: string[] = ['Mićanovi Dvori', 'Zrmanja Camping Vilagge'];
+const navLinksOne = [
+  { text: 'O nama', href: '/o-nama' },
+  { text: 'Aktivnosti', href: '/aktivnosti' },
+  { text: 'Kontakt', href: '/kontakt' },
+];
+const navLinksTwo = [
+  { text: 'Mićanovi Dvori', href: '/' },
+  { text: 'Zrmanja Camping Vilagge', href: '/' },
+];
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
-
+import { Spin as Hamburger } from 'hamburger-react';
 const AppHeader = () => {
+  const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
+
+  const handleNavControl = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   const HeaderBaseOne = () => {
     return (
       <div className={styles.navLeft}>
         {navLinksOne.map((link) => (
-          <Link key={link} href={'#'}>
-            {link}
+          <Link key={link.text} href={link.href}>
+            {link.text}
           </Link>
         ))}
       </div>
@@ -25,8 +40,8 @@ const AppHeader = () => {
     return (
       <div className={styles.navRight}>
         {navLinksTwo.map((link) => (
-          <Link key={link} href={'#'}>
-            {link}
+          <Link key={link.text} href={link.href}>
+            {link.text}
           </Link>
         ))}
       </div>
@@ -57,13 +72,40 @@ const AppHeader = () => {
         <div className={styles.navInnerParent}>
           <AppButton isNav content='BOOK YOUR ADVENTURE' />
           <LanguageSwitch />
-          <div className={styles.mobileButtonTemp}>
-            <div className=''></div>
-            <div className=''></div>
-            <div className=''></div>
-          </div>
+          <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
         </div>
       </div>
+
+      {/* MOBILE */}
+
+      <div
+        className={
+          isNavOpen ? `${styles.mobileNavParent}` : `${styles.mobileNavParent} ${styles.mobileNavParentClosed}`
+        }
+      >
+        <div className={styles.langSwitchBlock}>
+          <LanguageSwitch />
+        </div>
+
+        <div className={styles.mobileBlock}>
+          {navLinksOne.map((link, index) => (
+            <Link key={link.text} href={link.href}>
+              {link.text}
+            </Link>
+          ))}
+        </div>
+
+        <div className={styles.mobileBlockSpace}></div>
+
+        <div className={styles.mobileBlock}>
+          {navLinksTwo.map((link, index) => (
+            <Link key={link.text} href={link.href}>
+              {link.text}
+            </Link>
+          ))}
+        </div>
+      </div>
+      {/* MOBILE */}
     </nav>
   );
 };
