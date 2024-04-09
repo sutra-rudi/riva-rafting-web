@@ -100,26 +100,36 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
                   <div className={styles.articleInfo}>
                     <ul>
                       <li>
-                        DESTINATION: <span>{findData?.['ENG_DESTINACIJA:']}</span>
+                        <span className={styles.boldSpan}>DESTINATION:</span>
+                        <span>{findData?.['ENG_DESTINACIJA:']}</span>
                       </li>
                       <li>
-                        PRICE: <span>{findData?.['ENG_CIJENA:']}</span>
+                        <span className={styles.boldSpan}>PRICE:</span>
+                        <span>{findData?.['ENG_CIJENA:']}</span>
                       </li>
                       <li>
-                        ACTIVITY: <span>{findData?.['ENG_AKTIVNOST:']}</span>
+                        <span className={styles.boldSpan}>ACTIVITY:</span>
+                        <span>{findData?.['ENG_AKTIVNOST:']}</span>
                       </li>
                       <li>
-                        MINIMUM AGE: <span>{findData?.['ENG_MINIMALNA_DOB:']}</span>
+                        <span className={styles.boldSpan}>MINIMUM AGE:</span>
+                        <span>{findData?.['ENG_MINIMALNA_DOB:']}</span>
                       </li>
                       <li>
-                        DIFFICULTY: <span>{findData?.['ENG_ZAHTJEVNOST:']}</span>
+                        <span className={styles.boldSpan}>DIFFICULTY:</span>
+                        <span>{findData?.['ENG_ZAHTJEVNOST:']}</span>
                       </li>
                       <li>
-                        GROUP SIZE: <span>{findData?.['ENG_VELIČINA_GRUPE:']}</span>
+                        <span className={styles.boldSpan}>GROUP SIZE:</span>
+                        <span>{findData?.['ENG_VELIČINA_GRUPE:']}</span>
                       </li>
-                      <li>DURATION: {findData?.['ENG_TRAJANJE:']}</li>
                       <li>
-                        LENGTH: <span>{findData?.['ENG_DULJINA:']}</span>
+                        <span className={styles.boldSpan}>DURATION:</span>
+                        {findData?.['ENG_TRAJANJE:']}
+                      </li>
+                      <li>
+                        <span className={styles.boldSpan}>LENGTH:</span>
+                        <span>{findData?.['ENG_DULJINA:']}</span>
                       </li>
                     </ul>
                   </div>
@@ -145,12 +155,18 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
                   </div>
 
                   <div className={styles.articleInfo}>
-                    <p>OBAVEZNO:</p>
-                    <ul>{parseBulletPoints(findData?.OBAVEZNO as string)}</ul>
-                    <p>PO ŽELJI:</p>
-                    <ul>{parseBulletPoints(findData?.PO_ŽELJI as string)}</ul>
-                    <p>SAVJETUJEMO:</p>
-                    <ul>{parseBulletPoints(findData?.SAVJETUJEMO as string)}</ul>
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>OBAVEZNO:</p>
+                      <ul>{parseBulletPoints(findData?.OBAVEZNO as string)}</ul>
+                    </div>
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>PO ŽELJI:</p>
+                      <ul>{parseBulletPoints(findData?.PO_ŽELJI as string)}</ul>
+                    </div>
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>SAVJETUJEMO:</p>
+                      <ul>{parseBulletPoints(findData?.SAVJETUJEMO as string)}</ul>
+                    </div>
                   </div>
                 </div>
               </div>

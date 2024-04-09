@@ -30,7 +30,7 @@ const PogledajVideo = () => {
 
   const foreground: BannerLayer = {
     translateY: [0, 30],
-    scale: [1.25, 0.95],
+    scale: [2, 0.8],
     opacity: [1, 0.1],
     shouldAlwaysCompleteAnimation: true,
     children: (

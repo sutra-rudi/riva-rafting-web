@@ -219,23 +219,22 @@
 
         .articleInfo {
           padding: 1.3rem 0 1.3rem 4rem;
+          display: grid;
+          gap: 1.25rem;
+          grid-template-columns: repeat(1, 1fr);
+          place-items: start;
 
           @media only screen and (max-width: $tablets) {
-            // display: none;
             padding: 1.3rem 0 1.3rem 3rem;
           }
 
           @media only screen and (max-width: $phones) {
-            // display: none;
             padding: 1.3rem 0 1.3rem 2.1rem;
           }
 
-          p {
-            margin: 0.5rem 0;
-          }
-
-          li + li {
-            margin-top: 0.5rem;
+          .boldSpan {
+            font-weight: 500;
+            margin-right: 0.25rem;
           }
 
           p {
@@ -243,12 +242,24 @@
             line-height: 130%;
             color: $tamna;
             font-weight: 500;
+            margin-left: -0.75rem;
+          }
+
+          ul {
+            padding: 0 0 0 0.25rem;
           }
 
           li {
             font-size: 1.1rem;
             line-height: 130%;
             color: $tamna;
+            margin: 0.25rem 0;
+          }
+
+          .articleInfoWithHeading {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0.5rem;
           }
         }
       }
