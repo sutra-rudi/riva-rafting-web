@@ -2,7 +2,11 @@
   width: 100%;
   position: relative;
   z-index: 7;
-  padding: 0 0 4em 0;
+  padding: 0 0 2.5em 0;
+
+  @media only screen and (max-width: $tablets) {
+    padding: 0;
+  }
 
   .pogledajVideoGradient {
     height: 200px;

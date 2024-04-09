@@ -50,20 +50,32 @@
     place-items: center;
     gap: 3rem;
 
+    @media only screen and (max-width: $desktops) {
+      gap: 2rem;
+    }
+
+    @media only screen and (max-width: $tablets) {
+      gap: 1rem;
+    }
+
+    @media only screen and (max-width: $phones) {
+      gap: 0.5rem;
+    }
+
     .accordion {
       max-width: 547px;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       place-items: stretch;
-      gap: 1rem;
+      gap: 0.5rem;
 
       .accordionItem {
         background: transparent;
         border: none;
         outline: none;
 
-        padding: 0 0 1rem 0;
+        padding: 0 0 0.5rem 0;
       }
 
       .accordionItemHeading {
@@ -91,7 +103,7 @@
         line-height: $browserProred;
         color: $tamna;
         line-height: 120%;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         position: relative;
         display: flex;
         place-items: center;
@@ -145,7 +157,7 @@
         padding: 0;
 
         p {
-          margin-top: 1rem;
+          margin-top: 0.5rem;
           color: $tamna;
           font-size: $baseFontSize;
           padding: 0 0 0 2.7rem;
