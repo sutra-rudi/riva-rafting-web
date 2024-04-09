@@ -90,30 +90,39 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
               <div className={styles.articleDetails}>
                 <div className={styles.articleBlock}>
                   <h4 className={styles.articleBlockHeading}>{findData?.OSNOVNE_INFORMACIJE_O_TURI}</h4>
-
                   <div className={styles.articleInfo}>
                     <ul>
                       <li>
-                        DESTINACIJA: <span>{findData?.['DESTINACIJA:']}</span>
+                        <span className={styles.boldSpan}>DESTINACIJA:</span>
+                        <span>{findData?.['DESTINACIJA:']}</span>
                       </li>
                       <li>
-                        CIJENA: <span>{findData?.['CIJENA:']}</span>
+                        <span className={styles.boldSpan}>CIJENA:</span>
+                        <span>{findData?.['CIJENA:']}</span>
                       </li>
                       <li>
-                        AKTIVNOST: <span>{findData?.['AKTIVNOST:']}</span>
+                        <span className={styles.boldSpan}>AKTIVNOST:</span>
+                        <span>{findData?.['AKTIVNOST:']}</span>
                       </li>
                       <li>
-                        MINIMALNA DOB: <span>{findData?.['MINIMALNA_DOB:']}</span>
+                        <span className={styles.boldSpan}>MINIMALNA DOB:</span>
+                        <span>{findData?.['MINIMALNA_DOB:']}</span>
                       </li>
                       <li>
-                        ZAHTJEVNOST: <span>{findData?.['ZAHTJEVNOST:']}</span>
+                        <span className={styles.boldSpan}>ZAHTJEVNOST:</span>
+                        <span>{findData?.['ZAHTJEVNOST:']}</span>
                       </li>
                       <li>
-                        VELIČINA GRUPE: <span>{findData?.['VELIČINA_GRUPE:']}</span>
+                        <span className={styles.boldSpan}>VELIČINA GRUPE:</span>
+                        <span>{findData?.['VELIČINA_GRUPE:']}</span>
                       </li>
-                      <li>TRAJANJE: {findData?.['TRAJANJE:']}</li>
                       <li>
-                        DULJINA: <span>{findData?.['DULJINA:']}</span>
+                        <span className={styles.boldSpan}>TRAJANJE:</span>
+                        <span>{findData?.['TRAJANJE:']}</span>
+                      </li>
+                      <li>
+                        <span className={styles.boldSpan}>DULJINA:</span>
+                        <span>{findData?.['DULJINA:']}</span>
                       </li>
                     </ul>
                   </div>
@@ -139,12 +148,20 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
                   </div>
 
                   <div className={styles.articleInfo}>
-                    <p>OBAVEZNO:</p>
-                    <ul>{parseBulletPoints(findData?.OBAVEZNO as string)}</ul>
-                    <p>PO ŽELJI:</p>
-                    <ul>{parseBulletPoints(findData?.PO_ŽELJI as string)}</ul>
-                    <p>SAVJETUJEMO:</p>
-                    <ul>{parseBulletPoints(findData?.SAVJETUJEMO as string)}</ul>
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>OBAVEZNO:</p>
+                      <ul>{parseBulletPoints(findData?.OBAVEZNO as string)}</ul>
+                    </div>
+
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>PO ŽELJI:</p>
+                      <ul>{parseBulletPoints(findData?.PO_ŽELJI as string)}</ul>
+                    </div>
+
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>SAVJETUJEMO:</p>
+                      <ul>{parseBulletPoints(findData?.SAVJETUJEMO as string)}</ul>
+                    </div>
                   </div>
                 </div>
               </div>
