@@ -52,8 +52,6 @@ const TureSekcija = () => {
             <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? headline_hr : headline_eng}</h2>
             <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
           </div>
-
-          {/* <AppButton content='REZERVIRAJTE SVOJ TERMIN' /> */}
         </div>
         <ReactPlayer
           url={'/novi-ping-pong.mp4'}

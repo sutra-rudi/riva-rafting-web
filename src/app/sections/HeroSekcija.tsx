@@ -91,8 +91,8 @@ const HeroSekcija = () => {
   };
 
   const headline: BannerLayer = {
-    translateY: [0, 10],
-    scale: [1, 0.7],
+    translateY: [0, 15],
+    scale: [1.25, 0.7],
     opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,
     children: (

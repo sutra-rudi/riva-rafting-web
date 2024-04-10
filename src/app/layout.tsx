@@ -23,16 +23,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'Riva Rafting',
-    // url: 'https://www.example.com',
     description: 'Experience thrilling rafting adventures in Croatia with Riva Rafting.',
-    // site_name: 'Riva Rafting',
     siteName: 'Riva Rafting',
-    // images: [
-    //   {
-    //     url: 'https://www.example.com/images/og-image.jpg',
-    //     alt: 'Riva Rafting - Rafting Adventures in Croatia',
-    //   },
-    // ],
   },
   description:
     'Experience thrilling rafting adventures in Croatia with Riva Rafting. Discover the beauty of Croatian rivers and nature while enjoying adrenaline-pumping rafting experiences.',

@@ -9,7 +9,7 @@ import localFont from 'next/font/local';
 import videoKontrole from '../img/video-kontrole-custom.svg';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 
-// import Lottie from 'lottie-web';
+import Lottie from 'lottie-react';
 
 import PaperDividTop from '../components/PaperDividTop';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';
@@ -19,15 +19,17 @@ const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
 
+import lottieAnima from '../img/videoPulse.json';
+
 const PogledajVideo = () => {
-  const containerRef = React.useRef();
+  // const containerRef = React.useRef(null);
   // React.useEffect(() => {
   //   Lottie.loadAnimation({
-  //     container: containerRef.current as any,
+  //     container: containerRef.current,
   //     renderer: 'svg',
   //     loop: true,
   //     autoplay: true,
-  //     path: '/animation.json',
+  //     path: '../../../public/videoPulse.json',
   //   });
   // }, []);
 
@@ -42,7 +44,7 @@ const PogledajVideo = () => {
   };
 
   const foreground: BannerLayer = {
-    translateY: [0, 30],
+    translateY: [0, 15],
     scale: [2, 0.8],
     opacity: [1, 0.1],
     shouldAlwaysCompleteAnimation: true,
@@ -60,6 +62,7 @@ const PogledajVideo = () => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.pogledajControls}>
+        <Lottie animationData={lottieAnima} className={styles.lottieCustom} />
         <Image src={videoKontrole} alt='controls' width={131} height={131} />
         <h1 className={`${styles.pogledajKontroleTekstMaster} ${RecoletaBold.className}`}>
           {userLang === 'hr' ? 'Pogledaj video' : 'Watch video'}
