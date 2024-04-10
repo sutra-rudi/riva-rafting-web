@@ -91,9 +91,9 @@ const HeroSekcija = () => {
   };
 
   const headline: BannerLayer = {
-    translateY: [0, 19],
-    scale: [1, 0.8],
-    opacity: [0.25, 0],
+    translateY: [0, 10],
+    scale: [1, 0.7],
+    opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroCtaHeaderBacksideWrapper}>

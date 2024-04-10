@@ -24,7 +24,11 @@ const AppButton = ({ content, isNav = false, isHero = false, isAbout = false, is
     ? `${styles.appButton} ${styles.secondaryButton}`
     : `${styles.appButton}`;
 
-  return <button className={buttonClassNames}>{content}</button>;
+  return (
+    <button className={buttonClassNames}>
+      <span>{content}</span>
+    </button>
+  );
 };
 
 export default AppButton;

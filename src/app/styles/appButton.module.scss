@@ -24,17 +24,32 @@
 
   max-width: max-content;
 
+  span {
+    z-index: 2;
+    position: relative;
+    transition: all 250ms ease-out;
+    // display: block;
+  }
+
+  &:hover {
+    span {
+      color: $zelenaGlavna;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;
-    top: 60px;
-    left: -5px;
-    width: 0px;
-    height: 0px;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 190px solid rgba(164, 205, 70, 0.25);
+    inset: 0;
+    transform: translateY(150%);
+    width: 100%;
+    height: 110%;
+    background: rgba(164, 205, 70, 0.75);
+    background: rgba($color: #fff, $alpha: 0.75);
     z-index: 1;
+    display: block;
+    border-radius: 6px;
+
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -47,35 +62,31 @@
   &::after {
     -webkit-transition-delay: 0.2s !important;
     transition-delay: 0.2s !important;
-
     content: '';
     position: absolute;
-    top: 60px;
-    left: -5px;
-    width: 0px;
-    height: 0px;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 190px solid rgba(127, 167, 35, 0.25);
+    inset: 0;
+    width: 100%;
+    height: 110%;
+    transform: translateY(150%);
+    background: rgba(127, 167, 35, 0.5);
+    background: rgba($color: #fff, $alpha: 0.5);
     z-index: 1;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s;
     transition-delay: 0s;
+    border-radius: 6px;
+    display: block;
   }
 
   &:hover {
     &::before {
-      opacity: 1;
-      -webkit-transform: translate(0px, -190px);
-      transform: translate(0px, -190px);
+      transform: translateY(0);
     }
 
     &::after {
-      opacity: 1;
-      -webkit-transform: translate(0px, -150px);
-      transform: translate(0px, -150px);
+      transform: translateY(0);
     }
   }
 }
@@ -89,6 +100,21 @@
 
   @media screen and (max-width: $tablets) {
     display: none;
+  }
+
+  &::before {
+    background: $svijetloSiva;
+    background: rgba(164, 205, 70, 0.75);
+  }
+  &::after {
+    background: $svijetloSiva;
+    background: rgba(127, 167, 35, 0.5);
+  }
+
+  &:hover {
+    span {
+      color: #fff;
+    }
   }
 }
 
@@ -113,69 +139,19 @@
   background: #fff;
   // outline: 1.5px solid $zelenaGlavna;
   color: $zelenaGlavna;
-}
 
-.SMN_effect-54 a {
-  color: rgba(255, 255, 255, 1);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  overflow: hidden;
-  /*custom*/
-  padding: 15px 60px;
-}
+  &::before {
+    background: $svijetloSiva;
+    background: rgba(164, 205, 70, 0.75);
+  }
+  &::after {
+    background: $svijetloSiva;
+    background: rgba(127, 167, 35, 0.5);
+  }
 
-.SMN_effect-54 a:before {
-  content: '';
-  position: absolute;
-  top: 60px;
-  left: -5px;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 190px solid rgba(255, 255, 255, 0.25);
-  z-index: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
-.SMN_effect-54 a:after {
-  -webkit-transition-delay: 0.2s !important;
-  transition-delay: 0.2s !important;
-}
-
-.SMN_effect-54 a:after {
-  content: '';
-  position: absolute;
-  top: 60px;
-  left: -5px;
-  width: 0;
-  height: 0;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  border-bottom: 190px solid rgba(255, 255, 255, 0.25);
-  z-index: 1;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  transition-delay: 0s;
-}
-
-.SMN_effect-54 a:hover:before {
-  opacity: 1;
-  -webkit-transform: translate(0px, -190px);
-  transform: translate(0px, -190px);
-}
-
-.SMN_effect-54 a:hover:after {
-  opacity: 1;
-  -webkit-transform: translate(0px, -150px);
-  transform: translate(0px, -150px);
+  &:hover {
+    span {
+      color: #fff;
+    }
+  }
 }

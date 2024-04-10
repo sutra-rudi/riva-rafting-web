@@ -36,6 +36,8 @@
     top: 50%;
     inset: 0;
 
+    padding: 0 1rem;
+
     .heroCtaHeaderBackside {
       font-size: $heading1;
       color: $svijetloSiva;
@@ -49,7 +51,6 @@
       @media only screen and (max-width: $desktops) {
         font-size: $mobileHeading1;
         line-height: $browserProred;
-        padding: 0 1rem;
       }
     }
   }
