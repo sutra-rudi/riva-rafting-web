@@ -34,11 +34,11 @@ const HeroSekcija = () => {
   const headline_en = 'Experience the beauty of Zrmanja with us!';
   const headline_hr = 'Doživite ljepote Zrmanje s nama!';
 
-  const btn_main_hr = 'Aktivnosti koje nudimo';
-  const btn_main_en = 'The activities we offer';
+  const btn_main_hr = 'Rezerviraj telefonski';
+  const btn_main_en = 'Book by phone';
 
-  const btn_second_hr = 'Rezervirajte svoj termin';
-  const btn_second_en = 'Book your appointment';
+  const btn_second_hr = 'Rezerviraj mailom';
+  const btn_second_en = 'Book by email';
 
   const langCheck = React.useCallback(
     (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),

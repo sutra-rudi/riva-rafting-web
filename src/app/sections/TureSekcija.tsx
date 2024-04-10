@@ -10,7 +10,7 @@ import pingPongPoster from '../img/ping-pong-poster.jpg';
 import Loading from '../loading';
 import localFont from 'next/font/local';
 import { useAppContext } from '../contexts/store';
-// import AppButton from '../components/AppButton';
+import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
@@ -38,6 +38,46 @@ const TureSekcija = () => {
   const content_eng =
     'Explore unlimited adventures, from exciting rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
 
+  const foreground: BannerLayer = {
+    translateY: [0, 40],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <div className={styles.gallerySectionTextOverlay}>
+        <div className={styles.gallerySectionTextOverlayContent}>
+          <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? headline_hr : headline_eng}</h2>
+          <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
+        </div>
+      </div>
+    ),
+  };
+
+  const background: BannerLayer = {
+    translateY: [0, 80],
+    shouldAlwaysCompleteAnimation: true,
+
+    children: (
+      <ReactPlayer
+        url={'/novi-ping-pong.mp4'}
+        loop
+        muted
+        volume={0}
+        width={'100%'}
+        height={'100%'}
+        playsinline
+        playing={isReady}
+        onReady={onReady}
+        fallback={<Loading />}
+        config={{
+          file: {
+            attributes: {
+              poster: pingPongPoster.src,
+            },
+          },
+        }}
+      />
+    ),
+  };
+
   return (
     <section className={styles.tureSekcija}>
       <PaperDividTop />
@@ -46,33 +86,7 @@ const TureSekcija = () => {
           <Image fill src={ferlaufTop} alt='ferlauf' />
         </div>
       </div>
-      <div className={styles.playerContainer}>
-        <div className={styles.gallerySectionTextOverlay}>
-          <div className={styles.gallerySectionTextOverlayContent}>
-            <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? headline_hr : headline_eng}</h2>
-            <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
-          </div>
-        </div>
-        <ReactPlayer
-          url={'/novi-ping-pong.mp4'}
-          loop
-          muted
-          volume={0}
-          width={'100%'}
-          height={'100%'}
-          playsinline
-          playing={isReady}
-          onReady={onReady}
-          fallback={<Loading />}
-          config={{
-            file: {
-              attributes: {
-                poster: pingPongPoster.src,
-              },
-            },
-          }}
-        />
-      </div>
+      <ParallaxBanner className={styles.playerContainer} layers={[background, foreground]} />
     </section>
   );
 };

@@ -22,17 +22,6 @@ const RecoletaBold = localFont({
 import lottieAnima from '../img/videoPulse.json';
 
 const PogledajVideo = () => {
-  // const containerRef = React.useRef(null);
-  // React.useEffect(() => {
-  //   Lottie.loadAnimation({
-  //     container: containerRef.current,
-  //     renderer: 'svg',
-  //     loop: true,
-  //     autoplay: true,
-  //     path: '../../../public/videoPulse.json',
-  //   });
-  // }, []);
-
   const {
     state: { userLang },
   } = useAppContext();

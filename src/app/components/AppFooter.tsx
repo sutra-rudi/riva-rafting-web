@@ -94,9 +94,9 @@ const AppFooter = () => {
           <div className={styles.footerBlock}>
             <p>Kontaktirajte nas</p>
             <div className={styles.contactStack}>
-              <a href=''>{`6 Obala hr. Čas. Senada Ž.,\nObrovac, Croatia`}</a>
-              <a href=''>info@riva-rafting-centar.hr</a>
-              <a href=''>023 689 920</a>
+              <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>{`6 Obala hr. Čas. Senada Ž.,\nObrovac, Croatia`}</a>
+              <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
+              <a href='tel:+38523689920'>023 689 920</a>
             </div>
           </div>
 
@@ -112,7 +112,9 @@ const AppFooter = () => {
               <div className={styles.disclaimerSigIn}>
                 <span>© 2024 All Rights Reserved</span>
                 <span>|</span>
-                <span>WEB DESIGN SUTRA.HR</span>
+                <span>
+                  <a href='https://www.sutra.hr/'>WEB DESIGN SUTRA.HR</a>
+                </span>
               </div>
             </div>
 
