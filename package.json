@@ -2,6 +2,9 @@
   "name": "riva-rafting",
   "version": "0.1.0",
   "private": true,
+  "browserslist": [
+  "cover 99.5%"
+],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
