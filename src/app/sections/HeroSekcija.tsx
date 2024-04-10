@@ -13,17 +13,9 @@ const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
 
+import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+
 const HeroSekcija = () => {
-  const [scrollPos, setScrollPos] = React.useState<number>(0);
-
-  React.useEffect(() => {
-    const updateClientScrollPostion = () => window.scrollY < 772 && setScrollPos(window.scrollY);
-
-    window && window.addEventListener('scroll', updateClientScrollPostion);
-
-    return () => window.removeEventListener('scroll', updateClientScrollPostion);
-  }, []);
-
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
 
@@ -53,10 +45,11 @@ const HeroSekcija = () => {
     [userLang]
   );
 
-  return (
-    <section className={styles.heroSekcija}>
-      <div className={styles.playerContainer}>
-        <PaperDividTop />
+  const background: BannerLayer = {
+    translateY: [0, 60],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <>
         <ReactPlayer
           ref={playerRef}
           url={'/novi-hero.mp4'}
@@ -77,26 +70,44 @@ const HeroSekcija = () => {
           playsinline
           fallback={<Loading />}
         />
-        <div className={styles.heroCtaKontejner}>
-          <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
+      </>
+    ),
+  };
 
-          <h1
-            style={{
-              letterSpacing: scrollPos > 0 ? `${scrollPos / 120}px` : '0',
-              transform: `translateY(${scrollPos / 20}px)`,
-              opacity: scrollPos < 250 ? `0.25` : `${1 - scrollPos / 500}`,
-            }}
-            className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}
-          >
-            {userLang === 'hr' ? headline_hr : headline_en}
-          </h1>
-
-          <div className={styles.heroCtaButtonKontejter}>
-            <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
-            <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary />
-          </div>
+  const foreground: BannerLayer = {
+    translateY: [0, 30],
+    // scale: [2, 0.8],
+    // opacity: [1, 0.1],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <div className={styles.heroCtaKontejner}>
+        <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
+        <div className={styles.heroCtaButtonKontejter}>
+          <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
+          <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary />
         </div>
       </div>
+    ),
+  };
+
+  const headline: BannerLayer = {
+    translateY: [0, 19],
+    scale: [1, 0.8],
+    opacity: [0.25, 0],
+    shouldAlwaysCompleteAnimation: true,
+    children: (
+      <div className={styles.heroCtaHeaderBacksideWrapper}>
+        <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
+          {langCheck(headline_hr, headline_en)}
+        </h1>
+      </div>
+    ),
+  };
+
+  return (
+    <section className={styles.heroSekcija}>
+      <PaperDividTop />
+      <ParallaxBanner className={styles.playerContainer} layers={[background, headline, foreground]} />
     </section>
   );
 };

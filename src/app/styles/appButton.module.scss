@@ -101,17 +101,17 @@
   padding: 1em;
 
   @media screen and (max-width: $tablets) {
-    padding: 0.7rem 0.9rem;
+    padding: 0.7rem 1.1rem;
   }
 
   @media screen and (max-width: $phones) {
-    padding: 0.5rem 0.7rem;
+    padding: 0.5rem 0.9rem;
   }
 }
 
 .secondaryButton {
   background: #fff;
-  outline: 1.5px solid $zelenaGlavna;
+  // outline: 1.5px solid $zelenaGlavna;
   color: $zelenaGlavna;
 }
 

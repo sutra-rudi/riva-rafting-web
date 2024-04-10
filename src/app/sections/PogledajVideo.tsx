@@ -9,7 +9,7 @@ import localFont from 'next/font/local';
 import videoKontrole from '../img/video-kontrole-custom.svg';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 
-import Lottie from 'lottie-web';
+// import Lottie from 'lottie-web';
 
 import PaperDividTop from '../components/PaperDividTop';
 import PaperDividBotAlt from '../components/PaperDivitBotAlt';

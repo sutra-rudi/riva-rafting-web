@@ -22,8 +22,35 @@
     overflow: hidden;
     display: flex;
     @media only screen and (max-width: $tablets) {
-      // max-height: 95dvh;
       max-height: auto;
+    }
+  }
+
+  .heroCtaHeaderBacksideWrapper {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    inset: 0;
+
+    .heroCtaHeaderBackside {
+      font-size: $heading1;
+      color: $svijetloSiva;
+      text-transform: uppercase;
+      line-height: $defaultProred;
+      text-align: center;
+      color: transparent;
+      -webkit-text-stroke: 1px #fff;
+      text-wrap: balance;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $mobileHeading1;
+        line-height: $browserProred;
+        padding: 0 1rem;
+      }
     }
   }
 
@@ -36,6 +63,12 @@
     place-items: center;
     gap: 3em;
 
+    @media only screen and (max-width: $desktops) {
+      gap: 2rem;
+    }
+
+    padding: 0 1rem;
+
     .heroCtaHeader {
       font-size: $heading1;
       color: $svijetloSiva;
@@ -43,33 +76,13 @@
       line-height: $defaultProred;
       text-align: center;
       position: relative;
-      // overflow: hidden;
       z-index: 2;
+      text-wrap: balance;
 
       @media only screen and (max-width: $desktops) {
         font-size: $mobileHeading1;
-        padding: 0 0.25rem;
-      }
-    }
 
-    .heroCtaHeaderBackside {
-      position: absolute;
-      font-size: $heading1;
-      color: $svijetloSiva;
-      text-transform: uppercase;
-      line-height: $defaultProred;
-      text-align: center;
-      inset: 0;
-      width: 100%;
-
-      will-change: letter-spacing;
-      color: transparent;
-      -webkit-text-stroke: 1px #fff;
-      white-space: nowrap;
-
-      @media only screen and (max-width: $desktops) {
-        font-size: $mobileHeading1;
-        // padding: 0 0.25rem;
+        line-height: $browserProred;
       }
     }
 
@@ -81,12 +94,6 @@
       place-items: center;
       justify-content: center;
       z-index: 4;
-
-      // @media only screen and (max-width: $tablets) {
-      //   button:nth-child(1) {
-      //     display: none;
-      //   }
-      // }
     }
   }
 }
