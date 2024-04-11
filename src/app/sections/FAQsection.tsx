@@ -22,65 +22,54 @@ const FAQsection = () => {
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  What harsh truths do you prefer to ignore?
+                  Minimalan broj osoba za pješačku turu Kudin most?
+                </AccordionItemButton>
+              </AccordionItemHeading>
+              <AccordionItemPanel className={styles.accordionItemPanel}>
+                <p>Minimalan broj osoba u grupi sa lokalnim vodičem je 6.</p>
+              </AccordionItemPanel>
+            </AccordionItem>
+            <AccordionItem className={styles.accordionItem}>
+              <AccordionItemHeading className={styles.accordionItemHeading}>
+                <AccordionItemButton className={styles.accordionItemButton}>
+                  Koliko traje kayak/rafting tura?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim
-                  minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.
+                  Rafting i kayak tura nisu istog trajanja, razlika je u približno satu vremena. Rafting tura traje oko
+                  2:30 sata, obzirom da se raftovima ide kad je vodostaj viši i rijeka puno brža tako i sam izlet traje
+                  kraće. Kayak tura traje oko 3:30 sata i aktivna je kada je vodostaj rijeke nešto niži. Ovo je naravno
+                  zlatna sredina i svaka tura je individualna na način da je brzina i kayak i rafting ture naravno
+                  onolika kolika je brzina najsporijeg veslača u grupi.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
+                  Kako se vratimo sa cilja kayak/rafting ture na start po automobile?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
+                  Pri dolasku na cilj staze, gosti se presvlače u suhu odjeću koju smo dovezli našim vozilima na cilj.
+                  Nakon kratkog predaha organizira se povratak po vozila. Na službeni start voze se isključivo samo
+                  vozači automobila. Ostatak grupe ostaje na cilju gdje čekaju vozače sa osobnim automobilima da se
+                  vrate po njih.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
+                  Postoji li vodič u kayak turi?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
-                </p>
-              </AccordionItemPanel>
-            </AccordionItem>
-            <AccordionItem className={styles.accordionItem}>
-              <AccordionItemHeading className={styles.accordionItemHeading}>
-                <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
-                </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel className={styles.accordionItemPanel}>
-                <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
-                </p>
-              </AccordionItemPanel>
-            </AccordionItem>
-            <AccordionItem className={styles.accordionItem}>
-              <AccordionItemHeading className={styles.accordionItemHeading}>
-                <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
-                </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel className={styles.accordionItemPanel}>
-                <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
+                  Vodič u kayak turi postoji, te ovisno o veličini same grupe broj vodiča raste. Ponekad grupe imaju i 3
+                  vodiča iako je najčešća situacija da grupu vode 2 vodiča.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
@@ -90,65 +79,45 @@ const FAQsection = () => {
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  What harsh truths do you prefer to ignore?
+                  Koji uzrast može ići na kayak/rafting turu?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat occaecat ut occaecat consequat est minim
-                  minim esse tempor laborum consequat esse adipisicing eu reprehenderit enim.
+                  Donja granica je 5 godina. Vrlo je važno napomenuti da u slučaju vrlo visoke vode dob djece se naravno
+                  mijenja. To se najčešće odnosi na rafting ture. Kod kayak tura ova dob je odobrena i vrlo je važno
+                  napomenuti da djeca obavezno u kayak idu sa odraslom osobom - roditelj/staratelj odgovoran za
+                  maloljetnika.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
+                  Gdje starta kayak/rafting tura?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
+                  Službeni start rafting/kayak ture nalazi se u Kaštel Žegarskom. Na ovoj lokaciji okuplja se grupa,
+                  parkira svoje automobile, preuzima opremu potrebnu za spust i ulazi u rijeku.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
             <AccordionItem className={styles.accordionItem}>
               <AccordionItemHeading className={styles.accordionItemHeading}>
                 <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
+                  Što ponijeti sa sobom na kayak/rafting turu?
                 </AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel className={styles.accordionItemPanel}>
                 <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
-                </p>
-              </AccordionItemPanel>
-            </AccordionItem>
-            <AccordionItem className={styles.accordionItem}>
-              <AccordionItemHeading className={styles.accordionItemHeading}>
-                <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
-                </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel className={styles.accordionItemPanel}>
-                <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
-                </p>
-              </AccordionItemPanel>
-            </AccordionItem>
-            <AccordionItem className={styles.accordionItem}>
-              <AccordionItemHeading className={styles.accordionItemHeading}>
-                <AccordionItemButton className={styles.accordionItemButton}>
-                  Is free will real or just an illusion?
-                </AccordionItemButton>
-              </AccordionItemHeading>
-              <AccordionItemPanel className={styles.accordionItemPanel}>
-                <p>
-                  In ad velit in ex nostrud dolore cupidatat consectetur ea in ut nostrud velit in irure cillum tempor
-                  laboris sed adipisicing eu esse duis nulla non.
+                  Svaki gost trebao bi imati kremu za sunce, tenisice sa kojima može u vodu, dodatnu presvlaku koju sa
+                  ručnikom šalje na cilj te po volji hranu i piće. Od strane organizatora osigurane su vodonepropusne
+                  bačvice u koje se mogu staviti predmeti koje želite sa sobom u kanjonu. Organizator nije odgovoran za
+                  elektronske uređaje poput mobilnih telefona, fotoaparata, GoPro kamera i sl. U slučaju da želite sa
+                  sobom nositi naočale za sunce ili vid, predlažemo da ih osigurate prikladnom trakom oko vrata ili
+                  osigurate za pojas za spašavanje.
                 </p>
               </AccordionItemPanel>
             </AccordionItem>
