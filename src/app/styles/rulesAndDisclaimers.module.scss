@@ -61,6 +61,16 @@
       padding: 4rem 1.25rem 6rem 1.25rem;
     }
 
+    .innerContentAlt {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem 8rem;
+      max-width: 1128px;
+
+      @media only screen and (max-width: $tablets) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
     .contentBlock {
       display: grid;
       grid-template-columns: repeat(1, 1fr);
