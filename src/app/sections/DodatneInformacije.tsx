@@ -13,7 +13,6 @@ interface MoreInfoProps {
 }
 
 const DodatneInformacije = (props: MoreInfoProps) => {
-  // console.log('test');
   return (
     <section
       className={
@@ -29,7 +28,9 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>ZRMANJA CAMPING VILLAGE</h6>
-              <h2>SMJEŠTAJ U NAŠEM KAMPU</h2>
+              <h2 className={styles.headingDefault}>SMJEŠTAJ U NAŠEM KAMPU</h2>
+
+              <h2 className={styles.headingOverlayHover}>SMJEŠTAJ U NAŠEM KAMPU</h2>
             </div>
           </div>
 
@@ -39,7 +40,9 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
-              <h2>DOMAĆA HRANA</h2>
+              <h2 className={styles.headingDefault}>DOMAĆA HRANA</h2>
+
+              <h2 className={styles.headingOverlayHover}>DOMAĆA HRANA</h2>
             </div>
           </div>
 
@@ -49,7 +52,9 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
-              <h2>ŠTO POSJETITI U OKOLICI?</h2>
+              <h2 className={styles.headingDefault}>ŠTO POSJETITI U OKOLICI?</h2>
+
+              <h2 className={styles.headingOverlayHover}>ŠTO POSJETITI U OKOLICI?</h2>
             </div>
           </div>
 

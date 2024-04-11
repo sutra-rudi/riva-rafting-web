@@ -110,11 +110,17 @@ const AppFooter = () => {
           <div className={styles.footerDislaimerTrack}>
             <div className={styles.disclaimerSig}>
               <div className={styles.disclaimerSigIn}>
-                <span>Terms & Conditions</span>
+                <span>
+                  <a href='/uvjeti-koristenja'>Terms & Conditions</a>
+                </span>
                 <span>|</span>
-                <span>Privacy Policy</span>
+                <span>
+                  <a href='/pravila-privatnosti'>Privacy Policy</a>
+                </span>
                 <span>|</span>
-                <span>Company info</span>
+                <span>
+                  <a href='/podatci-o-tvrtki'>Company info</a>
+                </span>
               </div>
               <div className={styles.disclaimerSigIn}>
                 <span>© 2024 All Rights Reserved</span>
