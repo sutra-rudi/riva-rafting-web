@@ -35,28 +35,35 @@ const AppFooter = () => {
             <div className={styles.activityStack}>
               <ul>
                 <li>
-                  <a href=''>Rafting tura</a>
+                  <a href='/aktivnosti/Rafting'>Rafting tura</a>
                 </li>
                 <li>
-                  <a href=''>Špiljarenje</a>
+                  <a href='/aktivnosti/Spiljarenje'>Špiljarenje</a>
                 </li>
                 <li>
-                  <a href=''>Vožnja bicikla</a>
+                  <a href='/aktivnosti/Bicik'>Vožnja bicikla</a>
                 </li>
                 <li>
-                  <a href=''>Jahanje</a>
+                  <a href='/aktivnosti/Jahanje'>Jahanje</a>
                 </li>
                 <li>
-                  <a href=''>Pješačka tura</a>
+                  <a href='/aktivnosti/pjesacke-ture'>Pješačka tura</a>
                 </li>
                 <li>
-                  <a href=''>Jeep safari</a>
+                  <a href='/aktivnosti/Jeep-safari'>Jeep safari</a>
                 </li>
                 <li>
-                  <a href=''>Kayak ture</a>
+                  <a href='/aktivnosti/kayak-tura'>Kayak ture</a>
                 </li>
                 <li>
-                  <a href=''>Stand up paddle</a>
+                  <a href='/aktivnosti/Stand-Up-Paddle'>Stand up paddle</a>
+                </li>
+                <li>
+                  <a href='/aktivnosti/Zrmanja-brodom'>Vožnja brodom</a>
+                </li>
+
+                <li>
+                  <a href='/aktivnosti/Kayak-Zrmanja-More'>{`Kayak po Zrmanji do Jadranskog mora`}</a>
                 </li>
               </ul>
             </div>
