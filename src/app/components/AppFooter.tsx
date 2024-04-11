@@ -134,9 +134,15 @@ const AppFooter = () => {
             <div className={styles.disclaimerSocial}>
               <span>Follow us:</span>
               <div className={styles.disclaimerSocialIcons}>
-                <Image src={facebookIcon} alt='icon' width={32} height={32} />
-                <Image src={instaIcon} alt='icon' width={32} height={32} />
-                <Image src={teleIcon} alt='icon' width={32} height={32} />
+                <a href='https://www.facebook.com/RivaRaftingCentar/'>
+                  <Image src={facebookIcon} alt='icon' width={32} height={32} />
+                </a>
+                <a href='https://www.instagram.com/riva_rafting_centar/ '>
+                  <Image src={instaIcon} alt='icon' width={32} height={32} />
+                </a>
+                <a href='mailto:info@riva-rafting-centar.hr'>
+                  <Image src={teleIcon} alt='icon' width={32} height={32} />
+                </a>
               </div>
             </div>
           </div>

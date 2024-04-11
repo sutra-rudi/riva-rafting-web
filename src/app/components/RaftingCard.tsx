@@ -30,7 +30,14 @@ const RaftingCard = (props: RaftingCardProps) => {
             </span>
             {location}
           </p>
-          <Image className={styles.raftingImage} src={imageUrl} fill alt='rafting img' />
+          <Image
+            className={styles.raftingImage}
+            src={imageUrl}
+            fill
+            alt='rafting img'
+            placeholder='blur'
+            loading='lazy'
+          />
         </div>
         <div className={styles.raftingCartInteractiveOverlay}>
           <div className={styles.interactiveOverlayTitleCont}>
