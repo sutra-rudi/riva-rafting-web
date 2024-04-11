@@ -77,7 +77,7 @@ const AppHeader = () => {
             </Link>
             <HeaderBaseOne />
           </div>
-          <span>|</span>
+          <span className={styles.headerLinkDivid}>|</span>
 
           <HeaderBaseTwo />
         </div>
