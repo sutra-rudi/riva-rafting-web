@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import styles from '../styles/appFooter.module.scss';
 import footerBg from '../img/footer-bg-main.png';
@@ -9,7 +11,40 @@ import teleIcon from '../img/TELE-FOOTER.svg';
 import footerArrow from '../img/FOOTER-LINK-ARROW.svg';
 
 import PaperDividTop from './PaperDividTop';
+import { useAppContext } from '../contexts/store';
 const AppFooter = () => {
+  const {
+    state: { userLang },
+  } = useAppContext();
+
+  const en_links = [
+    { title: 'Hiking tour', href: '/activities/walking-tour' },
+    { title: 'Kayak tours', href: '/activities/kayak' },
+    { title: 'Rafting tour', href: '/activities/Rafting-on-Zrmanja' },
+    { title: 'Kayaking from Zrmanja to the Adriatic Sea', href: '/activities/Kayak-River-to-the-sea' },
+    { title: 'Stand Up Paddle', href: '/activities/Stand-Up-Paddle-Zrmanja' },
+    { title: 'Boat Tour', href: '/activities/Zrmanja-by-boat' },
+    { title: 'Jeep Safari', href: '/activities/Velebit-Jeep-safari' },
+    { title: 'Caving', href: '/activities/Cave-Modric' },
+    { title: 'Horseback Riding', href: '/activities/horses' },
+    { title: 'Cycling', href: '/activities/Bike-riding' },
+  ];
+
+  const hr_links = [
+    { title: 'Pješačka Tura', href: '/aktivnosti/pjesacke-ture' },
+    { title: 'Kayak Ture', href: '/aktivnosti/kayak-tura' },
+    { title: 'Rafting Tura', href: '/aktivnosti/Rafting' },
+    { title: 'Kayak po Zrmanji do Jadranskog mora', href: '/aktivnosti/Kayak-Zrmanja-More' },
+    { title: 'Stand Up Paddle', href: '/aktivnosti/Stand-Up-Paddle' },
+    { title: 'Vožnja Brodom', href: '/aktivnosti/Zrmanja-brodom' },
+    { title: 'Jeep Safari', href: '/aktivnosti/Jeep-safari' },
+    { title: 'Špiljarenje', href: '/aktivnosti/Spiljarenje' },
+    { title: 'Jahanje', href: '/aktivnosti/Jahanje' },
+    { title: 'Vožnja Bicikla', href: '/aktivnosti/Bicik' },
+  ];
+
+  const parseByLang = () => {};
+
   return (
     <footer className={styles.appFooter}>
       <PaperDividTop />
@@ -34,37 +69,17 @@ const AppFooter = () => {
             <p>Aktivnosti koje nudimo</p>
             <div className={styles.activityStack}>
               <ul>
-                <li>
-                  <a href='/aktivnosti/Rafting'>Rafting tura</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Spiljarenje'>Špiljarenje</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Bicik'>Vožnja bicikla</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Jahanje'>Jahanje</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/pjesacke-ture'>Pješačka tura</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Jeep-safari'>Jeep safari</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/kayak-tura'>Kayak ture</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Stand-Up-Paddle'>Stand up paddle</a>
-                </li>
-                <li>
-                  <a href='/aktivnosti/Zrmanja-brodom'>Vožnja brodom</a>
-                </li>
-
-                <li>
-                  <a href='/aktivnosti/Kayak-Zrmanja-More'>{`Kayak po Zrmanji do Jadranskog mora`}</a>
-                </li>
+                {userLang === 'hr'
+                  ? hr_links.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href}>{link.title}</a>
+                      </li>
+                    ))
+                  : en_links.map((link) => (
+                      <li key={link.href}>
+                        <a href={link.href}>{link.title}</a>
+                      </li>
+                    ))}
               </ul>
             </div>
           </div>

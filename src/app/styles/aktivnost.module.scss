@@ -274,7 +274,19 @@
 
   .mapboxContainer {
     min-height: 680px;
+
+    @media only screen and (max-width: $tablets) {
+      min-height: 480px;
+    }
+
+    @media only screen and (max-width: $phones) {
+      min-height: 380px;
+    }
+
     margin: 10rem 0 0 0;
     position: relative;
+    touch-action: none !important;
+    user-select: none !important;
+    pointer-events: none !important;
   }
 }

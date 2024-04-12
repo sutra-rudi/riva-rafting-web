@@ -9,13 +9,17 @@ import {
 } from 'react-accessible-accordion';
 import 'react-accessible-accordion/dist/fancy-example.css';
 import styles from '../styles/faqSection.module.scss';
+import { useAppContext } from '../contexts/store';
 const FAQsection = () => {
+  const {
+    state: { userLang },
+  } = useAppContext();
   return (
     <section className={styles.faqSection}>
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         <div className={styles.sectionHeading}>
-          <h2>NAJČEŠĆA PITANJA</h2>
+          <h2>{userLang === 'hr' ? 'NAJČEŠĆA PITANJA' : 'FREQUENTLY ASKED QUESTIONS'}</h2>
         </div>
         <div className={styles.faqContainer}>
           <Accordion allowZeroExpanded className={styles.accordion}>
