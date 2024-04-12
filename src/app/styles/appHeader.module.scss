@@ -178,7 +178,7 @@
   // overflow: auto;
   width: 70%;
   height: 100%;
-  background: #fff;
+  background: $zelenaGlavna;
   min-height: 100vh;
   min-height: 100lvh;
   z-index: 9;
@@ -216,6 +216,7 @@
       font-size: $mobileHeading3;
       font-weight: 400;
       line-height: $defaultProred;
+      // color: #fff;
     }
   }
 
