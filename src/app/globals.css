@@ -31,6 +31,10 @@ body {
   }
 }
 
+nav {
+  overflow-x: hidden;
+}
+
 img,
 picture,
 video,
