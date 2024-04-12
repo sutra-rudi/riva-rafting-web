@@ -31,7 +31,7 @@ const PageContent = (content: PageContentPriv) => {
   };
 
   const headline: BannerLayer = {
-    translateY: [0, 30],
+    translateY: [0, -10],
     scale: [1, 0.85],
     //     opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,

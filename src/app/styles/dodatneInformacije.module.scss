@@ -1,7 +1,6 @@
 .dodatneInformacije {
   width: 100%;
   position: relative;
-  margin: 47rem auto 0 auto;
   margin: 0 auto;
 
   @media only screen and (max-width: $desktops) {
@@ -12,7 +11,7 @@
   .sectionHeading {
     text-align: center;
     color: $tamna;
-    // text-transform: uppercase;
+
     font-size: $heading2;
     @media only screen and (max-width: $tablets) {
       font-size: $heading3;
@@ -35,13 +34,9 @@
     }
 
     @media only screen and (max-width: $tablets) {
-      // justify-content: center;
       flex-wrap: wrap;
     }
 
-    // flex-flow: row wrap;
-
-    // gap: 1.375rem;
     margin: 0 auto 2em auto;
     max-width: $masterContainerWidth;
 
@@ -62,12 +57,13 @@
           color: #fff;
           text-transform: uppercase;
           text-align: center;
-          transition: all 150ms ease;
+          transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
         }
 
         h6 {
           font-size: $baseFontSize;
           line-height: $defaultProred;
+          transition-delay: 150ms;
         }
         h2 {
           font-size: $heading2;
@@ -85,83 +81,42 @@
       }
     }
 
-    .headingOverlayHover {
-      position: absolute;
-      top: -120%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      text-align: center;
-      transition: all 250ms ease !important;
-      transition-delay: 100ms !important;
-      color: $zelenaGlavna !important;
-      opacity: 0;
-    }
-
     .imageBox {
       position: relative;
       width: 472px;
       height: 472px;
       overflow: hidden;
       cursor: pointer;
-      transition: all 250ms ease-in-out;
-      &::after {
-        position: absolute;
-        background: rgba($color: #161938, $alpha: 0.15);
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        content: '';
-        transform: scale(0);
-        transition: all 300ms ease-out;
-        transform-origin: center;
-      }
+      transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
 
       &:hover {
         border-radius: 0 0 120px 0;
         img {
-          transform: scale(1);
+          transform: scale(1.15);
+          filter: grayscale(25%);
         }
-        .headingDefault {
-          opacity: 0;
-        }
-
-        .headingOverlayHover {
-          top: 48%;
-          opacity: 1;
-        }
-        &::after {
-          transform: scale(1);
+        h6 {
+          letter-spacing: 0.15rem;
         }
       }
 
       img {
         object-position: center;
-        transition: all 300ms ease-out;
-        transition-delay: 100ms;
-        // border-radius: 0 0 120px 0;
+        transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
         aspect-ratio: 1 / 1;
-        transform: scale(1.15);
       }
 
       @media only screen and (max-width: $desktops) {
         width: 374px;
         height: 374px;
-        // border-radius: 0 0 29px 0;
         padding: 1rem;
-
-        // img {
-        //   // border-radius: 0 0 29px 0;
-        //   // padding: 1rem;
-        // }
       }
 
       @media only screen and (max-width: $phones) {
         width: 100%;
-        // border-radius: 0 0 29px 0;
+
         height: 205px;
         img {
-          // border-radius: 0 0 29px 0;
           aspect-ratio: 16 / 9;
         }
       }
