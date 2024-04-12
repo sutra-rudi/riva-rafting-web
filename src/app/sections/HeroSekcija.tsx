@@ -31,11 +31,11 @@ const HeroSekcija = () => {
     state: { userLang },
   } = useAppContext();
 
-  const headline_en = 'Experience the beauty of Zrmanja with us!';
-  const headline_hr = 'Doživite ljepote Zrmanje s nama!';
+  const headline_en = `Experience the beauty \n of Zrmanja with us!`;
+  const headline_hr = `Doživite ljepote \n Zrmanje s nama!`;
 
-  const btn_main_hr = 'Rezerviraj telefonski';
-  const btn_main_en = 'Book by phone';
+  const btn_main_hr = 'Kontaktiraj nas';
+  const btn_main_en = 'Contact us';
 
   const btn_second_hr = 'Rezerviraj mailom';
   const btn_second_en = 'Book by email';
@@ -84,7 +84,7 @@ const HeroSekcija = () => {
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
         <div className={styles.heroCtaButtonKontejter}>
           <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
-          <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary />
+          {/* <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary /> */}
         </div>
       </div>
     ),
@@ -92,7 +92,7 @@ const HeroSekcija = () => {
 
   const headline: BannerLayer = {
     translateY: [0, 15],
-    scale: [1.25, 0.7],
+    scale: [1.1, 0.7],
     opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,
     children: (
