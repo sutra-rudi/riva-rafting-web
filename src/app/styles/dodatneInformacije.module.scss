@@ -67,6 +67,7 @@
         }
         h2 {
           font-size: $heading2;
+          transition-delay: 200ms;
 
           @media only screen and (max-width: $tablets) {
             font-size: $mobileHeading1;
@@ -97,6 +98,10 @@
         }
         h6 {
           letter-spacing: 0.15rem;
+        }
+
+        h2 {
+          letter-spacing: -0.1rem;
         }
       }
 

@@ -72,7 +72,7 @@ const AppHeader = () => {
       <div className={styles.navMaster}>
         <div className={styles.navInnerParent}>
           <div className={styles.navLeftParent}>
-            <Link href={'/'}>
+            <Link className={styles.noEffectLogo} href={'/'}>
               <Image src={svgAppLogo} alt='app logo' />
             </Link>
             <HeaderBaseOne />

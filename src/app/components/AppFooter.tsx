@@ -23,7 +23,7 @@ const AppFooter = () => {
         </div>
       </div>
 
-      <Image fill src={footerBg} alt='footerBackground' />
+      <Image fill src={footerBg} alt='footerBackground' placeholder='blur' />
 
       <div className={styles.footerMaster}>
         <div className={styles.appLogoContainer}>

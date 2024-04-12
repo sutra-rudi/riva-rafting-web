@@ -7,11 +7,8 @@ import StickyBox from 'react-sticky-box';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import Image, { StaticImageData } from 'next/image';
-// import { useWindowSize } from '@/app/hooks/useWindowSize';
 
 const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => {
-  // const clientWindowSize = useWindowSize();
-
   const splideOptions: any = {
     perPage: 5.2,
     // type: clientWindowSize && clientWindowSize?.width > 1300 ? 'loop' : 'slide',

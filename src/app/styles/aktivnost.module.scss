@@ -21,7 +21,7 @@
       position: absolute;
       gap: 0.85rem;
 
-      bottom: 216px;
+      bottom: 316px;
       left: 50%;
       transform: translateX(-50%);
       width: 100%;
@@ -53,8 +53,13 @@
   }
 
   .masterContainer {
-    max-width: $masterContainerWidth;
-    margin: 4rem auto 0 auto;
+    // max-width: $masterContainerWidth;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-content: center;
   }
 
   .contentContainer {
@@ -64,7 +69,8 @@
     width: 100%;
     position: relative;
     gap: 4rem;
-
+    max-width: $masterContainerWidth;
+    padding: 4rem 0 0 0;
     @media only screen and (max-width: $largeDesktops) {
       flex-wrap: wrap-reverse;
       place-items: center;
