@@ -9,7 +9,7 @@
 html {
   scrollbar-gutter: stable;
   height: 100%;
-  overflow-x: hidden !important;
+  overflow-x: hidden;
   width: 100%;
 }
 

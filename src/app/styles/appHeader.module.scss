@@ -5,6 +5,7 @@
   place-items: center;
   padding: 0.5em 4.5em;
   overflow: hidden !important;
+  max-width: 100%;
 
   @media screen and (max-width: $tablets) {
     padding: 1.5em 3em;
