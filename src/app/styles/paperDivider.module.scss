@@ -1,6 +1,6 @@
 .paperTop {
   position: absolute;
-  width: 120vw;
+  width: 100vw;
   height: 51px;
   // height: calc(5lvh + 1px);
   // height: 2.5vmin;
@@ -15,7 +15,7 @@
 
 .paperBottom {
   position: absolute;
-  width: 120vw;
+  width: 100vw;
   height: 51px;
   // height: 2.5vmin;
   // height: calc(5lvh + 1px);
@@ -30,7 +30,7 @@
 }
 .paperBottomAlt {
   position: absolute;
-  width: 120vw;
+  width: 100vw;
   height: 51px;
   // height: calc(5lvh + 1px);
   // height: 2.5vmin;
@@ -52,6 +52,8 @@
     object-position: center center;
     display: block;
     width: 100% !important;
-    transform: translateX(-5%);
+    // transform: translateX(-5%);
   }
+
+  // display: none;
 }

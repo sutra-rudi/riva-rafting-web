@@ -180,7 +180,7 @@
   }
 }
 .mobileNavParent {
-  position: absolute;
+  position: fixed;
   // overflow: auto;
   width: 70%;
   height: 100%;
@@ -191,6 +191,7 @@
   top: 0;
   right: 0;
   transition: all 250ms ease;
+  // display: none;
 
   .mobileNavParentInner {
     width: 100%;
