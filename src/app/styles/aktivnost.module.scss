@@ -26,7 +26,6 @@
       transform: translateX(-50%);
       width: 100%;
       h1 {
-        // font-size: $heading1;
         font-size: 110px;
 
         @media only screen and (max-width: $desktops) {
@@ -35,9 +34,6 @@
           line-height: $browserProred;
         }
 
-        // @media only screen and (max-width: $phones) {
-        //   font-size: 44px;
-        // }
         text-transform: uppercase;
         color: #fff;
         line-height: $defaultProred;

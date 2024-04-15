@@ -1,0 +1,51 @@
+.sectionMaster {
+  position: relative;
+  min-height: 634px;
+}
+
+.sectionMain {
+  width: 100%;
+  position: relative;
+}
+
+.sectionHero {
+  height: 85vh;
+  height: 85dvh;
+  min-height: 634px;
+
+  position: relative;
+
+  .heroHeader {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    position: absolute;
+    gap: 0.85rem;
+    bottom: 316px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+
+    h1 {
+      font-size: $heading1;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 120%;
+      text-align: center;
+      width: 100%;
+      text-wrap: balance;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+
+    h4 {
+      max-width: 748px;
+      width: 100%;
+      color: #fff;
+      text-align: center;
+      font-size: $mobileHeading4;
+      line-height: 120%;
+      font-weight: 500;
+    }
+  }
+}
