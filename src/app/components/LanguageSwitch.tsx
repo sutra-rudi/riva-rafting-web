@@ -6,6 +6,7 @@ import { useAppContext } from '../contexts/store';
 import { ActionTypes } from '../types/actionTypes';
 import { UserLanguage } from '../types/appState';
 import { usePathname, useRouter } from 'next/navigation';
+import { setLocalStorageItem, getLocalStorageItem } from '../utils/localStorage';
 
 const LanguageSwitch = () => {
   const {
@@ -16,8 +17,17 @@ const LanguageSwitch = () => {
   const router = useRouter();
   const pathname = usePathname();
 
+  React.useEffect(() => {
+    const checkIfLangSet = getLocalStorageItem('@riva-rafting-language');
+    if (checkIfLangSet) {
+      dispatch({ type: ActionTypes.SET_USER_LANG, payload: checkIfLangSet });
+    }
+  }, [dispatch]);
+
   const handleLangSwitch = (payloadF: UserLanguage) => {
     dispatch({ type: ActionTypes.SET_USER_LANG, payload: payloadF });
+
+    setLocalStorageItem('@riva-rafting-language', payloadF);
 
     if (pathname !== '/') {
       router.push('/');
@@ -28,14 +38,14 @@ const LanguageSwitch = () => {
     <div className={styles.langSwitcherParent}>
       <div
         onClick={() => handleLangSwitch(UserLanguage.hr)}
-        className={`${userLang === 'hr' ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
+        className={`${userLang === UserLanguage.hr ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
       >
         HR
       </div>
       <div className={styles.separator}>/</div>
       <div
         onClick={() => handleLangSwitch(UserLanguage.en)}
-        className={`${userLang === 'en' ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
+        className={`${userLang === UserLanguage.en ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
       >
         ENG
       </div>
