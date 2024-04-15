@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '../styles/dodatneInformacije.module.scss';
 import imgone from '../img/imag1.png';
 import imgtwo from '../img/imag2.png';
@@ -6,6 +8,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Ubuntu_Condensed } from 'next/font/google';
 import Link from 'next/link';
+import { useAppContext } from '../contexts/store';
 
 const ubuntuCondensed = Ubuntu_Condensed({ weight: '400', subsets: ['latin'] });
 
@@ -14,6 +17,10 @@ interface MoreInfoProps {
 }
 
 const DodatneInformacije = (props: MoreInfoProps) => {
+  const {
+    state: { userLang },
+  } = useAppContext();
+
   return (
     <section
       className={
@@ -22,7 +29,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           : `${styles.dodatneInformacije} ${styles.dodatneInformacijeSub}`
       }
     >
-      <h2 className={styles.sectionHeading}>Dodatne Informacije</h2>
+      <h2 className={styles.sectionHeading}>{userLang === 'hr' ? 'Dodatne Informacije' : 'Additional information'}</h2>
 
       <div className={styles.sectionListContainer}>
         <div className={styles.imageBox}>

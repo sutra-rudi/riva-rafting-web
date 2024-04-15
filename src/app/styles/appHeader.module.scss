@@ -181,7 +181,6 @@
 }
 .mobileNavParent {
   position: fixed;
-  // overflow: auto;
   width: 70%;
   height: 100%;
   background: $zelenaGlavna;
@@ -190,13 +189,12 @@
   z-index: 9;
   top: 0;
   right: 0;
-  transition: all 250ms ease;
-  // display: none;
+  // transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
+  transition: all 250ms cubic-bezier(0.25, 0.4, 0.2, 0.5);
 
   .mobileNavParentInner {
     width: 100%;
     height: 100%;
-    // padding: 10rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -223,7 +221,6 @@
       font-size: $mobileHeading3;
       font-weight: 400;
       line-height: $defaultProred;
-      // color: #fff;
     }
   }
 
