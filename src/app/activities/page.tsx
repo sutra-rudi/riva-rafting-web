@@ -4,7 +4,7 @@ import AppFooter from '../components/AppFooter';
 import styles from '../styles/page.module.scss';
 import DodatneInformacije from '../sections/DodatneInformacije';
 import NajpopularnijeTure from '../sections/NajpopularnijeTure';
-import TripAdvisorSekcija from '../sections/TripAdvisorSekcija';
+
 import Loading from './loading';
 export default function Aktivnosti() {
   return (
@@ -12,7 +12,6 @@ export default function Aktivnosti() {
       <main className={styles.aktivnostiMain}>
         <AppHeader />
         <DodatneInformacije isLanding={false} />
-        <TripAdvisorSekcija />
         <NajpopularnijeTure isLanding={false} />
         <AppFooter />
       </main>

@@ -84,8 +84,9 @@ const PageContent = () => {
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
           <div className={styles.spanTextContainer}>
-            <span>Sviđa ti se što vidiš?</span> <span>Bookiraj svoju avanturu s nama!</span>
-            <span>TEL: +385 23 689 920</span> <span>EMAIL: info@riva-rafting.hr</span>
+            <span>Sviđa ti se što vidiš?</span> <span>Bookiraj svoju avanturu s nama!</span>
+            <a href='tel:+38523689920'>TEL: +385 23 689 920</a>
+            <a href='mailto:info@riva-rafting.hr'>EMAIL: info@riva-rafting.hr</a>
           </div>
 
           <AppButton content='REZERVIRAJ SVOJU AVANTURU' />
@@ -97,7 +98,6 @@ const PageContent = () => {
   const paraForeground: BannerLayer = {
     image: paralTwo.src,
     translateY: [0, 15],
-    // scale: [1, 1.1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
   };
 
@@ -110,7 +110,6 @@ const PageContent = () => {
   const headline: BannerLayer = {
     translateY: [0, 30],
     scale: [1, 0.95],
-    //     opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroHeader}>

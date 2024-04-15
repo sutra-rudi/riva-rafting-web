@@ -233,13 +233,15 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
 
-        span {
+        span,
+        a {
           font-weight: 400;
           font-family: inherit;
           line-height: 130%;
           font-size: $mobileHeading4;
           color: #fff;
           z-index: 3;
+          text-decoration: none;
         }
       }
     }
