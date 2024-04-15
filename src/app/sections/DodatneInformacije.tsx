@@ -5,6 +5,7 @@ import imgthree from '../img/imag3.png';
 import React from 'react';
 import Image from 'next/image';
 import { Ubuntu_Condensed } from 'next/font/google';
+import Link from 'next/link';
 
 const ubuntuCondensed = Ubuntu_Condensed({ weight: '400', subsets: ['latin'] });
 
@@ -45,14 +46,16 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <Image src={imgtwo} fill alt='offer image' />
         </div>
         <div className={styles.imageBox}>
-          <div className={styles.titleHolder}>
-            <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
-              <h2 className={styles.headingDefault}>ŠTO POSJETITI U OKOLICI?</h2>
+          <Link href={'/obrovacki-kraj'}>
+            <div className={styles.titleHolder}>
+              <div className={styles.titleHolderInner}>
+                <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
+                <h2 className={styles.headingDefault}>ŠTO POSJETITI U OKOLICI?</h2>
+              </div>
             </div>
-          </div>
 
-          <Image src={imgthree} fill alt='offer image' />
+            <Image src={imgthree} fill alt='offer image' />
+          </Link>
         </div>
       </div>
     </section>
