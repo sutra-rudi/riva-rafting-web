@@ -1,6 +1,7 @@
 .aboutUsSection {
   width: 100%;
   position: relative;
+  margin-top: 5rem;
 
   .masterContainer {
     max-width: $masterContainerWidth;
@@ -36,6 +37,11 @@
 
     .imageHolder {
       width: 100%;
+      border-radius: 155px 0 0 0;
+
+      img {
+        border-radius: 155px 0 0 0;
+      }
       @media only screen and (min-width: $desktops) {
         max-width: 669px;
       }

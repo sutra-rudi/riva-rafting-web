@@ -2,16 +2,18 @@
 
 import React from 'react';
 import styles from '../styles/appFooter.module.scss';
-import footerBg from '../img/footer-bg-main.png';
+import footerBg from '../img/test-footer.png';
 import appLogo from '../img/FOOTER-LOGO-NEW.svg';
 import Image from 'next/image';
 import facebookIcon from '../img/FACEBOOK-FOOTER.svg';
 import instaIcon from '../img/INSTA-FOOTER.svg';
 import teleIcon from '../img/TELE-FOOTER.svg';
 import footerArrow from '../img/FOOTER-LINK-ARROW.svg';
+import footerAltBg from '../img/footer-small-screen.png';
 
 import PaperDividTop from './PaperDividTop';
 import { useAppContext } from '../contexts/store';
+import { useWindowSize } from '../hooks/useWindowSize';
 const AppFooter = () => {
   const {
     state: { userLang },
@@ -43,14 +45,16 @@ const AppFooter = () => {
     { title: 'Vožnja Bicikla', href: '/aktivnosti/Bicik' },
   ];
 
-  const parseByLang = () => {};
+  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+
+  const clientWindowSize = useWindowSize();
 
   return (
     <footer className={styles.appFooter}>
       <PaperDividTop />
 
       <div className={styles.socialFooterStack}>
-        <p>Zapratite nas:</p>
+        <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
         <div className={styles.socialIconStack}>
           <Image src={facebookIcon} alt='icon' width={32} height={32} />
           <Image src={instaIcon} alt='icon' width={32} height={32} />
@@ -58,7 +62,14 @@ const AppFooter = () => {
         </div>
       </div>
 
-      <Image fill src={footerBg} alt='footerBackground' placeholder='blur' />
+      <Image
+        fill
+        src={clientWindowSize && clientWindowSize?.width > 1024 ? footerBg : footerAltBg}
+        alt='footerBackground'
+        placeholder='blur'
+        quality={100}
+        loading='lazy'
+      />
 
       <div className={styles.footerMaster}>
         <div className={styles.appLogoContainer}>
@@ -66,7 +77,7 @@ const AppFooter = () => {
         </div>
         <div className={styles.contentContainer}>
           <div className={styles.footerBlock}>
-            <p>Aktivnosti koje nudimo</p>
+            <p>{parseByLang('Aktivnosti koje nudimo', 'Activities we offer')}</p>
             <div className={styles.activityStack}>
               <ul>
                 {userLang === 'hr'
@@ -84,21 +95,21 @@ const AppFooter = () => {
             </div>
           </div>
           <div className={styles.footerBlock}>
-            <p>Linkovi</p>
+            <p>{parseByLang('Linkovi', 'Links')}</p>
             <div className={styles.linkStack}>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>O nama</span>
+                <span>{parseByLang('O nama', 'About us')}</span>
               </a>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>Kontakt forma</span>
+                <span>{parseByLang('Kontakt forma', 'Contact form')}</span>
               </a>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>FAQ</span>
+                <span>{parseByLang('FAQ', 'FAQ')}</span>
               </a>
-              <a href=''>
+              <a href='/obrovacki-kraj'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>Obrovački kraj</span>
               </a>
@@ -114,7 +125,7 @@ const AppFooter = () => {
           </div>
 
           <div className={styles.footerBlock}>
-            <p>Kontaktirajte nas</p>
+            <p>{parseByLang('Kontaktirajte nas', 'Contact us')}</p>
             <div className={styles.contactStack}>
               <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>{`6 Obala hr. Čas. Senada Ž.,\nObrovac, Croatia`}</a>
               <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
@@ -125,29 +136,26 @@ const AppFooter = () => {
           <div className={styles.footerDislaimerTrack}>
             <div className={styles.disclaimerSig}>
               <div className={styles.disclaimerSigIn}>
-                <span>
-                  <a href='/uvjeti-koristenja'>Terms & Conditions</a>
-                </span>
+                <a href='/uvjeti-koristenja'>{parseByLang('Uvjeti i odredbe', 'Terms & Conditions')}</a>
+
                 <span>|</span>
-                <span>
-                  <a href='/pravila-privatnosti'>Privacy Policy</a>
-                </span>
+
+                <a href='/pravila-privatnosti'>{parseByLang('Politika privatnosti', 'Privacy Policy')}</a>
+
                 <span>|</span>
-                <span>
-                  <a href='/podatci-o-tvrtki'>Company info</a>
-                </span>
+
+                <a href='/podatci-o-tvrtki'>{parseByLang('Podaci o tvrtki', 'Company info')}</a>
               </div>
               <div className={styles.disclaimerSigIn}>
-                <span>© 2024 All Rights Reserved</span>
+                <span>{parseByLang('© 2024 All Rights Reserved', '© 2024 All Rights Reserved')}</span>
                 <span>|</span>
-                <span>
-                  <a href='https://www.sutra.hr/'>WEB DESIGN SUTRA.HR</a>
-                </span>
+
+                <a href='https://www.sutra.hr/'>WEB DESIGN SUTRA.HR</a>
               </div>
             </div>
 
             <div className={styles.disclaimerSocial}>
-              <span>Follow us:</span>
+              <span>{parseByLang('Zapratite nas:', 'Follow us:')}</span>
               <div className={styles.disclaimerSocialIcons}>
                 <a href='https://www.facebook.com/RivaRaftingCentar/'>
                   <Image src={facebookIcon} alt='icon' width={32} height={32} />
