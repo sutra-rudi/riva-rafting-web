@@ -1,18 +1,20 @@
 import AppFooter from '../components/AppFooter';
 import AppHeader from '../components/AppHeader';
-import PageContent from './PageContent';
 import styles from '../styles/obrovackiKraj.module.scss';
 import { Suspense } from 'react';
 import Loading from './loading';
+import dynamic from 'next/dynamic';
+
+const LazyContent = dynamic(() => import('./PageContent'));
 
 export default async function ObrovackiKraj() {
   return (
-    <Suspense fallback={<Loading />}>
-      <main className={styles.sectionMain}>
+    <main className={styles.sectionMain}>
+      <Suspense fallback={<Loading />}>
         <AppHeader />
-        <PageContent />
+        <LazyContent />
         <AppFooter />
-      </main>
-    </Suspense>
+      </Suspense>
+    </main>
   );
 }
