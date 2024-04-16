@@ -26,7 +26,7 @@
       transform: translateX(-50%);
       width: 100%;
       h1 {
-        font-size: 110px;
+        font-size: $headingPolicy;
 
         @media only screen and (max-width: $desktops) {
           min-width: 95vw;
@@ -67,7 +67,7 @@
     gap: 4rem;
     max-width: $masterContainerWidth;
     padding: 4rem 0 0 0;
-    @media only screen and (max-width: $largeDesktops) {
+    @media only screen and (max-width: $desktops) {
       flex-wrap: wrap-reverse;
       place-items: center;
     }
@@ -76,11 +76,11 @@
   .swiperSticky {
     width: 100%;
 
-    @media only screen and (min-width: $largeDesktops) {
+    @media only screen and (min-width: $desktops) {
       max-width: 693px;
     }
 
-    @media only screen and (max-width: $largeDesktops) {
+    @media only screen and (max-width: $desktops) {
       position: static !important;
       // max-width: 95vw;
       overflow-x: hidden;
@@ -115,13 +115,13 @@
     place-items: stretch;
     gap: 2.8rem;
 
-    @media only screen and (max-width: $largeDesktops) {
+    @media only screen and (max-width: $desktops) {
       // display: none;
       // padding: 0 1.25rem;
     }
 
     .articleTopContent {
-      @media only screen and (max-width: $largeDesktops) {
+      @media only screen and (max-width: $desktops) {
         // display: none;
         padding: 0 1rem;
       }
