@@ -60,11 +60,14 @@ const ContactForm = () => {
             <option value='' defaultValue={'Odaberi aktivnost'} selected disabled>
               Odaberi aktivnost
             </option>
-            {webContent.map((activity) => (
-              <option value={activity.NASLOV_AKTIVNOSTI_HERO_HR} key={activity.NASLOV_AKTIVNOSTI_HERO_HR}>
-                {activity.NASLOV_AKTIVNOSTI_HERO_HR}
-              </option>
-            ))}
+            {webContent.map(
+              (activity) =>
+                activity.NASLOV_AKTIVNOSTI_HERO_HR !== '' && (
+                  <option value={activity.NASLOV_AKTIVNOSTI_HERO_HR} key={activity.NASLOV_AKTIVNOSTI_HERO_HR}>
+                    {activity.NASLOV_AKTIVNOSTI_HERO_HR}
+                  </option>
+                )
+            )}
           </select>
         </div>
         <div className={styles.formBlockRight}>
