@@ -1,5 +1,7 @@
 import React from 'react';
 import styles from '../styles/appButton.module.scss';
+import Image from 'next/image';
+import strelicaDesno from '../img/strelica-desno-botun.svg';
 
 interface ButtonProps {
   content: string;
@@ -27,6 +29,7 @@ const AppButton = ({ content, isNav = false, isHero = false, isAbout = false, is
   return (
     <button className={buttonClassNames}>
       <span>{content}</span>
+      {isAbout && <Image width={20} height={20} alt='icon img button' src={strelicaDesno} />}
     </button>
   );
 };

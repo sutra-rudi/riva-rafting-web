@@ -52,15 +52,14 @@
       width: 100%;
       color: #fff;
       text-align: center;
-      font-size: $mobileHeading4;
+      font-size: $baseFontSize;
+
       @media only screen and (max-width: $desktops) {
-        font-size: $heading5;
-      }
-      @media only screen and (max-width: $tablets) {
         font-size: $mobileFontSizeAlt;
       }
-      line-height: 120%;
-      font-weight: 500;
+
+      line-height: 153%;
+      font-weight: 400;
     }
   }
 }
@@ -233,6 +232,16 @@
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 0.25rem;
+
+        h3 {
+          font-size: $heading3;
+          text-wrap: balance;
+          word-wrap: break-word;
+          white-space: pre-wrap;
+          color: #fff;
+          line-height: 120%;
+          z-index: 3;
+        }
 
         span,
         a {

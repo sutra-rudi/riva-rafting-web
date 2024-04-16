@@ -7,6 +7,9 @@ import { ActionTypes } from '../types/actionTypes';
 import { UserLanguage } from '../types/appState';
 import { usePathname, useRouter } from 'next/navigation';
 import { setLocalStorageItem, getLocalStorageItem } from '../utils/localStorage';
+import Image from 'next/image';
+import croatianFlag from '../img/country-flags/croatiaFlag.svg';
+import englishFlag from '../img/country-flags/englishFlag.svg';
 
 const LanguageSwitch = () => {
   const {
@@ -40,14 +43,16 @@ const LanguageSwitch = () => {
         onClick={() => handleLangSwitch(UserLanguage.hr)}
         className={`${userLang === UserLanguage.hr ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
       >
-        HR
+        <Image width={20} height={20} alt='croatian flag' src={croatianFlag} />
+        <span>HR</span>
       </div>
-      <div className={styles.separator}>/</div>
+
       <div
         onClick={() => handleLangSwitch(UserLanguage.en)}
         className={`${userLang === UserLanguage.en ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
       >
-        ENG
+        <Image width={20} height={20} alt='croatian flag' src={englishFlag} />
+        <span>ENG</span>
       </div>
     </div>
   );

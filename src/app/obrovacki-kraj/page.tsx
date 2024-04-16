@@ -9,12 +9,12 @@ const LazyContent = dynamic(() => import('./PageContent'));
 
 export default async function ObrovackiKraj() {
   return (
-    <main className={styles.sectionMain}>
-      <Suspense fallback={<Loading />}>
-        <AppHeader />
+    <Suspense fallback={<Loading />}>
+      <AppHeader />
+      <main className={styles.sectionMain}>
         <LazyContent />
         <AppFooter />
-      </Suspense>
-    </main>
+      </main>
+    </Suspense>
   );
 }

@@ -60,14 +60,12 @@ const PageContent = () => {
   const titleHr = `ŠTO POSJETITI U \n NAŠEM KRAJU?`;
   const titleEn = `WHAT TO VISIT IN \n OUR REGION?`;
 
-  const headlineHr = `U srcu Obrovačkog kraja, očekuje vas bogatstvo prirodnih čuda i kulturnih bisera. Ovo izuzetno područje pruža
-          nevjerojatne mogućnosti za istraživanje vrhova planina, divljih rijeka i impresivnih slapova, te uživanje u
-          posjetama nacionalnim parkovima. Krenite od prekrasnih vrhova Velebita, otkrijte skrivene ljepote rijeke Krupe
-          i Zrmanje te istražite dubine planine u Cerovačkim pećinama. Nakon toga, osvježite se kupanjem u Novigradskom
-          ili Karinskom moru. Ne propustite priliku posjetiti Kudin most i Manastir Krupa kako biste još dublje zaronili
-          u bogatstvo ovog fascinantnog kraja.`;
+  const likeHr = `Sviđa ti se što vidiš? \n Bookiraj svoju avanturu s nama!`;
+  const likeEn = `Do you like what you see? \n Book your adventure with us!`;
 
-  const headlineEn = `In the heart of the Obrovac region, you can expect a wealth of natural wonders and cultural gems. This exceptional area offers incredible opportunities to explore mountain peaks, wild rivers, and impressive waterfalls, as well as enjoy visits to national parks. Start with the beautiful peaks of Velebit, discover the hidden beauties of the Krupa and Zrmanja rivers, and explore the depths of the mountains in the Cerovačke Caves. Afterward, refresh yourself with a swim in the Novigrad or Karin Sea. Don't miss the chance to visit the Kuda Bridge and Krupa Monastery to delve even deeper into the richness of this fascinating region.`;
+  const headlineHr = `U srcu Obrovačkog kraja, očekuje vas bogatstvo prirodnih čuda i kulturnih bisera. Ovo izuzetno područje pruža nevjerojatne mogućnosti za istraživanje vrhova planina, divljih rijeka i impresivnih slapova, te uživanje u posjetama nacionalnim parkovima. Krenite od prekrasnih vrhova Velebita, otkrijte skrivene ljepote rijeke Krupe i Zrmanje te istražite dubine planine u Cerovačkim pećinama. Nakon toga, osvježite se kupanjem u Novigradskom ili Karinskom moru. Ne propustite priliku posjetiti Kudin most i Manastir Krupa kako biste još dublje zaronili u bogatstvo ovog fascinantnog kraja.`;
+
+  const headlineEn = `In the heart of the Obrovac region, you can expect a wealth of natural wonders and cultural gems. This exceptional area offers incredible opportunities to explore mountain peaks, wild rivers, impressive waterfalls, and enjoy visits to national parks. Start from the beautiful peaks of Velebit, discover the hidden beauties of the Krupa and Zrmanja rivers, and explore the depths of the mountain in the Cerovačke Caves. After that, refresh yourself with a swim in the Novigrad or Karin Sea. Don't miss the chance to visit Kuda's Bridge and the Krupa Monastery to delve even deeper into the richness of this fascinating region.`;
 
   const langCheck = (croString: string, engString: string) => (userLang === 'hr' ? croString : engString);
 
@@ -84,12 +82,17 @@ const PageContent = () => {
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
           <div className={styles.spanTextContainer}>
-            <span>Sviđa ti se što vidiš?</span> <span>Bookiraj svoju avanturu s nama!</span>
+            <h3>{langCheck(likeHr, likeEn)}</h3>
             <a href='tel:+38523689920'>TEL: +385 23 689 920</a>
             <a href='mailto:info@riva-rafting.hr'>EMAIL: info@riva-rafting.hr</a>
           </div>
 
-          <AppButton content='REZERVIRAJ SVOJU AVANTURU' />
+          <AppButton
+            content={langCheck(
+              String('Rezerviraj svoju avanturu').toUpperCase(),
+              String('Book your adventure').toUpperCase()
+            )}
+          />
         </div>
       </div>
     ),
