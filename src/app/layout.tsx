@@ -20,16 +20,63 @@ export const metadata: Metadata = {
     default: 'Riva Rafting - Rafting Adventures in Croatia',
     template: '%s | Riva Rafting',
   },
+  generator: `Next.js`,
+  metadataBase: new URL(`https://riva-rafting-web-under-construction.vercel.app`),
   openGraph: {
     type: 'website',
     title: 'Riva Rafting',
     description: 'Experience thrilling rafting adventures in Croatia with Riva Rafting.',
     siteName: 'Riva Rafting',
+    url: new URL(`https://riva-rafting-web-under-construction.vercel.app`),
+    locale: 'hr',
+    images: [
+      // {
+      // url: new URL(``),
+      // alt: 'Rafting adventures in Croatia',
+      // width: 1200,
+      // height: 630,
+      // type: 'image/jpeg',
+      // },
+    ],
+    videos: [
+      // {
+      //   url: new URL(``),
+      //   width: 1920,
+      //   height: 1080,
+      //   type: 'video/mp4',
+      //   secureUrl: new URL(``),
+      // },
+    ],
   },
   description:
     'Experience thrilling rafting adventures in Croatia with Riva Rafting. Discover the beauty of Croatian rivers and nature while enjoying adrenaline-pumping rafting experiences.',
   creator: 'Riva Rafting',
+  publisher: 'Vercel',
   keywords: 'rafting, Croatia, adventure, adrenaline, rivers, nature, water sports, outdoor activities',
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+  },
+  twitter: {
+    description:
+      'Experience thrilling rafting adventures in Croatia with Riva Rafting. Discover the beauty of Croatian rivers and nature while enjoying adrenaline-pumping rafting experiences.',
+    creator: 'Riva Rafting',
+    images: [
+      // {
+      //   url: new URL(``),
+      //   alt: 'Rafting adventures in Croatia',
+      //   width: 1200,
+      //   height: 630,
+      //   type: 'image/jpeg',
+      // },
+    ],
+  },
+  category: 'Rafting',
+  authors: [
+    { name: 'Riva Rafting', url: new URL(`https://riva-rafting-web-under-construction.vercel.app`) },
+    { name: 'Studio Sutra', url: new URL(`https://www.sutra.hr/`) },
+  ],
 };
 
 export default function RootLayout({

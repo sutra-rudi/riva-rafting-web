@@ -130,6 +130,17 @@
   gap: 0.25rem;
 }
 
+.contactButton {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+
+  img {
+    z-index: 3;
+  }
+}
+
 .secondaryButton {
   background: #fff;
   // outline: 1.5px solid $zelenaGlavna;

@@ -1,0 +1,172 @@
+.sectionMain {
+  width: 100%;
+  position: relative;
+}
+
+.sectionHero {
+  height: 85vh;
+  height: 85dvh;
+  min-height: 682px;
+
+  position: relative;
+
+  .heroHeader {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    position: absolute;
+    gap: 0.85rem;
+    bottom: 216px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0 1rem;
+
+    h1 {
+      font-size: $heading1;
+
+      @media only screen and (max-width: $desktops) {
+        font-size: $heading2;
+      }
+      @media only screen and (max-width: $tablets) {
+        font-size: $heading3;
+      }
+
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 120%;
+      text-align: center;
+      width: 100%;
+      text-wrap: balance;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+    }
+  }
+}
+
+.masterContainer {
+  //   max-width: $masterContainerWidth;
+  max-width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.contentContainer {
+  max-width: $masterContainerWidth;
+  margin: 0 auto;
+  padding: 5rem 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.contactFormContainer {
+  max-width: 840px;
+  width: 100%;
+
+  @media only screen and (max-width: $tablets) {
+    padding: 0 1rem;
+  }
+}
+
+.contactForm {
+  display: flex;
+  width: 100%;
+  gap: 2rem;
+  place-items: stretch;
+  justify-content: center;
+
+  @media only screen and (max-width: $tablets) {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+
+  .formBlockLeft {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    place-items: start;
+    gap: 0.85rem;
+
+    input,
+    select {
+      outline: none;
+      border: none;
+      width: 100%;
+      height: 100%;
+      background: $contactFormInputBg;
+      padding: 0 1rem;
+      color: $skrozTamnaZelena;
+      border-radius: 5px;
+      font-size: $heading4;
+      line-height: 130%;
+      font-family: inherit;
+      font-weight: 400;
+
+      @media only screen and (max-width: $tablets) {
+        padding: 0.75rem 1rem;
+      }
+
+      &::placeholder {
+        opacity: 1;
+        color: $skrozTamnaZelena;
+        font-size: $heading4;
+        line-height: 130%;
+        font-family: inherit;
+        font-weight: 400;
+      }
+    }
+
+    option {
+      font-size: $heading4;
+      line-height: 130%;
+      font-family: inherit;
+      font-weight: 400;
+      padding: 0 1rem;
+      color: $skrozTamnaZelena;
+    }
+  }
+
+  .formBlockRight {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    place-items: stretch;
+    gap: 0.85rem;
+
+    textarea {
+      color: $skrozTamnaZelena;
+      padding: 1rem;
+      border: none;
+      outline: none;
+      background: $contactFormInputBg;
+      border-radius: 5px;
+      font-size: $heading4;
+      line-height: 130%;
+      font-family: inherit;
+      font-weight: 400;
+      &::placeholder {
+        color: $skrozTamnaZelena;
+        opacity: 1;
+        font-size: $heading4;
+        line-height: 130%;
+        font-family: inherit;
+        font-weight: 400;
+      }
+    }
+
+    //     button {
+    //       color: $skrozTamnaZelena;
+    //       border-radius: 5px;
+    //       border: none;
+    //       outline: none;
+    //       background: $zelenaGlavna;
+    //       font-size: inherit;
+    //       padding: 0.75rem 1rem;
+    //       cursor: pointer;
+    //       font-size: $heading4;
+    //       line-height: 130%;
+    //     }
+  }
+}
