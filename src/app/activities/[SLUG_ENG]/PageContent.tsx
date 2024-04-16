@@ -65,7 +65,7 @@ const PageContent = ({
               </div>
               <div className={styles.articleButtonStack}>
                 <AppButton content='Book now' />
-                <AppButton content='Have any questions?' isSecondary />
+                <AppButton content='Have any questions?' />
               </div>
             </div>
 
