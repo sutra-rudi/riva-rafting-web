@@ -12,6 +12,7 @@ const navLinksOne = [
 const navLinksTwo = [
   { text: 'Mićanovi Dvori', href: '/' },
   { text: 'Zrmanja Camping Vilagge', href: '/' },
+  { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
 ];
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
@@ -35,6 +36,10 @@ const AppHeader = () => {
       setIsNavOpen(false);
     }
   };
+
+  React.useEffect(() => {
+    document.documentElement.classList.remove('overflow-hidden');
+  }, []);
 
   const HeaderBaseOne = () => {
     return (
