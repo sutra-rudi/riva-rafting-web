@@ -4,6 +4,7 @@ import styles from '../styles/contact.module.scss';
 import { useAppContext } from '../contexts/store';
 import webContent from '../../../public/webdata/webcontent.json';
 import AppButton from './AppButton';
+import { useFormspark } from '@formspark/use-formspark';
 
 const ContactForm = () => {
   const [contactFormData, setContactFormData] = React.useState<Record<string, string>>({
@@ -13,10 +14,16 @@ const ContactForm = () => {
     activity: '',
     message: '',
   });
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+
+  const formKey = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID;
+
+  const [submit, submitting] = useFormspark({
+    formId: formKey as string,
+  });
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    alert(JSON.stringify(contactFormData));
+    await submit(contactFormData);
   };
 
   const handleInputs = (inputEvent: React.ChangeEvent<HTMLInputElement>, inputName: string) => {

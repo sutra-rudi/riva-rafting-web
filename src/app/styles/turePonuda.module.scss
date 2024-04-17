@@ -105,11 +105,17 @@
       line-height: $defaultProred;
       font-weight: 300;
       color: $tamna;
+      text-wrap: balance;
+      word-wrap: break-word;
+
+      @media only screen and (min-width: $desktops) {
+        max-width: 62ch;
+      }
     }
 
     .imgHolder {
-      flex-grow: 1; /* Allow image to grow */
-      flex-shrink: 1; /* Allow image to shrink */
+      flex-grow: 1;
+      flex-shrink: 1;
 
       height: 30vh;
       position: relative;
@@ -117,7 +123,7 @@
 
       @media only screen and (min-width: $tablets) {
         max-width: 672px;
-        max-width: calc(50% - 1.5rem); /* Set maximum width for image holder */
+        max-width: calc(50% - 1.5rem);
         height: 445px;
       }
     }

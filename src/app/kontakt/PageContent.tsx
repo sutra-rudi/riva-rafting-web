@@ -13,6 +13,9 @@ const RecoletaBold = localFont({
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import PaperDividBot from '../components/PaperDividBot';
 import ContactForm from '../components/ContactForm';
+import cardImage from '../img/aktivnosti-hero-update-slike/kayakTura/Kayak gallery-1.png';
+import { CiLocationOn as LocationIcon, CiMail as MailIcon } from 'react-icons/ci';
+import { FiPhoneCall as PhoneIcon } from 'react-icons/fi';
 
 interface AboutUsPageContent {
   title: string;
@@ -47,6 +50,37 @@ const PageContent = (content: AboutUsPageContent) => {
         <PaperDividBot />
         <div className={styles.contentContainer}>
           <ContactForm />
+          <div className={styles.contactCardCont}>
+            <div className={styles.contactInfoCont}>
+              <p>Kontaktirajte nas</p>
+
+              <div className={styles.contactInfoInnerCont}>
+                <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>
+                  <span className={styles.contactIcon}>
+                    <LocationIcon />
+                  </span>
+                  <span className={styles.contactText}>6 Obala hr. Čas. Senada Ž., Obrovac, Croatia</span>
+                </a>
+
+                <a href={'mailto:info@riva-rafting-centar.hr'}>
+                  <span className={styles.contactIcon}>
+                    <MailIcon />
+                  </span>
+                  <span className={styles.contactText}>info@riva-rafting-centar.hr</span>
+                </a>
+
+                <a href={'tel:+38523689920'}>
+                  <span className={styles.contactIcon}>
+                    <PhoneIcon />
+                  </span>
+                  <span className={styles.contactText}>023 689 920</span>
+                </a>
+              </div>
+            </div>
+            <div className={styles.contactImageCont}>
+              <Image fill src={cardImage} alt='kaya tour' />
+            </div>
+          </div>
         </div>
       </div>
     </>

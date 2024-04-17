@@ -59,15 +59,98 @@
   display: grid;
   place-items: center;
   grid-template-columns: repeat(1, 1fr);
+  gap: 3.5rem;
+
+  @media only screen and (max-width: $tablets) {
+    padding: 5rem 1rem;
+  }
+}
+
+.contactCardCont {
+  display: flex;
+  max-width: 840px;
+  width: 100%;
+
+  @media only screen and (max-width: $phones) {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .contactImageCont {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    border-radius: 0px 9px 9px 0px;
+    flex-shrink: 1;
+    min-height: 227px;
+    @media only screen and (max-width: $phones) {
+      max-width: unset;
+      border-radius: 0px 0px 9px 9px;
+    }
+
+    img {
+      border-radius: 0px 9px 9px 0px;
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+
+      @media only screen and (max-width: $phones) {
+        border-radius: 0px 0px 9px 9px;
+      }
+    }
+  }
+
+  .contactInfoCont {
+    background: $zelenaGlavna;
+    padding: 2.1rem 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: stretch;
+    gap: 1rem;
+    border-radius: 9px 0 0 9px;
+
+    @media only screen and (max-width: $phones) {
+      max-width: unset;
+      border-radius: 9px 9px 0px 0px;
+    }
+
+    p {
+      font-weight: 600;
+      font-size: $mobileHeading4;
+    }
+
+    a {
+      display: flex;
+      place-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+
+      .contactIcon {
+        font-size: 120%;
+        flex-shrink: 0;
+        color: $skrozTamnaZelena;
+      }
+
+      .contactText {
+        color: $skrozTamnaZelena;
+        font-size: $baseFontSize;
+        line-height: $browserProred;
+
+        font-weight: normal;
+      }
+    }
+
+    .contactInfoInnerCont {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      place-items: stretch;
+      gap: 1rem;
+    }
+  }
 }
 
 .contactFormContainer {
   max-width: 840px;
   width: 100%;
-
-  @media only screen and (max-width: $tablets) {
-    padding: 0 1rem;
-  }
 }
 
 .contactForm {
@@ -89,11 +172,16 @@
     place-items: start;
     gap: 0.85rem;
 
+    @media only screen and (max-width: $phones) {
+      width: 90%;
+    }
+
     input,
     select {
       outline: none;
       border: none;
       width: 100%;
+      max-width: 100%;
       height: 100%;
       background: $contactFormInputBg;
       padding: 0 1rem;
@@ -132,8 +220,13 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
+    max-width: 100%;
     place-items: stretch;
     gap: 0.85rem;
+
+    @media only screen and (max-width: $phones) {
+      width: 90%;
+    }
 
     textarea {
       color: $skrozTamnaZelena;
@@ -146,6 +239,9 @@
       line-height: 130%;
       font-family: inherit;
       font-weight: 400;
+      @media only screen and (max-width: $phones) {
+        width: 100%;
+      }
       &::placeholder {
         color: $skrozTamnaZelena;
         opacity: 1;
@@ -155,18 +251,5 @@
         font-weight: 400;
       }
     }
-
-    //     button {
-    //       color: $skrozTamnaZelena;
-    //       border-radius: 5px;
-    //       border: none;
-    //       outline: none;
-    //       background: $zelenaGlavna;
-    //       font-size: inherit;
-    //       padding: 0.75rem 1rem;
-    //       cursor: pointer;
-    //       font-size: $heading4;
-    //       line-height: 130%;
-    //     }
   }
 }

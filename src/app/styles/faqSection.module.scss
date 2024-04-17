@@ -64,12 +64,28 @@
     }
 
     .accordion {
-      max-width: 547px;
+      max-width: 450px;
       width: 100%;
       display: grid;
       grid-template-columns: repeat(1, 1fr);
       place-items: stretch;
       gap: 0.5rem;
+
+      &:first-child {
+        place-self: end;
+        @media only screen and (max-width: $phones) {
+          place-self: center;
+          max-width: auto;
+        }
+      }
+
+      &:nth-child(2) {
+        place-self: start;
+        @media only screen and (max-width: $phones) {
+          place-self: center;
+          max-width: auto;
+        }
+      }
 
       .accordionItem {
         background: transparent;

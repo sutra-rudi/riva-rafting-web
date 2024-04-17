@@ -13,7 +13,7 @@
   }
   cursor: pointer;
   background: $zelenaGlavna;
-  transition: all 250ms ease-out;
+  transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
   color: #fff;
   font-size: 1rem;
   line-height: $defaultProred;
@@ -22,13 +22,14 @@
   display: block;
   overflow: hidden;
   min-width: 200px;
+  outline: 1px solid $zelenaGlavna;
 
   // max-width: max-content;
 
   span {
     z-index: 2;
     position: relative;
-    transition: all 250ms ease-out;
+    transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
     // display: block;
   }
 
@@ -123,12 +124,22 @@
   text-transform: uppercase;
 }
 
+.buttonIcon {
+  transition: all 250ms cubic-bezier(0.5, 0.2, 0.4, 0.25);
+}
+
 .aboutButton {
   width: 231px;
   display: flex;
   place-items: center;
   justify-content: center;
   gap: 0.25rem;
+
+  &:hover {
+    .buttonIcon {
+      color: $zelenaGlavna;
+    }
+  }
 }
 
 .contactButton {
@@ -137,8 +148,10 @@
   justify-content: center;
   gap: 0.25rem;
 
-  img {
-    z-index: 3;
+  color: $skrozTamnaZelena;
+
+  .buttonIcon {
+    font-size: 1.25rem;
   }
 }
 

@@ -39,7 +39,7 @@ const TureSekcija = () => {
     'Explore unlimited adventures, from exciting rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
 
   const foreground: BannerLayer = {
-    translateY: [0, 40],
+    translateY: [0, 45],
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.gallerySectionTextOverlay}>
@@ -52,7 +52,7 @@ const TureSekcija = () => {
   };
 
   const background: BannerLayer = {
-    translateY: [0, 80],
+    translateY: [0, 40],
     shouldAlwaysCompleteAnimation: true,
 
     children: (
