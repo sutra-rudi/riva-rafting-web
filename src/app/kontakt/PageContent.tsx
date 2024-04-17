@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import PaperDividTop from '../components/PaperDividTop';
+
 import Image, { StaticImageData } from 'next/image';
 
 import styles from '../styles/contact.module.scss';
@@ -16,6 +16,7 @@ import ContactForm from '../components/ContactForm';
 import cardImage from '../img/aktivnosti-hero-update-slike/kayakTura/Kayak gallery-1.png';
 import { CiLocationOn as LocationIcon, CiMail as MailIcon } from 'react-icons/ci';
 import { FiPhoneCall as PhoneIcon } from 'react-icons/fi';
+import PaperDividTop from '../components/PaperDividTop';
 
 interface AboutUsPageContent {
   title: string;
@@ -43,8 +44,10 @@ const PageContent = (content: AboutUsPageContent) => {
 
   return (
     <>
-      <PaperDividTop />
-      <ParallaxBanner className={styles.sectionHero} layers={[background, headline]} />
+      <div className={styles.heroWrapp}>
+        <PaperDividTop />
+        <ParallaxBanner className={styles.sectionHero} layers={[background, headline]} />
+      </div>
 
       <div className={styles.masterContainer}>
         <PaperDividBot />

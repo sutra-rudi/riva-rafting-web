@@ -12,6 +12,7 @@ export default async function Kontakt() {
   return (
     <main className={styles.sectionMain}>
       <AppHeader />
+
       <Suspense fallback={<Loading />}>
         <LazyContent title={`KONTAKTIRAJTE NAS I\nREZERVIRAJTE SVOJ TERMIN`} imgSrc={kontaktHero} />
       </Suspense>
