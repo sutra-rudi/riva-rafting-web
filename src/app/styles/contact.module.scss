@@ -86,6 +86,7 @@
     border-radius: 0px 9px 9px 0px;
     flex-shrink: 1;
     min-height: 227px;
+    overflow: hidden;
     @media only screen and (max-width: $phones) {
       max-width: unset;
       border-radius: 0px 0px 9px 9px;
@@ -95,6 +96,9 @@
       border-radius: 0px 9px 9px 0px;
       object-fit: cover;
       aspect-ratio: 16 / 9;
+      width: 200%;
+      height: 200%;
+      object-position: center;
 
       @media only screen and (max-width: $phones) {
         border-radius: 0px 0px 9px 9px;
@@ -207,6 +211,12 @@
         font-family: inherit;
         font-weight: 400;
       }
+    }
+
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
     }
 
     option {

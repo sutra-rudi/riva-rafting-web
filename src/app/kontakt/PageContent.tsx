@@ -10,7 +10,7 @@ const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
 
-import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+import { BannerLayer, ParallaxBanner, useParallax } from 'react-scroll-parallax';
 import PaperDividBot from '../components/PaperDividBot';
 import ContactForm from '../components/ContactForm';
 import cardImage from '../img/aktivnosti-hero-update-slike/kayakTura/Kayak gallery-1.png';
@@ -33,7 +33,6 @@ const PageContent = (content: AboutUsPageContent) => {
   const headline: BannerLayer = {
     translateY: [0, 30],
     scale: [1, 0.85],
-    //     opacity: [0.15, 0],
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroHeader}>
@@ -41,6 +40,10 @@ const PageContent = (content: AboutUsPageContent) => {
       </div>
     ),
   };
+
+  const { ref: paralaImage } = useParallax<HTMLDivElement>({
+    scale: [1, 1.7],
+  });
 
   return (
     <>
@@ -81,7 +84,8 @@ const PageContent = (content: AboutUsPageContent) => {
               </div>
             </div>
             <div className={styles.contactImageCont}>
-              <Image fill src={cardImage} alt='kaya tour' />
+              {/* @ts-ignore */}
+              <Image ref={paralaImage} fill src={cardImage} alt='kaya tour' />
             </div>
           </div>
         </div>

@@ -97,11 +97,11 @@ const AppFooter = () => {
           <div className={styles.footerBlock}>
             <p>{parseByLang('Linkovi', 'Links')}</p>
             <div className={styles.linkStack}>
-              <a href=''>
+              <a href='/o-nama'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('O nama', 'About us')}</span>
               </a>
-              <a href=''>
+              <a href='/kontakt'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('Kontakt forma', 'Contact form')}</span>
               </a>

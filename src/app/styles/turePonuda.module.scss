@@ -54,19 +54,19 @@
   .tureArticle {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Align items to the start of the flex container */
+    align-items: flex-start;
     flex-wrap: wrap;
     gap: 3rem;
     width: 100%;
 
     .contentHolder {
       flex-grow: 1;
-      flex-basis: 0; /* Ensure content holder takes full width */
+      flex-basis: 0;
       // max-width: calc(50% - 1.5rem); /* Set maximum width for content holder */
       width: 100%;
       @media only screen and (min-width: $tablets) {
-        max-width: 672px; /* Limit max width for larger screens */
-        max-width: calc(50% - 1.5rem); /* Set maximum width for content holder */
+        max-width: 672px;
+        max-width: calc(50% - 1.5rem);
       }
 
       display: grid;
@@ -80,6 +80,9 @@
       color: $tamna;
       line-height: $sekundarniProred;
       width: 100%;
+      text-wrap: balance;
+      word-wrap: break-word;
+      white-space: pre-wrap;
 
       @media only screen and (max-width: $tablets) {
         font-size: $mobileHeading1;

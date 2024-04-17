@@ -148,6 +148,10 @@
     position: relative;
     z-index: 1;
 
+    &:nth-child(3) {
+      display: none;
+    }
+
     &::before {
       content: '';
       z-index: -1;

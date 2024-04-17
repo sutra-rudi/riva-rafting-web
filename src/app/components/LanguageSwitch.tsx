@@ -43,7 +43,7 @@ const LanguageSwitch = () => {
         onClick={() => handleLangSwitch(UserLanguage.hr)}
         className={`${userLang === UserLanguage.hr ? `${styles.croa} ${styles.active}` : `${styles.croa}`} `}
       >
-        <Image width={20} height={20} alt='croatian flag' src={croatianFlag} />
+        {/* <Image width={20} height={20} alt='croatian flag' src={croatianFlag} /> */}
         <span>HR</span>
       </div>
 
@@ -51,7 +51,7 @@ const LanguageSwitch = () => {
         onClick={() => handleLangSwitch(UserLanguage.en)}
         className={`${userLang === UserLanguage.en ? `${styles.engl} ${styles.active}` : `${styles.engl}`} `}
       >
-        <Image width={20} height={20} alt='croatian flag' src={englishFlag} />
+        {/* <Image width={20} height={20} alt='croatian flag' src={englishFlag} /> */}
         <span>ENG</span>
       </div>
     </div>
