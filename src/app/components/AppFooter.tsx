@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from '../styles/appFooter.module.scss';
-import footerBg from '../img/test-footer.png';
+import footerBg from '../img/footer-bg-main.png';
 import appLogo from '../img/FOOTER-LOGO-NEW.svg';
 import Image from 'next/image';
 import facebookIcon from '../img/FACEBOOK-FOOTER.svg';
