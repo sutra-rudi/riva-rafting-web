@@ -46,7 +46,8 @@
 .paperBottom,
 .paperBottomAlt,
 .paperTop {
-  background-size: 100%;
+  // overflow: hidden;
+  // background-size: 100%;
   img {
     object-fit: cover;
     object-position: center center;

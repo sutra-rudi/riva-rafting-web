@@ -55,7 +55,7 @@ const PageContent = (content: PageContentAbout) => {
 
         <div className={styles.innerContentWrapp}>
           <div className={styles.headerWrapp}>
-            <h2>Informacije o tvrtki:</h2>
+            <h2>Company info:</h2>
           </div>
           <div className={styles.innerContentAlt}>
             {content.textSegments.map((segment, index) => {

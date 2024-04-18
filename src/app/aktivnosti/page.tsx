@@ -4,7 +4,7 @@ import AppFooter from '../components/AppFooter';
 import styles from '../styles/page.module.scss';
 import DodatneInformacije from '../sections/DodatneInformacije';
 import Loading from './loading';
-export default function Aktivnosti() {
+export default async function Aktivnosti() {
   return (
     <Suspense fallback={<Loading />}>
       <main className={styles.aktivnostiMain}>

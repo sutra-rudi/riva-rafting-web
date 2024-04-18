@@ -14,7 +14,12 @@ import footerAltBg from '../img/footer-small-screen.png';
 import PaperDividTop from './PaperDividTop';
 import { useAppContext } from '../contexts/store';
 import { useWindowSize } from '../hooks/useWindowSize';
-const AppFooter = () => {
+
+interface FooterInterface {
+  isAbout?: boolean;
+}
+
+const AppFooter = (props: FooterInterface) => {
   const {
     state: { userLang },
   } = useAppContext();
@@ -50,8 +55,8 @@ const AppFooter = () => {
   const clientWindowSize = useWindowSize();
 
   return (
-    <footer className={styles.appFooter}>
-      <PaperDividTop />
+    <footer style={{ marginTop: props.isAbout ? '0' : '3rem' }} className={styles.appFooter}>
+      <PaperDividTop isAbout={props.isAbout} />
 
       <div className={styles.socialFooterStack}>
         <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
@@ -97,7 +102,7 @@ const AppFooter = () => {
           <div className={styles.footerBlock}>
             <p>{parseByLang('Linkovi', 'Links')}</p>
             <div className={styles.linkStack}>
-              <a href='/o-nama'>
+              <a href={parseByLang('/o-nama', '/about-us')}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('O nama', 'About us')}</span>
               </a>
