@@ -106,11 +106,11 @@ const AppFooter = (props: FooterInterface) => {
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('O nama', 'About us')}</span>
               </a>
-              <a href='/kontakt'>
+              <a href={'/kontakt'}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('Kontakt forma', 'Contact form')}</span>
               </a>
-              <a href=''>
+              <a href='/#FAQ'>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
                 <span>{parseByLang('FAQ', 'FAQ')}</span>
               </a>
@@ -141,15 +141,21 @@ const AppFooter = (props: FooterInterface) => {
           <div className={styles.footerDislaimerTrack}>
             <div className={styles.disclaimerSig}>
               <div className={styles.disclaimerSigIn}>
-                <a href='/uvjeti-koristenja'>{parseByLang('Uvjeti i odredbe', 'Terms & Conditions')}</a>
+                <a href={parseByLang('/uvjeti-koristenja', '/terms-of-use')}>
+                  {parseByLang('Uvjeti i odredbe', 'Terms & Conditions')}
+                </a>
 
                 <span>|</span>
 
-                <a href='/pravila-privatnosti'>{parseByLang('Politika privatnosti', 'Privacy Policy')}</a>
+                <a href={parseByLang('/pravila-privatnosti', '/privacy-policy')}>
+                  {parseByLang('Politika privatnosti', 'Privacy Policy')}
+                </a>
 
                 <span>|</span>
 
-                <a href='/podatci-o-tvrtki'>{parseByLang('Podaci o tvrtki', 'Company info')}</a>
+                <a href={parseByLang('/podatci-o-tvrtki', '/company-info')}>
+                  {parseByLang('Podaci o tvrtki', 'Company info')}
+                </a>
               </div>
               <div className={styles.disclaimerSigIn}>
                 <span>{parseByLang('© 2024 All Rights Reserved', '© 2024 All Rights Reserved')}</span>

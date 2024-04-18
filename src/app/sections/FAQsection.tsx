@@ -15,7 +15,7 @@ const FAQsection = () => {
     state: { userLang },
   } = useAppContext();
   return (
-    <section className={styles.faqSection}>
+    <section id='FAQ' className={styles.faqSection}>
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         <div className={styles.sectionHeading}>
