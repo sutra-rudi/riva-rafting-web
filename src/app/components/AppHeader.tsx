@@ -4,16 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import svgAppLogo from '../img/APP-LOGO-FOOTER.svg';
 import Image from 'next/image';
-const navLinksOne = [
-  { text: 'O nama', href: '/o-nama' },
-  { text: 'Aktivnosti', href: '/aktivnosti' },
-  { text: 'Kontakt', href: '/kontakt' },
-];
-const navLinksTwo = [
-  { text: 'Mićanovi Dvori', href: '/' },
-  { text: 'Zrmanja Camping Vilagge', href: '/' },
-  { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
-];
+
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
@@ -23,8 +14,26 @@ import facebookIcon from '../img/MOBILE-MENU-SOCIAL-1.svg';
 import teleIcon from '../img/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/MOBILE-PAPIR.svg';
+import { useAppContext } from '../contexts/store';
 
 const AppHeader = () => {
+  const {
+    state: { userLang },
+  } = useAppContext();
+
+  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+
+  const navLinksOne = [
+    { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
+    { text: parseByLang('Aktivnosti', 'Activities'), href: parseByLang('/aktivnosti', '/activities') },
+    { text: parseByLang('Kontakt', 'Contact'), href: '/kontakt' },
+  ];
+  const navLinksTwo = [
+    { text: 'Mićanovi Dvori', href: '/' },
+    { text: 'Zrmanja Camping Vilagge', href: '/' },
+    { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
+  ];
+
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
 
   const handleNavControl = () => {
