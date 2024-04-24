@@ -97,7 +97,7 @@ const AppHeader = () => {
             <HeaderBaseTwo />
           </div>
           <div className={styles.navInnerParent}>
-            <AppButton isNav content='BOOK YOUR ADVENTURE' />
+            <AppButton isNav content={parseByLang('REZERVIRAJ SVOJU AVANTURU', 'BOOK YOUR ADVENTURE')} />
             <div className={styles.navInnerParentLang}>
               <LanguageSwitch />
             </div>

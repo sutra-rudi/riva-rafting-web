@@ -3,10 +3,10 @@
   position: relative;
 }
 .aboutUsHero {
-  height: 85vh;
-  height: 85dvh;
+  height: 45vh;
+  height: 45dvh;
 
-  min-height: 634px;
+  // min-height: 634px;
   position: relative;
 
   .heroHeader {
@@ -17,7 +17,7 @@
     position: absolute;
     gap: 0.85rem;
 
-    bottom: 316px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;

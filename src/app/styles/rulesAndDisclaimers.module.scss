@@ -5,10 +5,10 @@
   min-height: 634px;
 
   .rulesHero {
-    height: 75vh;
-    height: 75dvh;
+    height: 45vh;
+    height: 45dvh;
 
-    min-height: 634px;
+    // min-height: 634px;
     position: relative;
   }
 
@@ -17,7 +17,7 @@
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
     position: absolute;
-    bottom: 316px;
+    bottom: 150px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
