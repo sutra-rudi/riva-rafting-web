@@ -17,9 +17,9 @@ export default async function Home() {
   const GallerySectionLazy = dynamic(() => import('./sections/GallerySection'));
 
   return (
-    <Suspense fallback={<Loading />}>
-      <main className={styles.homeMain}>
-        <AppHeader />
+    <main className={styles.homeMain}>
+      <AppHeader />
+      <Suspense fallback={<Loading />}>
         <HeroLazy />
         <PromoLazy />
         <TureLazy />
@@ -29,8 +29,9 @@ export default async function Home() {
         <DodatneInformacije isLanding />
         <FAQsectionLazy />
         <GallerySectionLazy />
-        <AppFooter />
-      </main>
-    </Suspense>
+      </Suspense>
+
+      <AppFooter />
+    </main>
   );
 }
