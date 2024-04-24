@@ -7,12 +7,13 @@ import DodatneInformacije from '../sections/DodatneInformacije';
 import Loading from './loading';
 export default async function Aktivnosti() {
   return (
-    <Suspense fallback={<Loading />}>
-      <main className={styles.aktivnostiMain}>
-        <AppHeader />
+    <main className={styles.aktivnostiMain}>
+      <AppHeader />
+      <Suspense fallback={<Loading />}>
         <DodatneInformacije isLanding={false} />
-        <AppFooter />
-      </main>
-    </Suspense>
+      </Suspense>
+
+      <AppFooter />
+    </main>
   );
 }

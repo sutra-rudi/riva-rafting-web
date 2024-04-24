@@ -67,9 +67,9 @@ const companyInfoSegments = [
 
 export default async function Onama() {
   return (
-    <Suspense fallback={<Loading />}>
-      <main className={styles.aboutUsMain}>
-        <AppHeader />
+    <main className={styles.aboutUsMain}>
+      <AppHeader />
+      <Suspense fallback={<Loading />}>
         <PageContent
           title='O nama'
           paraContent={pageParagraphContentHr}
@@ -77,9 +77,8 @@ export default async function Onama() {
           compImg={compImage}
           textSegments={companyInfoSegments}
         />
-
-        <AppFooter isAbout />
-      </main>
-    </Suspense>
+      </Suspense>
+      <AppFooter isAbout />
+    </main>
   );
 }

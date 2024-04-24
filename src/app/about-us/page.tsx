@@ -61,9 +61,9 @@ const companyInfoSegments = [
 
 export default async function AboutUs() {
   return (
-    <Suspense fallback={<Loading />}>
-      <main className={styles.aboutUsMain}>
-        <AppHeader />
+    <main className={styles.aboutUsMain}>
+      <AppHeader />
+      <Suspense fallback={<Loading />}>
         <PageContent
           title='About us'
           paraContent={pageParagraphContentHr}
@@ -71,9 +71,9 @@ export default async function AboutUs() {
           compImg={compImage}
           textSegments={companyInfoSegments}
         />
+      </Suspense>
 
-        <AppFooter isAbout />
-      </main>
-    </Suspense>
+      <AppFooter isAbout />
+    </main>
   );
 }

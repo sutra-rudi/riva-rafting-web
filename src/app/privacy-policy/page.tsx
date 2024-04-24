@@ -46,12 +46,12 @@ const sectionContent_hr = {
 
 export default async function PrivacyPolicy() {
   return (
-    <Suspense fallback={<Loading />}>
+    <main className={styles.mainSection}>
       <AppHeader />
-      <main className={styles.mainSection}>
+      <Suspense fallback={<Loading />}>
         <PageContent {...sectionContent_hr} />
-        <AppFooter />
-      </main>
-    </Suspense>
+      </Suspense>
+      <AppFooter />
+    </main>
   );
 }
