@@ -3,6 +3,10 @@
   position: relative;
   margin-top: 5rem;
 
+  @media only screen and (max-width: $tablets) {
+    margin-top: 2rem;
+  }
+
   .masterContainer {
     max-width: $masterContainerWidth;
     margin: 0 auto;
@@ -18,7 +22,11 @@
       flex-direction: row;
       flex-wrap: wrap-reverse;
       place-items: center;
-      gap: 5.5em;
+      gap: 5.5rem;
+
+      @media only screen and (max-width: $tablets) {
+        gap: 3rem;
+      }
     }
 
     .sectionHeading {
@@ -52,6 +60,10 @@
         max-height: 100%;
         display: block;
         border-radius: 155px 0 0 0;
+
+        @media only screen and (max-width: $tablets) {
+          border-radius: 77.5px 0 0 0;
+        }
       }
     }
 

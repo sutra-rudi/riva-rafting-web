@@ -30,7 +30,7 @@ const OnamaSekcija = () => {
             <p>{userLang === 'hr' ? paragraphContent : paraGraphContentEn}</p>
             <div className={styles.buttonContainer}>
               <AppButton isAbout content={userLang === 'hr' ? 'Saznaj više' : 'Learn more'} />
-              <AppButton isAbout content={userLang === 'hr' ? 'Kontaktiraj nas' : 'Contact us'} />
+              <AppButton isRelax isAbout content={userLang === 'hr' ? 'Kontaktiraj nas' : 'Contact us'} />
             </div>
           </div>
         </div>
