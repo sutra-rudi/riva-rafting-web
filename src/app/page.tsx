@@ -6,7 +6,7 @@ import { Suspense } from 'react';
 import Loading from './loading';
 import AppFooter from './components/AppFooter';
 
-export default async function Home({ searchParams }: Record<string, string>) {
+export default async function Home({ searchParams }: any) {
   const HeroLazy = dynamic(() => import('./sections/HeroSekcija'), { ssr: false });
   const PromoLazy = dynamic(() => import('./sections/PromoSekcijaJedan'), { ssr: false });
   const TureLazy = dynamic(() => import('./sections/TureSekcija'), { ssr: false });
