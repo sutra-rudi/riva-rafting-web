@@ -18,9 +18,8 @@ export default async function Home({ searchParams }: any) {
 
   return (
     <Suspense fallback={<Loading />}>
+      <AppHeader />
       <main className={styles.homeMain}>
-        <AppHeader />
-
         <HeroLazy />
         <PromoLazy />
         <TureLazy />
