@@ -41,9 +41,9 @@ const PageContent = (content: PageContentPriv) => {
       </div>
     ),
   };
-  if (typeof window !== 'undefined' || window !== null) {
-    return null;
-  }
+  // if (typeof window !== 'undefined' || window !== null) {
+  //   return null;
+  // }
 
   return typeof window !== 'undefined' && window !== null ? (
     <>

@@ -121,9 +121,9 @@ const PageContent = () => {
       </div>
     ),
   };
-  if (typeof window !== 'undefined' || window !== null) {
-    return null;
-  }
+  // if (typeof window !== 'undefined' || window !== null) {
+  //   return null;
+  // }
 
   return typeof window !== 'undefined' && window !== null ? (
     <div className={styles.sectionMaster}>
