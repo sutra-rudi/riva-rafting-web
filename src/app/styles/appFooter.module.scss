@@ -295,7 +295,7 @@
       gap: 1rem;
 
       @media only screen and (max-width: $phones) {
-        bottom: -63px;
+        // bottom: -63px;
         font-size: $mobileFontSizeSmall;
       }
 
@@ -412,7 +412,7 @@
     }
 
     .footerBlock:nth-child(3) {
-      padding: 1.5rem 0;
+      padding: 1.5rem 0 2.5rem 0;
 
       a,
       p {

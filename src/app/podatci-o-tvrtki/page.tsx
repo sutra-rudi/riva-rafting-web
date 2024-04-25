@@ -3,8 +3,8 @@ import styles from '../styles/rulesAndDisclaimers.module.scss';
 import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/podatci-o-tvrtki-hero.png';
 import AppHeader from '../components/AppHeader';
-import PageContent from './PageContent';
 import Loading from './loading';
+import dynamic from 'next/dynamic';
 const sectionContent_hr = {
   title: 'Podatci o tvrtki',
   topText: '',
@@ -66,13 +66,15 @@ const sectionContent_hr = {
 };
 
 export default async function PodatciOTvrtki() {
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
+
   return (
-    <main className={styles.mainSection}>
+    <Suspense fallback={<Loading />}>
       <AppHeader />
-      <Suspense fallback={<Loading />}>
-        <PageContent {...sectionContent_hr} />
-      </Suspense>
+      <main className={styles.mainSection}>
+        <LazyContent {...sectionContent_hr} />
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }

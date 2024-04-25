@@ -3,8 +3,9 @@ import styles from '../styles/rulesAndDisclaimers.module.scss';
 import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/pravila-privatnosti-hero.png';
 import AppHeader from '../components/AppHeader';
-import PageContent from './PageContent';
+
 import Loading from './loading';
+import dynamic from 'next/dynamic';
 const sectionContent_hr = {
   title: 'Pravila privatnosti',
   topText: `Riva Rafting Centar, PA d.o.o. (u daljnjem tekstu "mi", "nas" ili "tvrtka") poštuje vašu privatnost i posvećeni smo zaštiti vaših osobnih podataka. Ova Pravila privatnosti opisuju kako prikupljamo, koristimo i otkrivamo osobne podatke koje primamo putem naše web stranice riva-rafting.hr (u daljnjem tekstu "web stranica"). Molimo vas da pažljivo pročitate ova pravila kako biste razumjeli naše postupke u vezi s vašim osobnim podacima i kako ih tretiramo.`,
@@ -43,15 +44,15 @@ const sectionContent_hr = {
 };
 
 export default async function PravilaPrivatnosti() {
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
   return (
-    <main className={styles.mainSection}>
+    <Suspense fallback={<Loading />}>
       <AppHeader />
-
-      <Suspense fallback={<Loading />}>
-        <PageContent {...sectionContent_hr} />
-      </Suspense>
+      <main className={styles.mainSection}>
+        <LazyContent {...sectionContent_hr} />
+      </main>
 
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }

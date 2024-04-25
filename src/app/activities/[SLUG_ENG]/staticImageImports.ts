@@ -153,6 +153,12 @@ import jahanje6 from '../../img/aktivnosti-hero-update-slike/jahanje/jahanje gal
 //----------------BICIKL--------//
 
 import bicikl1 from '../../img/aktivnosti-hero-update-slike/bicikl(1).png';
+import bicikl2 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl01.png';
+import bicikl3 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl02.png';
+import bicikl4 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl03.png';
+import bicikl5 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl04.png';
+// import bicikl6 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl05.png';
+// import bicikl7 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl06.png';
 
 //----------------BICIKL--------//
 
@@ -287,7 +293,11 @@ const AktivnostiHeroSlike = [
     aktivnostHeroUrl: jahanje,
     aktivnostGalerija: [jahanje1, jahanje2, jahanje3, jahanje4, jahanje5, jahanje6],
   },
-  { aktivnostId: 10, aktivnostHeroUrl: bicikl, aktivnostGalerija: [bicikl1] },
+  {
+    aktivnostId: 10,
+    aktivnostHeroUrl: bicikl,
+    aktivnostGalerija: [bicikl1, bicikl2, bicikl3, bicikl4, bicikl5],
+  },
 ];
 
 export default AktivnostiHeroSlike;

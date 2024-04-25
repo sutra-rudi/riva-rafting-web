@@ -3,8 +3,9 @@ import styles from '../styles/rulesAndDisclaimers.module.scss';
 import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/podatci-o-tvrtki-hero.png';
 import AppHeader from '../components/AppHeader';
-import PageContent from './PageContent';
+
 import Loading from './loading';
+import dynamic from 'next/dynamic';
 const sectionContent_hr = {
   title: 'Company info',
   topText: '',
@@ -66,11 +67,13 @@ const sectionContent_hr = {
 };
 
 export default async function CompanyInfo() {
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
+
   return (
     <main className={styles.mainSection}>
       <AppHeader />
       <Suspense fallback={<Loading />}>
-        <PageContent {...sectionContent_hr} />
+        <LazyContent {...sectionContent_hr} />
       </Suspense>
       <AppFooter />
     </main>

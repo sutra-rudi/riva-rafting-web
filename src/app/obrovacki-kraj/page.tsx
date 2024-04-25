@@ -5,17 +5,16 @@ import { Suspense } from 'react';
 import Loading from './loading';
 import dynamic from 'next/dynamic';
 
-const LazyContent = dynamic(() => import('./PageContent'));
-
 export default async function ObrovackiKraj() {
-  return (
-    <main className={styles.sectionMain}>
-      <AppHeader />
-      <Suspense fallback={<Loading />}>
-        <LazyContent />
-      </Suspense>
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
 
+  return (
+    <Suspense fallback={<Loading />}>
+      <AppHeader />
+      <main className={styles.sectionMain}>
+        <LazyContent />
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }

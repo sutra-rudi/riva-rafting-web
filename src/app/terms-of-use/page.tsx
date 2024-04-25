@@ -3,8 +3,8 @@ import styles from '../styles/rulesAndDisclaimers.module.scss';
 import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/pravila-privatnosti-hero.png';
 import AppHeader from '../components/AppHeader';
-import PageContent from './PageContent';
 import Loading from './loading';
+import dynamic from 'next/dynamic';
 const sectionContent_hr = {
   title: 'Terms of use',
   topText:
@@ -45,11 +45,13 @@ const sectionContent_hr = {
 };
 
 export default async function TermsOfUse() {
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
+
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
       <main className={styles.mainSection}>
-        <PageContent {...sectionContent_hr} />
+        <LazyContent {...sectionContent_hr} />
         <AppFooter />
       </main>
     </Suspense>

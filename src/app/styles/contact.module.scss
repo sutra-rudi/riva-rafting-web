@@ -7,9 +7,10 @@
 }
 
 .sectionHero {
-  height: 85vh;
-  height: 85dvh;
-  min-height: 682px;
+  height: 45vh;
+  height: 45dvh;
+
+  // min-height: 682px;
 
   position: relative;
 
@@ -19,7 +20,7 @@
     place-items: center;
     position: absolute;
     gap: 0.85rem;
-    bottom: 216px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;

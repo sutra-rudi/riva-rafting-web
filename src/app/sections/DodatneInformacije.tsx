@@ -26,8 +26,6 @@ const DodatneInformacije = (props: MoreInfoProps) => {
     threshold: 0,
   });
 
-  console.log('U VIEW', inView);
-
   return (
     <section
       className={

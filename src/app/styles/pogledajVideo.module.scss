@@ -2,6 +2,7 @@
   min-height: 70vh;
   min-height: 70lvh;
   overflow-x: hidden;
+  overflow: hidden;
 
   width: 100%;
   @media only screen and (max-width: $tablets) {
@@ -18,7 +19,7 @@
   .pogledajVideoParalax {
     height: 70vh;
     height: 70lvh;
-    min-height: 100%;
+
     position: relative;
   }
 

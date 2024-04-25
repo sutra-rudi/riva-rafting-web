@@ -40,7 +40,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
 
   const findGallery = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
 
-  const LazyContent = dynamic(() => import('./PageContent'));
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
 
   return (
     <Suspense fallback={<Loading />}>
@@ -55,8 +55,8 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
         )}
         <MapboxMapa apiKey={mapboxApiKey as string} />
         <DodatneInformacije isLanding={false} />
-        <AppFooter />
       </main>
+      <AppFooter />
     </Suspense>
   );
 }

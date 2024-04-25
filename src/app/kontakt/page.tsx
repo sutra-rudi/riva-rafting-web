@@ -10,14 +10,14 @@ import dynamic from 'next/dynamic';
 export default async function Kontakt() {
   const LazyContent = dynamic(() => import('./PageContent'));
   return (
-    <main className={styles.sectionMain}>
+    <Suspense fallback={<Loading />}>
       <AppHeader />
-
-      <Suspense fallback={<Loading />}>
+      <main className={styles.sectionMain}>
         <LazyContent title={`KONTAKTIRAJTE NAS I\nREZERVIRAJTE SVOJ TERMIN`} imgSrc={kontaktHero} />
-      </Suspense>
-      <FAQsection />
+
+        <FAQsection />
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }

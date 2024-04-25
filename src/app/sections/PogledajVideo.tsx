@@ -63,10 +63,7 @@ const PogledajVideo = () => {
   return (
     <section className={styles.pogledajVideoSection}>
       <PaperDividTop />
-      <ParallaxBanner
-        className={styles.pogledajVideoParalax}
-        layers={[background, headline, foreground]}
-      ></ParallaxBanner>
+      <ParallaxBanner className={styles.pogledajVideoParalax} layers={[background, headline, foreground]} />
       <PaperDividBotAlt />
     </section>
   );
