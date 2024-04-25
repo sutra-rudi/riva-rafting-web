@@ -8,7 +8,7 @@ import FAQsection from '../sections/FAQsection';
 import dynamic from 'next/dynamic';
 
 export default async function Kontakt() {
-  const LazyContent = dynamic(() => import('./PageContent'));
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />

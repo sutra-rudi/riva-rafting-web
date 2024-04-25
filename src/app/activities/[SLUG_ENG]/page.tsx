@@ -44,7 +44,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
 
   const findGallery = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
 
-  const LazyContent = dynamic(() => import('./PageContent'));
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
 
   return (
     <Suspense fallback={<Loading />}>
