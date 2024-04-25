@@ -122,7 +122,7 @@ const PageContent = () => {
     ),
   };
 
-  return (
+  return window && typeof window !== undefined ? (
     <div className={styles.sectionMaster}>
       <PaperDividTop />
       <ParallaxBanner className={styles.sectionHero} layers={[background, headline]} />
@@ -153,7 +153,7 @@ const PageContent = () => {
       />
       <PaperDividBotAlt />
     </div>
-  );
+  ) : null;
 };
 
 export default PageContent;

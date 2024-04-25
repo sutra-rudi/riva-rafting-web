@@ -45,7 +45,7 @@ const PageContent = (content: AboutUsPageContent) => {
     scale: [1, 1.7],
   });
 
-  return (
+  return window && typeof window !== undefined ? (
     <>
       <div className={styles.heroWrapp}>
         <PaperDividTop />
@@ -91,7 +91,7 @@ const PageContent = (content: AboutUsPageContent) => {
         </div>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default PageContent;

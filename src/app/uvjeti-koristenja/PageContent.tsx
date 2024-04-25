@@ -42,7 +42,7 @@ const PageContent = (content: PageContentPriv) => {
     ),
   };
 
-  return (
+  return window && typeof window !== undefined ? (
     <>
       <PaperDividTop />
       <ParallaxBanner className={styles.rulesHero} layers={[background, headline]} />
@@ -70,7 +70,7 @@ const PageContent = (content: PageContentPriv) => {
         </div>
       </div>
     </>
-  );
+  ) : null;
 };
 
 export default PageContent;
