@@ -17,9 +17,10 @@ export default async function Home({ searchParams }: any) {
   const GallerySectionLazy = dynamic(() => import('./sections/GallerySection'), { ssr: false });
 
   return (
-    <main className={styles.homeMain}>
-      <AppHeader />
-      <Suspense fallback={<Loading />}>
+    <Suspense fallback={<Loading />}>
+      <main className={styles.homeMain}>
+        <AppHeader />
+
         <HeroLazy />
         <PromoLazy />
         <TureLazy />
@@ -29,9 +30,8 @@ export default async function Home({ searchParams }: any) {
         <DodatneInformacije isLanding />
         <FAQsectionLazy />
         <GallerySectionLazy />
-      </Suspense>
-
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }
