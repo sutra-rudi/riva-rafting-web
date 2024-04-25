@@ -39,7 +39,7 @@ const PageContent = (content: PageContentAbout) => {
     ),
   };
 
-  return window && typeof window !== undefined ? (
+  return typeof window !== 'undefined' && window !== null ? (
     <div className={styles.heroWrapp}>
       <PaperDividTop />
       <ParallaxBanner className={styles.aboutUsHero} layers={[background, headline]} />

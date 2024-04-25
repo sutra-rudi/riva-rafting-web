@@ -42,7 +42,7 @@ const PageContent = (content: PageContentPriv) => {
     ),
   };
 
-  return window && typeof window !== undefined ? (
+  return typeof window !== 'undefined' && window !== null ? (
     <>
       <PaperDividTop />
       <ParallaxBanner className={styles.rulesHero} layers={[background, headline]} />

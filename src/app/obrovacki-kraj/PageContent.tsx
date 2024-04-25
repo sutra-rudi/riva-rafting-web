@@ -122,7 +122,7 @@ const PageContent = () => {
     ),
   };
 
-  return window && typeof window !== undefined ? (
+  return typeof window !== 'undefined' && window !== null ? (
     <div className={styles.sectionMaster}>
       <PaperDividTop />
       <ParallaxBanner className={styles.sectionHero} layers={[background, headline]} />

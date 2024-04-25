@@ -44,7 +44,7 @@ const PageContent = ({
     ),
   };
 
-  return window && typeof window !== undefined ? (
+  return typeof window !== 'undefined' && window !== null ? (
     <>
       <PaperDividTop />
       <ParallaxBanner className={styles.aktivnostHero} layers={[background, headline]} />
