@@ -70,12 +70,12 @@ export default async function CompanyInfo() {
   const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
 
   return (
-    <main className={styles.mainSection}>
+    <Suspense fallback={<Loading />}>
       <AppHeader />
-      <Suspense fallback={<Loading />}>
+      <main className={styles.mainSection}>
         <LazyContent {...sectionContent_hr} />
-      </Suspense>
+      </main>
       <AppFooter />
-    </main>
+    </Suspense>
   );
 }
