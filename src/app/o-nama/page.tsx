@@ -5,7 +5,7 @@ import styles from '../styles/page.module.scss';
 
 import Loading from './loading';
 import aboutUsHero from '../img/heros/about-us-hero.png';
-import compImage from '../img/about-us-company-img.png';
+import compImage from '../img/globals/about-us-company-img.png';
 import dynamic from 'next/dynamic';
 
 const pageParagraphContentHr = `Riva Rafting Centar d.o.o. je tvrtka s više od 20 godina iskustva u poslovanju na ruralnom, brdsko-planinskom području, smještena u Kruševu, zaseoku Drage iznad Obrovca. Naša lokacija ima nevjerojatan turistički potencijal za aktivni, sportski i seoski turizam, te je strateški pozicionirana na udaljenosti od 0 do 80 km od većine Nacionalnih parkova i Parkova prirode.

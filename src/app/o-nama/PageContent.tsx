@@ -25,11 +25,7 @@ const PageContent = (content: PageContentAbout) => {
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
-    children: (
-      <>
-        <Image fill src={content.imgSrc} alt='hero' placeholder='blur' priority loading='eager' />
-      </>
-    ),
+    children: <Image fill src={content.imgSrc ?? ''} alt='hero' placeholder='blur' />,
   };
 
   const headline: BannerLayer = {
