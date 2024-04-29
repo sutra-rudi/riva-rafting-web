@@ -28,11 +28,7 @@ const PageContent = (content: PageContentAbout) => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <>
-        {typeof window !== 'undefined' && window !== null ? (
-          <Loading />
-        ) : (
-          <Image fill src={content.imgSrc ?? ''} alt='hero' placeholder='blur' />
-        )}
+        <Image fill src={content.imgSrc} alt='hero' placeholder='blur' priority loading='eager' />
       </>
     ),
   };
