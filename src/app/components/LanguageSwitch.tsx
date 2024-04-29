@@ -5,12 +5,11 @@ import styles from '../styles/langSwitcher.module.scss';
 import { useAppContext } from '../contexts/store';
 import { ActionTypes } from '../types/actionTypes';
 import { UserLanguage } from '../types/appState';
-import { usePathname, useRouter } from 'next/navigation';
-import { getLocalStorageItem, setLocalStorageItem } from '../utils/localStorage';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { setLocalStorageItem, getLocalStorageItem } from '../utils/localStorage';
 import Image from 'next/image';
 import croatianFlag from '../img/icons/country-flags/croatianFlag.svg';
 import englishFlag from '../img/icons/country-flags/englishFlag.svg';
-import { useSearchParams } from 'next/navigation';
 
 const LanguageSwitch = () => {
   const {
@@ -58,7 +57,8 @@ const LanguageSwitch = () => {
 
     setLocalStorageItem('@riva-rafting-user-language', payloadF);
 
-    if (pathname !== '/') {
+    if (pathname !== '/smjestaj/mobilne-kucice') {
+      window.location.reload();
       router.push('/');
     } else {
       window.location.reload();

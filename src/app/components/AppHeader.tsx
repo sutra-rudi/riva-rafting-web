@@ -15,23 +15,33 @@ import teleIcon from '../img/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
+import { useSearchParams } from 'next/navigation';
 
 const AppHeader = () => {
   const {
     state: { userLang },
   } = useAppContext();
 
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+
   const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
 
   const navLinksOne = [
-    { text: parseByLang('O nama', 'About us'), href: parseByLang('/o-nama', '/about-us') },
-    { text: parseByLang('Aktivnosti', 'Activities'), href: parseByLang('/aktivnosti', '/activities') },
-    { text: parseByLang('Kontakt', 'Contact'), href: '/kontakt' },
+    {
+      text: parseByLang('O nama', 'About us'),
+      href: parseByLang(`/o-nama/?lang=${checkParams}`, `/about-us/?lang=${checkParams}`),
+    },
+    {
+      text: parseByLang('Aktivnosti', 'Activities'),
+      href: parseByLang(`/aktivnosti/?lang=${checkParams}`, `/activities/?lang=${checkParams}`),
+    },
+    { text: parseByLang('Kontakt', 'Contact'), href: `/kontakt/?lang=${checkParams}` },
   ];
   const navLinksTwo = [
     { text: 'Mićanovi Dvori', href: '/' },
     { text: 'Zrmanja Camping Vilagge', href: '/' },
-    { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
+    { text: 'Što posjetiti u okolici?', href: `/obrovacki-kraj/?lang=${checkParams}` },
   ];
 
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
