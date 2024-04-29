@@ -66,7 +66,7 @@ const companyInfoSegments = [
 ];
 
 export default async function Onama() {
-  const LazyContent = dynamic(async () => await import('./PageContent'), { ssr: false });
+  const LazyContent = dynamic(() => import('./PageContent'), { ssr: true });
 
   return (
     <Suspense fallback={<Loading />}>
