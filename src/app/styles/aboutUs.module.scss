@@ -6,7 +6,7 @@
   height: 45vh;
   height: 45dvh;
 
-  // min-height: 634px;
+  min-height: 486px;
   position: relative;
 
   .heroHeader {
@@ -112,7 +112,7 @@
       position: absolute;
       width: 100%;
       height: 384px;
-      background: url('../img/about-us-gradient-overlay.svg');
+      background: url('../img/globals/about-us-gradient-overlay.svg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -193,4 +193,6 @@
 }
 .heroWrapp {
   position: relative;
+  width: 100%;
+  height: 100%;
 }

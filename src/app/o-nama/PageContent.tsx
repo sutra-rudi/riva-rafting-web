@@ -12,7 +12,6 @@ const RecoletaBold = localFont({
 
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import PaperDividBot from '../components/PaperDividBot';
-import Loading from './loading';
 
 interface PageContentAbout {
   title: string;
