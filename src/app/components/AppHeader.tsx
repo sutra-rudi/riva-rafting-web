@@ -95,23 +95,25 @@ const AppHeader = () => {
           <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
         </div>
         <div className={styles.navMaster}>
-          <div className={styles.navInnerParent}>
-            <div className={styles.navLeftParent}>
-              <Link className={styles.noEffectLogo} href={'/'}>
-                <Image src={svgAppLogo} alt='app logo' />
-              </Link>
-              <HeaderBaseOne />
-            </div>
-            <span className={styles.headerLinkDivid}>|</span>
+          <Link className={styles.noEffectLogo} href={'/'}>
+            <Image src={svgAppLogo} alt='app logo' />
+          </Link>
+          <div className={styles.navParentMaster}>
+            <div className={styles.navInnerParent}>
+              <div className={styles.navLeftParent}>
+                <HeaderBaseOne />
+              </div>
+              <span className={styles.headerLinkDivid}>|</span>
 
-            <HeaderBaseTwo />
-          </div>
-          <div className={styles.navInnerParent}>
-            <AppButton isNav content={parseByLang('REZERVIRAJ SVOJU AVANTURU', 'BOOK YOUR ADVENTURE')} />
-            <div className={styles.navInnerParentLang}>
-              <LanguageSwitch />
+              <HeaderBaseTwo />
             </div>
-            <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+            <div className={styles.navInnerParent}>
+              <AppButton isNav content={parseByLang('REZERVIRAJ SVOJU AVANTURU', 'BOOK YOUR ADVENTURE')} />
+              <div className={styles.navInnerParentLang}>
+                <LanguageSwitch />
+              </div>
+              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+            </div>
           </div>
         </div>
 

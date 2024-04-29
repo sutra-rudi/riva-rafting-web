@@ -60,7 +60,7 @@ const companyInfoSegments = [
 ];
 
 export default async function AboutUs() {
-  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
+  const LazyContent = dynamic(async () => await import('./PageContent'), { ssr: false });
 
   return (
     <Suspense fallback={<Loading />}>
