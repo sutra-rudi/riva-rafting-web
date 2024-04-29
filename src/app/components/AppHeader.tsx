@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import React from 'react';
-import svgAppLogo from '../img/APP-LOGO-FOOTER.svg';
+import svgAppLogo from '../img/app-logo-master.svg';
 import Image from 'next/image';
 
 import styles from '../styles/appHeader.module.scss';
