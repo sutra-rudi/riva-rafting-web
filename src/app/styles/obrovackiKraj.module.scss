@@ -71,9 +71,11 @@
   column-gap: 0.625rem;
   row-gap: 2.1875rem;
   margin: 4.1875rem 0 0 0;
+  padding: 0 1rem;
+  place-items: start center;
   @media only screen and (max-width: $desktops) {
     grid-template-columns: repeat(3, 1fr);
-    place-items: start center;
+    // place-items: start center;
   }
 
   @media only screen and (max-width: $tablets) {

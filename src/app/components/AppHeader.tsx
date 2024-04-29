@@ -2,18 +2,18 @@
 
 import Link from 'next/link';
 import React from 'react';
-import svgAppLogo from '../img/app-logo-master.svg';
+import svgAppLogo from '../img/logos/riva-logo.svg';
 import Image from 'next/image';
 
 import styles from '../styles/appHeader.module.scss';
 import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
 import { Spin as Hamburger } from 'hamburger-react';
-import instaIcon from '../img/MOBILE-MENU-SOCIAL-2.svg';
-import facebookIcon from '../img/MOBILE-MENU-SOCIAL-1.svg';
-import teleIcon from '../img/MOBILE-MENU-SOCIAL-3.svg';
+import instaIcon from '../img/icons/MOBILE-MENU-SOCIAL-2.svg';
+import facebookIcon from '../img/icons/MOBILE-MENU-SOCIAL-1.svg';
+import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
-import mobilePapir from '../img/MOBILE-PAPIR.svg';
+import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
 import { useSearchParams } from 'next/navigation';
 
@@ -22,14 +22,16 @@ const AppHeader = () => {
     state: { userLang },
   } = useAppContext();
 
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
+    [userLang]
+  );
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
-
   const navLinksOne = [
     {
-      text: parseByLang('O nama', 'About us'),
+      text: parseByLang(`O nama`, `About us`),
       href: parseByLang(`/o-nama/?lang=${checkParams}`, `/about-us/?lang=${checkParams}`),
     },
     {
@@ -37,11 +39,15 @@ const AppHeader = () => {
       href: parseByLang(`/aktivnosti/?lang=${checkParams}`, `/activities/?lang=${checkParams}`),
     },
     { text: parseByLang('Kontakt', 'Contact'), href: `/kontakt/?lang=${checkParams}` },
+    {
+      text: parseByLang('Što posjetiti?', 'What to visit?'),
+      href: parseByLang(`/obrovacki-kraj/?lang=${checkParams}`, `/obrovacki-kraj/?lang=${checkParams}`),
+    },
   ];
   const navLinksTwo = [
     { text: 'Mićanovi Dvori', href: '/' },
     { text: 'Zrmanja Camping Vilagge', href: '/' },
-    { text: 'Što posjetiti u okolici?', href: `/obrovacki-kraj/?lang=${checkParams}` },
+    // { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
   ];
 
   const [isNavOpen, setIsNavOpen] = React.useState<boolean>(false);
@@ -108,11 +114,11 @@ const AppHeader = () => {
               <HeaderBaseTwo />
             </div>
             <div className={styles.navInnerParent}>
-              <AppButton isNav content={parseByLang('REZERVIRAJ SVOJU AVANTURU', 'BOOK YOUR ADVENTURE')} />
+              <AppButton isNav content={parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')} />
               <div className={styles.navInnerParentLang}>
                 <LanguageSwitch />
               </div>
-              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f476f' />
+              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f2a32' />
             </div>
           </div>
         </div>

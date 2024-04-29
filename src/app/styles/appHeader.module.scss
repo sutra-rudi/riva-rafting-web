@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   place-items: center;
-  padding: 1rem 4.5rem 0.5rem 4.5rem;
+  padding: 0.5rem 4.5rem;
   overflow: hidden !important;
   max-width: 100%;
 
@@ -100,7 +100,7 @@
 .navLeftParent {
   display: flex;
   place-items: center;
-  gap: 4rem;
+
   font-weight: 400;
 
   a {
