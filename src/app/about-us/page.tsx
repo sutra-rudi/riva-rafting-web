@@ -4,7 +4,7 @@ import AppFooter from '../components/AppFooter';
 import styles from '../styles/page.module.scss';
 
 import Loading from './loading';
-import aboutUsHero from '../img/about-us-hero.png';
+import aboutUsHero from '../img/heros/about-us-hero.png';
 import compImage from '../img/about-us-company-img.png';
 import dynamic from 'next/dynamic';
 
