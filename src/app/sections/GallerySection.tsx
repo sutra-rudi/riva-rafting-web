@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import slika1 from '../img/karuzel1.png';
-import slika2 from '../img/karuzel2.png';
-import slika3 from '../img/karuzel3.png';
-import slika4 from '../img/karuzel4.png';
-import slika5 from '../img/imag3.png';
+import slika1 from '../img/gallery-carousel/galleryCarausel01.png';
+import slika2 from '../img/gallery-carousel/galleryCarausel02.png';
+import slika3 from '../img/gallery-carousel/galleryCarausel03.png';
+import slika4 from '../img/gallery-carousel/galleryCarausel04.png';
+import slika5 from '../img/gallery-carousel/galleryCarausel05.png';
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
 import paralOne from '../img/PARAL-UP.png';
@@ -49,7 +49,7 @@ const GallerySection = () => {
     pagination: false,
     arrows: false,
     autoplay: true,
-    interval: 2000,
+    interval: 1000,
     rewind: true,
 
     breakpoints: {
@@ -85,21 +85,61 @@ const GallerySection = () => {
 
       <Splide className={styles.swiper} options={splideOptions}>
         <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika1} alt='slika' />
+          <Image
+            draggable={false}
+            fill
+            src={slika1}
+            placeholder='blur'
+            quality={100}
+            loading='eager'
+            alt='rafting tour image'
+          />
         </SplideSlide>
         <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika2} alt='slika' />
+          <Image
+            draggable={false}
+            fill
+            src={slika2}
+            placeholder='blur'
+            quality={100}
+            loading='eager'
+            alt='rafting tour image'
+          />
         </SplideSlide>
         <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika3} alt='slika' />
+          <Image
+            draggable={false}
+            fill
+            src={slika3}
+            placeholder='blur'
+            quality={100}
+            loading='eager'
+            alt='rafting tour image'
+          />
         </SplideSlide>
 
         <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika4} alt='slika' />
+          <Image
+            draggable={false}
+            fill
+            src={slika4}
+            placeholder='blur'
+            quality={100}
+            loading='eager'
+            alt='rafting tour image'
+          />
         </SplideSlide>
 
         <SplideSlide className={styles.swiperSlide}>
-          <Image draggable={false} fill src={slika5} alt='slika' />
+          <Image
+            draggable={false}
+            fill
+            src={slika5}
+            placeholder='blur'
+            quality={100}
+            loading='eager'
+            alt='rafting tour image'
+          />
         </SplideSlide>
       </Splide>
     </section>

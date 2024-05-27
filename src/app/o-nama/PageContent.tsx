@@ -52,7 +52,7 @@ const PageContent = (content: PageContentAbout) => {
         <div className={`${styles.innerContent}`}>
           <p>{content.paraContent}</p>
           <div className={styles.imgCont}>
-            <Image fill alt='img' src={content.compImg} />
+            <Image fill alt='img' src={content.compImg} quality={100} loading='eager' placeholder='blur' />
           </div>
         </div>
 

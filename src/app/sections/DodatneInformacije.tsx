@@ -3,7 +3,7 @@
 import styles from '../styles/dodatneInformacije.module.scss';
 import imgone from '../img/imag1.png';
 import imgtwo from '../img/imag2.png';
-import imgthree from '../img/imag3.png';
+import imgthree from '../img/gallery-carousel/galleryCarausel03.png';
 import React from 'react';
 import Image from 'next/image';
 import { Ubuntu_Condensed } from 'next/font/google';

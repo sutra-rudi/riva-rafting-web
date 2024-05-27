@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
 import ReactPlayer from 'react-player/lazy';
-import AppButton from '../components/AppButton';
 import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
 import Loading from '../loading';
@@ -14,6 +13,9 @@ const RecoletaBold = localFont({
 });
 
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+import Link from 'next/link';
+import { UserLanguage } from '../types/appState';
+import { useSearchParams } from 'next/navigation';
 
 const HeroSekcija = () => {
   const [isReady, setIsReady] = React.useState(false);
@@ -31,60 +33,61 @@ const HeroSekcija = () => {
     state: { userLang },
   } = useAppContext();
 
+  const checkParams = useSearchParams();
+  const langCheckParam = checkParams.get('lang');
+
   const headline_en = `Experience the beauty \n of Zrmanja with us!`;
   const headline_hr = `Doživite ljepote \n Zrmanje s nama!`;
 
   const btn_main_hr = 'Kontaktiraj nas';
   const btn_main_en = 'Contact us';
 
-  const btn_second_hr = 'Rezerviraj mailom';
-  const btn_second_en = 'Book by email';
-
   const langCheck = React.useCallback(
-    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
+    (hrString: string, enString: string) => (userLang === UserLanguage.hr ? hrString : enString),
     [userLang]
   );
+
+  const parseLink =
+    langCheckParam === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
 
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
     children: (
-      <>
-        <ReactPlayer
-          ref={playerRef}
-          url={'/novi-hero.mp4'}
-          config={{
-            file: {
-              attributes: {
-                poster: heroPoster.src,
-              },
+      <ReactPlayer
+        ref={playerRef}
+        url={'/novi-hero.mp4'}
+        config={{
+          file: {
+            attributes: {
+              poster: heroPoster.src,
             },
-          }}
-          loop
-          playing={isReady}
-          onReady={onReady}
-          muted
-          volume={0}
-          width={'100%'}
-          height={'100%'}
-          playsinline
-          fallback={<Loading />}
-        />
-      </>
+          },
+        }}
+        loop
+        playing={isReady}
+        onReady={onReady}
+        muted
+        volume={0}
+        width={'100%'}
+        height={'100%'}
+        playsinline
+        fallback={<Loading />}
+      />
     ),
   };
 
   const foreground: BannerLayer = {
     translateY: [0, 30],
-    // scale: [2, 0.8],
-    // opacity: [1, 0.1],
+
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroCtaKontejner}>
         <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
         <div className={styles.heroCtaButtonKontejter}>
-          <AppButton isHero content={langCheck(btn_main_hr, btn_main_en)} />
-          {/* <AppButton isHero content={langCheck(btn_second_hr, btn_second_en)} isSecondary /> */}
+          <Link href={parseLink}>
+            <span>{langCheck(btn_main_hr, btn_main_en)}</span>
+          </Link>
         </div>
       </div>
     ),

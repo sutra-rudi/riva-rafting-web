@@ -38,9 +38,6 @@ const PageContent = (content: PageContentAbout) => {
       </div>
     ),
   };
-  // if (typeof window !== 'undefined' || window !== null) {
-  //   return null;
-  // }
 
   return typeof window !== 'undefined' && window !== null ? (
     <div className={styles.heroWrapp}>
@@ -52,7 +49,7 @@ const PageContent = (content: PageContentAbout) => {
         <div className={`${styles.innerContent}`}>
           <p>{content.paraContent}</p>
           <div className={styles.imgCont}>
-            <Image fill alt='img' src={content.compImg} />
+            <Image fill alt='img' src={content.compImg} quality={100} placeholder='blur' loading='eager' />
           </div>
         </div>
 
