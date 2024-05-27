@@ -11,7 +11,6 @@ import Image, { StaticImageData } from 'next/image';
 const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => {
   const splideOptions: any = {
     perPage: 5.2,
-    // type: clientWindowSize && clientWindowSize?.width > 1300 ? 'loop' : 'slide',
     type: 'slide',
     drag: 'free',
     snap: true,
@@ -19,7 +18,6 @@ const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => 
     focus: 'center',
     pagination: false,
     arrows: false,
-    // autoplay: clientWindowSize && clientWindowSize?.width > 1300 ? true : false,
     autoplay: false,
     interval: 5000,
     isNavigation: true,
@@ -37,12 +35,6 @@ const AktivnostGallery = ({ listaSlika }: { listaSlika: StaticImageData[] }) => 
     pagination: false,
     arrows: false,
     autoplay: false,
-    // interval: 2500,
-    // breakpoints: {
-    //   640: { perPage: 1.2 },
-    //   960: { perPage: 2.2 },
-    //   1200: { perPage: 3 },
-    // },
   };
 
   const topSliderRef = React.useRef();

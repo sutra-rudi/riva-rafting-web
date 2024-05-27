@@ -52,7 +52,13 @@ const PogledajVideo = () => {
     children: (
       <div className={styles.pogledajControls}>
         <Lottie animationData={lottieAnima} className={styles.lottieCustom} />
-        <Image src={videoKontrole} alt='controls' width={150} height={150} />
+        <Image
+          src={videoKontrole}
+          alt='controls'
+          width={150}
+          height={150}
+          className={styles.pogledajVideoControlsImg}
+        />
         <h1 className={`${styles.pogledajKontroleTekstMaster} ${RecoletaBold.className}`}>
           {userLang === 'hr' ? 'Pogledaj video' : 'Watch video'}
         </h1>

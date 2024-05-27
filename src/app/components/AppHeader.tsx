@@ -4,9 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 import svgAppLogo from '../img/logos/riva-logo.svg';
 import Image from 'next/image';
-
 import styles from '../styles/appHeader.module.scss';
-import AppButton from './AppButton';
 import LanguageSwitch from './LanguageSwitch';
 import { Spin as Hamburger } from 'hamburger-react';
 import instaIcon from '../img/icons/MOBILE-MENU-SOCIAL-2.svg';
@@ -29,6 +27,49 @@ const AppHeader = () => {
   );
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
+
+  const promoSekcijaDemoPodaci = [
+    {
+      title: userLang === 'hr' ? 'Rafting tura' : 'Rafting Tour',
+      url: userLang === 'hr' ? 'Rafting' : 'Rafting-on-Zrmanja',
+    },
+    {
+      title: userLang === 'hr' ? 'Špiljarenje' : 'Caving',
+      url: userLang === 'hr' ? 'Spiljarenje' : 'Cave-Modric',
+    },
+    {
+      title: userLang === 'hr' ? 'Jahanje' : 'Horseback Riding',
+      url: userLang === 'hr' ? 'Jahanje' : 'horses',
+    },
+    {
+      title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
+      url: userLang === 'hr' ? 'Bicik' : 'Bike-riding',
+    },
+    {
+      title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',
+      url: userLang === 'hr' ? 'Kayak-Zrmanja-More' : 'Kayak-River-to-the-sea',
+    },
+    {
+      title: userLang === 'hr' ? 'Stand up paddle' : 'Stand Up Paddle',
+      url: userLang === 'hr' ? 'Stand-Up-Paddle' : 'Stand-Up-Paddle-Zrmanja',
+    },
+    {
+      title: userLang === 'hr' ? 'Vožnja brodom' : 'Boat Tour',
+      url: userLang === 'hr' ? 'Zrmanja-brodom' : 'Zrmanja-by-boat',
+    },
+    {
+      title: userLang === 'hr' ? 'Pješačka tura' : 'Hiking Tour',
+      url: userLang === 'hr' ? 'Pjesacke-ture' : 'walking-tour',
+    },
+    {
+      title: userLang === 'hr' ? 'Jeep safari' : 'Jeep Safari',
+      url: userLang === 'hr' ? 'Jeep-safari' : 'Velebit-Jeep-safari',
+    },
+    {
+      title: userLang === 'hr' ? 'Kayak ture' : 'Kayak Tours',
+      url: userLang === 'hr' ? 'kayak-tura' : 'kayak',
+    },
+  ];
 
   const navLinksOne = [
     {
@@ -70,11 +111,13 @@ const AppHeader = () => {
   const HeaderBaseOne = () => {
     return (
       <div className={styles.navLeft}>
-        {navLinksOne.map((link) => (
-          <Link key={link.text} href={link.href}>
-            {link.text}
-          </Link>
-        ))}
+        {navLinksOne.map((link) => {
+          return (
+            <Link key={link.text} href={link.href}>
+              {link.text}
+            </Link>
+          );
+        })}
       </div>
     );
   };

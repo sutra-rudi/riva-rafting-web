@@ -16,37 +16,8 @@ import RaftingCard from '../components/RaftingCard';
 import PaperDividBot from '../components/PaperDividBot';
 import { useAppContext } from '../contexts/store';
 
-// const taxonomijaPromoSekcija = [
-//   { title: 'Sve', id: 1 },
-//   { title: 'Zrmanja', id: 2 },
-//   { title: 'Velebit', id: 3 },
-//   { title: 'Murvica', id: 4 },
-// ];
-
 const PromoSekcijaJedan = () => {
   const [currentActiveTax, setCurrentActiveTax] = React.useState<number>(1);
-
-  // const handleClick = (itemValue: number) => setCurrentActiveTax(itemValue);
-
-  // const TaxonomyButtons = () => {
-  //   return (
-  //     <div className={styles.promoSekcijaTaxonomyContainer}>
-  //       {taxonomijaPromoSekcija.map((item) => (
-  //         <span
-  //           className={
-  //             currentActiveTax === item.id
-  //               ? `${styles.taxonomyButton} ${styles.taxonomyButtonActive}`
-  //               : `${styles.taxonomyButton}`
-  //           }
-  //           onClick={() => handleClick(item.id)}
-  //           key={item.title}
-  //         >
-  //           {item.title}
-  //         </span>
-  //       ))}
-  //     </div>
-  //   );
-  // };
 
   const {
     state: { userLang },
@@ -56,12 +27,6 @@ const PromoSekcijaJedan = () => {
     (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
     [userLang]
   );
-
-  // const headline_en =
-  //   'Explore unlimited adventures, from thrilling rafting trips on the Zrmanja River to discovering the wilderness of Velebit. Experience unforgettable moments amidst untouched nature.';
-
-  // const headline_hr =
-  //   'Istražite neograničene avanture, od uzbudljivih rafting izleta na rijeci Zrmanji do otkrivanja divljine Velebita. Doživite nezaboravne trenutke usred netaknute prirode.';
 
   const secondHead_hr = 'Odaberi svoju avanturu';
   const secondHead_en = 'Choose your adventure';
@@ -174,13 +139,8 @@ const PromoSekcijaJedan = () => {
       <PaperDividBot />
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
-        {/* <h2 className={styles.promoSekcijaHeader}>{langCheck(headline_hr, headline_en)}</h2> */}
         <h2 className={styles.promoSekcijaHeaderMobile}>{langCheck(secondHead_hr, secondHead_en)}</h2>
-
-        {/* <TaxonomyButtons /> */}
         <TaxonomyCardContainer />
-
-        {/* <h3 className={styles.mobileHeadingPromo}>{langCheck(headline_hr, headline_en)}</h3> */}
       </div>
       {/* MAIN CONT END */}
     </section>

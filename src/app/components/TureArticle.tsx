@@ -2,9 +2,10 @@
 
 import React from 'react';
 import style from '../styles/turePonuda.module.scss';
-import AppButton from './AppButton';
 import Image, { StaticImageData } from 'next/image';
 import { useAppContext } from '../contexts/store';
+import Link from 'next/link';
+import { UserLanguage } from '../types/appState';
 
 interface TureKarticaData {
   subtitle: string;
@@ -20,6 +21,9 @@ const TureArticle = (props: TureKarticaData) => {
   const {
     state: { userLang },
   } = useAppContext();
+
+  const parseLink =
+    userLang === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
   return (
     <article className={isCTA ? `${style.tureArticle}` : `${style.tureArticle} ${style.articleReverse}`}>
       <div className={style.imgHolder}>
@@ -31,7 +35,12 @@ const TureArticle = (props: TureKarticaData) => {
           <h2 className={style.contentTitle}>{title}</h2>
         </div>
         <p className={style.contentText}>{content}</p>
-        {isCTA && <AppButton content={userLang === 'hr' ? 'Kontaktirajte nas' : 'Contact us'} />}
+
+        {isCTA && (
+          <Link href={parseLink} className={style.contactCtaTura}>
+            <span>{userLang === UserLanguage.hr ? 'Kontaktirajte nas' : 'Contact us'}</span>
+          </Link>
+        )}
       </div>
     </article>
   );
