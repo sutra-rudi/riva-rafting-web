@@ -1,6 +1,5 @@
 .navParent {
-  overflow-x: hidden !important;
-  z-index: 9999;
+  width: 100%;
 }
 
 .navMaster {
@@ -9,7 +8,6 @@
   justify-content: space-between;
   place-items: center;
   padding: 0.5rem 4.5rem;
-  overflow: hidden !important;
   max-width: 100%;
 
   @media screen and (max-width: $tablets) {
@@ -264,27 +262,55 @@
   display: flex;
   place-items: center;
   gap: 1.3rem;
-  z-index: 9999;
+  position: relative;
+  z-index: 9;
+
+  .bigParent {
+    position: relative;
+    display: block;
+
+    .navCustomLinks {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      // background-color: red;
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      top: 2rem;
+      transition: all 550ms ease-in-out;
+      min-width: 20rem;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hide {
+      transform: translateY(20%);
+      opacity: 0;
+    }
+
+    span {
+      z-index: 9;
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .customNohover {
+    // display: none;
+    position: relative;
+    display: block;
+  }
 
   @media screen and (max-width: $desktops) {
     display: none;
-  }
-
-  .activitiesLink {
-    color: red;
-    display: block;
-    position: relative;
-    z-index: 9999;
-
-    .innerActivitiesCont {
-      position: absolute;
-      bottom: -2rem;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-      background: #fff;
-    }
   }
 }
 

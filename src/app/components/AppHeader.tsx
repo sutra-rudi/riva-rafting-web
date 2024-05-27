@@ -13,7 +13,7 @@ import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
 const AppHeader = () => {
@@ -28,46 +28,70 @@ const AppHeader = () => {
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
+  const [isActivitiesDropdown, setIsActivitiesDropdown] = React.useState<boolean>(false);
+
   const promoSekcijaDemoPodaci = [
     {
       title: userLang === 'hr' ? 'Rafting tura' : 'Rafting Tour',
-      url: userLang === 'hr' ? 'Rafting' : 'Rafting-on-Zrmanja',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Rafting/?lang=${checkParams}`
+          : `/activities/Rafting-on-Zrmanja/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Špiljarenje' : 'Caving',
-      url: userLang === 'hr' ? 'Spiljarenje' : 'Cave-Modric',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Spiljarenje/?lang=${checkParams}`
+          : `/activities/Cave-Modric/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Jahanje' : 'Horseback Riding',
-      url: userLang === 'hr' ? 'Jahanje' : 'horses',
+      url: userLang === 'hr' ? `/aktivnosti/Jahanje/?lang=${checkParams}` : `/activities/horses/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
-      url: userLang === 'hr' ? 'Bicik' : 'Bike-riding',
+      url:
+        userLang === 'hr' ? `/aktivnosti/Bicik/?lang=${checkParams}` : `/activities/Bike-riding/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',
-      url: userLang === 'hr' ? 'Kayak-Zrmanja-More' : 'Kayak-River-to-the-sea',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}`
+          : `/activities/Kayak-River-to-the-sea/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Stand up paddle' : 'Stand Up Paddle',
-      url: userLang === 'hr' ? 'Stand-Up-Paddle' : 'Stand-Up-Paddle-Zrmanja',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Stand-Up-Paddle/?lang=${checkParams}`
+          : `/activities/Stand-Up-Paddle-Zrmanja/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Vožnja brodom' : 'Boat Tour',
-      url: userLang === 'hr' ? 'Zrmanja-brodom' : 'Zrmanja-by-boat',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Zrmanja-brodom/?lang=${checkParams}`
+          : `/activities/Zrmanja-by-boat/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Pješačka tura' : 'Hiking Tour',
-      url: userLang === 'hr' ? 'Pjesacke-ture' : 'walking-tour',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Pjesacke-ture/?lang=${checkParams}`
+          : `/activities/walking-tour/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Jeep safari' : 'Jeep Safari',
-      url: userLang === 'hr' ? 'Jeep-safari' : 'Velebit-Jeep-safari',
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Jeep-safari/?lang=${checkParams}`
+          : `/activities/Velebit-Jeep-safari/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Kayak ture' : 'Kayak Tours',
-      url: userLang === 'hr' ? 'kayak-tura' : 'kayak',
+      url: userLang === 'hr' ? `/aktivnosti/kayak-tura/?lang=${checkParams}` : `/activities/kayak/?lang=${checkParams}`,
     },
   ];
 
@@ -108,10 +132,38 @@ const AppHeader = () => {
     document.documentElement.classList.remove('overflow-hidden');
   }, []);
 
+  const router = useRouter();
+
+  const handleCustomPush = (url: string) => router.push(url);
+
   const HeaderBaseOne = () => {
     return (
       <div className={styles.navLeft}>
-        {navLinksOne.map((link) => {
+        {navLinksOne.map((link, index) => {
+          if (index === 1) {
+            return (
+              <div className={styles.bigParent} key={link.text}>
+                <Link
+                  href={link.href}
+                  className={styles.customNohover}
+                  onMouseEnter={() => setIsActivitiesDropdown(true)}
+                >
+                  <span>{link.text}</span>
+                </Link>
+
+                <span
+                  className={`${styles.navCustomLinks} ${isActivitiesDropdown ? styles.show : styles.hide}`}
+                  onMouseLeave={() => setIsActivitiesDropdown(false)}
+                >
+                  {promoSekcijaDemoPodaci.map((aktiv) => (
+                    <span onClick={() => handleCustomPush(aktiv.url)} key={aktiv.title}>
+                      {aktiv.title}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            );
+          }
           return (
             <Link key={link.text} href={link.href}>
               {link.text}
@@ -139,83 +191,81 @@ const AppHeader = () => {
 
   return (
     <nav className={styles.navParent}>
-      <div className='overflow-hidden'>
-        <div className={`${styles.navPromoTrack} `}>
-          <span>TRIP ADVISOR</span>
-          <span>|</span>
-          <a href='tel:+0038523689920'>+385 23 689 920</a>
-          <span>|</span>
-          <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
-        </div>
-        <div className={styles.navMaster}>
-          <Link className={styles.noEffectLogo} href={'/'}>
-            <Image src={svgAppLogo} alt='app logo' />
-          </Link>
-          <div className={styles.navParentMaster}>
-            <div className={styles.navInnerParent}>
-              <div className={styles.navLeftParent}>
-                <HeaderBaseOne />
-              </div>
-              <span className={styles.headerLinkDivid}>|</span>
+      <div className={`${styles.navPromoTrack} `}>
+        <span>TRIP ADVISOR</span>
+        <span>|</span>
+        <a href='tel:+0038523689920'>+385 23 689 920</a>
+        <span>|</span>
+        <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
+      </div>
+      <div className={styles.navMaster}>
+        <Link className={styles.noEffectLogo} href={'/'}>
+          <Image src={svgAppLogo} alt='app logo' />
+        </Link>
+        <div className={styles.navParentMaster}>
+          <div className={styles.navInnerParent}>
+            <div className={styles.navLeftParent}>
+              <HeaderBaseOne />
+            </div>
+            <span className={styles.headerLinkDivid}>|</span>
 
-              <HeaderBaseTwo />
-            </div>
-            <div className={styles.navInnerParent}>
-              <Link className={styles.navCta} href={parseLink}>
-                <span>{parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')}</span>
-              </Link>
-              <div className={styles.navInnerParentLang}>
-                <LanguageSwitch />
-              </div>
-              <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f2a32' />
-            </div>
+            <HeaderBaseTwo />
           </div>
-        </div>
-
-        {/* MOBILE */}
-
-        <div
-          className={
-            isNavOpen ? `${styles.mobileNavParent}` : `${styles.mobileNavParent} ${styles.mobileNavParentClosed}`
-          }
-        >
-          <div className={styles.mobileNavParentInner}>
-            <div className={styles.langSwitchBlock}>
+          <div className={styles.navInnerParent}>
+            <Link className={styles.navCta} href={parseLink}>
+              <span>{parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')}</span>
+            </Link>
+            <div className={styles.navInnerParentLang}>
               <LanguageSwitch />
             </div>
-
-            <div className={styles.mobileBlock}>
-              {navLinksOne.map((link, index) => (
-                <Link key={link.text} href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </div>
-
-            <div className={styles.mobileBlockSpace}></div>
-
-            <div className={styles.mobileBlock}>
-              {navLinksTwo.map((link, index) => (
-                <Link key={link.text} href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </div>
-
-            <div className={styles.socialBlock}>
-              <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={facebookIcon} />
-              </div>
-              <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={instaIcon} />
-              </div>
-              <div className={styles.socialBlockImage}>
-                <Image width={20} height={20} alt='icon' src={teleIcon} />
-              </div>
-            </div>
-
-            <Image className={styles.mobilePapir} alt='' src={mobilePapir} />
+            <Hamburger toggled={isNavOpen} onToggle={handleNavControl} color='#2f2a32' />
           </div>
+        </div>
+      </div>
+
+      {/* MOBILE */}
+
+      <div
+        className={
+          isNavOpen ? `${styles.mobileNavParent}` : `${styles.mobileNavParent} ${styles.mobileNavParentClosed}`
+        }
+      >
+        <div className={styles.mobileNavParentInner}>
+          <div className={styles.langSwitchBlock}>
+            <LanguageSwitch />
+          </div>
+
+          <div className={styles.mobileBlock}>
+            {navLinksOne.map((link, index) => (
+              <Link key={link.text} href={link.href}>
+                {link.text}
+              </Link>
+            ))}
+          </div>
+
+          <div className={styles.mobileBlockSpace}></div>
+
+          <div className={styles.mobileBlock}>
+            {navLinksTwo.map((link, index) => (
+              <Link key={link.text} href={link.href}>
+                {link.text}
+              </Link>
+            ))}
+          </div>
+
+          <div className={styles.socialBlock}>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={facebookIcon} />
+            </div>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={instaIcon} />
+            </div>
+            <div className={styles.socialBlockImage}>
+              <Image width={20} height={20} alt='icon' src={teleIcon} />
+            </div>
+          </div>
+
+          <Image className={styles.mobilePapir} alt='' src={mobilePapir} />
         </div>
       </div>
 
