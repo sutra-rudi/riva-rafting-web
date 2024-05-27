@@ -2,9 +2,12 @@
 
 import React from 'react';
 import styles from '../styles/oNama.module.scss';
-import AppButton from '../components/AppButton';
 import { useAppContext } from '../contexts/store';
 import AboutUsLottie from '../components/AboutUsLottie';
+import Link from 'next/link';
+import { MdArrowRightAlt as RightArrow } from 'react-icons/md';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const paragraphContent = `Riva Rafting Centar, specijalizirana putnička agencija, ističe se dugogodišnjom tradicijom u organizaciji pustolovnih i sportskih aktivnosti, obuhvaćajući širok spektar selektivnih turističkih usluga u Hrvatskoj, poput raftinga, kajakanja, SUP-a, off-roada, speleologije, trekkinga i biciklizma. Ove aktivnosti, kao inovativni doprinos ukupnoj turističkoj ponudi, ključne su za razvoj team building programa i sportsko-pustolovnih događanja, što je dovelo do razvoja jedinstvenog pristupa u marketingu - manifestacijskog marketinga.\n\nUz ponudu organiziranja avantura vezanih za Zrmanju i Velebit, nudimo i usluge smještaja u našem CAMPING VILLAGE ZRMANJA i ugostiteljske usluge unutar seoskog gospodarstva MIĆANOVI DVORI.`;
 
@@ -14,6 +17,13 @@ const OnamaSekcija = () => {
   const {
     state: { userLang },
   } = useAppContext();
+
+  const checkParams = useSearchParams().get('lang');
+  const parseLink =
+    checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
+
+  const parseOnama =
+    checkParams === UserLanguage.hr ? `/o-nama?lang=${UserLanguage.hr}` : `/about-us?lang=${UserLanguage.en}`;
 
   return (
     <section className={styles.aboutUsSection}>
@@ -29,8 +39,18 @@ const OnamaSekcija = () => {
             <h2 className={styles.sectionHeading}>{userLang === 'hr' ? 'O nama' : 'About us'}</h2>
             <p>{userLang === 'hr' ? paragraphContent : paraGraphContentEn}</p>
             <div className={styles.buttonContainer}>
-              <AppButton isAbout content={userLang === 'hr' ? 'Saznaj više' : 'Learn more'} />
-              <AppButton isRelax isAbout content={userLang === 'hr' ? 'Kontaktiraj nas' : 'Contact us'} />
+              <Link href={parseOnama} className={styles.aboutLink}>
+                <span>{userLang === 'hr' ? 'Saznaj više' : 'Learn more'}</span>
+                <span className={styles.buttonIcon}>
+                  <RightArrow />
+                </span>
+              </Link>
+              <Link href={parseLink} className={styles.contactLink}>
+                <span>{userLang === 'hr' ? 'Kontaktiraj nas' : 'Contact us'}</span>
+                <span className={styles.buttonIcon}>
+                  <RightArrow />
+                </span>
+              </Link>
             </div>
           </div>
         </div>

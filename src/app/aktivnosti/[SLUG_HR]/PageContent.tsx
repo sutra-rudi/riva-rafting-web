@@ -43,12 +43,9 @@ const PageContent = ({
       </div>
     ),
   };
-  // if (typeof window !== 'undefined' || window !== null) {
-  //   return null;
-  // }
 
-  return typeof window !== 'undefined' && window !== null ? (
-    <>
+  return (
+    <div className={styles.heroWrapp}>
       <PaperDividTop />
       <ParallaxBanner className={styles.aktivnostHero} layers={[background, headline]} />
 
@@ -155,8 +152,8 @@ const PageContent = ({
           </article>
         </div>
       </div>
-    </>
-  ) : null;
+    </div>
+  );
 };
 
 export default PageContent;
