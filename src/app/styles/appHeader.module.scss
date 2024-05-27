@@ -282,7 +282,7 @@
       padding: 0.5rem 1rem;
       width: 100%;
       top: 2rem;
-      transition: all 550ms ease-in-out;
+      transition: all 250ms ease-in-out;
       min-width: 20rem;
     }
 
@@ -300,6 +300,14 @@
       z-index: 9;
       display: block;
       cursor: pointer;
+      transition: all 250ms ease-in-out;
+
+      span {
+        &:hover {
+          color: $zelenaGlavna;
+          transform: translateX(0.25rem);
+        }
+      }
     }
   }
 
