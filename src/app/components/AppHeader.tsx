@@ -16,6 +16,7 @@ import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
 import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const AppHeader = () => {
   const {
@@ -90,6 +91,9 @@ const AppHeader = () => {
     );
   };
 
+  const parseLink =
+    checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
+
   return (
     <nav className={styles.navParent}>
       <div className='overflow-hidden'>
@@ -114,7 +118,9 @@ const AppHeader = () => {
               <HeaderBaseTwo />
             </div>
             <div className={styles.navInnerParent}>
-              <AppButton isNav content={parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')} />
+              <Link className={styles.navCta} href={parseLink}>
+                <span>{parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')}</span>
+              </Link>
               <div className={styles.navInnerParentLang}>
                 <LanguageSwitch />
               </div>
