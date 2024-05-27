@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import { Suspense } from 'react';
 import Loading from '../loading';
 import demoData from '../../../../public/webdata/webcontent.json';
@@ -8,6 +7,7 @@ import AppFooter from '@/app/components/AppFooter';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
 import staticImageImports from './staticImageImports';
 import MapboxMapa from './MapboxMapa';
+import PageContent from './PageContent';
 
 export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
@@ -44,14 +44,12 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
 
   const findGallery = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
 
-  const LazyContent = dynamic(() => import('./PageContent'), { ssr: false });
-
   return (
     <Suspense fallback={<Loading />}>
       <AppHeader />
       <main className={styles.aktivnost}>
         {findHero !== undefined && findGallery !== undefined && (
-          <LazyContent
+          <PageContent
             pageContentData={findData}
             hero={findHero.aktivnostHeroUrl}
             gallery={findGallery.aktivnostGalerija}
