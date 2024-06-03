@@ -2,7 +2,11 @@
   min-height: 70vh;
   min-height: 70lvh;
   overflow-x: hidden;
-  overflow: hidden;
+  margin-top: 8rem;
+
+  @media only screen and (max-width: $tablets) {
+    margin-top: 4rem;
+  }
 
   width: 100%;
   @media only screen and (max-width: $tablets) {
@@ -19,16 +23,14 @@
   .pogledajVideoParalax {
     height: 70vh;
     height: 70lvh;
-
+    min-height: 100%;
     position: relative;
 
-    .pogledajVideoControlsImg {
-      transition: all 250ms ease-in-out;
-    }
-
     &:hover {
-      .pogledajVideoControlsImg {
-        transform: scale(1.05);
+      .pogledajControls {
+        img {
+          transform: scale(1.15);
+        }
       }
     }
   }
@@ -37,17 +39,18 @@
     display: grid;
     gap: 1em;
     place-items: center;
-    z-index: 1;
+    z-index: 3;
     position: absolute;
     bottom: 300px;
     left: 50%;
-
     transform: translateX(-50%);
 
     width: 100%;
     max-width: 700px;
+
     img {
       cursor: pointer;
+      transition: all 250ms ease-in-out;
 
       @media only screen and (max-width: $tablets) {
         width: 100px;
@@ -101,13 +104,18 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+    cursor: pointer;
 
     span {
       margin: 7rem 0 0 0;
 
       @media only screen and (max-width: $tablets) {
-        margin: 3.5rem 0 0 0;
+        margin: 10rem 0 0 0;
       }
+
+      // @media only screen and (max-width: $phones) {
+      //   margin: 2rem 0 0 0;
+      // }
     }
   }
 
