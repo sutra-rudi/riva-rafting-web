@@ -205,7 +205,7 @@ const AppHeader = () => {
         <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
       </div>
       <div className={styles.navMaster}>
-        <Link className={styles.noEffectLogo} href={'/'}>
+        <Link className={styles.noEffectLogo} href={`/?lang=${checkParams}`}>
           <Image src={svgAppLogo} alt='app logo' />
         </Link>
         <div className={styles.navParentMaster}>

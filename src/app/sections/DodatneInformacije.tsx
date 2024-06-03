@@ -66,7 +66,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <Image src={moreInfoBackTwo} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
-          <Link href={'/obrovacki-kraj'}>
+          <Link href={`/obrovacki-kraj/?lang=${userLang}`}>
             <div className={styles.titleHolder}>
               <div className={styles.titleHolderInner}>
                 <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
