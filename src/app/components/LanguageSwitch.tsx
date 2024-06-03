@@ -31,6 +31,12 @@ const LanguageSwitch = () => {
       newUrlParams.set('lang', checkLocalStorage);
       const searchString = newUrlParams.toString();
       router.replace(`?${searchString}`);
+    } else if (!checkLocalStorage && !checkParams) {
+      dispatch({ type: ActionTypes.SET_USER_LANG, payload: UserLanguage.hr });
+      const newUrlParams = new URLSearchParams(window.location.search);
+      newUrlParams.set('lang', UserLanguage.hr);
+      const searchString = newUrlParams.toString();
+      router.replace(`?${searchString}`);
     } else {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: UserLanguage.hr });
       const newUrlParams = new URLSearchParams(window.location.search);
