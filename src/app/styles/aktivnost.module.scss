@@ -90,6 +90,10 @@
 
     .swiper {
       margin-top: 1rem;
+
+      @media only screen and (max-width: $desktops) {
+        margin-top: 0.5rem;
+      }
     }
 
     .swiperTop {
@@ -100,6 +104,10 @@
       .swiperSlide {
         position: relative;
         height: 540px;
+
+        @media only screen and (max-width: $desktops) {
+          height: 440px;
+        }
       }
     }
 
@@ -114,11 +122,10 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-items: stretch;
-    gap: 2.8rem;
 
+    gap: 2.8rem;
     @media only screen and (max-width: $desktops) {
-      // display: none;
-      // padding: 0 1.25rem;
+      gap: 3.8rem;
     }
 
     .articleTopContent {
@@ -281,6 +288,10 @@
     }
 
     margin: 10rem 0 0 0;
+
+    @media only screen and (max-width: $desktops) {
+      margin: 3rem 0 4rem 0;
+    }
     position: relative;
     touch-action: none !important;
     user-select: none !important;
