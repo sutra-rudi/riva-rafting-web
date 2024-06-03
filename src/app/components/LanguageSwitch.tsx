@@ -24,14 +24,14 @@ const LanguageSwitch = () => {
     if (checkParams || !checkLocalStorage) {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: checkParams === 'hr' ? UserLanguage.hr : UserLanguage.en });
       setLocalStorageItem('@riva-rafting-user-language', checkParams);
-    } else if (checkLocalStorage && !checkParams) {
+    } else if (checkLocalStorage && checkLocalStorage !== null && !checkParams) {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: checkLocalStorage });
 
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('lang', checkLocalStorage);
       const searchString = newUrlParams.toString();
       router.replace(`?${searchString}`);
-    } else if (!checkLocalStorage && !checkParams) {
+    } else if (checkLocalStorage === null && !checkParams) {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: UserLanguage.hr });
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('lang', UserLanguage.hr);
