@@ -69,9 +69,9 @@ const ContactForm = () => {
             </option>
             {webContent.map(
               (activity) =>
-                activity.NASLOV_AKTIVNOSTI_HERO_HR !== '' && (
-                  <option value={activity.NASLOV_AKTIVNOSTI_HERO_HR} key={activity.NASLOV_AKTIVNOSTI_HERO_HR}>
-                    {activity.NASLOV_AKTIVNOSTI_HERO_HR}
+                activity['NASLOV AKTIVNOSTI HERO'] !== '' && (
+                  <option value={activity['NASLOV AKTIVNOSTI HERO']} key={activity['NASLOV AKTIVNOSTI HERO']}>
+                    {activity['NASLOV AKTIVNOSTI HERO']}
                   </option>
                 )
             )}
