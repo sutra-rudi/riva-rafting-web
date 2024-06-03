@@ -38,7 +38,7 @@ const PageContent = ({
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroHeader}>
-        <h1 className={RecoletaBold.className}>{pageContentData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
+        <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO']}</h1>
         <AppButton content='Rezervirajte svoj termin' />
       </div>
     ),
@@ -71,7 +71,7 @@ const PageContent = ({
 
             <div className={styles.articleDetails}>
               <div className={styles.articleBlock}>
-                <h4 className={styles.articleBlockHeading}>{pageContentData?.OSNOVNE_INFORMACIJE_O_TURI}</h4>
+                <h4 className={styles.articleBlockHeading}>{pageContentData?.['OSNOVNE INFORMACIJE O TURI']}</h4>
                 <div className={styles.articleInfo}>
                   <ul>
                     <li>
@@ -114,12 +114,12 @@ const PageContent = ({
 
               <div className={styles.articleBlock}>
                 <div className={styles.articleBlockHeading}>
-                  <h4>{pageContentData?.['NASLOV:_PLAN_TURE']}</h4>
+                  <h4>{pageContentData?.['NASLOV: PLAN TURE']}</h4>
                 </div>
 
                 <div className={styles.articleInfo}>
                   <ul>
-                    {pageContentData?.Sadržaj_bulleti.split('\n').map((str: string, index: number) => (
+                    {pageContentData?.['Sadržaj bulleti'].split('\n').map((str: string, index: number) => (
                       <li key={index}>{str}</li>
                     ))}
                   </ul>
@@ -128,7 +128,7 @@ const PageContent = ({
 
               <div className={styles.articleBlock}>
                 <div className={styles.articleBlockHeading}>
-                  <h4>{pageContentData?.['NASLOV:Uzeti_sa_sobom']}</h4>
+                  <h4>{pageContentData?.['NASLOV: Uzeti sa sobom']}</h4>
                 </div>
 
                 <div className={styles.articleInfo}>
@@ -139,12 +139,12 @@ const PageContent = ({
 
                   <div className={styles.articleInfoWithHeading}>
                     <p>PO ŽELJI:</p>
-                    <ul>{parseBulletPoints(pageContentData?.PO_ŽELJI as string)}</ul>
+                    <ul>{parseBulletPoints(pageContentData?.['PO ŽELJI'] as string)}</ul>
                   </div>
 
                   <div className={styles.articleInfoWithHeading}>
                     <p>SAVJETUJEMO:</p>
-                    <ul>{parseBulletPoints(pageContentData?.SAVJETUJEMO as string)}</ul>
+                    <ul>{parseBulletPoints(pageContentData?.['Sadržaj ‘Savjetujemo’'] as string)}</ul>
                   </div>
                 </div>
               </div>

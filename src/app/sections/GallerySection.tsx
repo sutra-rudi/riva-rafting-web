@@ -1,11 +1,13 @@
 'use client';
 
 import React from 'react';
-import slika1 from '../img/gallery-carousel/galleryCarausel01.png';
-import slika2 from '../img/gallery-carousel/galleryCarausel02.png';
-import slika3 from '../img/gallery-carousel/galleryCarausel03.png';
-import slika4 from '../img/gallery-carousel/galleryCarausel04.png';
-import slika5 from '../img/gallery-carousel/galleryCarausel05.png';
+import kar1 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin01.png';
+import kar2 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin02.png';
+import kar3 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin03.png';
+import kar4 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin04.png';
+import kar5 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin05.png';
+import kar6 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin06.png';
+import kar7 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin07.png';
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
 import paralOne from '../img/PARAL-UP.png';
@@ -25,11 +27,12 @@ const GallerySection = () => {
   const {
     state: { userLang },
   } = useAppContext();
+  const imgArr = [kar1, kar2, kar3, kar4, kar5, kar6, kar7];
 
-  const title_hr = 'RIJEKA ZRMANJA';
+  const title_hr = 'NAŠ DOM - RIJEKA ZRMANJA';
   const content_hr =
     'Sa svojim dubokim kanjonom koji se proteže kroz spektakularne vapnenačke stijene, nudi nezaboravne prizore čiste, smaragdno zelene vode koja se vijuga kroz divljinu Sjeverne Dalmacije.';
-  const title_eng = 'ZRMANJA RIVER';
+  const title_eng = 'OUR HOME - ZRMANJA RIVER';
   const content_eng =
     'With its deep canyon cutting through spectacular limestone cliffs, it offers unforgettable views of pure, emerald-green water winding through the wilderness of Northern Dalmatia.';
 
@@ -49,7 +52,7 @@ const GallerySection = () => {
     pagination: false,
     arrows: false,
     autoplay: true,
-    interval: 1000,
+    interval: 2000,
     rewind: true,
 
     breakpoints: {
@@ -84,63 +87,19 @@ const GallerySection = () => {
       <ParallaxBanner className={styles.gallerySectionParallax} layers={[background, foreground, headline]} />
 
       <Splide className={styles.swiper} options={splideOptions}>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image
-            draggable={false}
-            fill
-            src={slika1}
-            placeholder='blur'
-            quality={100}
-            loading='eager'
-            alt='rafting tour image'
-          />
-        </SplideSlide>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image
-            draggable={false}
-            fill
-            src={slika2}
-            placeholder='blur'
-            quality={100}
-            loading='eager'
-            alt='rafting tour image'
-          />
-        </SplideSlide>
-        <SplideSlide className={styles.swiperSlide}>
-          <Image
-            draggable={false}
-            fill
-            src={slika3}
-            placeholder='blur'
-            quality={100}
-            loading='eager'
-            alt='rafting tour image'
-          />
-        </SplideSlide>
-
-        <SplideSlide className={styles.swiperSlide}>
-          <Image
-            draggable={false}
-            fill
-            src={slika4}
-            placeholder='blur'
-            quality={100}
-            loading='eager'
-            alt='rafting tour image'
-          />
-        </SplideSlide>
-
-        <SplideSlide className={styles.swiperSlide}>
-          <Image
-            draggable={false}
-            fill
-            src={slika5}
-            placeholder='blur'
-            quality={100}
-            loading='eager'
-            alt='rafting tour image'
-          />
-        </SplideSlide>
+        {imgArr.map((img) => (
+          <SplideSlide key={img.src} className={styles.swiperSlide}>
+            <Image
+              draggable={false}
+              fill
+              src={img.src}
+              alt='image of camping villiage'
+              placeholder='blur'
+              blurDataURL={img.blurDataURL}
+              loading='lazy'
+            />
+          </SplideSlide>
+        ))}
       </Splide>
     </section>
   );

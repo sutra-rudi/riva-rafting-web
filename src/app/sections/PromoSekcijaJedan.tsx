@@ -51,14 +51,14 @@ const PromoSekcijaJedan = () => {
       location: 'Murvica',
       image: jahanje,
       locationId: 4,
-      url: userLang === 'hr' ? 'Jahanje' : 'horses',
+      url: userLang === 'hr' ? 'jahanje' : 'horse-riding',
     },
     {
       title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
       location: 'Zrmanja',
       image: voznjaBicikla,
       locationId: 2,
-      url: userLang === 'hr' ? 'Bicik' : 'Bike-riding',
+      url: userLang === 'hr' ? 'biciklizam' : 'bike-tour',
     },
     {
       title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',
@@ -86,7 +86,7 @@ const PromoSekcijaJedan = () => {
       location: 'Zrmanja',
       image: pjesackaTura,
       locationId: 2,
-      url: userLang === 'hr' ? 'Pjesacke-ture' : 'walking-tour',
+      url: userLang === 'hr' ? 'pjesacka-tura' : 'walking-tour',
     },
     {
       title: userLang === 'hr' ? 'Jeep safari' : 'Jeep Safari',

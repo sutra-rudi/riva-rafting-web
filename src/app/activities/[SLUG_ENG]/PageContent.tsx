@@ -38,14 +38,12 @@ const PageContent = ({
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroHeader}>
-        <h1 className={RecoletaBold.className}>{pageContentData?.NASLOV_AKTIVNOSTI_HERO_HR}</h1>
+        <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO']}</h1>
         <AppButton content='Book now' />
       </div>
     ),
   };
-  // if (typeof window !== 'undefined' || window !== null) {
-  //   return null;
-  // }
+
   return (
     <div className={styles.heroWrapp}>
       <PaperDividTop />
@@ -58,10 +56,10 @@ const PageContent = ({
 
           <article className={styles.activityArticle}>
             <div className={styles.articleTopContent}>
-              <h6>{pageContentData?.['____PRAZNO__5']}</h6>
-              <h2>{pageContentData?.ENG_NASLOV}</h2>
+              <h6>{pageContentData?.NADNASLOV}</h6>
+              <h2>{pageContentData?.['ENG NASLOV']}</h2>
               <div className={styles.articleContentTextContainer}>
-                {pageContentData?.ENG_TEKST.split('\n').map((t: any, i: any) => (
+                {pageContentData?.['ENG TEKST'].split('\n').map((t: any, i: any) => (
                   <p key={i}>{t}</p>
                 ))}
               </div>
@@ -73,41 +71,41 @@ const PageContent = ({
 
             <div className={styles.articleDetails}>
               <div className={styles.articleBlock}>
-                <h4 className={styles.articleBlockHeading}>{pageContentData?.OSNOVNE_INFORMACIJE_O_TURI}</h4>
+                <h4 className={styles.articleBlockHeading}>{pageContentData?.['ENG OSNOVNE INFORMACIJE O TURI']}</h4>
                 <div className={styles.articleInfo}>
                   <ul>
                     <li>
                       <span className={styles.boldSpan}>DESTINATION:</span>
-                      <span>{pageContentData?.['ENG_DESTINACIJA:']}</span>
+                      <span>{pageContentData?.['ENG DESTINACIJA:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>PRICE:</span>
-                      <span>{pageContentData?.['ENG_CIJENA:']}</span>
+                      <span>{pageContentData?.['ENG CIJENA:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>ACTIVITY:</span>
-                      <span>{pageContentData?.['ENG_AKTIVNOST:']}</span>
+                      <span>{pageContentData?.['ENG AKTIVNOST:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>MINUMUM AGE:</span>
-                      <span>{pageContentData?.['ENG_MINIMALNA_DOB:']}</span>
+                      <span>{pageContentData?.['ENG MINIMALNA DOB:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>DIFFICULTY:</span>
-                      <span>{pageContentData?.['ENG_ZAHTJEVNOST:']}</span>
+                      <span>{pageContentData?.['ENG ZAHTJEVNOST:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>GROUP SIZE:</span>
-                      <span>{pageContentData?.['ENG_VELIČINA_GRUPE:']}</span>
+                      <span>{pageContentData?.['ENG VELIČINA GRUPE:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>DURATION:</span>
-                      <span>{pageContentData?.['ENG_TRAJANJE:']}</span>
+                      <span>{pageContentData?.['ENG TRAJANJE:']}</span>
                     </li>
-                    {pageContentData?.['ENG_DULJINA:'] !== '' && (
+                    {pageContentData?.['ENG DULJINA:'] !== '' && (
                       <li>
                         <span className={styles.boldSpan}>LENGTH:</span>
-                        <span>{pageContentData?.['ENG_DULJINA:']}</span>
+                        <span>{pageContentData?.['ENG DULJINA:']}</span>
                       </li>
                     )}
                   </ul>
@@ -116,12 +114,12 @@ const PageContent = ({
 
               <div className={styles.articleBlock}>
                 <div className={styles.articleBlockHeading}>
-                  <h4>{pageContentData?.['ENG_NASLOV:_ENG_PLAN_TURE']}</h4>
+                  <h4>{pageContentData?.['ENG NASLOV: ENG PLAN TURE']}</h4>
                 </div>
 
                 <div className={styles.articleInfo}>
                   <ul>
-                    {pageContentData?.['ENG_Sadržaj_bulleti'].split('\n').map((str: string, index: number) => (
+                    {pageContentData?.['ENG Sadržaj bulleti'].split('\n').map((str: string, index: number) => (
                       <li key={index}>{str}</li>
                     ))}
                   </ul>
@@ -130,23 +128,25 @@ const PageContent = ({
 
               <div className={styles.articleBlock}>
                 <div className={styles.articleBlockHeading}>
-                  <h4>{pageContentData?.['ENG_Uzeti_sa_sobom']}</h4>
+                  <h4>{pageContentData?.['ENG Uzeti sa sobom']}</h4>
                 </div>
 
                 <div className={styles.articleInfo}>
                   <div className={styles.articleInfoWithHeading}>
-                    <p>OBAVEZNO:</p>
-                    <ul>{parseBulletPoints(pageContentData?.['ENG_Sadržaj‘Obavezno’'] as string)}</ul>
+                    <p>{pageContentData['ENG OBAVEZNO']}</p>
+                    <ul>{parseBulletPoints(pageContentData?.['ENG Sadržaj ‘Obavezno’'] as string)}</ul>
                   </div>
 
-                  <div className={styles.articleInfoWithHeading}>
-                    <p>PO ŽELJI:</p>
-                    <ul>{parseBulletPoints(pageContentData?.PO_ŽELJI as string)}</ul>
-                  </div>
+                  {pageContentData?.['ENG PO ŽELJI'] && (
+                    <div className={styles.articleInfoWithHeading}>
+                      <p>PO ŽELJI:</p>
+                      <ul>{parseBulletPoints(pageContentData?.['PO ŽELJI'] as string)}</ul>
+                    </div>
+                  )}
 
                   <div className={styles.articleInfoWithHeading}>
-                    <p>{pageContentData?.['ENG_SAVJETUJEMO']}</p>
-                    <ul>{parseBulletPoints(pageContentData?.['ENG_Sadržaj‘Savjetujemo’'] as string)}</ul>
+                    <p>{pageContentData?.['ENG SAVJETUJEMO']}</p>
+                    <ul>{parseBulletPoints(pageContentData?.['ENG Sadržaj ‘Savjetujemo’'] as string)}</ul>
                   </div>
                 </div>
               </div>

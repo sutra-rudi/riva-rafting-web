@@ -10,6 +10,7 @@ import { Spin as Hamburger } from 'hamburger-react';
 import instaIcon from '../img/icons/MOBILE-MENU-SOCIAL-2.svg';
 import facebookIcon from '../img/icons/MOBILE-MENU-SOCIAL-1.svg';
 import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
+import demoData from '../../../public/webdata/webcontent.json';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
 import { useAppContext } from '../contexts/store';
@@ -47,12 +48,17 @@ const AppHeader = () => {
     },
     {
       title: userLang === 'hr' ? 'Jahanje' : 'Horseback Riding',
-      url: userLang === 'hr' ? `/aktivnosti/Jahanje/?lang=${checkParams}` : `/activities/horses/?lang=${checkParams}`,
+      url:
+        userLang === 'hr'
+          ? `/aktivnosti/Jahanje/?lang=${checkParams}`
+          : `/activities/horse-riding/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
       url:
-        userLang === 'hr' ? `/aktivnosti/Bicik/?lang=${checkParams}` : `/activities/Bike-riding/?lang=${checkParams}`,
+        userLang === 'hr'
+          ? `/aktivnosti/Biciklizam/?lang=${checkParams}`
+          : `/activities/bike-tour/?lang=${checkParams}`,
     },
     {
       title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',

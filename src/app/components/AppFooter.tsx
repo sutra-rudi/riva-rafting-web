@@ -40,12 +40,12 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Boat Tour', href: `/activities/Zrmanja-by-boat/?lang=${checkParams}` },
     { title: 'Jeep Safari', href: `/activities/Velebit-Jeep-safari/?lang=${checkParams}` },
     { title: 'Caving', href: `/activities/Cave-Modric/?lang=${checkParams}` },
-    { title: 'Horseback Riding', href: `/activities/horses/?lang=${checkParams}` },
-    { title: 'Cycling', href: `/activities/Bike-riding/?lang=${checkParams}` },
+    { title: 'Horseback Riding', href: `/activities/horse-riding/?lang=${checkParams}` },
+    { title: 'Cycling', href: `/activities/bike-tour/?lang=${checkParams}` },
   ];
 
   const hr_links = [
-    { title: 'Pješačka Tura', href: `/aktivnosti/pjesacke-ture/?lang=${checkParams}` },
+    { title: 'Pješačka Tura', href: `/aktivnosti/pjesacka-tura/?lang=${checkParams}` },
     { title: 'Kayak Ture', href: `/aktivnosti/kayak-tura/?lang=${checkParams}` },
     { title: 'Rafting Tura', href: `/aktivnosti/Rafting/?lang=${checkParams}` },
     { title: 'Kayak po Zrmanji do Jadranskog mora', href: `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}` },
@@ -54,7 +54,7 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Jeep Safari', href: `/aktivnosti/Jeep-safari/?lang=${checkParams}` },
     { title: 'Špiljarenje', href: `/aktivnosti/Spiljarenje/?lang=${checkParams}` },
     { title: 'Jahanje', href: `/aktivnosti/Jahanje/?lang=${checkParams}` },
-    { title: 'Vožnja Bicikla', href: `/aktivnosti/Bicik/?lang=${checkParams}` },
+    { title: 'Vožnja Bicikla', href: `/aktivnosti/Biciklizam/?lang=${checkParams}` },
   ];
 
   const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);

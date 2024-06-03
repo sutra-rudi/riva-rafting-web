@@ -5,28 +5,29 @@ import styles from '../../styles/aktivnost.module.scss';
 import AppHeader from '@/app/components/AppHeader';
 import AppFooter from '@/app/components/AppFooter';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
-import staticImageImports from './staticImageImports';
+
 import MapboxMapa from './MapboxMapa';
 import PageContent from './PageContent';
+import { aktivnostiHeroSlike } from '@/app/aktivnosti/[SLUG_HR]/staticImageImports';
 
 export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
-    (iten) => String(iten.SLUG_ENG).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
+    (iten) => String(iten['SLUG ENG']).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
   );
 
   return {
-    title: findData?.ENG_NASLOV,
+    title: findData?.['ENG NASLOV'],
     openGraph: {
-      title: findData?.ENG_NASLOV,
-      description: String(findData?.SEO_ENG),
-      siteName: findData?.ENG_NASLOV,
+      title: findData?.['ENG NASLOV'],
+      description: String(findData?.['SEO ENG']),
+      siteName: findData?.['ENG NASLOV'],
       type: 'website',
       locale: 'en',
     },
     twitter: {
-      title: findData?.ENG_NASLOV,
-      description: String(findData?.SEO_ENG),
-      siteName: findData?.ENG_NASLOV,
+      title: findData?.['ENG NASLOV'],
+      description: String(findData?.['SEO ENG']),
+      siteName: findData?.['ENG NASLOV'],
       type: 'website',
       locale: 'en',
     },
@@ -35,14 +36,14 @@ export async function generateMetadata({ params }: { params: { SLUG_ENG: string 
 
 export default async function ActivityDetails({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
-    (iten) => String(iten.SLUG_ENG).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
+    (iten) => String(iten['SLUG ENG']).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
   );
 
   const mapboxApiKey = process.env.MAPBOX_API_KEY;
 
-  const findHero = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
+  const findHero = aktivnostiHeroSlike.find((item) => item.aktivnostId === findData?.ID);
 
-  const findGallery = staticImageImports.find((item) => item.aktivnostId === findData?.ID);
+  const findGallery = aktivnostiHeroSlike.find((item) => item.aktivnostId === findData?.ID);
 
   return (
     <Suspense fallback={<Loading />}>
