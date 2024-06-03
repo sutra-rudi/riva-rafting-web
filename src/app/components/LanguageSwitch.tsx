@@ -21,12 +21,11 @@ const LanguageSwitch = () => {
   const checkLocalStorage = getLocalStorageItem('@riva-rafting-user-language');
 
   React.useEffect(() => {
-    if (checkParams || !checkLocalStorage) {
+    if ((checkParams && checkParams !== null) || !checkLocalStorage) {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: checkParams === 'hr' ? UserLanguage.hr : UserLanguage.en });
       setLocalStorageItem('@riva-rafting-user-language', checkParams);
     } else if (checkLocalStorage && checkLocalStorage !== null && !checkParams) {
       dispatch({ type: ActionTypes.SET_USER_LANG, payload: checkLocalStorage });
-
       const newUrlParams = new URLSearchParams(window.location.search);
       newUrlParams.set('lang', checkLocalStorage);
       const searchString = newUrlParams.toString();
