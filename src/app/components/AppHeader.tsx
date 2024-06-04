@@ -10,94 +10,80 @@ import { Spin as Hamburger } from 'hamburger-react';
 import instaIcon from '../img/icons/MOBILE-MENU-SOCIAL-2.svg';
 import facebookIcon from '../img/icons/MOBILE-MENU-SOCIAL-1.svg';
 import teleIcon from '../img/icons/MOBILE-MENU-SOCIAL-3.svg';
-import demoData from '../../../public/webdata/webcontent.json';
 
 import mobilePapir from '../img/globals/MOBILE-PAPIR.svg';
-import { useAppContext } from '../contexts/store';
+
 import { useRouter, useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
 const AppHeader = () => {
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const parseByLang = React.useCallback(
-    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
-    [userLang]
-  );
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const [isActivitiesDropdown, setIsActivitiesDropdown] = React.useState<boolean>(false);
 
   const promoSekcijaDemoPodaci = [
     {
-      title: userLang === 'hr' ? 'Rafting tura' : 'Rafting Tour',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Rafting/?lang=${checkParams}`
-          : `/activities/Rafting-on-Zrmanja/?lang=${checkParams}`,
+      title: parseByLang('Rafting tura', 'Rafting Tour'),
+      url: parseByLang(
+        `/aktivnosti/Rafting/?lang=${checkParams}`,
+        `/activities/Rafting-on-Zrmanja/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Špiljarenje' : 'Caving',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Spiljarenje/?lang=${checkParams}`
-          : `/activities/Cave-Modric/?lang=${checkParams}`,
+      title: parseByLang('Špiljarenje', 'Caving'),
+      url: parseByLang(`/aktivnosti/Spiljarenje/?lang=${checkParams}`, `/activities/Cave-Modric/?lang=${checkParams}`),
     },
     {
-      title: userLang === 'hr' ? 'Jahanje' : 'Horseback Riding',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Jahanje/?lang=${checkParams}`
-          : `/activities/horse-riding/?lang=${checkParams}`,
+      title: parseByLang('Jahanje', 'Horseback Riding'),
+      url: parseByLang(`/aktivnosti/Jahanje/?lang=${checkParams}`, `/activities/horse-riding/?lang=${checkParams}`),
     },
     {
-      title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Biciklizam/?lang=${checkParams}`
-          : `/activities/bike-tour/?lang=${checkParams}`,
+      title: parseByLang('Vožnja bicikla', 'Cycling'),
+      url: parseByLang(`/aktivnosti/Biciklizam/?lang=${checkParams}`, `/activities/bike-tour/?lang=${checkParams}`),
     },
     {
-      title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}`
-          : `/activities/Kayak-River-to-the-sea/?lang=${checkParams}`,
+      title: parseByLang('Kajak po Zrmanji do Jadranskog mora', 'Kayaking from Zrmanja to the Adriatic Sea'),
+      url: parseByLang(
+        `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}`,
+        `/activities/Kayak-River-to-the-sea/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Stand up paddle' : 'Stand Up Paddle',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Stand-Up-Paddle/?lang=${checkParams}`
-          : `/activities/Stand-Up-Paddle-Zrmanja/?lang=${checkParams}`,
+      title: parseByLang('Stand up paddle', 'Stand Up Paddle'),
+      url: parseByLang(
+        `/aktivnosti/Stand-Up-Paddle/?lang=${checkParams}`,
+        `/activities/Stand-Up-Paddle-Zrmanja/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Vožnja brodom' : 'Boat Tour',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Zrmanja-brodom/?lang=${checkParams}`
-          : `/activities/Zrmanja-by-boat/?lang=${checkParams}`,
+      title: parseByLang('Vožnja brodom', 'Boat Tour'),
+      url: parseByLang(
+        `/aktivnosti/Zrmanja-brodom/?lang=${checkParams}`,
+        `/activities/Zrmanja-by-boat/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Pješačka tura' : 'Hiking Tour',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/pjesacka-tura/?lang=${checkParams}`
-          : `/activities/walking-tour/?lang=${checkParams}`,
+      title: parseByLang('Pješačka tura', 'Hiking Tour'),
+      url: parseByLang(
+        `/aktivnosti/pjesacka-tura/?lang=${checkParams}`,
+        `/activities/walking-tour/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Jeep safari' : 'Jeep Safari',
-      url:
-        userLang === 'hr'
-          ? `/aktivnosti/Jeep-safari/?lang=${checkParams}`
-          : `/activities/Velebit-Jeep-safari/?lang=${checkParams}`,
+      title: parseByLang('Jeep safari', 'Jeep Safari'),
+      url: parseByLang(
+        `/aktivnosti/Jeep-safari/?lang=${checkParams}`,
+        `/activities/Velebit-Jeep-safari/?lang=${checkParams}`
+      ),
     },
     {
-      title: userLang === 'hr' ? 'Kayak ture' : 'Kayak Tours',
-      url: userLang === 'hr' ? `/aktivnosti/kayak-tura/?lang=${checkParams}` : `/activities/kayak/?lang=${checkParams}`,
+      title: parseByLang('Kayak ture', 'Kayak Tours'),
+      url: parseByLang(`/aktivnosti/kayak-tura/?lang=${checkParams}`, `/activities/kayak/?lang=${checkParams}`),
     },
   ];
 

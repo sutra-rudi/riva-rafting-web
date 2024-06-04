@@ -12,21 +12,21 @@ import footerArrow from '../img/FOOTER-LINK-ARROW.svg';
 import footerAltBg from '../img/footer-small-screen.png';
 
 import PaperDividTop from './PaperDividTop';
-import { useAppContext } from '../contexts/store';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 interface FooterInterface {
   isAbout?: boolean;
 }
 
 const AppFooter = (props: FooterInterface) => {
-  const {
-    state: { userLang },
-  } = useAppContext();
-
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const en_links = [
     { title: 'Hiking tour', href: `/activities/walking-tour/?lang=${checkParams}` },
@@ -56,8 +56,6 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Jahanje', href: `/aktivnosti/Jahanje/?lang=${checkParams}` },
     { title: 'Vožnja Bicikla', href: `/aktivnosti/Biciklizam/?lang=${checkParams}` },
   ];
-
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
 
   const clientWindowSize = useWindowSize();
 
@@ -92,7 +90,7 @@ const AppFooter = (props: FooterInterface) => {
             <p>{parseByLang('Aktivnosti koje nudimo', 'Activities we offer')}</p>
             <div className={styles.activityStack}>
               <ul>
-                {userLang === 'hr'
+                {checkParams === UserLanguage.hr
                   ? hr_links.map((link) => (
                       <li key={link.href}>
                         <a href={link.href}>{link.title}</a>
