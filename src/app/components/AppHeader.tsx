@@ -85,7 +85,7 @@ const AppHeader = () => {
       title: userLang === 'hr' ? 'Pješačka tura' : 'Hiking Tour',
       url:
         userLang === 'hr'
-          ? `/aktivnosti/Pjesacke-ture/?lang=${checkParams}`
+          ? `/aktivnosti/pjesacka-tura/?lang=${checkParams}`
           : `/activities/walking-tour/?lang=${checkParams}`,
     },
     {

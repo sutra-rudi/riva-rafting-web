@@ -161,7 +161,7 @@
       }
 
       .articleContentTextContainer {
-        margin-top: 2.3rem;
+        margin-top: 1.8rem;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         place-items: start;
@@ -181,7 +181,7 @@
         justify-content: flex-start;
         gap: 1.1rem;
         place-items: center;
-        margin-top: 1.25rem;
+        margin-top: 2rem;
 
         @media only screen and (max-width: $tablets) {
           // display: none;

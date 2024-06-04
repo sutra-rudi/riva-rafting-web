@@ -123,7 +123,7 @@ const AppFooter = (props: FooterInterface) => {
               </a>
               <a href={`/obrovacki-kraj/?lang=${checkParams}`}>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />
-                <span>Obrovački kraj</span>
+                <span>{parseByLang('Obrovački kraj', 'Obrovac region')}</span>
               </a>
               <a href=''>
                 <Image src={footerArrow} alt='icon' width={16} height={16} />

@@ -56,7 +56,7 @@ const PageContent = ({
 
           <article className={styles.activityArticle}>
             <div className={styles.articleTopContent}>
-              <h6>{pageContentData?.NADNASLOV}</h6>
+              <h6>{pageContentData?.['NADNASLOV ENG']}</h6>
               <h2>{pageContentData?.['ENG NASLOV']}</h2>
               <div className={styles.articleContentTextContainer}>
                 {pageContentData?.['ENG TEKST'].split('\n').map((t: any, i: any) => (
@@ -140,7 +140,7 @@ const PageContent = ({
                   {pageContentData?.['ENG PO ŽELJI'] && (
                     <div className={styles.articleInfoWithHeading}>
                       <p>PO ŽELJI:</p>
-                      <ul>{parseBulletPoints(pageContentData?.['PO ŽELJI'] as string)}</ul>
+                      <ul>{parseBulletPoints(pageContentData?.['ENG PO ŽELJI'] as string)}</ul>
                     </div>
                   )}
 

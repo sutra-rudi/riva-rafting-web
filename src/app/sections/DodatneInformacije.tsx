@@ -32,6 +32,8 @@ const DodatneInformacije = (props: MoreInfoProps) => {
     triggerOnce: true,
   });
 
+  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
+
   return (
     <section
       className={
@@ -46,7 +48,7 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>ZRMANJA CAMPING VILLAGE</h6>
+              <h6 className={ubuntuCondensed.className}>{parseByLang('KAMP ZRMANJA', 'ZRMANJA CAMPING VILLAGE')}</h6>
               <h2 className={styles.headingDefault}>SMJEŠTAJ U NAŠEM KAMPU</h2>
             </div>
           </div>
