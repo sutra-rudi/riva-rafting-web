@@ -5,7 +5,7 @@ import { useAppContext } from '../contexts/store';
 import webContent from '../../../public/webdata/webcontent.json';
 import AppButton from './AppButton';
 import { useFormspark } from '@formspark/use-formspark';
-
+import { FaChevronDown as DownIcon } from 'react-icons/fa';
 const ContactForm = () => {
   const [contactFormData, setContactFormData] = React.useState<Record<string, string>>({
     name: '',
@@ -63,6 +63,7 @@ const ContactForm = () => {
             type='text'
             placeholder={parseLang('Telefon', 'Phone')}
           />
+
           <select onChange={handleActivitySelect} name='aktivnost' id=''>
             <option value='' defaultValue={'Odaberi aktivnost'} selected disabled>
               Odaberi aktivnost
@@ -85,7 +86,7 @@ const ContactForm = () => {
             id=''
             cols={30}
             rows={10}
-          ></textarea>
+          />
           <AppButton isContact content={parseLang('Pošalji upit', 'Send inquiry')} />
         </div>
       </form>

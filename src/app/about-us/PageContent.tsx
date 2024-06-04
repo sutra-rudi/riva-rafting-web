@@ -12,6 +12,7 @@ const RecoletaBold = localFont({
 
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import PaperDividBot from '../components/PaperDividBot';
+import { useRouter } from 'next/navigation';
 
 interface PageContentAbout {
   title: string;
@@ -22,6 +23,8 @@ interface PageContentAbout {
 }
 
 const PageContent = (content: PageContentAbout) => {
+  const router = useRouter();
+
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
@@ -38,6 +41,8 @@ const PageContent = (content: PageContentAbout) => {
       </div>
     ),
   };
+
+  React.useEffect(() => router.refresh(), [router]);
 
   return (
     <div className={styles.heroWrapp}>
