@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styles from '../styles/oNama.module.scss';
-import { useAppContext } from '../contexts/store';
+
 import AboutUsLottie from '../components/AboutUsLottie';
 import Link from 'next/link';
 import { MdArrowRightAlt as RightArrow } from 'react-icons/md';
@@ -14,16 +14,12 @@ const paragraphContent = `Riva Rafting Centar, specijalizirana putnička agencij
 const paraGraphContentEn = `Riva Rafting Center, a specialized travel agency, distinguishes itself with a long-standing tradition in organizing adventurous and sports activities, encompassing a wide range of selective tourism services in Croatia, such as rafting, kayaking, stand-up paddleboarding (SUP), off-roading, spelunking, trekking, and cycling. These activities, as an innovative contribution to the overall tourism offer, are crucial for the development of team-building programs and sports-adventure events, leading to the development of a unique marketing approach - event marketing.\n\nIn addition to offering adventures related to the Zrmanja River and Velebit, we also provide accommodation services in our CAMPING VILLAGE ZRMANJA and catering services within the rural estate MIĆANOVI DVORI.`;
 
 const OnamaSekcija = () => {
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const checkParams = useSearchParams().get('lang');
-  const parseLink =
-    checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
-
-  const parseOnama =
-    checkParams === UserLanguage.hr ? `/o-nama?lang=${UserLanguage.hr}` : `/about-us?lang=${UserLanguage.en}`;
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   return (
     <section className={styles.aboutUsSection}>
@@ -36,17 +32,23 @@ const OnamaSekcija = () => {
           </div>
 
           <div className={styles.aboutUsContent}>
-            <h2 className={styles.sectionHeading}>{userLang === 'hr' ? 'O nama' : 'About us'}</h2>
-            <p>{userLang === 'hr' ? paragraphContent : paraGraphContentEn}</p>
+            <h2 className={styles.sectionHeading}>{parseByLang('O nama', 'About us')}</h2>
+            <p>{parseByLang(paragraphContent, paraGraphContentEn)}</p>
             <div className={styles.buttonContainer}>
-              <Link href={parseOnama} className={styles.aboutLink}>
-                <span>{userLang === 'hr' ? 'Saznaj više' : 'Learn more'}</span>
+              <Link
+                href={parseByLang(`/o-nama?lang=${UserLanguage.hr}`, `/about-us?lang=${UserLanguage.en}`)}
+                className={styles.aboutLink}
+              >
+                <span>{parseByLang('Saznaj više', 'Learn more')}</span>
                 <span className={styles.buttonIcon}>
                   <RightArrow />
                 </span>
               </Link>
-              <Link href={parseLink} className={styles.contactLink}>
-                <span>{userLang === 'hr' ? 'Kontaktiraj nas' : 'Contact us'}</span>
+              <Link
+                href={parseByLang(`/kontakt?lang=${UserLanguage.hr}`, `/kontakt?lang=${UserLanguage.en}`)}
+                className={styles.contactLink}
+              >
+                <span>{parseByLang('Kontaktiraj nas', 'Contact us')}</span>
                 <span className={styles.buttonIcon}>
                   <RightArrow />
                 </span>

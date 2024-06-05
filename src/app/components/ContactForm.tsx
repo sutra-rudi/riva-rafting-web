@@ -1,11 +1,13 @@
 'use client';
 import React, { FormEvent } from 'react';
 import styles from '../styles/contact.module.scss';
-import { useAppContext } from '../contexts/store';
+
 import webContent from '../../../public/webdata/webcontent.json';
 import AppButton from './AppButton';
 import { useFormspark } from '@formspark/use-formspark';
-import { FaChevronDown as DownIcon } from 'react-icons/fa';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
+
 const ContactForm = () => {
   const [contactFormData, setContactFormData] = React.useState<Record<string, string>>({
     name: '',
@@ -16,6 +18,13 @@ const ContactForm = () => {
   });
 
   const formKey = process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID;
+
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const [submit, submitting] = useFormspark({
     formId: formKey as string,
@@ -42,26 +51,24 @@ const ContactForm = () => {
       return { ..._prev, ['activity']: event.target.value };
     });
 
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const parseLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
-
   return (
     <div className={styles.contactFormContainer}>
       <form action='' onSubmit={handleSubmit} className={styles.contactForm}>
         <div className={styles.formBlockLeft}>
-          <input onChange={(event) => handleInputs(event, 'name')} type='text' placeholder={parseLang('Ime', 'Name')} />
+          <input
+            onChange={(event) => handleInputs(event, 'name')}
+            type='text'
+            placeholder={parseByLang('Ime', 'Name')}
+          />
           <input
             onChange={(event) => handleInputs(event, 'email')}
             type='email'
-            placeholder={parseLang('Email', 'Email')}
+            placeholder={parseByLang('Email', 'Email')}
           />
           <input
             onChange={(event) => handleInputs(event, 'phone')}
             type='text'
-            placeholder={parseLang('Telefon', 'Phone')}
+            placeholder={parseByLang('Telefon', 'Phone')}
           />
 
           <select onChange={handleActivitySelect} name='aktivnost' id=''>
@@ -82,12 +89,12 @@ const ContactForm = () => {
           <textarea
             onChange={handleTextarea}
             name=''
-            placeholder={parseLang('Poruka', 'Message')}
+            placeholder={parseByLang('Poruka', 'Message')}
             id=''
             cols={30}
             rows={10}
           />
-          <AppButton isContact content={parseLang('Pošalji upit', 'Send inquiry')} />
+          <AppButton isContact content={parseByLang('Pošalji upit', 'Send inquiry')} />
         </div>
       </form>
     </div>

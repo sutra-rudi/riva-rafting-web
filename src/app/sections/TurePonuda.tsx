@@ -6,9 +6,11 @@ import TureArticle from '../components/TureArticle';
 import tureOne from '../img/ture1.png';
 import tureTwo from '../img/ture2.png';
 import PaperDividBot from '../components/PaperDividBot';
-import { useAppContext } from '../contexts/store';
+
 import Image from 'next/image';
 import pogledajVideoGradient from '../img/pogledaj-video-gradient.svg';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const staticDemoData = [
   {
@@ -40,10 +42,12 @@ const staticDemoData = [
 ];
 
 const TurePonuda = () => {
-  const {
-    state: { userLang },
-  } = useAppContext();
-
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
   return (
     <section className={styles.turePonudaSekcija}>
       <PaperDividBot />
@@ -52,10 +56,10 @@ const TurePonuda = () => {
         {staticDemoData.map((article) => (
           <TureArticle
             key={article.title}
-            title={userLang === 'hr' ? article.title : article.EN_title}
+            title={parseByLang(article.title, article.EN_title)}
             isCTA={article.isCTA}
-            content={userLang === 'hr' ? article.content : article.EN_content}
-            subtitle={userLang === 'hr' ? article.subtitle : article.EN_subtitle}
+            content={parseByLang(article.content, article.EN_content)}
+            subtitle={parseByLang(article.subtitle, article.EN_subtitle)}
             imageSRC={article.imageSRC}
           />
         ))}

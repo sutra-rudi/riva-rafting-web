@@ -9,13 +9,22 @@ import Image from 'next/image';
 import pingPongPoster from '../img/ping-pong-poster.jpg';
 import Loading from '../loading';
 import localFont from 'next/font/local';
-import { useAppContext } from '../contexts/store';
+
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
 });
 const TureSekcija = () => {
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
+
   const [isReady, setIsReady] = React.useState(false);
   const playerRef = React.useRef<ReactPlayer>(null);
 
@@ -26,10 +35,6 @@ const TureSekcija = () => {
       setIsReady(true);
     }
   }, [isReady]);
-
-  const {
-    state: { userLang },
-  } = useAppContext();
 
   const headline_hr = 'Netaknuta Priroda';
   const content_hr =
@@ -44,8 +49,8 @@ const TureSekcija = () => {
     children: (
       <div className={styles.gallerySectionTextOverlay}>
         <div className={styles.gallerySectionTextOverlayContent}>
-          <h2 className={RecoletaSemiBold.className}>{userLang === 'hr' ? headline_hr : headline_eng}</h2>
-          <h4>{userLang === 'hr' ? content_hr : content_eng}</h4>
+          <h2 className={RecoletaSemiBold.className}>{parseByLang(headline_hr, headline_eng)}</h2>
+          <h4>{parseByLang(content_hr, content_eng)}</h4>
         </div>
       </div>
     ),

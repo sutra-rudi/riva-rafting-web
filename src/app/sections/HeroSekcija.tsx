@@ -29,12 +29,12 @@ const HeroSekcija = () => {
     }
   }, [isReady]);
 
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const checkParams = useSearchParams();
-  const langCheckParam = checkParams.get('lang');
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const headline_en = `Experience the beauty \n of Zrmanja with us!`;
   const headline_hr = `Doživite ljepote \n Zrmanje s nama!`;
@@ -42,13 +42,8 @@ const HeroSekcija = () => {
   const btn_main_hr = 'Kontaktiraj nas';
   const btn_main_en = 'Contact us';
 
-  const langCheck = React.useCallback(
-    (hrString: string, enString: string) => (userLang === UserLanguage.hr ? hrString : enString),
-    [userLang]
-  );
-
   const parseLink =
-    langCheckParam === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
+    checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
 
   const background: BannerLayer = {
     translateY: [0, 60],
@@ -83,10 +78,10 @@ const HeroSekcija = () => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroCtaKontejner}>
-        <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{langCheck(headline_hr, headline_en)}</h1>
+        <h1 className={`${styles.heroCtaHeader} ${RecoletaBold.className}`}>{parseByLang(headline_hr, headline_en)}</h1>
         <div className={styles.heroCtaButtonKontejter}>
           <Link href={parseLink}>
-            <span>{langCheck(btn_main_hr, btn_main_en)}</span>
+            <span>{parseByLang(btn_main_hr, btn_main_en)}</span>
           </Link>
         </div>
       </div>
@@ -101,7 +96,7 @@ const HeroSekcija = () => {
     children: (
       <div className={styles.heroCtaHeaderBacksideWrapper}>
         <h1 className={`${RecoletaBold.className} ${styles.heroCtaHeaderBackside}`}>
-          {langCheck(headline_hr, headline_en)}
+          {parseByLang(headline_hr, headline_en)}
         </h1>
       </div>
     ),

@@ -14,18 +14,17 @@ import jeepSafari from '../img/slike-hd-ture/jeep-safari.png';
 import kayakTure from '../img/slike-hd-ture/kayak-ture.png';
 import RaftingCard from '../components/RaftingCard';
 import PaperDividBot from '../components/PaperDividBot';
-import { useAppContext } from '../contexts/store';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const PromoSekcijaJedan = () => {
   const [currentActiveTax, setCurrentActiveTax] = React.useState<number>(1);
 
-  const {
-    state: { userLang },
-  } = useAppContext();
-
-  const langCheck = React.useCallback(
-    (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString),
-    [userLang]
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
   );
 
   const secondHead_hr = 'Odaberi svoju avanturu';
@@ -33,74 +32,74 @@ const PromoSekcijaJedan = () => {
 
   const promoSekcijaDemoPodaci = [
     {
-      title: userLang === 'hr' ? 'Rafting tura' : 'Rafting Tour',
+      title: parseByLang('Rafting tura', 'Rafting Tour'),
       location: 'Zrmanja',
       image: raftingTura,
       locationId: 2,
-      url: userLang === 'hr' ? 'Rafting' : 'Rafting-on-Zrmanja',
+      url: parseByLang('Rafting', 'Rafting-on-Zrmanja') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Špiljarenje' : 'Caving',
+      title: parseByLang('Špiljarenje', 'Caving'),
       location: 'Velebit',
       image: spiljarenje,
       locationId: 3,
-      url: userLang === 'hr' ? 'Spiljarenje' : 'Cave-Modric',
+      url: parseByLang('Spiljarenje', 'Cave-Modric') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Jahanje' : 'Horseback Riding',
+      title: parseByLang('Jahanje', 'Horseback Riding'),
       location: 'Murvica',
       image: jahanje,
       locationId: 4,
-      url: userLang === 'hr' ? 'jahanje' : 'horse-riding',
+      url: parseByLang('jahanje', 'horse-riding') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Vožnja bicikla' : 'Cycling',
+      title: parseByLang('Vožnja bicikla', 'Cycling'),
       location: 'Zrmanja',
       image: voznjaBicikla,
       locationId: 2,
-      url: userLang === 'hr' ? 'biciklizam' : 'bike-tour',
+      url: parseByLang('biciklizam', 'bike-tour') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Kajak po Zrmanji do Jadranskog mora' : 'Kayaking from Zrmanja to the Adriatic Sea',
+      title: parseByLang('Kajak po Zrmanji do Jadranskog mora', 'Kayaking from Zrmanja to the Adriatic Sea'),
       location: 'Zrmanja',
       image: kajakPoZrmanji,
       locationId: 2,
-      url: userLang === 'hr' ? 'Kayak-Zrmanja-More' : 'Kayak-River-to-the-sea',
+      url: parseByLang('Kayak-Zrmanja-More', 'Kayak-River-to-the-sea') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Stand up paddle' : 'Stand Up Paddle',
+      title: parseByLang('Stand up paddle', 'Stand Up Paddle'),
       location: 'Zrmanja',
       image: standupPaddle,
       locationId: 2,
-      url: userLang === 'hr' ? 'Stand-Up-Paddle' : 'Stand-Up-Paddle-Zrmanja',
+      url: parseByLang('Stand-Up-Paddle', 'Stand-Up-Paddle-Zrmanja') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Vožnja brodom' : 'Boat Tour',
+      title: parseByLang('Vožnja brodom', 'Boat Tour'),
       location: 'Zrmanja',
       image: voznjaBrodom,
       locationId: 2,
-      url: userLang === 'hr' ? 'Zrmanja-brodom' : 'Zrmanja-by-boat',
+      url: parseByLang('Zrmanja-brodom', 'Zrmanja-by-boat') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Pješačka tura' : 'Hiking Tour',
+      title: parseByLang('Pješačka tura', 'Hiking Tour'),
       location: 'Zrmanja',
       image: pjesackaTura,
       locationId: 2,
-      url: userLang === 'hr' ? 'pjesacka-tura' : 'walking-tour',
+      url: parseByLang('pjesacka-tura', 'walking-tour') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Jeep safari' : 'Jeep Safari',
+      title: parseByLang('Jeep safari', 'Jeep Safari'),
       location: 'Velebit',
       image: jeepSafari,
       locationId: 3,
-      url: userLang === 'hr' ? 'Jeep-safari' : 'Velebit-Jeep-safari',
+      url: parseByLang('Jeep-safari', 'Velebit-Jeep-safari') + `/?lang=${checkParams}`,
     },
     {
-      title: userLang === 'hr' ? 'Kayak ture' : 'Kayak Tours',
+      title: parseByLang('Kayak ture', 'Kayak Tours'),
       location: 'Zrmanja',
       image: kayakTure,
       locationId: 2,
-      url: userLang === 'hr' ? 'kayak-tura' : 'kayak',
+      url: parseByLang('kayak-tura', 'kayak') + `/?lang=${checkParams}`,
     },
   ];
 
@@ -139,7 +138,7 @@ const PromoSekcijaJedan = () => {
       <PaperDividBot />
       {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
-        <h2 className={styles.promoSekcijaHeaderMobile}>{langCheck(secondHead_hr, secondHead_en)}</h2>
+        <h2 className={styles.promoSekcijaHeaderMobile}>{parseByLang(secondHead_hr, secondHead_en)}</h2>
         <TaxonomyCardContainer />
       </div>
       {/* MAIN CONT END */}

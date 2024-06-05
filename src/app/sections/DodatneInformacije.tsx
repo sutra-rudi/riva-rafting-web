@@ -13,8 +13,9 @@ import React from 'react';
 import Image from 'next/image';
 import { Ubuntu_Condensed } from 'next/font/google';
 import Link from 'next/link';
-import { useAppContext } from '../contexts/store';
 import { useInView } from 'react-intersection-observer';
+import { useSearchParams } from 'next/navigation';
+import { UserLanguage } from '../types/appState';
 
 const ubuntuCondensed = Ubuntu_Condensed({ weight: '400', subsets: ['latin'] });
 
@@ -23,16 +24,17 @@ interface MoreInfoProps {
 }
 
 const DodatneInformacije = (props: MoreInfoProps) => {
-  const {
-    state: { userLang },
-  } = useAppContext();
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
 
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
-
-  const parseByLang = (hrString: string, enString: string) => (userLang === 'hr' ? hrString : enString);
 
   return (
     <section
@@ -42,14 +44,16 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           : `${styles.dodatneInformacije} ${styles.dodatneInformacijeSub}`
       }
     >
-      <h2 className={styles.sectionHeading}>{userLang === 'hr' ? 'Dodatne Informacije' : 'Additional information'}</h2>
+      <h2 className={styles.sectionHeading}>{parseByLang('Dodatne Informacije', 'Additional information')}</h2>
 
       <div ref={ref} className={styles.sectionListContainer}>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
               <h6 className={ubuntuCondensed.className}>{parseByLang('KAMP ZRMANJA', 'ZRMANJA CAMPING VILLAGE')}</h6>
-              <h2 className={styles.headingDefault}>SMJEŠTAJ U NAŠEM KAMPU</h2>
+              <h2 className={styles.headingDefault}>
+                {parseByLang('SMJEŠTAJ U NAŠEM KAMPU', 'ACCOMMODATION IN OUR CAMP')}
+              </h2>
             </div>
           </div>
 
@@ -59,8 +63,8 @@ const DodatneInformacije = (props: MoreInfoProps) => {
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <div className={styles.titleHolder}>
             <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>MIĆANOVI DVORI</h6>
-              <h2 className={styles.headingDefault}>DOMAĆA HRANA</h2>
+              <h6 className={ubuntuCondensed.className}>{parseByLang('MIĆANOVI DVORI', 'MIĆANOVI DVORI')}</h6>
+              <h2 className={styles.headingDefault}>{parseByLang('DOMAĆA HRANA', 'LOCAL FOOD')}</h2>
             </div>
           </div>
 
@@ -68,11 +72,15 @@ const DodatneInformacije = (props: MoreInfoProps) => {
           <Image src={moreInfoBackTwo} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
-          <Link href={`/obrovacki-kraj/?lang=${userLang}`}>
+          <Link href={`/obrovacki-kraj/?lang=${checkParams}`}>
             <div className={styles.titleHolder}>
               <div className={styles.titleHolderInner}>
-                <h6 className={ubuntuCondensed.className}>OBROVAC - ZRMANJA - VELEBIT</h6>
-                <h2 className={styles.headingDefault}>ŠTO POSJETITI U OKOLICI?</h2>
+                <h6 className={ubuntuCondensed.className}>
+                  {parseByLang('OBROVAC - ZRMANJA - VELEBIT', 'OBROVAC - ZRMANJA - VELEBIT')}
+                </h6>
+                <h2 className={styles.headingDefault}>
+                  {parseByLang('ŠTO POSJETITI U OKOLICI?', 'WHAT TO VISIT IN THE AREA?')}
+                </h2>
               </div>
             </div>
 
