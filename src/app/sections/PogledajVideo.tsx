@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-import pogledajVideo from '../img/pogledaj-video-demo.png';
+import pogledajPoster from '../img/pogledaj-video-demo.jpg';
 import styles from '../styles/pogledajVideo.module.scss';
 
 import localFont from 'next/font/local';
@@ -51,7 +51,7 @@ const PogledajVideo = () => {
     shouldAlwaysCompleteAnimation: true,
     children: (
       <ReactPlayer
-        url={'/camping-pogledaj-video-teaser.mp4'}
+        url={'/rafting-placeholder.mp4'}
         loop
         muted
         volume={0}
@@ -64,7 +64,7 @@ const PogledajVideo = () => {
         config={{
           file: {
             attributes: {
-              poster: pogledajVideo.src,
+              poster: pogledajPoster.src,
             },
           },
         }}
@@ -120,7 +120,7 @@ const PogledajVideo = () => {
               config={{
                 file: {
                   attributes: {
-                    poster: pogledajVideo.src,
+                    poster: pogledajPoster.src,
                   },
                 },
               }}
