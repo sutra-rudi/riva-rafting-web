@@ -56,7 +56,11 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
             gallery={findGallery.aktivnostGalerija}
           />
         )}
-        <MapboxMapa apiKey={mapboxApiKey as string} />
+        <MapboxMapa
+          mapCenter={findData?.['KORDINATE-CENTRA']!}
+          styleUrl={findData?.['Style URL'] ?? ''}
+          apiKey={mapboxApiKey as string}
+        />
         <DodatneInformacije isLanding={false} />
 
         <AppFooter />
