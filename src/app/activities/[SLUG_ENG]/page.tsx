@@ -24,6 +24,20 @@ export async function generateMetadata({ params }: { params: { SLUG_ENG: string 
       siteName: findData?.['NASLOV AKTIVNOSTI HERO ENG'],
       type: 'website',
       locale: 'en',
+      images: [
+        {
+          url: findGallery?.aktivnostHeroUrl.src,
+          width: findGallery?.aktivnostHeroUrl.width,
+          height: findGallery?.aktivnostHeroUrl.height,
+          alt: 'Riva Rafting Adventure on Zrmanja River',
+        },
+        {
+          url: findGallery?.aktivnostGalerija[0].src,
+          width: findGallery?.aktivnostGalerija[0].width,
+          height: findGallery?.aktivnostGalerija[0].height,
+          alt: 'Riva Rafting Adventure on Zrmanja River',
+        },
+      ],
     },
     twitter: {
       title: findData?.['ENG NASLOV'],
@@ -31,21 +45,21 @@ export async function generateMetadata({ params }: { params: { SLUG_ENG: string 
       siteName: findData?.['NASLOV AKTIVNOSTI HERO ENG'],
       type: 'website',
       locale: 'en',
+      images: [
+        {
+          url: findGallery?.aktivnostHeroUrl.src,
+          width: findGallery?.aktivnostHeroUrl.width,
+          height: findGallery?.aktivnostHeroUrl.height,
+          alt: 'Riva Rafting Adventure on Zrmanja River',
+        },
+        {
+          url: findGallery?.aktivnostGalerija[0].src,
+          width: findGallery?.aktivnostGalerija[0].width,
+          height: findGallery?.aktivnostGalerija[0].height,
+          alt: 'Riva Rafting Adventure on Zrmanja River',
+        },
+      ],
     },
-    images: [
-      {
-        url: findGallery?.aktivnostHeroUrl.src,
-        width: findGallery?.aktivnostHeroUrl.width,
-        height: findGallery?.aktivnostHeroUrl.height,
-        alt: 'Riva Rafting Adventure on Zrmanja River',
-      },
-      {
-        url: findGallery?.aktivnostGalerija[0].src,
-        width: findGallery?.aktivnostGalerija[0].width,
-        height: findGallery?.aktivnostGalerija[0].height,
-        alt: 'Riva Rafting Adventure on Zrmanja River',
-      },
-    ],
   };
 }
 
