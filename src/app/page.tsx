@@ -56,20 +56,6 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
         'Dobrodošli na Riva Rafting, vaše odredište za nezaboravne rafting avanture na rijeci Zrmanji u Hrvatskoj. Pridružite nam se i istražite prekrasne rijeke i kanjone.',
       url: 'https://rivarafting.hr',
       siteName: 'Riva Rafting',
-      images: [
-        {
-          url: 'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/karuzel-riva-fin01.png',
-          width: 800,
-          height: 600,
-          alt: 'Riva Rafting Adventure on Zrmanja River',
-        },
-        {
-          url: 'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/karuzel-riva-fin06.png',
-          width: 1800,
-          height: 1600,
-          alt: 'Riva Rafting Adventure on Zrmanja River',
-        },
-      ],
       locale: 'hr_HR',
       type: 'website',
     },
