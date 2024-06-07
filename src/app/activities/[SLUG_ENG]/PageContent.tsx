@@ -9,6 +9,8 @@ import localFont from 'next/font/local';
 import AktivnostGallery from './AktivnostGallery';
 import AppButton from '@/app/components/AppButton';
 import PaperDividBot from '@/app/components/PaperDividBot';
+import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
@@ -25,6 +27,9 @@ const PageContent = ({
   const parseBulletPoints = (strBlock: string) =>
     strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
 
+  const paramsControler = useSearchParams();
+  const checkParams = paramsControler.get('lang');
+
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
@@ -38,8 +43,10 @@ const PageContent = ({
     shouldAlwaysCompleteAnimation: true,
     children: (
       <div className={styles.heroHeader}>
-        <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO']}</h1>
-        <AppButton content='Book now' />
+        <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO ENG']}</h1>
+        <Link href={`/kontakt/?lang=${checkParams}`}>
+          <AppButton content='Book now' />
+        </Link>
       </div>
     ),
   };
@@ -64,8 +71,12 @@ const PageContent = ({
                 ))}
               </div>
               <div className={styles.articleButtonStack}>
-                <AppButton content='Book now' />
-                <AppButton content='Have any questions?' />
+                <Link href={`/kontakt/?lang=${checkParams}`}>
+                  <AppButton content='Book now' />
+                </Link>
+                <Link href={`/kontakt/?lang=${checkParams}`}>
+                  <AppButton content='Have any questions?' />
+                </Link>
               </div>
             </div>
 
