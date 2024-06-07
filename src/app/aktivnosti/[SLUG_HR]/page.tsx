@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { SLUG_HR: string }
   const findData = demoData.find(
     (iten) => String(iten['SLUG HR']).toLowerCase() === String(params.SLUG_HR).toLowerCase()
   );
-
+  const findGallery = aktivnostiHeroSlike.find((item) => item.aktivnostId === findData?.ID);
   return {
     title: findData?.NASLOV,
     openGraph: {
@@ -31,6 +31,20 @@ export async function generateMetadata({ params }: { params: { SLUG_HR: string }
       type: 'website',
       locale: 'hr',
     },
+    images: [
+      {
+        url: findGallery?.aktivnostHeroUrl.src,
+        width: findGallery?.aktivnostHeroUrl.width,
+        height: findGallery?.aktivnostHeroUrl.height,
+        alt: 'Riva Rafting Adventure on Zrmanja River',
+      },
+      {
+        url: findGallery?.aktivnostGalerija[0].src,
+        width: findGallery?.aktivnostGalerija[0].width,
+        height: findGallery?.aktivnostGalerija[0].height,
+        alt: 'Riva Rafting Adventure on Zrmanja River',
+      },
+    ],
   };
 }
 
