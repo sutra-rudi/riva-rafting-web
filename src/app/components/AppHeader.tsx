@@ -103,8 +103,8 @@ const AppHeader = () => {
     },
   ];
   const navLinksTwo = [
-    { text: 'Mićanovi Dvori', href: '/' },
-    { text: 'Zrmanja Camping Vilagge', href: '/' },
+    { text: 'Mićanovi Dvori', href: 'https://micanovidvori.com' },
+    { text: 'Zrmanja Camping Vilagge', href: 'https://www.zrmanja-camping.hr/' },
     // { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
   ];
 

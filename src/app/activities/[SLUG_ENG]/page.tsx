@@ -27,14 +27,14 @@ export async function generateMetadata({ params }: { params: { SLUG_ENG: string 
       images: [
         {
           url: findGallery?.aktivnostHeroUrl.src,
-          width: findGallery?.aktivnostHeroUrl.width,
-          height: findGallery?.aktivnostHeroUrl.height,
+          width: 1200,
+          height: 600,
           alt: 'Riva Rafting Adventure on Zrmanja River',
         },
         {
           url: findGallery?.aktivnostGalerija[0].src,
-          width: findGallery?.aktivnostGalerija[0].width,
-          height: findGallery?.aktivnostGalerija[0].height,
+          width: 1200,
+          height: 600,
           alt: 'Riva Rafting Adventure on Zrmanja River',
         },
       ],
@@ -48,14 +48,14 @@ export async function generateMetadata({ params }: { params: { SLUG_ENG: string 
       images: [
         {
           url: findGallery?.aktivnostHeroUrl.src,
-          width: findGallery?.aktivnostHeroUrl.width,
-          height: findGallery?.aktivnostHeroUrl.height,
+          width: 1200,
+          height: 600,
           alt: 'Riva Rafting Adventure on Zrmanja River',
         },
         {
           url: findGallery?.aktivnostGalerija[0].src,
-          width: findGallery?.aktivnostGalerija[0].width,
-          height: findGallery?.aktivnostGalerija[0].height,
+          width: 1200,
+          height: 600,
           alt: 'Riva Rafting Adventure on Zrmanja River',
         },
       ],

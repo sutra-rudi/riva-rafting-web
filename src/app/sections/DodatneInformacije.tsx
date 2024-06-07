@@ -48,28 +48,32 @@ const DodatneInformacije = (props: MoreInfoProps) => {
 
       <div ref={ref} className={styles.sectionListContainer}>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
-          <div className={styles.titleHolder}>
-            <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>{parseByLang('KAMP ZRMANJA', 'ZRMANJA CAMPING VILLAGE')}</h6>
-              <h2 className={styles.headingDefault}>
-                {parseByLang('SMJEŠTAJ U NAŠEM KAMPU', 'ACCOMMODATION IN OUR CAMP')}
-              </h2>
+          <Link href={'https://www.zrmanja-camping.hr/'}>
+            <div className={styles.titleHolder}>
+              <div className={styles.titleHolderInner}>
+                <h6 className={ubuntuCondensed.className}>{parseByLang('KAMP ZRMANJA', 'ZRMANJA CAMPING VILLAGE')}</h6>
+                <h2 className={styles.headingDefault}>
+                  {parseByLang('SMJEŠTAJ U NAŠEM KAMPU', 'ACCOMMODATION IN OUR CAMP')}
+                </h2>
+              </div>
             </div>
-          </div>
 
-          <Image src={moreInfoFrontOne} fill alt='offer image' quality={100} />
-          <Image src={moreInfoBackOne} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+            <Image src={moreInfoFrontOne} fill alt='offer image' quality={100} />
+            <Image src={moreInfoBackOne} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+          </Link>
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
-          <div className={styles.titleHolder}>
-            <div className={styles.titleHolderInner}>
-              <h6 className={ubuntuCondensed.className}>{parseByLang('MIĆANOVI DVORI', 'MIĆANOVI DVORI')}</h6>
-              <h2 className={styles.headingDefault}>{parseByLang('DOMAĆA HRANA', 'LOCAL FOOD')}</h2>
+          <Link href={'https://micanovidvori.com'}>
+            <div className={styles.titleHolder}>
+              <div className={styles.titleHolderInner}>
+                <h6 className={ubuntuCondensed.className}>{parseByLang('MIĆANOVI DVORI', 'MIĆANOVI DVORI')}</h6>
+                <h2 className={styles.headingDefault}>{parseByLang('DOMAĆA HRANA', 'LOCAL FOOD')}</h2>
+              </div>
             </div>
-          </div>
 
-          <Image src={moreInfoFrontTwo} fill alt='offer image' quality={100} />
-          <Image src={moreInfoBackTwo} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+            <Image src={moreInfoFrontTwo} fill alt='offer image' quality={100} />
+            <Image src={moreInfoBackTwo} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+          </Link>
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
           <Link href={`/obrovacki-kraj/?lang=${checkParams}`}>
