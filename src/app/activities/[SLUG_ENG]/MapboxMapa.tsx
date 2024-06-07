@@ -30,8 +30,6 @@ const MapboxMapa = (props: AktivnostInterface) => {
       return;
     }
 
-    console.log({ lat, lng });
-
     if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
