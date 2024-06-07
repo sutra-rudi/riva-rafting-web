@@ -54,7 +54,17 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
       title: 'Riva Rafting - Rafting Avanture na Zrmanji, Hrvatska',
       description:
         'Dobrodošli na Riva Rafting, vaše odredište za nezaboravne rafting avanture na rijeci Zrmanji u Hrvatskoj. Pridružite nam se i istražite prekrasne rijeke i kanjone.',
-      url: 'https://rivarafting.hr',
+      url: 'https://riva-rafting-centar.hr',
+      siteName: 'Riva Rafting',
+      locale: 'hr_HR',
+      type: 'website',
+    },
+
+    twitter: {
+      title: 'Riva Rafting - Rafting Avanture na Zrmanji, Hrvatska',
+      description:
+        'Dobrodošli na Riva Rafting, vaše odredište za nezaboravne rafting avanture na rijeci Zrmanji u Hrvatskoj. Pridružite nam se i istražite prekrasne rijeke i kanjone.',
+      url: 'https://riva-rafting-centar.hr',
       siteName: 'Riva Rafting',
       locale: 'hr_HR',
       type: 'website',
@@ -62,7 +72,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
   };
 }
 
-export default async function Home({ searchParams }: any) {
+export default async function Home() {
   const getReviewsQuery = await fetch(`${process.env.CAMPING_REVIEWS_URL}`, {
     method: 'POST',
     headers: {
