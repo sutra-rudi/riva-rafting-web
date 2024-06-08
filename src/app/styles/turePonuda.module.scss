@@ -13,6 +13,7 @@
     width: 100%;
     position: absolute;
     bottom: 0;
+    z-index: 1;
   }
 
   &::before {
@@ -37,6 +38,8 @@
     padding: 5rem 1rem;
     width: 100%;
     gap: 6em;
+    z-index: 3;
+    position: relative;
 
     @media only screen and (max-width: $desktops) {
       gap: 4rem;

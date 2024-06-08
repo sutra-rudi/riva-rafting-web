@@ -345,6 +345,13 @@
             // padding: 0.4rem 0.55rem;
             font-size: $mobileFontSizeAlt;
             line-height: $browserProred;
+
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-clamp: 1;
+            -webkit-line-clamp: 1;
           }
 
           color: #fff;

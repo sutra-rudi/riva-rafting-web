@@ -114,7 +114,7 @@
       }
 
       .accordionItemButton {
-        border-bottom: 0.7px solid $zelenaGlavna;
+        // border-bottom: 0.7px solid $zelenaGlavna;
         font-size: $mobileHeading4;
 
         @media only screen and (max-width: $tablets) {
@@ -165,6 +165,8 @@
 
       .accordionItemButton[aria-expanded='true'] {
         border-bottom: 0;
+        // border-bottom: 0.7px solid $zelenaGlavna;
+
         font-weight: 500;
 
         &::before {
@@ -176,12 +178,13 @@
 
       .accordionItemPanel {
         padding: 0;
+        border-bottom: 0.7px solid $zelenaGlavna;
 
         p {
           margin-top: 0.5rem;
           color: $tamna;
           font-size: $baseFontSize;
-          padding: 0 0 0 2.7rem;
+          padding: 0 0 0.75rem 2.7rem;
           @media only screen and (max-width: $tablets) {
             font-size: $mobileFontSizeAlt;
           }
