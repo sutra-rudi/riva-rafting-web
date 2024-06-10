@@ -38,12 +38,12 @@ const MapboxMapa = (props: AktivnostInterface) => {
       // center: [lng, lat],
 
       // zoom: 0.25,
-      zoom: 11,
+      zoom: 13,
     });
 
     map.current.scrollZoom.disable();
-    map.current.setCenter({ lat: '44.182943149033214', lng: '15.69450882816688' });
-    map.current.flyTo({ lat: '44.182943149033214', lng: '15.69450882816688' });
+    map.current.setCenter({ lat, lng });
+    map.current.flyTo({ lat, lng });
   }, [props.mapCenter, props.styleUrl, props.apiKey]);
 
   return (

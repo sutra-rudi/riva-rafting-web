@@ -5,10 +5,9 @@ import styles from '../../styles/aktivnost.module.scss';
 import AppHeader from '@/app/components/AppHeader';
 import AppFooter from '@/app/components/AppFooter';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
-
-import MapboxMapa from './MapboxMapa';
 import PageContent from './PageContent';
 import { aktivnostiHeroSlike } from './staticImageImports';
+import MapboxMapa from './MapboxMapa';
 
 export async function generateMetadata({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find(
@@ -84,7 +83,11 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
             gallery={findGallery.aktivnostGalerija}
           />
         )}
-        <MapboxMapa apiKey={mapboxApiKey as string} />
+        <MapboxMapa
+          mapCenter={findData?.['KORDINATE-CENTRA']!}
+          styleUrl={findData?.['Style URL'] ?? ''}
+          apiKey={mapboxApiKey as string}
+        />
         <DodatneInformacije isLanding={false} />
       </main>
       <AppFooter />
