@@ -56,8 +56,15 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
         'Dobrodošli na Riva Rafting, vaše odredište za nezaboravne rafting avanture na rijeci Zrmanji u Hrvatskoj. Pridružite nam se i istražite prekrasne rijeke i kanjone.',
       url: 'https://riva-rafting-centar.hr',
       siteName: 'Riva Rafting',
-      locale: 'hr_HR',
+      locale: parseByLang('hr_HR', 'en_US'),
       type: 'website',
+      images: [
+        {
+          width: 1200,
+          height: 600,
+          alt: parseByLang('Riva Rafting avantura na rijeci Zrmanji', 'Riva Rafting Adventure on Zrmanja River'),
+        },
+      ],
     },
 
     twitter: {
@@ -66,8 +73,15 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
         'Dobrodošli na Riva Rafting, vaše odredište za nezaboravne rafting avanture na rijeci Zrmanji u Hrvatskoj. Pridružite nam se i istražite prekrasne rijeke i kanjone.',
       url: 'https://riva-rafting-centar.hr',
       siteName: 'Riva Rafting',
-      locale: 'hr_HR',
       type: 'website',
+      locale: parseByLang('hr_HR', 'en_US'),
+      images: [
+        {
+          width: 1200,
+          height: 600,
+          alt: parseByLang('Riva Rafting avantura na rijeci Zrmanji', 'Riva Rafting Adventure on Zrmanja River'),
+        },
+      ],
     },
   };
 }
