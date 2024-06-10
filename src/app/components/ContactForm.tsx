@@ -24,7 +24,7 @@ const ContactForm = () => {
     activity: '',
     message: '',
     dateOfVisitStart: new Date(),
-    dateOfVisitEnd: new Date(),
+    // dateOfVisitEnd: new Date(),
     numOfPeople: undefined,
     numOfChildren: undefined,
   });
@@ -57,7 +57,7 @@ const ContactForm = () => {
         setErrors((prev) => [...prev, shorthandCheck ? 'Aktivnost je obavezna' : 'Activity is required']);
       if (!contactFormData.message)
         setErrors((prev) => [...prev, shorthandCheck ? 'Poruka je obavezna' : 'Message is required']);
-      if (!contactFormData.dateOfVisitStart && !contactFormData.dateOfVisitEnd)
+      if (!contactFormData.dateOfVisitStart)
         setErrors((prev) => [...prev, shorthandCheck ? 'Datum posjete je obavezan' : 'Date of visit is required']);
       if (contactFormData.numOfPeople === undefined)
         setErrors((prev) => [...prev, shorthandCheck ? 'Broj osoba je obavezan' : 'Number of people is required']);
@@ -78,9 +78,12 @@ const ContactForm = () => {
       await submit({
         ...contactFormData,
         dateOfVisitStart: dayjs(contactFormData.dateOfVisitStart).format('DD.MM.YYYY'),
-        dateOfVisitEnd: dayjs(contactFormData.dateOfVisitEnd).format('DD.MM.YYYY'),
       });
 
+      // console.log({
+      //   ...contactFormData,
+      //   dateOfVisitStart: dayjs(contactFormData.dateOfVisitStart).format('DD.MM.YYYY'),
+      // });
       toast.success(
         parseByLang(
           'Hvala na upitu, uskoro ćemo vam se javiti putem e-maila ili telefona! Ukoliko imate hitan upit, slobodno nas kontaktirajte putem telefona ili e-maila.',
@@ -108,13 +111,11 @@ const ContactForm = () => {
       return { ..._prev, ['activity']: event.target.value };
     });
 
-  const onDateChangePick = (dates: [Date | null, Date | null]) => {
-    const [start, end] = dates;
+  const onDateChangePick = (date: Date | null) => {
     setContactFormData((_prev) => {
       return {
         ..._prev,
-        ['dateOfVisitStart']: start,
-        ['dateOfVisitEnd']: end,
+        ['dateOfVisitStart']: date,
       };
     });
   };
@@ -170,15 +171,15 @@ const ContactForm = () => {
           />
           <div className={styles.datePickerWrapp}>
             <DatePicker
-              onChange={(dates) => onDateChangePick(dates)}
-              // selected={contactFormData['dateOfVisit']}
+              onChange={(date) => onDateChangePick(date)}
+              selected={contactFormData['dateOfVisitStart']}
               minDate={new Date()}
               placeholderText='Odaberite datum posjete'
               disabledKeyboardNavigation
               onFocus={(e) => e.target.blur()}
-              selectsRange
-              startDate={contactFormData['dateOfVisitStart']}
-              endDate={contactFormData['dateOfVisitEnd']}
+              // selectsRange
+              // startDate={contactFormData['dateOfVisitStart']}
+              // endDate={contactFormData['dateOfVisitEnd']}
             />
             <CalendarIcon className={`lg:text-2xl text-lg group-focus:text-interactive-green  text-text-white`} />
           </div>
