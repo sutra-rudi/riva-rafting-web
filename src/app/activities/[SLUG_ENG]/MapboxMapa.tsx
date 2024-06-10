@@ -36,10 +36,14 @@ const MapboxMapa = (props: AktivnostInterface) => {
       style: props.styleUrl ?? 'mapbox://styles/lovreperaic/clu5id29e00ud01qs2gbfabi4',
       accessToken: props.apiKey,
       // center: [lng, lat],
+
       // zoom: 0.25,
+      zoom: 11,
     });
 
     map.current.scrollZoom.disable();
+    map.current.setCenter({ lat: '44.182943149033214', lng: '15.69450882816688' });
+    map.current.flyTo({ lat: '44.182943149033214', lng: '15.69450882816688' });
   }, [props.mapCenter, props.styleUrl, props.apiKey]);
 
   return (
