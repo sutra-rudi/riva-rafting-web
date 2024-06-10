@@ -10,6 +10,7 @@ interface AktivnostInterface {
   apiKey: string;
   styleUrl: string;
   mapCenter: string;
+  zoom: number;
 }
 
 const MapboxMapa = (props: AktivnostInterface) => {
@@ -38,7 +39,8 @@ const MapboxMapa = (props: AktivnostInterface) => {
       // center: [lng, lat],
 
       // zoom: 0.25,
-      zoom: 13,
+      // zoom: 13,
+      zoom: props.zoom,
     });
 
     map.current.scrollZoom.disable();

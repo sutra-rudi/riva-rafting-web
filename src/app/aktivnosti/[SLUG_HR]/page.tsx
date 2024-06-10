@@ -87,6 +87,7 @@ export default async function ActivityDetails({ params }: { params: { SLUG_HR: s
           mapCenter={findData?.['KORDINATE-CENTRA']!}
           styleUrl={findData?.['Style URL'] ?? ''}
           apiKey={mapboxApiKey as string}
+          zoom={findData?.ZOOM!}
         />
         <DodatneInformacije isLanding={false} />
       </main>
