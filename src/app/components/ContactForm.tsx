@@ -75,9 +75,21 @@ const ContactForm = () => {
     event.preventDefault();
 
     if (errors.length === 0) {
+      const parsedData = {
+        ['Ime']: contactFormData.name,
+        ['Email adresa']: contactFormData.email,
+        ['Broj telefona']: contactFormData.phone,
+        ['Odabrana aktivnost']: contactFormData.activity,
+        ['Dodatna poruka']: contactFormData.message,
+        ['Željeni datum']: dayjs(contactFormData.dateOfVisitStart).format('DD.MM.YYYY'),
+        ['Broj odraslih']: contactFormData.numOfPeople,
+        ['Broj djece']: contactFormData.numOfChildren,
+      };
+
+      // console.log('PARSE', parsedData);
+
       await submit({
-        ...contactFormData,
-        dateOfVisitStart: dayjs(contactFormData.dateOfVisitStart).format('DD.MM.YYYY'),
+        ...parsedData,
       });
 
       // console.log({
