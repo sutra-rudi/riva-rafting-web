@@ -90,10 +90,10 @@ const AppFooter = (props: FooterInterface) => {
       <div className={styles.socialFooterStack}>
         <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
         <div className={styles.socialIconStack}>
-          <Link href={typeof footerURLS !== 'undefined' ? footerURLS.facebook : ''}>
+          <Link href={typeof footerURLS !== 'undefined' && footerURLS.facebook ? footerURLS.facebook : ''}>
             <Image src={facebookIcon} alt='icon' width={32} height={32} />
           </Link>
-          <Link href={typeof footerURLS !== 'undefined' ? footerURLS.instagram : ''}>
+          <Link href={typeof footerURLS !== 'undefined' && footerURLS.instagram ? footerURLS.instagram : ''}>
             <Image src={instaIcon} alt='icon' width={32} height={32} />
           </Link>
           <Link href='mailto:info@riva-rafting-centar.hr'>
