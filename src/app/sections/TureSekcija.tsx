@@ -62,7 +62,7 @@ const TureSekcija = () => {
 
     children: (
       <ReactPlayer
-        url={'/novi-ping-pong.mp4'}
+        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-ping-pong.mp4'}
         loop
         muted
         volume={0}

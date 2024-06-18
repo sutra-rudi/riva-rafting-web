@@ -51,7 +51,7 @@ const HeroSekcija = () => {
     children: (
       <ReactPlayer
         ref={playerRef}
-        url={'/novi-hero.mp4'}
+        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4'}
         config={{
           file: {
             attributes: {
