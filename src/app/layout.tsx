@@ -6,6 +6,7 @@ import '@splidejs/react-splide/css';
 const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin'] });
 import { GlobalContextProvider } from './contexts/store';
 import { Toaster } from 'react-hot-toast';
+import { GoogleAnalytics } from '@next/third-parties/google';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -34,6 +35,7 @@ export default function RootLayout({
         <GlobalContextProvider>
           <Toaster />
           <Providers>{children}</Providers>
+          <GoogleAnalytics gaId={process.env.RIVA_RAFTING_GOOGLE_ANALYTICS_CODE!} />
         </GlobalContextProvider>
       </body>
     </html>
