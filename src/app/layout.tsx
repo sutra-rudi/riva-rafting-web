@@ -35,9 +35,9 @@ export default function RootLayout({
         <GlobalContextProvider>
           <Toaster />
           <Providers>{children}</Providers>
-          <GoogleAnalytics gaId={process.env.RIVA_RAFTING_GOOGLE_ANALYTICS_CODE!} />
         </GlobalContextProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.RIVA_RAFTING_GOOGLE_ANALYTICS_CODE!} />
     </html>
   );
 }
