@@ -97,7 +97,7 @@ const PageContent = ({
                     </li>
                     <li>
                       <span className={styles.boldSpan}>MINIMALNA DOB:</span>
-                      <span>{pageContentData?.['MINIMALNA_DOB:']}</span>
+                      <span>{pageContentData?.['MINIMALNA DOB:']}</span>
                     </li>
                     <li>
                       <span className={styles.boldSpan}>ZAHTJEVNOST:</span>
