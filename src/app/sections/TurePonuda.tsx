@@ -5,12 +5,22 @@ import styles from '../styles/turePonuda.module.scss';
 import TureArticle from '../components/TureArticle';
 import tureOne from '../img/ture1.png';
 import tureTwo from '../img/ture2.png';
+import tureThree from '../img/aktivnosti-hero-update-slike/pjesacke-ture.png';
 import PaperDividBot from '../components/PaperDividBot';
 
 import Image from 'next/image';
 import pogledajVideoGradient from '../img/pogledaj-video-gradient.svg';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+
+const listSpecialOffer = [
+  'Rafting ili kayak tura po rijeci Zrmanji',
+  'Pješačka tura do Kudina mosta',
+  'Noćenje u mobilnim kućicama Mićanovih dvora',
+  'Tradicionalna večera u konobi "Tisno"',
+  'Organiziran prijevoz i vođenje',
+  'Vrijedi za travanj, svibanj, rujan, listopad / petak-nedjelja',
+];
 
 const staticDemoData = [
   {
@@ -39,6 +49,21 @@ const staticDemoData = [
     EN_title: 'Twenty Years of Adventure: Celebrating Nature and Sports at the Zrmanja Outdoor Festival',
     EN_content: `Since 2005, the Zrmanja Outdoor Festival has been a key event for adventure enthusiasts and active vacationers, taking place in the picturesque surroundings of Obrovac. The festival is known for its rich program that includes diverse activities such as rafting, water polo, kayaking, stand-up paddleboarding (SUP), and city trails, attracting nature lovers from all over the world. Participants have the opportunity to enjoy thrilling sports while exploring the beauty of the Zrmanja River and its surroundings, making this festival an unforgettable experience for adventurers of all ages.\n\nIn addition to sports challenges, the Zrmanja Adventure Festival also has a deep mission of nature conservation, emphasizing the importance of protecting the Zrmanja River and its tributaries from all forms of devastation. The festival is not just an opportunity for fun and recreation but also a platform for raising awareness about the importance of preserving the natural beauty and heritage that surrounds us.\n\nWith its long-standing tradition and diverse offerings, the Zrmanja Outdoor Festival has become more than a sports event; it is a festival that celebrates nature, adventure, and community while providing participants with unforgettable memories and experiences each year.`,
   },
+
+  {
+    subtitle: 'Proljetno i jesensko istraživanje Zrmanje ',
+    title: 'Trodnevni rafting i kayak paket na rijeci Zrmanji',
+    content: `Uronite u prirodne ljepote Zrmanje i njenog kanjona kroz trodnevni avanturistički paket. Od raftinga i kayaka do istraživanja skrivenih dragulja poput Kudina mosta, svaki dan je ispunjen uzbuđenjem i opuštanjem u prirodnom okruženju. Uz organiziran prijevoz, noćenje u udobnim kućicama i tradicionalne obroke, ovaj paket nudi savršen spoj adrenalina i relaksacije za svakog ljubitelja prirode.
+      `,
+
+    isCTA: true,
+    imageSRC: tureThree,
+    isDoubleCta: true,
+
+    EN_subtitle: 'Spring and Autumn Exploration of the Zrmanja River',
+    EN_title: 'Three-day Rafting and Kayaking Package on the Zrmanja River',
+    EN_content: `Immerse yourself in the natural beauty of the Zrmanja River and its canyon through a three-day adventure package. From rafting and kayaking to exploring hidden gems like the Kudin Bridge, each day is filled with excitement and relaxation in a natural setting. With organized transportation, comfortable accommodation in cabins, and traditional meals, this package offers the perfect blend of adrenaline and relaxation for every nature lover.`,
+  },
 ];
 
 const TurePonuda = () => {
@@ -58,6 +83,7 @@ const TurePonuda = () => {
             key={article.title}
             title={parseByLang(article.title, article.EN_title)}
             isCTA={article.isCTA}
+            isDoubleCta={article.isDoubleCta}
             content={parseByLang(article.content, article.EN_content)}
             subtitle={parseByLang(article.subtitle, article.EN_subtitle)}
             imageSRC={article.imageSRC}

@@ -229,4 +229,33 @@
   .articleReverse {
     flex-direction: row-reverse;
   }
+
+  .contactCtaTuraNoviBlok {
+    display: flex;
+    justify-content: start;
+    place-items: center;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: $tablets) {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  .swiperParent {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiperSlide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    height: 30vh;
+
+    @media only screen and (min-width: $tablets) {
+      height: 445px;
+    }
+  }
 }
