@@ -290,13 +290,13 @@ const AktivnostiHeroSlike = [
   },
   {
     aktivnostId: 9,
-    aktivnostHeroUrl: jahanje,
-    aktivnostGalerija: [jahanje1, jahanje2, jahanje3, jahanje4, jahanje5, jahanje6],
+    aktivnostHeroUrl: bicikl,
+    aktivnostGalerija: [bicikl1, bicikl2, bicikl3, bicikl4, bicikl5],
   },
   {
     aktivnostId: 10,
-    aktivnostHeroUrl: bicikl,
-    aktivnostGalerija: [bicikl1, bicikl2, bicikl3, bicikl4, bicikl5],
+    aktivnostHeroUrl: jahanje,
+    aktivnostGalerija: [jahanje1, jahanje2, jahanje3, jahanje4, jahanje5, jahanje6],
   },
 ];
 

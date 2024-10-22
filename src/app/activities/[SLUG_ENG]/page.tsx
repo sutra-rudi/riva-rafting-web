@@ -8,7 +8,7 @@ import DodatneInformacije from '@/app/sections/DodatneInformacije';
 import MapboxMapa from './MapboxMapa';
 import PageContent from './PageContent';
 import aktivnostiHeroSlike from './staticImageImports';
-
+const mapboxApiKey = process.env.MAPBOX_API_KEY;
 export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
     (iten) => String(iten['SLUG ENG']).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
@@ -67,8 +67,6 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
   const findData = demoData.find(
     (iten) => String(iten['SLUG ENG']).toLowerCase() === String(params.SLUG_ENG).toLowerCase()
   );
-
-  const mapboxApiKey = process.env.MAPBOX_API_KEY;
 
   const findHero = aktivnostiHeroSlike.find((item) => item.aktivnostId === findData?.ID);
 
