@@ -259,3 +259,16 @@
     }
   }
 }
+
+.lightboxCont {
+  width: 100%;
+  height: 100%;
+}
+
+.lightboxImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain !important;
+  object-position: center !important;
+}
