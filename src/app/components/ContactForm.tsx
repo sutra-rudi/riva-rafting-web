@@ -204,11 +204,27 @@ const ContactForm = () => {
             >
               {checkParams === UserLanguage.hr ? 'Odaberi aktivnost' : 'Pick activity'}
             </option>
-            {webContent.map(
+            {[
+              ...webContent,
+              {
+                ['NASLOV AKTIVNOSTI HERO']: 'Trodnevni rafting i kayak paket',
+                ['NASLOV AKTIVNOSTI HERO ENG']: 'Three-day Rafting and Kayaking Package',
+              },
+            ].map(
               (activity) =>
-                activity['NASLOV AKTIVNOSTI HERO'] !== '' && (
-                  <option value={activity['NASLOV AKTIVNOSTI HERO']} key={activity['NASLOV AKTIVNOSTI HERO']}>
-                    {activity['NASLOV AKTIVNOSTI HERO']}
+                activity['NASLOV AKTIVNOSTI HERO'] !== '' &&
+                activity['NASLOV AKTIVNOSTI HERO ENG'] !== '' && (
+                  <option
+                    value={
+                      checkParams === UserLanguage.hr
+                        ? activity['NASLOV AKTIVNOSTI HERO']
+                        : activity['NASLOV AKTIVNOSTI HERO ENG']
+                    }
+                    key={activity['NASLOV AKTIVNOSTI HERO']}
+                  >
+                    {checkParams === UserLanguage.hr
+                      ? activity['NASLOV AKTIVNOSTI HERO']
+                      : activity['NASLOV AKTIVNOSTI HERO ENG']}
                   </option>
                 )
             )}
