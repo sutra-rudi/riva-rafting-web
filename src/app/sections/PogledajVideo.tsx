@@ -22,7 +22,6 @@ import lottieAnima from '../img/videoPulse.json';
 import ReactPlayer from 'react-player';
 import Loading from '../loading';
 import Lightbox from 'yet-another-react-lightbox';
-import 'yet-another-react-lightbox/styles.css';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 

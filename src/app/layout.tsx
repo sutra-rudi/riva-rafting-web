@@ -7,6 +7,10 @@ const ubuntu = Ubuntu({ weight: ['300', '400', '500', '700'], subsets: ['latin']
 import { GlobalContextProvider } from './contexts/store';
 import { Toaster } from 'react-hot-toast';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Suspense } from 'react';
+import Loading from './loading';
+import AppHeader from './components/AppHeader';
+import AppFooter from './components/AppFooter';
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -32,10 +36,14 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
-        <GlobalContextProvider>
-          <Toaster />
-          <Providers>{children}</Providers>
-        </GlobalContextProvider>
+        <Toaster />
+        <Suspense fallback={<Loading />}>
+          <GlobalContextProvider>
+            <AppHeader />
+            <Providers>{children}</Providers>
+            <AppFooter />
+          </GlobalContextProvider>
+        </Suspense>
       </body>
       <GoogleAnalytics gaId={process.env.RIVA_RAFTING_GOOGLE_ANALYTICS_CODE!} />
     </html>

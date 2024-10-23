@@ -9,7 +9,7 @@ import { useSearchParams } from 'next/navigation';
 //@ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
-import 'yet-another-react-lightbox/styles.css';
+
 import img1 from '../img/aktivnosti-hero-update-slike/pjesacke-ture/waking tour gallery-6.png';
 import img2 from '../img/aktivnosti-hero-update-slike/kayakTura/Kayak gallery-2.png';
 import img3 from '../img/aktivnosti-hero-update-slike/pjesacke-ture/waking tour gallery-4.png';
@@ -50,7 +50,6 @@ const TureArticle = (props: TureKarticaData) => {
   const parseLink =
     checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
 
-  const parseLinkPdf = '';
   return (
     <article className={isCTA ? `${style.tureArticle}` : `${style.tureArticle} ${style.articleReverse}`}>
       <Lightbox
@@ -59,17 +58,13 @@ const TureArticle = (props: TureKarticaData) => {
         plugins={[Zoom]}
         slides={[
           {
-            //@ts-ignore
-            type: 'custom-slide',
+            src: paketAranzman.src,
+            imageFit: 'contain',
+            width: paketAranzman.width,
+            height: paketAranzman.height,
+            alt: 'Promotional flyer for Riva Rafting tour',
           },
         ]}
-        render={{
-          slide: () => (
-            <div className={style.lightboxCont}>
-              <Image src={paketAranzman} quality={100} fill alt='promo banner' className={style.lightboxImg} />,
-            </div>
-          ),
-        }}
       />
       <div className={style.imgHolder}>
         {isDoubleCta ? (

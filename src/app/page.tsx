@@ -1,20 +1,20 @@
-import AppHeader from './components/AppHeader';
-import DodatneInformacije from './sections/DodatneInformacije';
+import 'yet-another-react-lightbox/styles.css';
 import styles from './styles/page.module.scss';
-import { Suspense } from 'react';
-import Loading from './loading';
-import AppFooter from './components/AppFooter';
-import HeroSekcija from './sections/HeroSekcija';
-import PromoSekcijaJedan from './sections/PromoSekcijaJedan';
-import TureSekcija from './sections/TureSekcija';
-import TurePonuda from './sections/TurePonuda';
-import PogledajVideo from './sections/PogledajVideo';
-import OnamaSekcija from './sections/OnamaSekcija';
-import FAQsection from './sections/FAQsection';
-import GallerySection from './sections/GallerySection';
-import ReviewsSection from './sections/ReviewsSection';
+
 import { getReviews } from './queries/getReviewsQuery';
 import { UserLanguage } from './types/appState';
+import dynamic from 'next/dynamic';
+
+const HeroSekcija = dynamic(() => import('./sections/HeroSekcija'));
+const PromoSekcijaJedan = dynamic(() => import('./sections/PromoSekcijaJedan'));
+const TureSekcija = dynamic(() => import('./sections/TureSekcija'));
+const TurePonuda = dynamic(() => import('./sections/TurePonuda'));
+const PogledajVideo = dynamic(() => import('./sections/PogledajVideo'));
+const OnamaSekcija = dynamic(() => import('./sections/OnamaSekcija'));
+const DodatneInformacije = dynamic(() => import('./sections/DodatneInformacije'));
+const FAQsection = dynamic(() => import('./sections/FAQsection'));
+const GallerySection = dynamic(() => import('./sections/GallerySection'));
+const ReviewsSection = dynamic(() => import('./sections/ReviewsSection'));
 
 export async function generateMetadata({ searchParams }: { searchParams: { lang: string } }) {
   const parseByLang = (hrString: string | string[], enString: string | string[]) => {
@@ -95,26 +95,22 @@ export default async function Home() {
     body: JSON.stringify({
       query: getReviews,
     }),
-    cache: 'no-store',
+    // cache: 'no-store',
   });
 
   const reviewsData = await getReviewsQuery.json();
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.homeMain}>
-        <HeroSekcija />
-        <PromoSekcijaJedan />
-        <TureSekcija />
-        <TurePonuda />
-        <PogledajVideo />
-        <OnamaSekcija />
-        <DodatneInformacije isLanding />
-        <FAQsection />
-        <GallerySection />
-        <ReviewsSection content={reviewsData} />
-      </main>
-      <AppFooter />
-    </Suspense>
+    <main className={styles.homeMain}>
+      <HeroSekcija />
+      <PromoSekcijaJedan />
+      <TureSekcija />
+      <TurePonuda />
+      <PogledajVideo />
+      <OnamaSekcija />
+      <DodatneInformacije isLanding />
+      <FAQsection />
+      <GallerySection />
+      <ReviewsSection content={reviewsData} />
+    </main>
   );
 }

@@ -6,7 +6,6 @@ import ReactPlayer from 'react-player/lazy';
 import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
 import Loading from '../loading';
-import { useAppContext } from '../contexts/store';
 
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
