@@ -10,6 +10,9 @@ const mediaPaths = {
   tureSekcijaVideo: {
     url: `${basePath}wp-content/uploads/2024/06/novi-ping-pong.mp4`,
   },
+  pogledajVideoSekcija: {
+    url: `${basePath}wp-content/uploads/2024/06/rafting-placeholder.mp4`,
+  },
 };
 
 export async function GET(request: NextRequest) {

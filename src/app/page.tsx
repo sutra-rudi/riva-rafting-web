@@ -100,7 +100,7 @@ export default async function Home() {
       <PromoSekcijaJedan />
       <TureSekcija videoUrl={parseVideoLinks.tureSekcijaVideo.url} />
       <TurePonuda />
-      <PogledajVideo />
+      <PogledajVideo videoUrl={parseVideoLinks.pogledajVideoSekcija.url} />
       <OnamaSekcija />
       <DodatneInformacije isLanding />
       <FAQsection />
