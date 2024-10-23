@@ -1,9 +1,4 @@
-import React, { Suspense } from 'react';
-import AppHeader from '../components/AppHeader';
-import AppFooter from '../components/AppFooter';
 import styles from '../styles/page.module.scss';
-
-import Loading from './loading';
 import aboutUsHero from '../img/heros/about-us-hero.png';
 import compImage from '../img/globals/about-us-company-img.png';
 import PageContent from './PageContent';
@@ -67,19 +62,14 @@ const companyInfoSegments = [
 
 export default async function Onama() {
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.aboutUsMain}>
-        <PageContent
-          title='O nama'
-          paraContent={pageParagraphContentHr}
-          imgSrc={aboutUsHero}
-          compImg={compImage}
-          textSegments={companyInfoSegments}
-        />
-      </main>
-
-      <AppFooter isAbout />
-    </Suspense>
+    <main className={styles.aboutUsMain}>
+      <PageContent
+        title='O nama'
+        paraContent={pageParagraphContentHr}
+        imgSrc={aboutUsHero}
+        compImg={compImage}
+        textSegments={companyInfoSegments}
+      />
+    </main>
   );
 }
