@@ -1,3 +1,5 @@
+export const maxDuration = 60;
+
 import 'yet-another-react-lightbox/styles.css';
 import styles from './styles/page.module.scss';
 
