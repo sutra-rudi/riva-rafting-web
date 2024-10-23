@@ -88,19 +88,17 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
-  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`);
+  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`, { cache: 'no-cache' });
   const parseVideoLinks = await callVideoLinks.json();
   const getReviewsQuery = await fetchData(getReviews);
-
-  console.log('VIDEOS', parseVideoLinks);
 
   return (
     <main className={styles.homeMain}>
       <HeroSekcija heroVideoUrl={parseVideoLinks.heroVideo.url} />
       <PromoSekcijaJedan />
-      <TureSekcija videoUrl={'parseVideoLinks.tureSekcijaVideo.url'} />
+      <TureSekcija videoUrl={parseVideoLinks.tureSekcijaVideo.url} />
       <TurePonuda />
-      <PogledajVideo videoUrl={'parseVideoLinks.pogledajVideoSekcija.url'} />
+      <PogledajVideo videoUrl={parseVideoLinks.pogledajVideoSekcija.url} />
       <OnamaSekcija />
       <DodatneInformacije isLanding />
       <FAQsection />

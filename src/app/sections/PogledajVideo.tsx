@@ -24,10 +24,27 @@ import Loading from '../loading';
 import Lightbox from 'yet-another-react-lightbox';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+import { useInView } from 'react-intersection-observer';
+import { checkUrl } from '../utils/checkUrl';
+import dynamic from 'next/dynamic';
 
 interface PogledajVideo {
   videoUrl: string;
 }
+
+const ReactPlayerDy = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+  loading: () => (
+    <Image
+      src={pogledajPoster.src}
+      width={1920}
+      height={1080}
+      alt='poster for video'
+      className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+      priority
+    />
+  ),
+});
 
 const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
   const paramsControler = useSearchParams();
@@ -37,42 +54,91 @@ const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
     [checkParams]
   );
 
-  const [isReady, setIsReady] = React.useState(false);
-  const playerRef = React.useRef<ReactPlayer>(null);
-
-  const onReady = React.useCallback(() => {
-    if (!isReady) {
-      playerRef.current && playerRef.current.seekTo(0, 'seconds');
-      setIsReady(true);
-    }
-  }, [isReady]);
-
+  const [videoSource, setVideoSource] = React.useState<any>(null);
+  const [isVideoReady, setIsVideoReady] = React.useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
+  const [isVideoLoading, setIsVideoLoading] = React.useState<boolean>(false);
   const [isVideoLightbox, setIsVideoLightbox] = React.useState<boolean>(false);
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.25,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      setIsVideoLoading(true);
+      const validateVideo = async () => {
+        const videoRes = await checkUrl(videoUrl);
+
+        if (videoRes) {
+          setVideoSource({
+            source: videoUrl,
+            placeholder: pogledajPoster.src,
+          });
+          setIsVideoLoading(false);
+          setIsVideoReady(true);
+        }
+      };
+
+      validateVideo();
+    }
+  }, [inView, videoUrl]);
+
+  React.useEffect(() => {
+    if (isVideoReady) {
+      const timer = setTimeout(() => {
+        setIsPlaying(true);
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [isVideoReady]);
 
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
-    children: (
-      <ReactPlayer
-        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/rafting-placeholder.mp4'}
-        loop
-        muted
-        volume={0}
-        width={'100%'}
-        height={'100%'}
-        playsinline
-        playing={isReady}
-        onReady={onReady}
-        fallback={<Loading />}
-        config={{
-          file: {
-            attributes: {
-              poster: pogledajPoster.src,
+    children:
+      isVideoReady && videoSource && !isVideoLoading ? (
+        <ReactPlayerDy
+          url={videoSource.source}
+          playsinline
+          pip
+          muted
+          loop
+          volume={0}
+          width='100%'
+          height='100%'
+          playing={isPlaying}
+          fallback={
+            <Image
+              src={videoSource.placeholder}
+              alt='hero image'
+              width={1600}
+              height={1200}
+              className='object-cover object-center block aspect-video'
+              priority
+            />
+          }
+          config={{
+            file: {
+              attributes: {
+                preload: 'none', // Ensure video doesn't load until play
+                poster: videoSource.placeholder, // Proper use of poster attribute
+              },
             },
-          },
-        }}
-      />
-    ),
+          }}
+        />
+      ) : (
+        <Image
+          src={pogledajPoster.src}
+          width={1920}
+          height={1080}
+          alt='poster for video'
+          className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+          priority
+        />
+      ),
   };
 
   const foreground: BannerLayer = {
@@ -104,7 +170,7 @@ const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
   };
 
   return (
-    <section className={styles.pogledajVideoSection}>
+    <section className={styles.pogledajVideoSection} ref={ref}>
       <PaperDividTop />
       <ParallaxBanner className={styles.pogledajVideoParalax} layers={[background, headline, foreground]} />
       <Lightbox
