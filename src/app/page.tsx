@@ -4,6 +4,7 @@ import styles from './styles/page.module.scss';
 import { getReviews } from './queries/getReviewsQuery';
 import { UserLanguage } from './types/appState';
 import dynamic from 'next/dynamic';
+import { fetchData } from './utils/callApi';
 
 const HeroSekcija = dynamic(() => import('./sections/HeroSekcija'));
 const PromoSekcijaJedan = dynamic(() => import('./sections/PromoSekcijaJedan'));
@@ -87,30 +88,24 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
-  const getReviewsQuery = await fetch(`${process.env.CMS_BASE_URL}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      query: getReviews,
-    }),
-    // cache: 'no-store',
-  });
+  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`);
+  const parseVideoLinks = await callVideoLinks.json();
+  const getReviewsQuery = await fetchData(getReviews);
 
-  const reviewsData = await getReviewsQuery.json();
+  console.log('VIDEOS', parseVideoLinks);
+
   return (
     <main className={styles.homeMain}>
-      <HeroSekcija />
+      <HeroSekcija heroVideoUrl={parseVideoLinks.heroVideo.url} />
       <PromoSekcijaJedan />
-      <TureSekcija />
+      <TureSekcija videoUrl={parseVideoLinks.tureSekcijaVideo.url} />
       <TurePonuda />
-      <PogledajVideo />
+      <PogledajVideo videoUrl={parseVideoLinks.pogledajVideoSekcija.url} />
       <OnamaSekcija />
       <DodatneInformacije isLanding />
       <FAQsection />
       <GallerySection />
-      <ReviewsSection content={reviewsData} />
+      <ReviewsSection content={getReviewsQuery} />
     </main>
   );
 }

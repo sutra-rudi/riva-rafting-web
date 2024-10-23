@@ -2,11 +2,8 @@
 import localFont from 'next/font/local';
 import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
-
 import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
-import Loading from '../loading';
-import ReactPlayer from 'react-player/lazy';
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
@@ -16,14 +13,18 @@ const ReactPlayerDy = dynamic(() => import('react-player/lazy'), {
   loading: () => (
     <Image
       src={heroPoster.src}
-      width={1600}
-      height={1200}
+      width={1920}
+      height={1080}
       alt='poster for video'
       className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
       priority
     />
   ),
 });
+
+interface HeroSekcija {
+  heroVideoUrl: string;
+}
 
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import Link from 'next/link';
@@ -45,7 +46,7 @@ const checkUrl = async (url: string): Promise<boolean> => {
   }
 };
 
-const HeroSekcija = () => {
+const HeroSekcija = ({ heroVideoUrl }: HeroSekcija) => {
   const [videoSource, setVideoSource] = React.useState<any>(null);
   const [isVideoReady, setIsVideoReady] = React.useState<boolean>(false);
   const [isVideoLoading, setIsVideoLoading] = React.useState<boolean>(false);
@@ -54,12 +55,11 @@ const HeroSekcija = () => {
   React.useEffect(() => {
     setIsVideoLoading(true);
     const validateVideo = async () => {
-      const videoRes = await checkUrl('https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4');
+      const videoRes = await checkUrl(heroVideoUrl);
 
-      console.log('VIDEO RES', videoRes);
       if (videoRes) {
         setVideoSource({
-          source: 'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4',
+          source: heroVideoUrl,
           placeholder: heroPoster.src,
         });
         setIsVideoLoading(false);
@@ -74,7 +74,7 @@ const HeroSekcija = () => {
     if (isVideoReady) {
       const timer = setTimeout(() => {
         setIsPlaying(true);
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
@@ -86,17 +86,6 @@ const HeroSekcija = () => {
     (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
     [checkParams]
   );
-
-  const [isReady, setIsReady] = React.useState(false);
-  const playerRef = React.useRef<ReactPlayer>(null);
-
-  const onReady = React.useCallback(() => {
-    if (!isReady) {
-      // const timeToStart = 7 * 60 + 12.6;
-      playerRef.current && playerRef.current.seekTo(0, 'seconds');
-      setIsReady(true);
-    }
-  }, [isReady]);
 
   const headline_en = `Experience the beauty \n of Zrmanja with us!`;
   const headline_hr = `Doživite ljepote \n Zrmanje s nama!`;
@@ -110,68 +99,47 @@ const HeroSekcija = () => {
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
-    children: (
-      <ReactPlayer
-        ref={playerRef}
-        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4'}
-        config={{
-          file: {
-            attributes: {
-              poster: heroPoster.src,
+    children:
+      isVideoReady && videoSource && !isVideoLoading ? (
+        <ReactPlayerDy
+          url={videoSource.source}
+          playsinline
+          pip
+          muted
+          loop
+          volume={0}
+          width='100%'
+          height='100%'
+          playing={isPlaying}
+          fallback={
+            <Image
+              src={videoSource.placeholder}
+              alt='hero image'
+              width={1600}
+              height={1200}
+              className='object-cover object-center block aspect-video'
+              priority
+            />
+          }
+          config={{
+            file: {
+              attributes: {
+                preload: 'none', // Ensure video doesn't load until play
+                poster: videoSource.placeholder, // Proper use of poster attribute
+              },
             },
-          },
-        }}
-        loop
-        playing={isReady}
-        onReady={onReady}
-        muted
-        volume={0}
-        width={'100%'}
-        height={'100%'}
-        playsinline
-        fallback={<Loading />}
-      />
-    ),
-    // isVideoReady && videoSource && !isVideoLoading ? (
-    //   <ReactPlayerDy
-    //     url={videoSource.source}
-    //     playsinline
-    //     pip
-    //     muted
-    //     loop
-    //     volume={0}
-    //     width='100%'
-    //     height='100%'
-    //     playing={isPlaying}
-    //     fallback={
-    //       <Image
-    //         src={videoSource.placeholder}
-    //         alt='hero image'
-    //         width={1600}
-    //         height={1200}
-    //         className='object-cover object-center block aspect-video'
-    //         priority
-    //       />
-    //     }
-    //     config={{
-    //       file: {
-    //         attributes: {
-    //           preload: 'none', // Ensure video doesn't load until play
-    //           poster: videoSource.placeholder, // Proper use of poster attribute
-    //         },
-    //       },
-    //     }}
-    //   />
-    // ) : (
-    //   <Image
-    //     src={heroPoster.src}
-    //     width={1600}
-    //     height={1200}
-    //     alt='poster for video'
-    //     className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
-    //     priority
-    //   />
-    // ),
+          }}
+        />
+      ) : (
+        <Image
+          src={heroPoster.src}
+          width={1600}
+          height={1200}
+          alt='poster for video'
+          className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+          priority
+        />
+      ),
   };
 
   const foreground: BannerLayer = {

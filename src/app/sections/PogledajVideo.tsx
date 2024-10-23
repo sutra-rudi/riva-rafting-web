@@ -25,7 +25,11 @@ import Lightbox from 'yet-another-react-lightbox';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
-const PogledajVideo = () => {
+interface PogledajVideo {
+  videoUrl: string;
+}
+
+const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
   const parseByLang = React.useCallback(
