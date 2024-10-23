@@ -1,7 +1,8 @@
 import styles from '../styles/rulesAndDisclaimers.module.scss';
 import pravilaHero from '../img/pravila/pravila-privatnosti-hero.png';
+import dynamic from 'next/dynamic';
 
-import PageContent from './PageContent';
+const PageContent = dynamic(() => import('./PageContent'));
 const sectionContent_hr = {
   title: 'Terms of use',
   topText:

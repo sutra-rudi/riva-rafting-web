@@ -2,8 +2,10 @@ import demoData from '../../../../public/webdata/webcontent.json';
 import styles from '../../styles/aktivnost.module.scss';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
 import MapboxMapa from './MapboxMapa';
-import PageContent from './PageContent';
+const PageContent = dynamic(() => import('./PageContent'));
+
 import aktivnostiHeroSlike from './staticImageImports';
+import dynamic from 'next/dynamic';
 const mapboxApiKey = process.env.MAPBOX_API_KEY;
 export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(

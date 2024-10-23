@@ -1,7 +1,9 @@
 import styles from '../styles/page.module.scss';
 import aboutUsHero from '../img/heros/about-us-hero.png';
 import compImage from '../img/globals/about-us-company-img.png';
-import PageContent from './PageContent';
+import dynamic from 'next/dynamic';
+
+const PageContent = dynamic(() => import('./PageContent'));
 
 const pageParagraphContentHr = `Riva Rafting Centar d.o.o. je tvrtka s više od 20 godina iskustva u poslovanju na ruralnom, brdsko-planinskom području, smještena u Kruševu, zaseoku Drage iznad Obrovca. Naša lokacija ima nevjerojatan turistički potencijal za aktivni, sportski i seoski turizam, te je strateški pozicionirana na udaljenosti od 0 do 80 km od većine Nacionalnih parkova i Parkova prirode.
 \nKao vodeća tvrtka za seoski i sportski turizam u Zadarskoj županiji, ali i šire, ponosni smo na svoj doprinos u promociji regije. Riva Rafting Centar d.o.o. je odabran kao glavni konzultant produkcije Discovery Channela za svjetski poznatu avanturističku seriju Man, Woman, Wild. Ovaj projekt dodatno je pozicionirao našu tvrtku kao stručnjaka za aktivnosti na otvorenom, što potvrđuje naše dugogodišnje iskustvo i znanje o izazovnim terenima koje prolaze protagonisti serije.

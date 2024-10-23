@@ -1,9 +1,11 @@
 import demoData from '../../../../public/webdata/webcontent.json';
 import styles from '../../styles/aktivnost.module.scss';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
-import PageContent from './PageContent';
+const PageContent = dynamic(() => import('./PageContent'));
+
 import { aktivnostiHeroSlike } from './staticImageImports';
 import MapboxMapa from './MapboxMapa';
+import dynamic from 'next/dynamic';
 
 export async function generateMetadata({ params }: { params: { SLUG_HR: string } }) {
   const findData = demoData.find(

@@ -1,7 +1,8 @@
 import styles from '../styles/contact.module.scss';
 import kontaktHero from '../img/kontakt-slike/kontaktHero.png';
 import FAQsection from '../sections/FAQsection';
-import PageContent from './PageContent';
+import dynamic from 'next/dynamic';
+const PageContent = dynamic(() => import('./PageContent'));
 
 export default async function Kontakt({ searchParams }: any) {
   return (

@@ -1,5 +1,6 @@
+import dynamic from 'next/dynamic';
 import styles from '../styles/obrovackiKraj.module.scss';
-import PageContent from './PageContent';
+const PageContent = dynamic(() => import('./PageContent'));
 
 export default async function ObrovackiKraj() {
   return (

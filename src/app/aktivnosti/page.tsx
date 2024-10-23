@@ -1,7 +1,8 @@
 import styles from '../styles/page.module.scss';
-import DodatneInformacije from '../sections/DodatneInformacije';
+import dynamic from 'next/dynamic';
 
-import PromoSekcijaJedan from '../sections/PromoSekcijaJedan';
+const DodatneInformacije = dynamic(() => import('../sections/DodatneInformacije'));
+const PromoSekcijaJedan = dynamic(() => import('../sections/PromoSekcijaJedan'));
 export default async function Aktivnosti() {
   return (
     <main className={styles.aktivnostiMain}>
