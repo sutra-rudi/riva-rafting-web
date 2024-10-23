@@ -11,22 +11,74 @@ const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
 
+const ReactPlayerDy = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+  loading: () => (
+    <Image
+      src={heroPoster.src}
+      width={1600}
+      height={1200}
+      alt='poster for video'
+      className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+      priority
+    />
+  ),
+});
+
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import Link from 'next/link';
 import { UserLanguage } from '../types/appState';
 import { useSearchParams } from 'next/navigation';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+
+const checkUrl = async (url: string): Promise<boolean> => {
+  try {
+    const response = await fetch(url, {
+      method: 'HEAD',
+      next: { revalidate: 3600 },
+    });
+    return response.ok;
+  } catch (error) {
+    console.error('Error checking image URL:', error);
+    return false;
+  }
+};
 
 const HeroSekcija = () => {
-  const [isReady, setIsReady] = React.useState(false);
-  const playerRef = React.useRef<ReactPlayer>(null);
+  const [videoSource, setVideoSource] = React.useState<any>(null);
+  const [isVideoReady, setIsVideoReady] = React.useState<boolean>(false);
+  const [isVideoLoading, setIsVideoLoading] = React.useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = React.useState<boolean>(false);
 
-  const onReady = React.useCallback(() => {
-    if (!isReady) {
-      // const timeToStart = 7 * 60 + 12.6;
-      playerRef.current && playerRef.current.seekTo(0, 'seconds');
-      setIsReady(true);
+  React.useEffect(() => {
+    setIsVideoLoading(true);
+    const validateVideo = async () => {
+      const videoRes = await checkUrl('https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4');
+
+      console.log('VIDEO RES', videoRes);
+      if (videoRes) {
+        setVideoSource({
+          source: 'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4',
+          placeholder: heroPoster.src,
+        });
+        setIsVideoLoading(false);
+        setIsVideoReady(true);
+      }
+    };
+
+    validateVideo();
+  }, []);
+
+  React.useEffect(() => {
+    if (isVideoReady) {
+      const timer = setTimeout(() => {
+        setIsPlaying(true);
+      }, 2000);
+
+      return () => clearTimeout(timer);
     }
-  }, [isReady]);
+  }, [isVideoReady]);
 
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
@@ -47,28 +99,47 @@ const HeroSekcija = () => {
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
-    children: (
-      <ReactPlayer
-        ref={playerRef}
-        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4'}
-        config={{
-          file: {
-            attributes: {
-              poster: heroPoster.src,
+    children:
+      isVideoReady && videoSource && !isVideoLoading ? (
+        <ReactPlayerDy
+          url={videoSource.source}
+          playsinline
+          pip
+          muted
+          loop
+          volume={0}
+          width='100%'
+          height='100%'
+          playing={isPlaying}
+          fallback={
+            <Image
+              src={videoSource.placeholder}
+              alt='hero image'
+              width={1600}
+              height={1200}
+              className='object-cover object-center block aspect-video'
+              priority
+            />
+          }
+          config={{
+            file: {
+              attributes: {
+                preload: 'none', // Ensure video doesn't load until play
+                poster: videoSource.placeholder, // Proper use of poster attribute
+              },
             },
-          },
-        }}
-        loop
-        playing={isReady}
-        onReady={onReady}
-        muted
-        volume={0}
-        width={'100%'}
-        height={'100%'}
-        playsinline
-        fallback={<Loading />}
-      />
-    ),
+          }}
+        />
+      ) : (
+        <Image
+          src={heroPoster.src}
+          width={1600}
+          height={1200}
+          alt='poster for video'
+          className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+          priority
+        />
+      ),
   };
 
   const foreground: BannerLayer = {

@@ -9,8 +9,10 @@ import { Toaster } from 'react-hot-toast';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Suspense } from 'react';
 import Loading from './loading';
-import AppHeader from './components/AppHeader';
-import AppFooter from './components/AppFooter';
+import dynamic from 'next/dynamic';
+
+const AppHeader = dynamic(() => import('./components/AppHeader'));
+const AppFooter = dynamic(() => import('./components/AppFooter'));
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
