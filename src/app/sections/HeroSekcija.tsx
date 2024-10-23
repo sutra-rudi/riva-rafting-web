@@ -2,11 +2,11 @@
 import localFont from 'next/font/local';
 import React from 'react';
 import styles from '../styles/heroSekcija.module.scss';
-import ReactPlayer from 'react-player/lazy';
+
 import PaperDividTop from '../components/PaperDividTop';
 import heroPoster from '../img/hero-poster.jpg';
 import Loading from '../loading';
-
+import ReactPlayer from 'react-player/lazy';
 const RecoletaBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-Bold.ttf', weight: '700' }],
 });
@@ -87,6 +87,17 @@ const HeroSekcija = () => {
     [checkParams]
   );
 
+  const [isReady, setIsReady] = React.useState(false);
+  const playerRef = React.useRef<ReactPlayer>(null);
+
+  const onReady = React.useCallback(() => {
+    if (!isReady) {
+      // const timeToStart = 7 * 60 + 12.6;
+      playerRef.current && playerRef.current.seekTo(0, 'seconds');
+      setIsReady(true);
+    }
+  }, [isReady]);
+
   const headline_en = `Experience the beauty \n of Zrmanja with us!`;
   const headline_hr = `Doživite ljepote \n Zrmanje s nama!`;
 
@@ -99,47 +110,68 @@ const HeroSekcija = () => {
   const background: BannerLayer = {
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
-    children:
-      isVideoReady && videoSource && !isVideoLoading ? (
-        <ReactPlayerDy
-          url={videoSource.source}
-          playsinline
-          pip
-          muted
-          loop
-          volume={0}
-          width='100%'
-          height='100%'
-          playing={isPlaying}
-          fallback={
-            <Image
-              src={videoSource.placeholder}
-              alt='hero image'
-              width={1600}
-              height={1200}
-              className='object-cover object-center block aspect-video'
-              priority
-            />
-          }
-          config={{
-            file: {
-              attributes: {
-                preload: 'none', // Ensure video doesn't load until play
-                poster: videoSource.placeholder, // Proper use of poster attribute
-              },
+    children: (
+      <ReactPlayer
+        ref={playerRef}
+        url={'https://cms.zrmanja-camping.hr/wp-content/uploads/2024/06/novi-hero.mp4'}
+        config={{
+          file: {
+            attributes: {
+              poster: heroPoster.src,
             },
-          }}
-        />
-      ) : (
-        <Image
-          src={heroPoster.src}
-          width={1600}
-          height={1200}
-          alt='poster for video'
-          className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
-          priority
-        />
-      ),
+          },
+        }}
+        loop
+        playing={isReady}
+        onReady={onReady}
+        muted
+        volume={0}
+        width={'100%'}
+        height={'100%'}
+        playsinline
+        fallback={<Loading />}
+      />
+    ),
+    // isVideoReady && videoSource && !isVideoLoading ? (
+    //   <ReactPlayerDy
+    //     url={videoSource.source}
+    //     playsinline
+    //     pip
+    //     muted
+    //     loop
+    //     volume={0}
+    //     width='100%'
+    //     height='100%'
+    //     playing={isPlaying}
+    //     fallback={
+    //       <Image
+    //         src={videoSource.placeholder}
+    //         alt='hero image'
+    //         width={1600}
+    //         height={1200}
+    //         className='object-cover object-center block aspect-video'
+    //         priority
+    //       />
+    //     }
+    //     config={{
+    //       file: {
+    //         attributes: {
+    //           preload: 'none', // Ensure video doesn't load until play
+    //           poster: videoSource.placeholder, // Proper use of poster attribute
+    //         },
+    //       },
+    //     }}
+    //   />
+    // ) : (
+    //   <Image
+    //     src={heroPoster.src}
+    //     width={1600}
+    //     height={1200}
+    //     alt='poster for video'
+    //     className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
+    //     priority
+    //   />
+    // ),
   };
 
   const foreground: BannerLayer = {
