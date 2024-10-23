@@ -98,9 +98,9 @@ export default async function Home() {
     <main className={styles.homeMain}>
       <HeroSekcija heroVideoUrl={parseVideoLinks.heroVideo.url} />
       <PromoSekcijaJedan />
-      <TureSekcija videoUrl={parseVideoLinks.tureSekcijaVideo.url} />
+      <TureSekcija videoUrl={'parseVideoLinks.tureSekcijaVideo.url'} />
       <TurePonuda />
-      <PogledajVideo videoUrl={parseVideoLinks.pogledajVideoSekcija.url} />
+      <PogledajVideo videoUrl={'parseVideoLinks.pogledajVideoSekcija.url'} />
       <OnamaSekcija />
       <DodatneInformacije isLanding />
       <FAQsection />
