@@ -13,13 +13,22 @@ import pogledajVideoGradient from '../img/pogledaj-video-gradient.svg';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
 
-const listSpecialOffer = [
+const listSpecialOfferHr = [
   'Rafting ili kayak tura po rijeci Zrmanji',
   'Pješačka tura do Kudina mosta',
   'Noćenje u mobilnim kućicama Mićanovih dvora',
   'Tradicionalna večera u konobi "Tisno"',
   'Organiziran prijevoz i vođenje',
   'Vrijedi za travanj, svibanj, rujan, listopad / petak-nedjelja',
+];
+
+const listSpecialOfferEn = [
+  'Rafting or kayaking tour on the Zrmanja River',
+  'Hiking tour to Kudin Bridge',
+  'Accommodation in Mićanovi Dvori mobile homes',
+  'Traditional dinner at "Tisno" tavern',
+  'Organized transportation and guidance',
+  'Available in April, May, September, and October (Friday-Sunday)',
 ];
 
 const staticDemoData = [
@@ -55,7 +64,7 @@ const staticDemoData = [
     title: 'Trodnevni rafting i kayak paket na rijeci Zrmanji',
     content: `Uronite u prirodne ljepote Zrmanje i njenog kanjona kroz trodnevni avanturistički paket. Od raftinga i kayaka do istraživanja skrivenih dragulja poput Kudina mosta, svaki dan je ispunjen uzbuđenjem i opuštanjem u prirodnom okruženju. Uz organiziran prijevoz, noćenje u udobnim kućicama i tradicionalne obroke, ovaj paket nudi savršen spoj adrenalina i relaksacije za svakog ljubitelja prirode.
       `,
-
+    listInsideHr: listSpecialOfferHr,
     isCTA: true,
     imageSRC: tureThree,
     isDoubleCta: true,
@@ -63,6 +72,7 @@ const staticDemoData = [
     EN_subtitle: 'Spring and Autumn Exploration of the Zrmanja River',
     EN_title: 'Three-day Rafting and Kayaking Package on the Zrmanja River',
     EN_content: `Immerse yourself in the natural beauty of the Zrmanja River and its canyon through a three-day adventure package. From rafting and kayaking to exploring hidden gems like the Kudin Bridge, each day is filled with excitement and relaxation in a natural setting. With organized transportation, comfortable accommodation in cabins, and traditional meals, this package offers the perfect blend of adrenaline and relaxation for every nature lover.`,
+    listInsideEn: listSpecialOfferEn,
   },
 ];
 
@@ -76,7 +86,6 @@ const TurePonuda = () => {
   return (
     <section className={styles.turePonudaSekcija}>
       <PaperDividBot />
-      {/* MAIN CONT START */}
       <div className={styles.masterContainer}>
         {staticDemoData.map((article) => (
           <TureArticle
@@ -87,10 +96,10 @@ const TurePonuda = () => {
             content={parseByLang(article.content, article.EN_content)}
             subtitle={parseByLang(article.subtitle, article.EN_subtitle)}
             imageSRC={article.imageSRC}
+            listSpecialOffer={checkParams === UserLanguage.hr ? article.listInsideHr : article.listInsideEn}
           />
         ))}
       </div>
-      {/* MAIN CONT END */}
       <Image src={pogledajVideoGradient} alt='gradi' className={styles.pogledajVideoGradient} />
     </section>
   );

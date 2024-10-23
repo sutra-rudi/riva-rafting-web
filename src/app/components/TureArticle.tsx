@@ -26,12 +26,13 @@ interface TureKarticaData {
   isCTA: boolean;
   imageSRC: StaticImageData;
   isDoubleCta?: boolean;
+  listSpecialOffer?: string[];
 }
 
 const slideImgNewTour = [img1, img2, img3, img4];
 
 const TureArticle = (props: TureKarticaData) => {
-  const { subtitle, title, content, isCTA, imageSRC, isDoubleCta } = props;
+  const { subtitle, title, content, isCTA, imageSRC, isDoubleCta, listSpecialOffer } = props;
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
@@ -85,6 +86,13 @@ const TureArticle = (props: TureKarticaData) => {
           <h2 className={style.contentTitle}>{title}</h2>
         </div>
         <p className={style.contentText}>{content}</p>
+        {listSpecialOffer && (
+          <ul>
+            {listSpecialOffer.map((lis) => (
+              <li key={lis}>{lis}</li>
+            ))}
+          </ul>
+        )}
 
         {isCTA && !isDoubleCta && (
           <Link href={parseLink} className={style.contactCtaTura}>
