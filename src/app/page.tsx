@@ -88,7 +88,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
-  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`);
+  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`, { cache: 'no-cache' });
   const parseVideoLinks = await callVideoLinks.json();
   const getReviewsQuery = await fetchData(getReviews);
 
