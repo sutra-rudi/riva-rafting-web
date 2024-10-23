@@ -10,6 +10,8 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { Suspense } from 'react';
 import Loading from './loading';
 import dynamic from 'next/dynamic';
+import { fetchData } from './utils/callApi';
+import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
 
 const AppHeader = dynamic(() => import('./components/AppHeader'));
 const AppFooter = dynamic(() => import('./components/AppFooter'));
@@ -30,20 +32,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const prepareSocialLinks = await fetchData(getSocialLinksQuery);
+
+  const socialShorthand = prepareSocialLinks.data.povezniceDrustvene.povezniceDrustveneFields;
+
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
         <Toaster />
         <Suspense fallback={<Loading />}>
           <GlobalContextProvider>
-            <AppHeader />
+            <AppHeader appSocialLinks={socialShorthand} />
             <Providers>{children}</Providers>
-            <AppFooter />
+            <AppFooter appSocialLinks={socialShorthand} />
           </GlobalContextProvider>
         </Suspense>
       </body>
