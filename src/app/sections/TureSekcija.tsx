@@ -17,7 +17,12 @@ import { UserLanguage } from '../types/appState';
 const RecoletaSemiBold = localFont({
   src: [{ path: '../../../public/fonts/recoleta-font/Recoleta-SemiBold.ttf', weight: '600' }],
 });
-const TureSekcija = () => {
+
+interface TureSekcija {
+  videoUrl: string;
+}
+
+const TureSekcija = ({ videoUrl }: TureSekcija) => {
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
   const parseByLang = React.useCallback(
