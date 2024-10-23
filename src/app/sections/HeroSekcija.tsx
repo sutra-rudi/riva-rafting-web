@@ -32,19 +32,7 @@ import { UserLanguage } from '../types/appState';
 import { useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
-
-const checkUrl = async (url: string): Promise<boolean> => {
-  try {
-    const response = await fetch(url, {
-      method: 'HEAD',
-      next: { revalidate: 3600 },
-    });
-    return response.ok;
-  } catch (error) {
-    console.error('Error checking image URL:', error);
-    return false;
-  }
-};
+import { checkUrl } from '../utils/checkUrl';
 
 const HeroSekcija = ({ heroVideoUrl }: HeroSekcija) => {
   const [videoSource, setVideoSource] = React.useState<any>(null);
