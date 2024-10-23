@@ -1,12 +1,9 @@
-import React, { Suspense } from 'react';
 import styles from '../styles/rulesAndDisclaimers.module.scss';
-import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/podatci-o-tvrtki-hero.png';
-import AppHeader from '../components/AppHeader';
+import dynamic from 'next/dynamic';
 
-import Loading from './loading';
+const PageContent = dynamic(() => import('./PageContent'));
 
-import PageContent from './PageContent';
 const sectionContent_hr = {
   title: 'Company info',
   topText: '',
@@ -69,12 +66,8 @@ const sectionContent_hr = {
 
 export default async function CompanyInfo() {
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.mainSection}>
-        <PageContent {...sectionContent_hr} />
-      </main>
-      <AppFooter />
-    </Suspense>
+    <main className={styles.mainSection}>
+      <PageContent {...sectionContent_hr} />
+    </main>
   );
 }

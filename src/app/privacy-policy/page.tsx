@@ -1,12 +1,9 @@
-import React, { Suspense } from 'react';
 import styles from '../styles/rulesAndDisclaimers.module.scss';
-import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/pravila-privatnosti-hero.png';
-import AppHeader from '../components/AppHeader';
+import dynamic from 'next/dynamic';
 
-import Loading from './loading';
+const PageContent = dynamic(() => import('./PageContent'));
 
-import PageContent from './PageContent';
 const sectionContent_hr = {
   title: 'Privacy policy',
   topText:
@@ -48,12 +45,8 @@ const sectionContent_hr = {
 
 export default async function PrivacyPolicy() {
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.mainSection}>
-        <PageContent {...sectionContent_hr} />
-      </main>
-      <AppFooter />
-    </Suspense>
+    <main className={styles.mainSection}>
+      <PageContent {...sectionContent_hr} />
+    </main>
   );
 }

@@ -1,13 +1,11 @@
-import { Suspense } from 'react';
-import Loading from '../loading';
 import demoData from '../../../../public/webdata/webcontent.json';
 import styles from '../../styles/aktivnost.module.scss';
-import AppHeader from '@/app/components/AppHeader';
-import AppFooter from '@/app/components/AppFooter';
 import DodatneInformacije from '@/app/sections/DodatneInformacije';
 import MapboxMapa from './MapboxMapa';
-import PageContent from './PageContent';
+const PageContent = dynamic(() => import('./PageContent'));
+
 import aktivnostiHeroSlike from './staticImageImports';
+import dynamic from 'next/dynamic';
 const mapboxApiKey = process.env.MAPBOX_API_KEY;
 export async function generateMetadata({ params }: { params: { SLUG_ENG: string } }) {
   const findData = demoData.find(
@@ -73,26 +71,21 @@ export default async function ActivityDetails({ params }: { params: { SLUG_ENG: 
   const findGallery = aktivnostiHeroSlike.find((item) => item.aktivnostId === findData?.ID);
 
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.aktivnost}>
-        {findHero !== undefined && findGallery !== undefined && (
-          <PageContent
-            pageContentData={findData}
-            hero={findHero.aktivnostHeroUrl}
-            gallery={findGallery.aktivnostGalerija}
-          />
-        )}
-        <MapboxMapa
-          mapCenter={findData?.['KORDINATE-CENTRA']!}
-          styleUrl={findData?.['Style URL'] ?? ''}
-          apiKey={mapboxApiKey as string}
-          zoom={findData?.ZOOM!}
+    <main className={styles.aktivnost}>
+      {findHero !== undefined && findGallery !== undefined && (
+        <PageContent
+          pageContentData={findData}
+          hero={findHero.aktivnostHeroUrl}
+          gallery={findGallery.aktivnostGalerija}
         />
-        <DodatneInformacije isLanding={false} />
-
-        <AppFooter />
-      </main>
-    </Suspense>
+      )}
+      <MapboxMapa
+        mapCenter={findData?.['KORDINATE-CENTRA']!}
+        styleUrl={findData?.['Style URL'] ?? ''}
+        apiKey={mapboxApiKey as string}
+        zoom={findData?.ZOOM!}
+      />
+      <DodatneInformacije isLanding={false} />
+    </main>
   );
 }

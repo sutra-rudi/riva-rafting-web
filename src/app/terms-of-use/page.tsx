@@ -1,10 +1,8 @@
-import React, { Suspense } from 'react';
 import styles from '../styles/rulesAndDisclaimers.module.scss';
-import AppFooter from '../components/AppFooter';
 import pravilaHero from '../img/pravila/pravila-privatnosti-hero.png';
-import AppHeader from '../components/AppHeader';
-import Loading from './loading';
-import PageContent from './PageContent';
+import dynamic from 'next/dynamic';
+
+const PageContent = dynamic(() => import('./PageContent'));
 const sectionContent_hr = {
   title: 'Terms of use',
   topText:
@@ -46,12 +44,8 @@ const sectionContent_hr = {
 
 export default async function TermsOfUse() {
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.mainSection}>
-        <PageContent {...sectionContent_hr} />
-      </main>
-      <AppFooter />
-    </Suspense>
+    <main className={styles.mainSection}>
+      <PageContent {...sectionContent_hr} />
+    </main>
   );
 }

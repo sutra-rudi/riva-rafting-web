@@ -20,31 +20,10 @@ import Link from 'next/link';
 
 interface FooterInterface {
   isAbout?: boolean;
+  appSocialLinks: Record<string, string>;
 }
 
 const AppFooter = (props: FooterInterface) => {
-  const [footerURLS, setFooterURLS] = React.useState<any>();
-
-  React.useEffect(() => {
-    const prepareFooterLinks = async () => {
-      const getSocialLinks = await fetch(`https://cms.zrmanja-camping.hr/graphql`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query: getSocialLinksQuery }),
-        cache: 'no-store',
-      });
-
-      const parseSocialLinksData = await getSocialLinks.json();
-      const prepareDataForFooter = parseSocialLinksData.data.povezniceDrustvene.povezniceDrustveneFields;
-      setFooterURLS(prepareDataForFooter);
-      return prepareDataForFooter;
-    };
-
-    prepareFooterLinks();
-  }, []);
-
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
   const parseByLang = React.useCallback(
@@ -90,10 +69,22 @@ const AppFooter = (props: FooterInterface) => {
       <div className={styles.socialFooterStack}>
         <p>{parseByLang('Zapratite nas:', 'Follow us:')}</p>
         <div className={styles.socialIconStack}>
-          <Link href={typeof footerURLS !== 'undefined' && footerURLS.facebook ? footerURLS.facebook : ''}>
+          <Link
+            href={
+              typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks.facebook
+                ? props.appSocialLinks.facebook
+                : ''
+            }
+          >
             <Image src={facebookIcon} alt='icon' width={32} height={32} />
           </Link>
-          <Link href={typeof footerURLS !== 'undefined' && footerURLS.instagram ? footerURLS.instagram : ''}>
+          <Link
+            href={
+              typeof props.appSocialLinks !== 'undefined' && props.appSocialLinks.instagram
+                ? props.appSocialLinks.instagram
+                : ''
+            }
+          >
             <Image src={instaIcon} alt='icon' width={32} height={32} />
           </Link>
           <Link href='mailto:info@riva-rafting-centar.hr'>
@@ -208,10 +199,10 @@ const AppFooter = (props: FooterInterface) => {
             <div className={styles.disclaimerSocial}>
               <span>{parseByLang('Zapratite nas:', 'Follow us:')}</span>
               <div className={styles.disclaimerSocialIcons}>
-                <a href={typeof footerURLS !== 'undefined' ? footerURLS.facebook : ''}>
+                <a href={typeof props.appSocialLinks !== 'undefined' ? props.appSocialLinks.facebook : ''}>
                   <Image src={facebookIcon} alt='icon' width={32} height={32} />
                 </a>
-                <a href={typeof footerURLS !== 'undefined' ? footerURLS.instagram : ''}>
+                <a href={typeof props.appSocialLinks !== 'undefined' ? props.appSocialLinks.instagram : ''}>
                   <Image src={instaIcon} alt='icon' width={32} height={32} />
                 </a>
                 <a href='mailto:info@riva-rafting-centar.hr'>

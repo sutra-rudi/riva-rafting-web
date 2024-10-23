@@ -87,7 +87,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
 }
 
 export default async function Home() {
-  const getReviewsQuery = await fetch(`${process.env.CAMPING_REVIEWS_URL}`, {
+  const getReviewsQuery = await fetch(`${process.env.CMS_BASE_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

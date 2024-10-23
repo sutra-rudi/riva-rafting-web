@@ -1,11 +1,8 @@
-import React, { Suspense } from 'react';
-import AppHeader from '../components/AppHeader';
-import AppFooter from '../components/AppFooter';
 import styles from '../styles/page.module.scss';
-import Loading from './loading';
 import aboutUsHero from '../img/heros/about-us-hero.png';
 import compImage from '../img/globals/about-us-company-img.png';
-import PageContent from './PageContent';
+import dynamic from 'next/dynamic';
+const PageContent = dynamic(() => import('./PageContent'));
 
 const pageParagraphContentHr = `Riva Rafting Centar d.o.o. is a company with over 20 years of experience in operating in rural, mountainous areas, located in Kruševo, in the hamlet of Drage above Obrovac. Our location has incredible tourist potential for active, sports, and rural tourism, and is strategically positioned within 0 to 80 km from most National Parks and Nature Parks.\n\nAs a leading company in rural and sports tourism in Zadar County and beyond, we are proud of our contribution to the region's promotion. Riva Rafting Centar d.o.o. was chosen as the main production consultant for Discovery Channel's world-famous adventure series Man, Woman, Wild. This project further positioned our company as an expert in outdoor activities, confirming our long-standing experience and knowledge of the challenging terrains that the series protagonists traverse.\n\nWe take pride in being one of the first companies in the Croatian market dedicated to designing, organizing, and conducting all services related to team building and active vacations for groups and individual guests. In addition to standard activities such as rafting, kayaking, trekking, and cycling, we have expanded our operations to include organizing sports events. Our collaboration with local communities promotes the development of new adventure sports and helps promote the region as an active vacation destination.\n\nEvery year, we strive to expand our offerings, introducing new programs that find their place in the market. Our focus is on programs that allow the exploration of the canyons of the Zrmanja, Krnjeza, and Kupa rivers, the southern slopes of Velebit, the Adriatic Sea, and the rich karst underground that this region offers.\n\nRiva Rafting Centar d.o.o. is not just a tourism company; we also participate in scientific spheres and promote the development of scientific tourism. Our activity attracts numerous scientists and researchers from various fields such as speleology, geomorphology, biology, and more. In addition to promoting the beauty of nature, we encourage research and preservation of its resources for future generations.`;
 
@@ -60,18 +57,14 @@ const companyInfoSegments = [
 
 export default async function AboutUs() {
   return (
-    <Suspense fallback={<Loading />}>
-      <AppHeader />
-      <main className={styles.aboutUsMain}>
-        <PageContent
-          title='About us'
-          paraContent={pageParagraphContentHr}
-          imgSrc={aboutUsHero}
-          compImg={compImage}
-          textSegments={companyInfoSegments}
-        />
-      </main>
-      <AppFooter isAbout />
-    </Suspense>
+    <main className={styles.aboutUsMain}>
+      <PageContent
+        title='About us'
+        paraContent={pageParagraphContentHr}
+        imgSrc={aboutUsHero}
+        compImg={compImage}
+        textSegments={companyInfoSegments}
+      />
+    </main>
   );
 }
