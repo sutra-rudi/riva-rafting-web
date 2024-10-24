@@ -37,10 +37,11 @@ const RaftingCard = (props: RaftingCardProps) => {
           </p>
           <Image
             className={styles.raftingImage}
-            src={imageUrl}
+            src={imageUrl.src}
             fill
             alt='rafting img'
             placeholder='blur'
+            blurDataURL={imageUrl.blurDataURL}
             loading='lazy'
           />
         </div>

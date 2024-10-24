@@ -17,8 +17,8 @@ import kar13 from '../img/sections/karuzel-riva-fin/karuzel-riva-fin13.png';
 
 import styles from '../styles/gallerySection.module.scss';
 import Image from 'next/image';
-import paralOne from '../img/PARAL-UP.png';
-import paralTwo from '../img/PARAL-DOWN.png';
+import paralOne from '../img/PARAL-UP.webp';
+import paralTwo from '../img/PARAL-DOWN.webp';
 import { BannerLayer, ParallaxBanner } from 'react-scroll-parallax';
 import localFont from 'next/font/local';
 
@@ -49,7 +49,16 @@ const GallerySection = () => {
     'With its deep canyon cutting through spectacular limestone cliffs, it offers unforgettable views of pure, emerald-green water winding through the wilderness of Northern Dalmatia.';
 
   const background: BannerLayer = {
-    image: `${paralOne.src}`,
+    children: (
+      <Image
+        src={paralOne.src}
+        alt='parallax layer image'
+        placeholder='blur'
+        blurDataURL={paralOne.blurDataURL}
+        loading='lazy'
+        fill
+      />
+    ),
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
   };
@@ -88,7 +97,17 @@ const GallerySection = () => {
   };
 
   const foreground: BannerLayer = {
-    image: paralTwo.src,
+    // image: paralTwo.src,
+    children: (
+      <Image
+        src={paralTwo.src}
+        alt='parallax layer image'
+        fill
+        placeholder='blur'
+        blurDataURL={paralTwo.blurDataURL}
+        loading='lazy'
+      />
+    ),
     translateY: [0, 15],
     // scale: [1, 1.1, 'easeOutCubic'],
     shouldAlwaysCompleteAnimation: true,
