@@ -19,7 +19,7 @@
       width: 100%;
       padding: 2.1rem;
 
-      border-radius: 0 0 75px 0;
+      border-radius: 0 0 45px 0;
 
       a {
         text-decoration: none;
@@ -31,13 +31,13 @@
 
       @media only screen and (max-width: $tablets) {
         padding: 1.6rem;
-        border-radius: 0 0 55px 0;
+        border-radius: 0 0 25px 0;
       }
 
       @media only screen and (max-width: $phones) {
         max-width: 75%;
         padding: 1rem;
-        border-radius: 0 0 45px 0;
+        border-radius: 0 0 15px 0;
       }
 
       p {
