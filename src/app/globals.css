@@ -11,6 +11,8 @@ html {
   height: 100%;
   overflow-x: hidden !important;
   width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 body {
@@ -19,6 +21,8 @@ body {
   height: 100%;
   width: 100%;
   max-width: 100% !important;
+  min-height: 100vh;
+  min-height: 100dvh;
 
   /* overflow: scroll; */
 }
