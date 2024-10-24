@@ -15,6 +15,12 @@ const mediaPaths = {
   },
 };
 
+// API route koji vraća JSON s video putanjama
 export async function GET(request: NextRequest) {
-  return NextResponse.json(mediaPaths);
+  const response = NextResponse.json(mediaPaths);
+
+  // Postavljanje dugotrajnog keširanja (1 godina)
+  response.headers.set('Cache-Control', 'public, max-age=31536000, immutable'); // Cache for 1 year
+
+  return response;
 }

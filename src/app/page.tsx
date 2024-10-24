@@ -1,6 +1,5 @@
 import 'yet-another-react-lightbox/styles.css';
 import styles from './styles/page.module.scss';
-
 import { getReviews } from './queries/getReviewsQuery';
 import { UserLanguage } from './types/appState';
 import dynamic from 'next/dynamic';
@@ -87,10 +86,43 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
   };
 }
 
+async function getVideos() {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+  try {
+    const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`, {
+      signal: controller.signal,
+    });
+    clearTimeout(timeoutId);
+
+    if (!callVideoLinks.ok) {
+      throw new Error(`Error: ${callVideoLinks.status}`);
+    }
+
+    const parseVideoLinks = await callVideoLinks.json();
+    return parseVideoLinks;
+  } catch (error: any) {
+    if (error.name === 'AbortError') {
+      console.error('Fetch request timed out');
+    } else {
+      console.error('Fetch error:', error);
+    }
+    return null;
+  }
+}
+
 export default async function Home() {
-  const callVideoLinks = await fetch(`${process.env.BASE_APP_URL}api/mediaPaths`, { cache: 'no-cache' });
-  const parseVideoLinks = await callVideoLinks.json();
+  const parseVideoLinks = await getVideos();
   const getReviewsQuery = await fetchData(getReviews);
+
+  if (!parseVideoLinks) {
+    return (
+      <main className={styles.homeMain}>
+        <h2>Error loading video links. Please try again later.</h2>
+      </main>
+    );
+  }
 
   return (
     <main className={styles.homeMain}>
