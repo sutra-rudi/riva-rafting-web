@@ -13,8 +13,8 @@ import dynamic from 'next/dynamic';
 import { fetchData } from './utils/callApi';
 import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
 
-const AppHeader = dynamic(() => import('./components/AppHeader'));
-const AppFooter = dynamic(() => import('./components/AppFooter'));
+const AppHeader = dynamic(() => import('./components/AppHeader'), { loading: () => <Loading /> });
+const AppFooter = dynamic(() => import('./components/AppFooter'), { loading: () => <Loading /> });
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

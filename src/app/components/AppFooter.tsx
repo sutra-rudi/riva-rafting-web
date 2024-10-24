@@ -84,10 +84,10 @@ const AppFooter = (props: FooterInterface) => {
                 : ''
             }
           >
-            <Image src={instaIcon} alt='icon' width={32} height={32} />
+            <Image src={instaIcon} alt='icon' width={32} height={32} loading='lazy' />
           </Link>
           <Link href='mailto:info@riva-rafting-centar.hr'>
-            <Image src={teleIcon} alt='icon' width={32} height={32} />
+            <Image src={teleIcon} alt='icon' width={32} height={32} loading='lazy' />
           </Link>
         </div>
       </div>
