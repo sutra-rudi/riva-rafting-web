@@ -58,8 +58,25 @@ const DodatneInformacije = (props: MoreInfoProps) => {
               </div>
             </div>
 
-            <Image src={moreInfoFrontOne} fill alt='offer image' quality={100} />
-            <Image src={moreInfoBackOne} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+            <Image
+              src={moreInfoFrontOne.src}
+              fill
+              alt='offer image'
+              quality={100}
+              placeholder='blur'
+              blurDataURL={moreInfoFrontOne.blurDataURL}
+              loading='lazy'
+            />
+            <Image
+              src={moreInfoBackOne.src}
+              placeholder='blur'
+              blurDataURL={moreInfoBackOne.blurDataURL}
+              fill
+              alt='offer image'
+              quality={100}
+              loading='lazy'
+              className={`${styles.zcv}`}
+            />
           </Link>
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
@@ -71,8 +88,25 @@ const DodatneInformacije = (props: MoreInfoProps) => {
               </div>
             </div>
 
-            <Image src={moreInfoFrontTwo} fill alt='offer image' quality={100} />
-            <Image src={moreInfoBackTwo} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+            <Image
+              src={moreInfoFrontTwo}
+              fill
+              alt='offer image'
+              quality={100}
+              loading='lazy'
+              placeholder='blur'
+              blurDataURL={moreInfoFrontTwo.blurDataURL}
+            />
+            <Image
+              src={moreInfoBackTwo}
+              fill
+              alt='offer image'
+              quality={100}
+              loading='lazy'
+              placeholder='blur'
+              blurDataURL={moreInfoBackTwo.blurDataURL}
+              className={`${styles.zcv}`}
+            />
           </Link>
         </div>
         <div className={inView ? `${styles.imageBox} ${styles.inView}` : `${styles.imageBox}`}>
@@ -88,8 +122,25 @@ const DodatneInformacije = (props: MoreInfoProps) => {
               </div>
             </div>
 
-            <Image src={moreInfoFrontThree} fill alt='offer image' quality={100} />
-            <Image src={moreInfoBackThree} fill alt='offer image' quality={100} className={`${styles.zcv}`} />
+            <Image
+              src={moreInfoFrontThree}
+              fill
+              alt='offer image'
+              quality={100}
+              loading='lazy'
+              placeholder='blur'
+              blurDataURL={moreInfoFrontThree.blurDataURL}
+            />
+            <Image
+              src={moreInfoBackThree}
+              fill
+              alt='offer image'
+              quality={100}
+              loading='lazy'
+              placeholder='blur'
+              blurDataURL={moreInfoBackThree.blurDataURL}
+              className={`${styles.zcv}`}
+            />
           </Link>
         </div>
       </div>

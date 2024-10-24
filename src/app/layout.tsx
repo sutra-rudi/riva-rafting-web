@@ -14,7 +14,7 @@ import { fetchData } from './utils/callApi';
 import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
 
 const AppHeader = dynamic(() => import('./components/AppHeader'), { loading: () => <Loading /> });
-const AppFooter = dynamic(() => import('./components/AppFooter'), { loading: () => <Loading /> });
+const AppFooter = dynamic(() => import('./components/AppFooter'), { loading: () => <Loading />, ssr: false });
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,

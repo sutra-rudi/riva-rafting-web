@@ -41,7 +41,9 @@ const ReactPlayerDy = dynamic(() => import('react-player/lazy'), {
       height={1080}
       alt='poster for video'
       className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
-      priority
+      loading='lazy'
+      placeholder='blur'
+      blurDataURL={pogledajPoster.blurDataURL}
     />
   ),
 });
@@ -117,14 +119,15 @@ const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
               width={1600}
               height={1200}
               className='object-cover object-center block aspect-video'
-              priority
+              loading='lazy'
+              placeholder='blur'
             />
           }
           config={{
             file: {
               attributes: {
-                preload: 'none', // Ensure video doesn't load until play
-                poster: videoSource.placeholder, // Proper use of poster attribute
+                preload: 'none',
+                poster: videoSource.placeholder,
               },
             },
           }}
@@ -136,7 +139,9 @@ const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
           height={1080}
           alt='poster for video'
           className='object-cover object-center block aspect-video w-full h-full mx-auto my-0'
-          priority
+          loading='lazy'
+          placeholder='blur'
+          blurDataURL={pogledajPoster.blurDataURL}
         />
       ),
   };
@@ -161,7 +166,7 @@ const PogledajVideo = ({ videoUrl }: PogledajVideo) => {
     children: (
       <div className={styles.pogledajControls}>
         <Lottie animationData={lottieAnima} className={styles.lottieCustom} />
-        <Image src={videoKontrole} alt='controls' width={131} height={131} />
+        <Image src={videoKontrole} alt='controls' width={131} height={131} loading='lazy' />
         <h1 className={`${styles.pogledajKontroleTekstMaster} ${RecoletaBold.className}`}>
           {parseByLang('Pogledaj video', 'Watch video')}
         </h1>

@@ -23,8 +23,8 @@ import img_13 from '../img/obrovacki-kraj/13.png';
 import img_14 from '../img/obrovacki-kraj/14.png';
 import img_15 from '../img/obrovacki-kraj/15.png';
 import Link from 'next/link';
-import paralOne from '../img/PARAL-UP.png';
-import paralTwo from '../img/PARAL-DOWN.png';
+import paralOne from '../img/PARAL-UP.webp';
+import paralTwo from '../img/PARAL-DOWN.webp';
 import arrowIcon from '../img/article-arrow-subpage-thin.svg';
 
 import AppButton from '../components/AppButton';
@@ -73,7 +73,16 @@ const PageContent = () => {
   const headlineEn = `In the heart of the Obrovac region, you can expect a wealth of natural wonders and cultural gems. This exceptional area offers incredible opportunities to explore mountain peaks, wild rivers, impressive waterfalls, and enjoy visits to national parks. Start from the beautiful peaks of Velebit, discover the hidden beauties of the Krupa and Zrmanja rivers, and explore the depths of the mountain in the Cerovačke Caves. After that, refresh yourself with a swim in the Novigrad or Karin Sea. Don't miss the chance to visit Kuda's Bridge and the Krupa Monastery to delve even deeper into the richness of this fascinating region.`;
 
   const paraBackground: BannerLayer = {
-    image: `${paralOne.src}`,
+    children: (
+      <Image
+        src={paralOne.src}
+        alt='parallax layer image'
+        placeholder='blur'
+        blurDataURL={paralOne.blurDataURL}
+        loading='lazy'
+        fill
+      />
+    ),
     translateY: [0, 60],
     shouldAlwaysCompleteAnimation: true,
   };
@@ -102,7 +111,16 @@ const PageContent = () => {
   };
 
   const paraForeground: BannerLayer = {
-    image: paralTwo.src,
+    children: (
+      <Image
+        src={paralTwo.src}
+        alt='parallax layer image'
+        fill
+        placeholder='blur'
+        blurDataURL={paralTwo.blurDataURL}
+        loading='lazy'
+      />
+    ),
     translateY: [0, 15],
     shouldAlwaysCompleteAnimation: true,
   };

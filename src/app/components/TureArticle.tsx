@@ -72,12 +72,26 @@ const TureArticle = (props: TureKarticaData) => {
           <Splide className={style.swiperParent} options={slideOptions}>
             {slideImgNewTour.map((img) => (
               <SplideSlide key={img.src} className={style.swiperSlide}>
-                <Image fill src={img.src} alt='Offer image' loading='lazy' />
+                <Image
+                  fill
+                  src={img.src}
+                  alt='Offer image'
+                  loading='lazy'
+                  placeholder='blur'
+                  blurDataURL={img.blurDataURL}
+                />
               </SplideSlide>
             ))}
           </Splide>
         ) : (
-          <Image src={imageSRC} fill alt='Offer image' loading='lazy' />
+          <Image
+            src={imageSRC}
+            fill
+            alt='Offer image'
+            loading='lazy'
+            placeholder='blur'
+            blurDataURL={imageSRC.blurDataURL}
+          />
         )}
       </div>
       <div className={style.contentHolder}>
