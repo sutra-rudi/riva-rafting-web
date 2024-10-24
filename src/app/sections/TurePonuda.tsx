@@ -39,7 +39,7 @@ const staticDemoData = [
       'Imate grupu prijatelja, radne kolege ili obitelj s kojom provodite puno vremena? Možda biste trebali razmisliti o odlasku na kvalitetan grupni odmor. Turistička agencija Riva rafting ima bogato iskustvo i stručnost u organizaciji grupnih izleta i odmora. Vaš izlet možete čak prilagoditi vašim željama i interesima. Uz našu pomoć i detaljno planiranje, možemo kreirati grupni odmor koji će biti ispunjen predivnim uspomenama. Slobodno nas kontaktirajte.',
     isCTA: true,
     imageSRC: tureOne,
-
+    isDoubleCta: false,
     EN_subtitle: 'From Sea to Velebit: Signature Group Adventures',
     EN_title: 'Together in Adventure: Connecting Group Excursions',
     EN_content:
@@ -53,6 +53,7 @@ const staticDemoData = [
 
     isCTA: false,
     imageSRC: tureTwo,
+    isDoubleCta: false,
 
     EN_subtitle: 'Proud Hosts of Tradition and Adventure',
     EN_title: 'Twenty Years of Adventure: Celebrating Nature and Sports at the Zrmanja Outdoor Festival',

@@ -136,12 +136,11 @@ const PromoSekcijaJedan = () => {
   return (
     <section className={styles.promoSekcijaJedan}>
       <PaperDividBot />
-      {/* MAIN CONT START */}
+
       <div className={styles.masterContainer}>
         <h2 className={styles.promoSekcijaHeaderMobile}>{parseByLang(secondHead_hr, secondHead_en)}</h2>
         <TaxonomyCardContainer />
       </div>
-      {/* MAIN CONT END */}
     </section>
   );
 };

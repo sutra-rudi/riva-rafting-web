@@ -45,7 +45,7 @@ const TureArticle = (props: TureKarticaData) => {
     pagination: false,
     arrows: false,
     autoplay: true,
-    interval: 2500,
+    interval: 1500,
   };
 
   const parseLink =

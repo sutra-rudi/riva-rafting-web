@@ -4,17 +4,18 @@ import { getReviews } from './queries/getReviewsQuery';
 import { UserLanguage } from './types/appState';
 import dynamic from 'next/dynamic';
 import { fetchData } from './utils/callApi';
+import Loading from './loading';
 
-const HeroSekcija = dynamic(() => import('./sections/HeroSekcija'));
-const PromoSekcijaJedan = dynamic(() => import('./sections/PromoSekcijaJedan'));
-const TureSekcija = dynamic(() => import('./sections/TureSekcija'));
-const TurePonuda = dynamic(() => import('./sections/TurePonuda'));
-const PogledajVideo = dynamic(() => import('./sections/PogledajVideo'));
-const OnamaSekcija = dynamic(() => import('./sections/OnamaSekcija'));
-const DodatneInformacije = dynamic(() => import('./sections/DodatneInformacije'));
-const FAQsection = dynamic(() => import('./sections/FAQsection'));
-const GallerySection = dynamic(() => import('./sections/GallerySection'));
-const ReviewsSection = dynamic(() => import('./sections/ReviewsSection'));
+const HeroSekcija = dynamic(() => import('./sections/HeroSekcija'), { loading: () => <Loading /> });
+const PromoSekcijaJedan = dynamic(() => import('./sections/PromoSekcijaJedan'), { loading: () => <Loading /> });
+const TureSekcija = dynamic(() => import('./sections/TureSekcija'), { loading: () => <Loading /> });
+const TurePonuda = dynamic(() => import('./sections/TurePonuda'), { loading: () => <Loading /> });
+const PogledajVideo = dynamic(() => import('./sections/PogledajVideo'), { loading: () => <Loading /> });
+const OnamaSekcija = dynamic(() => import('./sections/OnamaSekcija'), { loading: () => <Loading /> });
+const DodatneInformacije = dynamic(() => import('./sections/DodatneInformacije'), { loading: () => <Loading /> });
+const FAQsection = dynamic(() => import('./sections/FAQsection'), { loading: () => <Loading /> });
+const GallerySection = dynamic(() => import('./sections/GallerySection'), { loading: () => <Loading /> });
+const ReviewsSection = dynamic(() => import('./sections/ReviewsSection'), { loading: () => <Loading /> });
 
 export async function generateMetadata({ searchParams }: { searchParams: { lang: string } }) {
   const parseByLang = (hrString: string | string[], enString: string | string[]) => {
