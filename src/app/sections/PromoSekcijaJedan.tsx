@@ -16,6 +16,7 @@ import RaftingCard from '../components/RaftingCard';
 import PaperDividBot from '../components/PaperDividBot';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+import Loading from '../loading';
 
 const PromoSekcijaJedan = () => {
   const [currentActiveTax, setCurrentActiveTax] = React.useState<number>(1);
@@ -136,12 +137,11 @@ const PromoSekcijaJedan = () => {
   return (
     <section className={styles.promoSekcijaJedan}>
       <PaperDividBot />
-      {/* MAIN CONT START */}
+      <Loading />
       <div className={styles.masterContainer}>
         <h2 className={styles.promoSekcijaHeaderMobile}>{parseByLang(secondHead_hr, secondHead_en)}</h2>
         <TaxonomyCardContainer />
       </div>
-      {/* MAIN CONT END */}
     </section>
   );
 };

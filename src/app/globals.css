@@ -93,3 +93,44 @@ h6 {
     display: none;
   }
 }
+
+.sutra-loader-container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.sutra-loader {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  display: block;
+  animation: rotate 1.5s ease-in infinite alternate;
+}
+.sutra-loader::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #a4cd46;
+  background: currentColor;
+  width: 64px;
+  height: 32px;
+  border-radius: 0 0 50px 50px;
+}
+.sutra-loader::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  background: #233005;
+  width: 8px;
+  height: 64px;
+  animation: rotate 1.2s linear infinite alternate-reverse;
+}
