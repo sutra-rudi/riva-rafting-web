@@ -15,6 +15,8 @@ import PaperDividTop from './PaperDividTop';
 import { useWindowSize } from '../hooks/useWindowSize';
 import { useSearchParams } from 'next/navigation';
 import { UserLanguage } from '../types/appState';
+import HR_REGION from '../img/hr-zadar-region-riva.png';
+import EN_REGION from '../img/eng-zadar-region-riva.png';
 import Link from 'next/link';
 
 interface FooterInterface {
@@ -160,6 +162,13 @@ const AppFooter = (props: FooterInterface) => {
               <a href='https://www.google.com/maps/dir//Obala+hr.+Čas.+Senada+Ž.+6,+23450,+Obrovac/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4761c76f06da2a03:0x8abf7d8f6eb1b3c1?sa=X&ved=1t:707&ictx=111'>{`6 Obala hr. Čas. Senada Ž.,\nObrovac, Croatia`}</a>
               <a href='mailto:info@riva-rafting-centar.hr'>info@riva-rafting-centar.hr</a>
               <a href='tel:+38523689920'>023 689 920</a>
+
+              <Image
+                src={checkParams === UserLanguage.hr ? HR_REGION : EN_REGION}
+                alt='stamp of the tourism comunity'
+                width={93}
+                height={41}
+              />
             </div>
           </div>
 
