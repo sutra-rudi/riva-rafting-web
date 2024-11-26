@@ -37,8 +37,8 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Kayak tours', href: `/activities/kayak/?lang=${checkParams}` },
     { title: 'Rafting tour', href: `/activities/Rafting-on-Zrmanja/?lang=${checkParams}` },
     {
-      title: 'Kayaking from Zrmanja to the Adriatic Sea',
-      href: `/activities/Kayak-River-to-the-sea/?lang=${checkParams}`,
+      title: 'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL',
+      href: `/activities/Kayak-Berberov-Ogarov/?lang=${checkParams}`,
     },
     { title: 'Stand Up Paddle', href: `/activities/Stand-Up-Paddle-Zrmanja/?lang=${checkParams}` },
     { title: 'Boat Tour', href: `/activities/Zrmanja-by-boat/?lang=${checkParams}` },
@@ -52,7 +52,10 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Pješačka Tura', href: `/aktivnosti/pjesacka-tura/?lang=${checkParams}` },
     { title: 'Kayak Ture', href: `/aktivnosti/kayak-tura/?lang=${checkParams}` },
     { title: 'Rafting Tura', href: `/aktivnosti/Rafting/?lang=${checkParams}` },
-    { title: 'Kayak po Zrmanji do Jadranskog mora', href: `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}` },
+    {
+      title: 'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
+      href: `/aktivnosti/Kajak-Berberov-Ogarov/?lang=${checkParams}`,
+    },
     { title: 'Stand Up Paddle', href: `/aktivnosti/Stand-Up-Paddle/?lang=${checkParams}` },
     { title: 'Vožnja Brodom', href: `/aktivnosti/Zrmanja-brodom/?lang=${checkParams}` },
     { title: 'Jeep Safari', href: `/aktivnosti/Jeep-safari/?lang=${checkParams}` },
