@@ -67,11 +67,14 @@ const PromoSekcijaJedan = () => {
       url: parseByLang('biciklizam', 'bike-tour') + `/?lang=${checkParams}`,
     },
     {
-      title: parseByLang('Kajak po Zrmanji do Jadranskog mora', 'Kayaking from Zrmanja to the Adriatic Sea'),
+      title: parseByLang(
+        'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
+        'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL'
+      ),
       location: 'Zrmanja',
       image: kajakPoZrmanji,
       locationId: 2,
-      url: parseByLang('Kayak-Zrmanja-More', 'Kayak-River-to-the-sea') + `/?lang=${checkParams}`,
+      url: parseByLang('Kajak-Berberov-Ogarov', 'Kayak-Berberov-Ogarov') + `/?lang=${checkParams}`,
     },
     {
       title: parseByLang('Stand up paddle', 'Stand Up Paddle'),

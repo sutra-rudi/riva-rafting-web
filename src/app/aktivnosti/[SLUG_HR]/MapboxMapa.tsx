@@ -46,7 +46,7 @@ const MapboxMapa = (props: AktivnostInterface) => {
     map.current.scrollZoom.disable();
     map.current.setCenter({ lat, lng });
     map.current.flyTo({ lat, lng });
-  }, [props.mapCenter, props.styleUrl, props.apiKey]);
+  }, [props.mapCenter, props.styleUrl, props.apiKey, props.zoom]);
 
   return (
     <div className={styles.mapboxContainer} ref={mapContainer}>

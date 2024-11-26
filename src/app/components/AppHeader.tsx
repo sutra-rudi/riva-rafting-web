@@ -55,10 +55,13 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
       url: parseByLang(`/aktivnosti/Biciklizam/?lang=${checkParams}`, `/activities/bike-tour/?lang=${checkParams}`),
     },
     {
-      title: parseByLang('Kajak po Zrmanji do Jadranskog mora', 'Kayaking from Zrmanja to the Adriatic Sea'),
+      title: parseByLang(
+        'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
+        'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL'
+      ),
       url: parseByLang(
-        `/aktivnosti/Kayak-Zrmanja-More/?lang=${checkParams}`,
-        `/activities/Kayak-River-to-the-sea/?lang=${checkParams}`
+        `/aktivnosti/Kajak-Berberov-Ogarov/?lang=${checkParams}`,
+        `/activities/Kayak-Berberov-Ogarov/?lang=${checkParams}`
       ),
     },
     {
