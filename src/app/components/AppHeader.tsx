@@ -32,6 +32,10 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
 
   const promoSekcijaDemoPodaci = [
     {
+      title: parseByLang('Kayak ture', 'Kayak Tours'),
+      url: parseByLang(`/aktivnosti/kayak-tura/?lang=${checkParams}`, `/activities/kayak/?lang=${checkParams}`),
+    },
+    {
       title: parseByLang('Rafting tura', 'Rafting Tour'),
       url: parseByLang(
         `/aktivnosti/Rafting/?lang=${checkParams}`,
@@ -85,10 +89,6 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
         `/activities/Velebit-Jeep-safari/?lang=${checkParams}`
       ),
     },
-    {
-      title: parseByLang('Kayak ture', 'Kayak Tours'),
-      url: parseByLang(`/aktivnosti/kayak-tura/?lang=${checkParams}`, `/activities/kayak/?lang=${checkParams}`),
-    },
   ];
 
   const navLinksOne = [
@@ -108,7 +108,7 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
   ];
   const navLinksTwo = [
     { text: 'Mićanovi Dvori', href: 'https://micanovidvori.com' },
-    { text: 'Zrmanja Camping Vilagge', href: 'https://www.zrmanja-camping.hr/' },
+    { text: 'Zrmanja Camping Village', href: 'https://www.zrmanja-camping.hr/' },
     // { text: 'Što posjetiti u okolici?', href: '/obrovacki-kraj' },
   ];
 
