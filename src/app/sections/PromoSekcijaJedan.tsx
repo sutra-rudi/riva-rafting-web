@@ -32,6 +32,13 @@ const PromoSekcijaJedan = () => {
 
   const promoSekcijaDemoPodaci = [
     {
+      title: parseByLang('Kayak ture', 'Kayak Tours'),
+      location: 'Zrmanja',
+      image: kayakTure,
+      locationId: 2,
+      url: parseByLang('kayak-tura', 'kayak') + `/?lang=${checkParams}`,
+    },
+    {
       title: parseByLang('Rafting tura', 'Rafting Tour'),
       location: 'Zrmanja',
       image: raftingTura,
@@ -93,13 +100,6 @@ const PromoSekcijaJedan = () => {
       image: jeepSafari,
       locationId: 3,
       url: parseByLang('Jeep-safari', 'Velebit-Jeep-safari') + `/?lang=${checkParams}`,
-    },
-    {
-      title: parseByLang('Kayak ture', 'Kayak Tours'),
-      location: 'Zrmanja',
-      image: kayakTure,
-      locationId: 2,
-      url: parseByLang('kayak-tura', 'kayak') + `/?lang=${checkParams}`,
     },
   ];
 
