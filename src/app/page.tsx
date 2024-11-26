@@ -5,6 +5,7 @@ import { UserLanguage } from './types/appState';
 import dynamic from 'next/dynamic';
 import { fetchData } from './utils/callApi';
 import Loading from './loading';
+import og from '../../public/Riva_rafting__OG-Image.jpg';
 
 const HeroSekcija = dynamic(() => import('./sections/HeroSekcija'), { loading: () => <Loading /> });
 const PromoSekcijaJedan = dynamic(() => import('./sections/PromoSekcijaJedan'), { loading: () => <Loading /> });
@@ -59,13 +60,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
       siteName: 'Riva Rafting',
       locale: parseByLang('hr_HR', 'en_US'),
       type: 'website',
-      images: [
-        {
-          width: 1200,
-          height: 600,
-          alt: parseByLang('Riva Rafting avantura na rijeci Zrmanji', 'Riva Rafting Adventure on Zrmanja River'),
-        },
-      ],
+      images: [og.src],
     },
 
     twitter: {
@@ -76,13 +71,7 @@ export async function generateMetadata({ searchParams }: { searchParams: { lang:
       siteName: 'Riva Rafting',
       type: 'website',
       locale: parseByLang('hr_HR', 'en_US'),
-      images: [
-        {
-          width: 1200,
-          height: 600,
-          alt: parseByLang('Riva Rafting avantura na rijeci Zrmanji', 'Riva Rafting Adventure on Zrmanja River'),
-        },
-      ],
+      images: [og.src],
     },
   };
 }
