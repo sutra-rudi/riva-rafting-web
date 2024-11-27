@@ -37,7 +37,7 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Kayak tours', href: `/activities/kayak/?lang=${checkParams}` },
     { title: 'Rafting tour', href: `/activities/Rafting-on-Zrmanja/?lang=${checkParams}` },
     {
-      title: 'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL',
+      title: 'Kayak short route',
       href: `/activities/Kayak-Berberov-Ogarov/?lang=${checkParams}`,
     },
     { title: 'Stand Up Paddle', href: `/activities/Stand-Up-Paddle-Zrmanja/?lang=${checkParams}` },
@@ -53,7 +53,7 @@ const AppFooter = (props: FooterInterface) => {
     { title: 'Kayak Ture', href: `/aktivnosti/kayak-tura/?lang=${checkParams}` },
     { title: 'Rafting Tura', href: `/aktivnosti/Rafting/?lang=${checkParams}` },
     {
-      title: 'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
+      title: 'Kratka ruta kajaka',
       href: `/aktivnosti/Kajak-Berberov-Ogarov/?lang=${checkParams}`,
     },
     { title: 'Stand Up Paddle', href: `/aktivnosti/Stand-Up-Paddle/?lang=${checkParams}` },
