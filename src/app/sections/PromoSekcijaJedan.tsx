@@ -67,10 +67,7 @@ const PromoSekcijaJedan = () => {
       url: parseByLang('biciklizam', 'bike-tour') + `/?lang=${checkParams}`,
     },
     {
-      title: parseByLang(
-        'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
-        'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL'
-      ),
+      title: parseByLang('Kratka ruta kajaka', 'Kayak short route'),
       location: 'Zrmanja',
       image: kajakPoZrmanji,
       locationId: 2,

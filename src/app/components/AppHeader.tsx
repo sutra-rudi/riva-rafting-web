@@ -55,10 +55,7 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
       url: parseByLang(`/aktivnosti/Biciklizam/?lang=${checkParams}`, `/activities/bike-tour/?lang=${checkParams}`),
     },
     {
-      title: parseByLang(
-        'Gornji tok rijeke Zrmanje od slapa Berberov buk do slapa Ogarov buk',
-        'KAYAK FROM BERBEROV BUK TO OGAROV WATERFALL'
-      ),
+      title: parseByLang('Kratka ruta kajaka', 'Kayak short route'),
       url: parseByLang(
         `/aktivnosti/Kajak-Berberov-Ogarov/?lang=${checkParams}`,
         `/activities/Kayak-Berberov-Ogarov/?lang=${checkParams}`
