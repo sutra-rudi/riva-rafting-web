@@ -12,6 +12,7 @@ import Loading from './loading';
 import dynamic from 'next/dynamic';
 import { fetchData } from './utils/callApi';
 import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
+import Script from 'next/script';
 
 const AppHeader = dynamic(() => import('./components/AppHeader'), { loading: () => <Loading /> });
 const AppFooter = dynamic(() => import('./components/AppFooter'), { loading: () => <Loading />, ssr: false });
@@ -52,6 +53,8 @@ export default async function RootLayout({
             <AppFooter appSocialLinks={socialShorthand} />
           </GlobalContextProvider>
         </Suspense>
+
+        <Script src='https://fareharbor.com/embeds/api/v1/?autolightframe=yes' />
       </body>
       <GoogleAnalytics gaId={process.env.RIVA_RAFTING_GOOGLE_ANALYTICS_CODE!} />
     </html>

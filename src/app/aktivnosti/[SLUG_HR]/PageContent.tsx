@@ -42,7 +42,7 @@ const PageContent = ({
     children: (
       <div className={styles.heroHeader}>
         <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO']}</h1>
-        <Link href={`/kontakt/?lang=${checkParams}`}>
+        <Link href={'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}>
           <AppButton content='Rezervirajte svoj termin' />
         </Link>
       </div>

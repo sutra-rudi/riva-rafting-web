@@ -208,8 +208,11 @@ const AppHeader = ({ appSocialLinks }: AppHeader) => {
             <HeaderBaseTwo />
           </div>
           <div className={styles.navInnerParent}>
-            <Link className={styles.navCta} href={parseLink}>
-              <span>{parseByLang('REZERVIRAJ SVOJ BORAVAK', 'BOOK YOUR STAY')}</span>
+            <Link
+              className={styles.navCta}
+              href={'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}
+            >
+              <span>{parseByLang('ONLINE REZERVACIJA', 'ONLINE BOOKING')}</span>
             </Link>
             <div className={styles.navInnerParentLang}>
               <LanguageSwitch />

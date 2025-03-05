@@ -51,6 +51,11 @@ const TureArticle = (props: TureKarticaData) => {
   const parseLink =
     checkParams === UserLanguage.hr ? `/kontakt?lang=${UserLanguage.hr}` : `/kontakt?lang=${UserLanguage.en}`;
 
+  const parseByLang = React.useCallback(
+    (hrString: string, enString: string) => (checkParams === UserLanguage.hr ? hrString : enString),
+    [checkParams]
+  );
+
   return (
     <article className={isCTA ? `${style.tureArticle}` : `${style.tureArticle} ${style.articleReverse}`}>
       <Lightbox
@@ -116,8 +121,11 @@ const TureArticle = (props: TureKarticaData) => {
 
         {isCTA && isDoubleCta && (
           <div className={style.contactCtaTuraNoviBlok}>
-            <Link href={parseLink} className={style.contactCtaTura}>
-              <span>{checkParams === UserLanguage.hr ? 'Kontaktirajte nas' : 'Contact us'}</span>
+            <Link
+              className={style.contactCtaTura}
+              href={'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}
+            >
+              <span>{parseByLang('Online rezervacija', 'Online booking')}</span>
             </Link>
 
             <div onClick={() => setOpenLightbox(true)} className={style.contactCtaTura}>

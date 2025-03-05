@@ -45,6 +45,9 @@ const OnamaSekcija = () => {
                 </span>
               </Link>
               <Link
+                style={{
+                  display: 'none',
+                }}
                 href={parseByLang(`/kontakt?lang=${UserLanguage.hr}`, `/kontakt?lang=${UserLanguage.en}`)}
                 className={styles.contactLink}
               >
