@@ -33,6 +33,20 @@ const listSpecialOfferEn = [
 
 const staticDemoData = [
   {
+    subtitle: 'DJELATNIK /DJELATNICA U PUTNIČKOJ AGENCIJI',
+    title: 'OGLAS ZA POSAO - SEZONA 2025',
+    content:
+      'Pridruži se našem timu i provedi sezonu u dinamičnom okruženju! Riva Rafting Centar traži odgovornu i komunikativnu osobu za rad u putničkoj agenciji u Obrovcu. Ako voliš rad s ljudima, turizam i timski duh, ovo je prilika za tebe! Nudimo osiguran smještaj, topli obrok i priliku za stjecanje vrijednog iskustva u turističkoj industriji.',
+    isCTA: false,
+    imageSRC: tureTwo,
+    isDoubleCta: false,
+    EN_subtitle: 'TRAVEL AGENCY EMPLOYEE',
+    EN_title: 'JOB ADVERTISEMENT - SEASON 2025',
+    EN_content:
+      'Join our team and spend the season in a dynamic environment! Riva Rafting Center is looking for a responsible and communicative person to work in a travel agency in Obrovac. If you enjoy working with people, tourism, and teamwork, this is the opportunity for you! We offer provided accommodation, a hot meal, and a chance to gain valuable experience in the tourism industry.',
+    isJobAd: true,
+  },
+  {
     subtitle: 'Od Mora do Velebita: Grupne Avanture s Potpisom',
     title: 'Zajedno u Avanturi: Grupni Izleti koji Spajaju',
     content:
@@ -88,7 +102,21 @@ const TurePonuda = () => {
     <section className={styles.turePonudaSekcija}>
       <PaperDividBot />
       <div className={styles.masterContainer}>
-        {staticDemoData.map((article) => (
+        <TureArticle
+          key={staticDemoData[0].title}
+          title={parseByLang(staticDemoData[0].title, staticDemoData[0].EN_title)}
+          isCTA={staticDemoData[0].isCTA}
+          isDoubleCta={staticDemoData[0].isDoubleCta}
+          content={parseByLang(staticDemoData[0].content, staticDemoData[0].EN_content)}
+          subtitle={parseByLang(staticDemoData[0].subtitle, staticDemoData[0].EN_subtitle)}
+          imageSRC={staticDemoData[0].imageSRC}
+          listSpecialOffer={
+            checkParams === UserLanguage.hr ? staticDemoData[0].listInsideHr : staticDemoData[0].listInsideEn
+          }
+          isJobAd={true}
+          lng={checkParams!}
+        />
+        {staticDemoData.slice(1, 4).map((article) => (
           <TureArticle
             key={article.title}
             title={parseByLang(article.title, article.EN_title)}
@@ -98,6 +126,7 @@ const TurePonuda = () => {
             subtitle={parseByLang(article.subtitle, article.EN_subtitle)}
             imageSRC={article.imageSRC}
             listSpecialOffer={checkParams === UserLanguage.hr ? article.listInsideHr : article.listInsideEn}
+            isJobAd={false}
           />
         ))}
       </div>
