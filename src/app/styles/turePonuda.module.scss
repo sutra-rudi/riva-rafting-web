@@ -54,6 +54,100 @@
     }
   }
 
+  // RIVA UPDATE
+
+  .dialogAd {
+    position: absolute;
+    background: #fff;
+    inset: 0;
+    width: 95%;
+    height: max-content;
+    z-index: 999;
+    margin: 0 auto;
+    border: 5px solid $plavaGlavna;
+    padding: 4rem 8rem;
+
+    @media only screen and (max-width: $desktops) {
+      padding: 3rem 6rem;
+    }
+
+    @media only screen and (max-width: $tablets) {
+      padding: 2rem 4rem;
+    }
+
+    @media only screen and (max-width: $phones) {
+      padding: 2rem;
+    }
+
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: clamp(1rem, 5vw, 2rem);
+      margin: 0 0 4rem 0;
+      color: $plavaGlavna;
+    }
+  }
+
+  .jobContainer {
+    max-width: 1141px;
+    margin: 0 auto;
+    position: relative;
+
+    .closeButton {
+      position: absolute;
+      top: -5%;
+      right: -5%;
+      border: 0;
+      outline: 0;
+      padding: 0.5rem;
+      background: transparent;
+      cursor: pointer;
+      font-size: 2rem;
+
+      @media only screen and (max-width: $phones) {
+        top: -3%;
+        right: -10%;
+        font-size: 1rem;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      gap: 73px;
+      line-height: 1.55;
+
+      @media only screen and (max-width: $phones) {
+        flex-wrap: wrap;
+      }
+
+      .contentBlock {
+        max-width: 534px;
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+
+        h2 {
+          margin-bottom: 1rem;
+          color: $plavaGlavna;
+          font-size: 1.15rem;
+
+          @media only screen and (max-width: $phones) {
+            font-size: 1rem;
+          }
+        }
+
+        ul {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+
+  // RIVA UPDATE
+
   .tureArticle {
     display: flex;
     justify-content: space-between;
@@ -61,6 +155,7 @@
     flex-wrap: wrap;
     gap: 3rem;
     width: 100%;
+    position: relative;
 
     .contentHolder {
       flex-grow: 1;
