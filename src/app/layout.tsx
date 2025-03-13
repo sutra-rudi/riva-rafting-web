@@ -13,6 +13,8 @@ import dynamic from 'next/dynamic';
 import { fetchData } from './utils/callApi';
 import { getSocialLinksQuery } from './queries/getSocialLinksQuery';
 import Script from 'next/script';
+import Link from 'next/link';
+import styles from '../app/styles/appHeader.module.scss';
 
 const AppHeader = dynamic(() => import('./components/AppHeader'), { loading: () => <Loading /> });
 const AppFooter = dynamic(() => import('./components/AppFooter'), { loading: () => <Loading />, ssr: false });
@@ -45,6 +47,18 @@ export default async function RootLayout({
   return (
     <html lang='en'>
       <body className={ubuntu.className}>
+        <div
+          style={{
+            zIndex: '999',
+            position: 'fixed',
+            bottom: '3rem',
+            right: '7%',
+          }}
+        >
+          <Link className={styles.navCta} href={'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}>
+            <span>{'ONLINE BOOKING'}</span>
+          </Link>
+        </div>
         <Toaster />
         <Suspense fallback={<Loading />}>
           <GlobalContextProvider>
