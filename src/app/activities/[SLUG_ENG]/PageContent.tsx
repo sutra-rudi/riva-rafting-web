@@ -27,6 +27,8 @@ const PageContent = ({
   const parseBulletPoints = (strBlock: string) =>
     strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
 
+  const fl = pageContentData['FHB_LINK'];
+
   const paramsControler = useSearchParams();
   const checkParams = paramsControler.get('lang');
 
@@ -44,7 +46,7 @@ const PageContent = ({
     children: (
       <div className={styles.heroHeader}>
         <h1 className={RecoletaBold.className}>{pageContentData?.['NASLOV AKTIVNOSTI HERO ENG']}</h1>
-        <Link href={'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}>
+        <Link href={fl ? fl : 'https://fareharbor.com/embeds/book/rivaraftingcentar/?full-items=yes'}>
           <AppButton content='Book now' />
         </Link>
       </div>
@@ -71,7 +73,7 @@ const PageContent = ({
                 ))}
               </div>
               <div className={styles.articleButtonStack}>
-                <Link href={`/kontakt/?lang=${checkParams}`}>
+                <Link href={fl ? fl : `/kontakt/?lang=${checkParams}`}>
                   <AppButton content='Book now' />
                 </Link>
                 <Link href={`/kontakt/?lang=${checkParams}`}>
