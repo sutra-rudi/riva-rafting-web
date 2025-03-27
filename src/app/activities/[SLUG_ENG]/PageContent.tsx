@@ -24,8 +24,10 @@ const PageContent = ({
   hero: StaticImageData;
   gallery: StaticImageData[];
 }) => {
-  const parseBulletPoints = (strBlock: string) =>
-    strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
+  const parseBulletPoints = (strBlock: string) => {
+    if (!strBlock) return;
+    else return strBlock.split('\n').map((item, index) => <li key={index}>{item}</li>);
+  };
 
   const fl = pageContentData['FHB_LINK'];
 
