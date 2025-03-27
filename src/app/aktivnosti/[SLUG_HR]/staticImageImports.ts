@@ -156,8 +156,8 @@ import bicikl1 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl01.png'
 import bicikl2 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl02.png';
 import bicikl3 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl03.png';
 import bicikl4 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl04.png';
-import bicikl5 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl05.png';
-import bicikl6 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl06.png';
+// import bicikl5 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl05.png';
+// import bicikl6 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl06.png';
 // import bicikl7 from '../../img/aktivnosti-hero-update-slike/bicikl/bicikl06.png';
 
 //----------------BICIKL--------//
@@ -290,8 +290,8 @@ export const aktivnostiHeroSlike = [
   },
   {
     aktivnostId: 9,
-    aktivnostHeroUrl: bicikl,
-    aktivnostGalerija: [bicikl1, bicikl2, bicikl3, bicikl4, bicikl5, bicikl6],
+    aktivnostHeroUrl: bicikl1,
+    aktivnostGalerija: [bicikl1, bicikl2, bicikl3, bicikl4],
   },
   {
     aktivnostId: 10,
