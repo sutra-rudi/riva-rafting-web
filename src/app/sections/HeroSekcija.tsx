@@ -160,6 +160,7 @@ const HeroSekcija = ({ heroVideoUrl }: HeroSekcija) => {
     ),
   };
 
+  console.log('');
   return (
     <section className={styles.heroSekcija}>
       <PaperDividTop />
